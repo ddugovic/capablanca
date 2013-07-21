@@ -1,0 +1,341 @@
+New mamer manager help file
+
+This file contains portions of server help files(written by Friar) and mamer   
+help files(written by mlong) relevant to new mamer managers.  toddmf merged 
+these files, updated out of date information, added some new things, and 
+removed some contradictions, hopefully resulting in a file useful for new mamer
+managers.  With the release of mamer 2.0, much of this document has been 
+rewritten by toddmf.  Send questions, comments, suggestions, etc. to toddmf.
+
+Introduction and general server considerations
+----------------------------------------------
+
+  Congratulations on becoming a mamer manager!  You have earned this position
+through your high level of maturity and interest in FICS chess(tournaments in
+particular).  Less than 1% of FICS users have been given the honor of being a
+TM. That being said, being a TM is also a responsibility.  It is essential that
+you continue to maintain a higher standard of maturity than most users for 
+several reasons.  The most obvious situations are problems in tourneys. Users 
+often get angry or impatient for several reasons during a tourney. For example:
+User has just been given chaos points, user is angry because he was flagged in
+a drawn game, user strongly disagrees with mamer policy, etc.  In these 
+situations, it is necessary for you to stay calm, be competent, and keep 
+channel 49 and/or the tourney under control without reacting too harshly. 
+Another reason is that TMs are often mistaken for admins, especially by 
+new/intermediate users.  Please kindly help them if possible, but refer them to
+an admin if one really is necessary.
+
+Expectations
+------------
+
+  Apart from staying out of trouble on FICS, the only requirement that you must
+meet in order to remain a mamer manager is to meet a monthly quota for tourneys
+managed.  Currently, it is 5 tourneys per month.  This is only a minimum, 
+though. Feel free to manage as many as you like.  This is fun, remember? :)  
+This quota does not apply to admins, several of whom only manage when there is
+a need for a tourney and no other TMs are online.  The quota is in place in 
+order to keep the manager staff active.  If you are unable to remain active as 
+a manager temporarily, message the COO(currently toddmf) and explain why.  If 
+you plan on being inactive for a long period of time(at least 3 months, or 
+longer than summer break for students), it is probably best if you step down as
+TM(if you've done well as a TM you would probably be able to return as TM when
+you return to FICS).
+
+Mamer's user commands
+---------------------
+
+  Before you get to the the details of manager commands and how to manage a
+tourney, you should first make sure you are well equipped to deal with users'
+questions about how to use mamer.  If you are unfamiliar with any of these 
+commands, you should try them.
+
+ Command           Abbrev  Level  Basic info
+ ---------------------------------------------------------------------
+ finger           | fi    |   0 | Displays the stats for a user. 
+ help             | h     |   0 | List commands and descripts.
+ join             | j     |   0 | Request to enter a tourney.
+ listmanagers     | lm    |   0 | Displays the Managers list.
+ listtourneys     | lt    |   0 | Displays the tournament list.
+ listtourneyvars  | vars  |   0 | Displays the tournament variables.
+ listtourneygames | games |   0 | Displays the tournament games.
+ listplayers      | lp    |   0 | Displays the players in the tourney.
+ showcommands     | sc    |   0 | List commands and descripts.
+ showhelpfile     | shf   |   0 | Shows a help file.
+ who              | who   |   0 | Displays the tournament games.
+ withdraw         | with  |   0 | Remove yourself from a tourney.
+
+User commands notes:
+ The "finger" command shows your statistics by default. You can see other
+ players' stats by "mam finger name".
+
+ "help" is the same as "showcommands". To see help files, use "showhelpfile".
+
+ The old commands "grid" and "standings" are now all neatly packaged in the
+ "who" command. The players are listed in rank order.
+
+ The "upset points" in the "who" listing are temporary points(they are deleted
+ when the tourney is deleted). They are calculated like this: If you beat a
+ higher rated player, you get the difference in rating in upset points.  If you
+ draw a higher rated player, you get half the difference in rating points,
+ rounded down.  For example, a 2000 who beats a 2101 gets 101 upset points. If
+ he had drawn, the 2000 would have gained 50 upset points.  Ratings from when
+ the players join the tourney are used.
+
+ The "Perfrm" (performance rating) in the "who" listing is a measure of what
+ the player's USCF(and several other similar systems) rating would be if this
+ was the only tourney he played in.  Again, the ratings from when the players
+ join the tourney are used.  Here is the formula:
+
+         Perf. Rating = Avg. opp. rating + 400 * ((wins-losses)/rounds)  
+
+ Most commands now require you to specify the tourney number! Remember this
+ when giving help.
+
+ Players very often ask about how to find out who is in a tourney, how to see
+ the standings, how to see a grid, how to see which games are in progress, and 
+ how to see tourney variables. It is useful to have an alias for telling 49 
+ something along the lines of "Please use the commands 'mam games #', 
+ 'mam vars #', and 'mam who #' for information about the tourney."
+
+Introduction to managing tourneys
+---------------------------------
+
+  The first thing you should do after becoming a manager is to join channel
+48.  You can ask for the advice of more experienced TMs in the channel if you
+run in to any problems while managing.  Channel 48 is also used to discuss
+other mamer issues, and it is just as often used for friendly chat among TMs.
+Here is a tutorial on how to manage a typical tourney. 
+
+The first thing you need to know is that you will be sending a lot of tells to
+mamer while managing.  To save yourself some typing, you should either use the
+server alias "mam"(short for xtell mamer) or create an even shorter alias like
+m.  In this tutorial, I will use "mam".
+
+ Step 1: Create a tourney
+ ------------------------
+
+ To create a new tourney, type "mam create". You should get the following
+ response:
+ 
+ mamer(TD) tells you: Created tourney number:  6
+
+ Contact the COO if mamer tells you that "you do not have permission". If you
+ did create the tourney successfully, all you need to remember is the tourney
+ number. In this tutorial, we'll continue managing tourney number 6.
+
+ Step 2: Select the tournament variable settings
+ -----------------------------------------------
+
+ Assuming you are now the manager for tourney 6, type "mam vars 6".
+ You get back a listing of the current tournament variable settings:
+
+:
+:           (T)ime:     4
+:      (I)ncrement:     0
+:         (R)ounds:     0
+:    Max (P)layers:    16
+:           (M)ode:     r (r)ated or (u)nrated
+:          (S)tyle:     s (s)wiss or (r)oundrobin
+:        (V)ariant:     w (w)ild, (r)egular, (b)ug, or (s)uicide
+:      (W)ild Type:    10 (0), (1), (2), (3), (4), (5), (8), (9)8a, (10)fr
+:     Rating (L)ow:     0
+:    Rating (H)igh:  9999
+:
+:          Manager:  toddmf                
+
+ The letters in () refer to the variable shortcut to be used when changing a
+ value for a variable.  Here is what the variables mean:
+
+    Time         -- Same as always: minutes to start the game with
+    Increment    -- Same as always: additional seconds per move
+    Rounds       -- Number of rounds in the tourney. If you leave this at 0,
+                    mamer will choose an optimal number of rounds.
+    Max Players  -- The tourney will automatically close and start when this
+                    many players have joined.
+    Mode         -- Will the tourney games be rated or unrated?
+    Style        -- Round Robin(everyone plays everyone) or Swiss System(system
+                    where, generally speaking, players play opponents with the
+                    same score in the tourney each round).
+    Variant      -- What type of game is being played? Regular is used for
+                    blitz, standard, and lightning.
+    Wild Type    -- This only appears when Variant is set to Wild. Use this to
+                    set which wild type will be played.
+    Rating Low   -- Players with a rating lower than this cannot join.
+    Rating High  -- Players with a rating higher than this cannot join.
+ 
+ You can change these variables before the tourney starts by using "mam stv #
+ var value".  For example, "mam stv 6 t 1" would change the time variable to 1.
+ Once the tourney has opened, you can only change the Max Players and Style
+ variants, and once it has closed and started, you cannot change any variables!
+
+ Step 3: Beginning the tournament
+ --------------------------------
+
+ After you have set the variables, you need to open the tournament so that 
+ players may join. To do so, type "mam open #" ("mam open 6" in our case).
+ 
+ At this point, mamer will announce the tourney in channel 49 and with a
+ cshout. You can duplicate the announcements by using the "mam announce #"
+ command to announce tourney number #. At the moment, there is no limit on how
+ often you can announce. I hope not to hear many complaints about mamer making
+ too many cshouts, so please use announce reasonably(somewhere around once per 
+ 30-60 seconds is reasonable).
+
+ When you have enough players, you can close and start the tournament.  To do 
+ so, "mam close #".  If you are unable to find enough players(a minimum of 4 is
+ needed for mamer to run a tourney) in a reasonable amount of time, you should
+ delete the tourney by using "mam delete #" where # is the tourney number.
+
+ Step 4: Running the tournament itself
+ -------------------------------------
+
+ If nobody leaves the tournament, there should be no problems.  Mamer should
+ take care of itself.  If someone leaves the tourney or logs off of FICS, you 
+ may have some work to do.  After managing several tourneys, you will have a 
+ good sense of how long to wait for someone to return before taking action.
+ The commands you're going to need are "forfeit" and "setres".  "mam forfeit
+ handle #" forfeits a player from tourney number #.  Use the forfeit command if
+ a player has left, you don't expect him back, and there is at least another
+ round left in the tourney.  "mam setres # white black 1/=/0" sets the result 
+ of white vs black in tourney # to a win for white/draw/win for black.  Use 
+ this if you are late in the tourney so that the player doesn't have to forfeit
+ his previous points.  Also use setres if you simply want to keep the tourney 
+ moving but expect the player to be back(this is useful for tourneys at very 
+ fast time controls).  
+
+ Step 5: The tournament ends
+ ---------------------------
+
+ Mamer will usually end the tournament automatically and post the final
+ results.  If it does not, type "mam games #" to see any uncompleted games.
+ Check if those players are logged in(a fast way to do this is "in handle"),
+ and use forfeit/setres accordingly.
+
+ If there are any problems with the data of the tourney then "message mlong" 
+ the correct values and let the players know that the results will be 
+ corrected.  Points in the tourneys are not recorded; what is important is 
+ wins, losses, and placement in the final tourney standings.  
+
+ If you have just managed a scheduled tourney(see "help motd" for a list of
+ them), please message the COO the names of the winner(s) and anyone else who
+ may have managed the tourney, so that he can create a news item each week.
+ Also, please "mam keep # 1" to set tourney #'s keep variable to 1.  This
+ allows people to view the scheduled tourney's standings days after the
+ tourney.
+
+Chaos points
+------------
+
+  As a TM, you will soon have the power to penalize tourney abuse by giving 
+someone chaos points.  This is done by typing "mam addchaos handle #", where #
+is the number of chaos points(use a negative number to remove chaos points).  
+When someone has 100 chaos points, mamer will censor him, thus preventing him 
+from playing in tourneys.  Firstly, let's talk about when you should not give 
+someone chaos points.  If you forfeit someone or they withdraw before the 
+tourney ends, mamer will automatically give that person 10 chaos points per 
+round missed.  Chaos points should be given out for non tourney games,
+profanity, and other distractions(such as telling 49 "hi mamer" repeatedly
+after being warned about overuse of it).  Use good judgement.  If a player is
+playing a non tourney game that will end in 30 seconds, maybe you should not
+act.  However, if he is in a standard game and ignores your request to end it
+and start the tourney, chaos points are warranted.  You should probably give
+somewhere between 10 and 20 chaos points per disruption.  If you find yourself
+wanting to give out less than 10, you should consider giving a warning instead.
+If you find yourself wanting to give more than 20, you should probably contact
+an admin about the abuse.  In any case, whenever you add chaos points, please 
+send them a message explaining how many points were given, why you did so, 
+and note that decisions can be appealed to the COO.  If you don't send a 
+message, the player may never knew he did anything wrong, repeat his actions, 
+and soon find himself censored by mamer.  By sending a message, the player has 
+a better chance of not repeating his actions, and it also necessitates having a
+good reason for adding the points.
+
+Manager commands
+----------------
+
+  Here is a summary of all the manager commands.
+
+: addchaos         | ac    |  25 | Adds (or subs) chaos points.
+: announce         | ann   |  10 | Announce the tournament to the working 
+                                   channel.
+: addtotourney     | att   |  25 | Add a user to a tourney.
+: create           | cr    |  10 | Creates a new tournament.
+: close            | cl    |  10 | Closes and starts a tournament.
+: delete           | del   |  10 | Deletes a tournament.
+: forfeit          | fo    |  10 | Remove a user from a tourney.
+: keep             | k     |  25 | Keep a tourney in memory.
+: loadedusers      | lu    |  25 | Displays the loaded users.
+: messman          | mm    |  50 | Message all of the Managers.
+: open             | ot    |  10 | Opens the tournament to players.
+: setinfo          | si    | 100 | Set a user's finger info.
+: setmanagerlevel  | sml   |  50 | Sets manager's level.
+: setres           | sr    |  10 | Sets the result of a game.
+: setstat          | ss    |  50 | Sets a specific finger stat.
+: settourneyvar    | stv   |  10 | Sets a Tourney's Variables.
+: shutdown         | sd    |  50 | Shuts down Mamer.
+
+All of the level 10 and 25 commands have been covered except for
+"addtotourney" and "loadedusers". "addtotourney player #" forces player to join
+tourney number #.  This is useful for players who want to play in a tourney 
+that is about to close but can't figure out how to join the first time.  If you
+need to use this, please try to tell the person how to join future tournaments 
+so that he doesn't rely on the manager to use addtotourney.  It is also useful 
+to create test tournaments, but aside from mlong testing code, there is rarely 
+a need for that.  "loadedusers" is simply a list of players in mamer's 
+"memory"; players who have told mamer something recently.  The only practical
+application for most managers that I can think of is trying to check if a new
+mamer player having trouble is even getting as far as telling mamer something.
+A note on "delete": Tourneys that aren't "kept"(using keep) are automatically
+deleted after two hours.  Please don't delete them before this unless you
+either want to abort a tourney in progress or open or the tourney list is
+getting very cluttered with many fast(ie 1 0, 0 1 suicide) tourneys.  Keeping
+tourney standings available for some time after the tourney ends was a feature
+requested by many users, so please don't negate it by deleting the tourneys
+prematurely.  
+
+
+
+Historical information about mamer
+----------------------------------
+
+  Users sometimes ask about this information.  You may also find it 
+interesting. The following is a cleaned up and up-to-date version of mamer
+1.x's "mam help about".
+
+   "Mamer is an automated tournament director for use on FICS only.
+ Fred Baumgarten originally wrote this code because there was a need and 
+ Chevrier Joel, the creator of Tomato(another TD program), would not 
+ share the code.  Fred gave me(mlong) the code in mid 1995 with the 
+ stipulation I not release it to anyone.  I have modified and (I hope) 
+ improved mame (now mamer).
+     
+     Mamer stands for "manage me". Plus the -r- for the
+ differentiation between mame (Fred's) code and mamer (mlong's) code.
+
+     Fred's words follow: The intention to write this tournament director
+ program came out of the need to have such a program. Tomato - used at
+ FICS and written by darkside was not released to the public. Darkside
+ even did not want to accept a non disclosure agreement - so I decided
+ to write such a program myself. (Tomato was sold to ICC shortly after
+ and has been used there ever since - toddmf).
+ The program is written in C and will support a bunch of new features soon. 
+ It is beta state since Version 0.5 but there _are_ bugs.
+ Fred Baumgarten <dc6iq@insl1.etec.uni-karlsruhe.de>. Have fun !!!
+
+ Mamer is maintained and coded here on FICS by mlong.  PLEASE! FOR BUGS
+ PERTAINING TO MAMER TALK TO mlong."
+
+  mlong has always maintained the mamer code.  He also was in control of
+mamer's day to day operations at first.  GBPacker soon took over this position,
+and fpawn followed.  toddmf currently holds this position.
+
+  Mamer's largest(in terms of number of players) tourneys occurred shortly
+after games in the 1997 Deep Blue-Kasparov rematch.  Some of these tourneys
+drew 50-60+ players(if anyone knows the exact numbers, please tell me).  The
+longest tourney(in terms of number of rounds) was probably a 15 round, 16
+player 1 0 RR tourney held in early 1998(again, please tell me if this is not
+accurate).
+
+See also: every other help file
+
+[Last modified: September 1, 1998 -- toddmf]

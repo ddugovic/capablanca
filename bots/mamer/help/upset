@@ -1,0 +1,14 @@
+upset
+
+mamer's "who"(also known as "listplayers") command lists upset points for each
+player in the tourney.  Upset points are gained for beating or drawing higher
+rated players.  If you beat a higher rated player, you gain the difference in
+ratings in upset points.  If you draw a higher rated player, you gain half the
+difference(rounded down) in upset points.  For example, a 1600 who beats a 
+2001 would gain 401 upset points.  If the game had ended in a draw, the 1600
+would have gained 200 upset points.  Upset points do not carry from tourney to
+tourney.
+
+See also: listplayers, who
+
+[Last modified: September 1, 1998 -- toddmf]

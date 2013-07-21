@@ -1,0 +1,13 @@
+
+next
+
+Usage: next
+
+  This command is used to continue the display of a long text file.  An alias
+for "next" is "more".  How many lines of text you receive at once is
+determined by the "height" variable setting.
+
+See Also:  help  intro_welcome  variables
+
+[Last modified: July 1, 1995 -- Friar]
+

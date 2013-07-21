@@ -1,0 +1,25 @@
+
+asetadmin
+
+Usage: asetadmin player AdminLevel
+RESTRICTED TO ADMINISTRATORS.
+
+  Sets the admin level of the player with the following restrictions.
+  1. You can only set the admin level of players lower than yourself.
+  2. You can only set the admin level to a level that is lower than
+     yourself.
+
+  Levels
+  ------
+    0    - Normal user.  Almost everyone is admin level 0.
+   10    - Administrator.  This level allows you to execute administrator
+           commands.
+   20    - Master Administrator.  Allows you to make and break
+           administrators.
+  100    - God. You can do anything.
+
+See ahelp:  admin-hierarchy
+See help:   
+
+[Last modified: June 22, 1995 -- Friar]
+

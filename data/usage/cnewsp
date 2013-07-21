@@ -1,0 +1,4 @@
+  Command:  cnewsp
+  Purpose:  change poster of a regular news item
+  Usage:    cnewsp #
+  Examples: cnewsp 180

@@ -1,0 +1,184 @@
+The Internet Chess Library -- An anonymous ftp archive at chess.onenet.net
+(this file may be somewhat out of date!  :-) )
+
+The chess archive consists of the content of the directory tree contained
+in /pub/chess.  At the top level of this tree are a few informational files
+which are briefly described below (the contents of these files will be 
+updated from time to time):
+
+  ICS.getting-started
+	This is an old introduction to the ICS (internet chess server).
+	The information will apply somewhat to the current server, but it
+	has changed a great deal since this was written.
+  README
+	This is a file containing a welcome message and a statement of the
+	general purpose and intent of the archive.
+  README.archive-structure
+	This file.
+  README-pictures-of-netchessplayers
+	This tells how you might donate a digitized picture of yourself or
+	a chessplayer you know into the archive.
+  README-where_is_ICS.info
+	This is a 'link' to the file containing the current Internet
+	locations of the main ICS's (currently, one in USA and one in
+	Europe.)
+  README.too
+	This is an informational note related to finding recently uploaded
+	data.
+  chess-FAQ
+	This is the Chess FAQ (Frequently Asked Questions, and answers).
+  gnu-chess-FAQ
+	This is a FAQ for GnuChess, a public domain chess playing program
+	from the GNU (Gnu's Not Unix) project -- part of the Free Software
+	Foundation.
+  ls-lR
+	This is a complete listing of the current contents of the archive,
+	without descriptions.  Filenames only.  A Index with descriptions
+	is probably not a possibility at this time because of the limited
+	resources of the current maintainer. (Any help on this would be
+	greatly appreciated)
+  where_is_ICS.info
+	This is the info file for the locations of the ICS's.  
+	README-where_is_ICS.info is linked to this file.
+
+
+
+The rest of the archive is divided into a number of subdirectories which 
+attempt to classify the data somewhat.  Below is a listing of directories 
+in this archive and what one might expect to find there.
+
+
+/pub/chess/
+  Amiga/		Software and data for/related to Amiga computers.
+  Atari/		Software and data for/related to Atari computers.
+  CBUFF/		Files and data for the CBUFF (ChessBase Utilities
+			  File Format) project.
+    Atari/
+    DOS/
+    Macintosh/
+    Unix/
+    data/
+    doc/
+    src/
+  DOS/			Software and data for/related to IBM PC compatible
+			  computers running DOS/Windows.
+    Bookup/  		Bookup data files.  This is a link to the 
+                          directory:
+			  Game-Databases/Bookup/
+    ChessAssistent/  	ChessAssistent data files.  This is a link to the 
+			  directory:   
+			  Game-Databases/ChessAssistent/
+    ChessBase/  	ChessBase data files.  This is a link to the 
+                          directory:
+			  Game-Databases/ChessBase/
+    NicBase/		NicBase data files.  this is a link to the 
+                          directory:
+			  Game-Databases/NicBase/
+    Tools/		Utility programs for DOS.  Archiving and 
+                          compression utilities needed to unpack most of 
+                          the data in this archive may be found here for 
+                          DOS.
+  Game-Databases/	This is a directory tree dedicated to Chess game 
+			  databases in varying formats.  Utilities to 
+                          convert from one format to another may be found
+                          in the Tools directory.
+    Bookup/		Bookup database files.
+    ChessAssistent/	ChessAssistent database files.
+      Tools/		Utilities for manipulating/converting ChessAssistent 
+                          data files.  This is a link to the directory:
+			  Game-Databases/Tools/ChessAssistent/
+    ChessBase/		ChessBase database files.
+      Tools/		Utilities for manipulating/converting ChessBase 
+                          data files.  This is a link to the directory:
+			  Game-Databases/Tools/ChessBase/
+    ChessBase_CBUFF/	ChessBase database files from the CBUFF project.
+                          This is a link to the directory:  CBUFF/data/
+    NicBase/		NicBase database files.
+      Tools/		Utility programs for manipulating/converting 
+                          NicBase files. This is a link to the directory: 
+			  Game-Databases/Tools/NicBase/
+    PGN/		This is the PGN (Portable Game Notation) project
+			  directory tree.  It contains utilities for the 
+                          PGN format (including tools for converting 
+                          between other formats) and game databases in 
+                          the format.  A DOS program for viewing these 
+                          databases is available.
+      Events/		PGN format data files of events in specific years.
+        1990/
+        1993/
+        1994/
+      MGR/		The MASTER GAME REPOSITORY directory.  contains 
+                          (or soon will) thousands of games in PGN format.
+      Players/		PGN data file of games for specific players: 
+                          Kasparov, Tal, Fischer, Karpov, Polgar, and 
+                          others!
+      Tools/		Utilities for PGN data files.  Conversion tools 
+                          and a reader.
+    Tools/		Utility programs for all Databasse formats in the 
+			  Game-Databases area. 
+      ChessAssistent/
+      ChessBase/
+      NicBase/
+      PGN/		This is a link to the directory:  
+                          Game-Databases/PGN/Tools/
+  HTML/			Hypertext files.  For use with Mosaic (WWW)
+                          clients.  If you don't know what this is, don't
+                           worry.  It's specific to distributed 
+                           information over the Internet.
+  ICS_help/             All the help files for the ICS.
+  Macintosh/		Software and data for/related to Macintosh's.
+  NeXT/			Software and data for/related to NeXT computers.
+  PGN/			This is the PGN (Portable Game Notation) project
+			  directory tree.  It contains utilities for the 
+                          PGN format (including tools for converting 
+                          between other formats) and game databases in 
+                          the format.  A DOS program for viewing these 
+                          databases is available.  This is a link to the 
+                          directory:  Game-Databases/PGN/
+  SAN_testsuites/	This is a collection of test positions for testing
+			  the problem solving capabilities of chess 
+                          software.  These files are related to the SAN 
+                          (Standard Algebraic Notation) project, the 
+                          distribution of which may be obtained in the 
+                          Unix/ directory.  SAN utilities and datafiles 
+                          use PGN.
+  Unix/			Software and data for/related to Unix OS.
+  X/			Software and data for/related to X-Windows.
+  chessbits/		Archives of the Chessbits Electronic magazine 
+                          which will probably not come back to life, 
+                          although an occasional ICS-Newsletter seems to 
+                          have picked up the slack.  These are found in 
+                          texts/ 
+  dropoff/		A place to drop things off where no-one but the 
+                          archive maintainer can get to them.  Please 
+                          accompany anything with a brief note.  
+  ics-tourn/		Data and games related to tournaments held on the
+                           ICS's.
+  masters/		Collections of games for masters and tournaments 
+                          in ascii format primarily (some are PGN 
+                          compatible)
+  matches/
+    WCC_1993/		Games of the World Chess Championships in 1993.  
+			  Fide men's and women's and the PCA match as well.
+  pictures/		digitized pictures of chess related art and/or 
+			  chess players both famous and not so famous. 
+  projects/		A directory tree for software projects donated to
+                          the archive.  Not necessarily chess related.
+    metagame/
+    morph/
+  texts/		General texts of materials, analysis and some game
+                          scores.  A grab-bag of chess related materials.
+    PCA_Qualifiers_1993/ 
+  uploads/		A directory containing lots of subdirectories for 
+                          donating materials to the archive.  Pick an 
+                          appropriate directory here for your upload.
+  windows/		Here is where new applications for MSwindows or
+			  other brands of windows for the IBM PC reside.
+			  This area is new, so many windows applications
+			  still are in th DOS directory.
+  xchange/		A place for data/software you want to make 
+                          available to everyone but which you might not 
+                          want to place in a 'permanent' area do to it's 
+                          developmental/experimental nature.
+
+

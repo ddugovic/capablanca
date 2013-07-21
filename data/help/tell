@@ -1,0 +1,48 @@
+
+tell
+ 
+Usage: tell user message
+
+  "Tell" transmits your message to the user specified.  The server gives you
+some feedback that the message has been sent.  You will also be told whether
+the user is playing a game currently, or is not even logged on at the moment. 
+"t" is an alias for "tell".
+
+  As a shortcut, you can use "." as an alias for "tell user" when you want to
+send another message to the last person you told.  That way you can keep
+conversations going easily.
+
+  When you receive a "tell" it will appear like this:
+	<User> tells you: <message>
+
+  The 'user' can also be a channel number in order to send a message to a grou
+of users having that channel activated.  In this case, you as sender will see
+the following display after sending your message: (# -> (##)) where # is the
+channel number and ## is the number of people on that channel that received
+your message.
+
+  As a shortcut, you can use "," as an alias for "tell #" and your message
+will be sent to the last channel you gave in a "tell" command.  (Compare to
+"xtell" command.)
+
+
+SPECIAL NOTES
+
+  (a) The server remembers both the last user to whom and the last channel to
+which you have told something.  For this reason, "." and "," are separate
+aliases and do not interfere with each other.
+
+  (b) A special command, "say", can be used for communicating with an opponent
+during or directly following a chess game.
+
+  (c) Another special command, "message", sends a message to a user so that it
+can be stored for future use.
+
+  (d) You can decide whether or not to hear a "tell" from unregistered users;
+setting the "tell" variable to 0 (zero) filters these from being sent to you.
+
+
+See Also:  alias  channel  intro_talking  message  say  variables  xtell
+
+[Last modified: October 8, 1995 -- Friar]
+

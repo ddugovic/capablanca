@@ -1,0 +1,14 @@
+canewst
+
+Usage: cnewst # message
+RESTRICTED TO ADMINISTRATORS.
+
+   This command allows you to change the title of an anews item that had
+previously been created using 'canewsi'.  The '#' is the number of the anews
+index and 'message' is the new title.  The message length limit in 'canewsi'
+also applies here.
+
+See ahelp:  canewse canewsf canewsi canewsp
+See help:   anews
+
+[Last modified: December 12, 1999 -- carlsbad]

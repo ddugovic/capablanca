@@ -1,0 +1,4 @@
+  Command:  rerank
+  Purpose:  reset a user's rank if there has been an error
+  Usage:    rerank user
+  Examples: rerank DAV

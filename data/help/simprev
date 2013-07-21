@@ -1,0 +1,15 @@
+
+simprev
+
+Usage: simprev
+
+  Used by a player engaged in simultaneous chess matches.  Use simprev to
+move to the previous game in the rotation so that you can make your next move
+in that game.  An alias for "simnext" is "sp".
+
+  To go to a specific board, use "goboard" or "gonum".
+
+See Also:  goboard  gonum  simnext  simuls
+
+[Last modified: June 16, 1995 -- Friar]
+

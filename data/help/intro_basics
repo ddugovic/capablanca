@@ -1,0 +1,21 @@
+
+intro_basics
+
+  Here is a summary chart for new users of the server with basic commands you
+may want to use as you start to play chess live on the internet.
+
+In order to ...                                  Type ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get assistance or an answer to a question        [Step 1]   +chan 1
+                                                 [Step 2]   tell 1 <text>
+Turn shouts off                                  set shout 0
+Read a help file                                 help file_name
+Select an appropriate graphics interface         help interfaces
+Download a graphics interface                    help ftp_hints
+Talk to just one individual                      tell user_name <text>
+Challenge a user to a chess match                match user_name
+
+See Also (these other help files):  help  index  intro_welcome  intro_talking
+
+[Last modified: December 19, 1995 -- Friar]
+

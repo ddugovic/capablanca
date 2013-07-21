@@ -1,0 +1,4 @@
+Command:  games
+Purpose:  display information about games currently in progress
+Usage:    games [#, /[bBelsSuw], string]     [default: all games]
+Examples: games; games 23; games sv; games sveshi; games /B; games /lw

@@ -1,0 +1,123 @@
+
+match
+
+Usage: match user [rated|unrated] [Start] [Inc] [Black_Start Black_Inc]
+[White|Black] [board_category board]
+
+
+SUMMARY
+~~~~~~~
+  This command allows you to challenge a given user to a game of chess.  To
+challenge USER to a match, type "match USER".  The type of match being offered
+depends on (a) your variable settings (preferences) and (b) information you
+give in the match request.  USER will need to accept or decline the challenge. 
+You can cancel a challenge you have made using the "withdraw" command.
+
+
+MATCH VARIABLES
+~~~~~~~~~~~~~~~
+  You can specify the parameters for the match.  If no parameters are
+specified, (a) the challenger's variable settings for "rated|unrated", "Start"
+and "Inc" will be used (see "variables"), (b) the clock times will be the same
+for both players, (c) the colors will be chosen by the server, and (d) the
+board_category will be standard.  Here are details about each variable of the
+match command.
+
+
+RATED|UNRATED -- Sets whether the match will be rated or unrated.  If
+undesignated, the challenger's variable setting for "Rated" will be used.  If
+designated, it will override the challenger's "Rated" setting.  Example:
+"match user rated".
+
+START and INC -- Determine the clock variables for the match, where Start is
+in minutes and Inc is in seconds.  If only 'Start' is given then 'Inc' is
+assumed to be zero (example, "match user 5").  If values are given for Black
+then the challenger will play the White side (example, "match user 5 0 5 0");
+otherwise the side will be chosen "fairly".
+
+WHITE|BLACK -- If a color is given, White or Black (w/b), that will be the
+color of the challenger (example, "match user w").
+
+BOARD_CATEGORY BOARD -- These two parameters must be used together.  They
+specify a particular starting position for the game.  These parameters can
+only be included when all of the other parameters have also been given.  If a
+particular starting position is not supplied, then "standard" and "standard"
+are used (that is, the "regular" starting position for pieces will be used
+with no particular opening).  (See the "boards" help file for the categories.)
+
+
+EXAMPLES OF MATCH REQUESTS (challenges):
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+match red
+  Challenges user "red" to a match using your default values for Rated, Start
+  and Inc.
+
+match red 5
+  Challenges user "red" to a match with Start = 5 and Inc = 0 using your
+  default value for Rated.
+
+match red 30 30 u
+  Challenges user "red" to an unrated match using a 30 minute Start time and
+  30 second Increments per move ("match red 30 30 0 0" would give the same
+  result.)
+
+match red 30 0 15 0 w
+  Challenges user "red" to a non-standard, time-odds match with the challenger
+  playing White and "red" playing Black.  White will Start with 30 minutes on
+  the clock, and Black will Start with 15 minutes (note that all four values
+  for the time controls must be given for a match with time odds).
+
+match red 2 12 0 0 openings ruy-lopez
+  Challenges user "red" to a match using the ruy-lopez opening position.
+  (Note that to start from a given board, you must give all four time control
+  values; in this example, you may NOT omit the two zeros.)
+
+match red 2 12 0 0 wild 3
+  Challenges user "red" to a match using the wild 3 starting position.
+  (Again, all four time control values must be given.)
+
+match red 5 12 bughouse
+  Challenges user "red" to a bughouse match, once the bughouse teams have been
+  arranged.  The word "wild" does not need to be used.
+
+
+SPECIAL NOTES
+~~~~~~~~~~~~~
+
+(a)  COUNTER OFFERS:  If you receive a match request from a user and you
+request a match with different time controls, then in essence you (a) decline
+the first request but (b) make a request of your own.  If your counter request
+has the same time controls, a game will begin.
+
+(b)  RESUMING ADJOURNED GAMES:  Use the "match" command to resume an adjourned
+game.  Resuming an adjourned game takes precedence over starting a new game. 
+The match request, of course, can be declined by your opponent.  Adjudications
+of adjourned games are possible.  
+
+(c)  USING FORMULAS TO FILTER OUT MATCH REQUESTS:  Match requests from other
+users can be filtered by using a formula.  If a request fails to meet your
+formula, it is declined automatically for you.  Also, you will not receive
+challenges from users on your "censor" list.
+
+(d)  ALIASES:  Using aliases can make it easier to challenge other players to
+matches.
+
+(e)  EXAMINE MODE:  Matching yourself ("match your_handle") is a way to enter
+examine mode.
+
+(f)  MATCH TYPE:  It is not possible to request a type of match directly, such
+as "match user blitz".  How a match is classified depends upon both the Start
+time and the Inc time.  An equation is used to determine whether a match will
+be blitz or standard (see the "blitz" help file).  You can, however, request a
+bughouse match directly.
+
+(g)  NOPLAY LIST:  If you do not want to receive match requests from a
+particular user, place that person on your "noplay" list.
+
+
+See Also:  accept  adjourn  adjudicate  alias  blitz  boards  bughouse  censor 
+decline  examine  formula  intro_playing  noplay  variables [rated, start,
+inc, etc.]  withdraw
+
+[Last modified: December 25, 1995 -- Friar]
+

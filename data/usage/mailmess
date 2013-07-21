@@ -1,0 +1,4 @@
+Command:  mailmess
+Purpose:  email 1 or more of your your stored messages to you
+Usage:    mailmess [user|#|#-#]
+Examples: mailmess; mailmess fpawn; mailmess 4; mailmess 7-11

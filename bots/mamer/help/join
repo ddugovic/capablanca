@@ -1,0 +1,13 @@
+join
+
+Alias: j
+
+Usage: join <tourney number>
+
+Use this command to join the specified tourney.  You can only join an open
+tourney.  To find a list of open tourneys, use the "listtourneys" command and
+look for tourneys with a status of "open".
+
+See also: listtourneys
+
+[Last modified: August 29, 1998 -- toddmf]

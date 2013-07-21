@@ -1,0 +1,5 @@
+Command:  adjourn
+Purpose:  to request an adjournment of a game; courtesy_adjourn when
+          opponent is out of time and may have lag problems
+Usage:    adjourn
+Examples: adjourn

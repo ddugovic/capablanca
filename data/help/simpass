@@ -1,0 +1,14 @@
+
+simpass
+
+Usage: simpass
+
+  This command is upen by an opponent of a simul player.  Use this command if
+you are not ready to move when the simul giver gets to your board and you wish
+more time for considering yuor move.  You have 3 passes per match, then you
+must move or risk having your game be aborted.
+
+See Also:  simabort  simuls
+
+[Last modified: July 7, 1995 -- Friar]
+

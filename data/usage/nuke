@@ -1,0 +1,4 @@
+  Command:  nuke
+  Purpose:  force a user to disconnect from the server
+  Usage:    nuke user
+  Examples: nuke BadUser

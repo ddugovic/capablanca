@@ -1,0 +1,124 @@
+
+ftp_hints
+
+There are many kinds of files for the chess server you may wish to access and
+download to your system.  The Internet Chess Library (chess.onenet.net) is an
+anonymous FTP archive containing a large amount of chess information and
+programs (~200MB).  (See the "inetchesslib" help file.)  Many users of the
+chess server download a graphical interface and timeseal (read the
+"interfaces" and "timeseal" help files).
+
+There are several ways to access and download these files.  But first, you
+need to connect to where the files are located.  There are two main ways to
+connect: World Wide Web (www) and file transfer protocol (ftp).  
+
+WWW access would be best and most intuitive.  You can get there using your
+favorite Web browser, like Netscape or Mosaic.  The URL address is:
+
+  http://chess.onenet.net/chess
+
+But ftp access is also easy.  This file is about ftp procedures for the chess
+server files.
+
+
+FTP FILE TRANSFER
+
+The most standard command to initiate an ftp connection to the files would be
+to initiate a session from your system (not from within the chess server
+itself) and at your host's prompt type:
+ 
+     ftp chess.onenet.net
+  or ftp 164.58.253.10
+
+[Note: chess.onenet.net and caissa.onenet.net are the same machine currently
+so either address will work for now.]
+
+If the ftp command seems to be garbage to your system, you will need to
+contact your local systems administrator.
+
+If you connect to the file server, you will see this message on your screen:
+
+  Connected to chess.onenet.net. 
+  220 caissa.onenet.net FTP server (Version wu-2.4(1) Tue Oct 11 11:29:11
+     1994)
+  ready
+  Name (your-host.your-domain:your-username):
+
+Type:
+
+  anonymous
+
+You will then see this message:
+
+  331 Guest login ok, send your complete e-mail address as password.
+  Password:
+
+Type your email address.
+
+Now you are in and should see the ftp prompt:
+
+  ftp>
+
+
+LOCATING THE FILES YOU NEED
+ 
+Typing "help" will give you a list of available commands in ftp, but here are
+some basics.  All files and directories in the current directory can be seen
+with "dir".  Typing "cd" changes directories.  A "/" separates directory names
+when specifying directories within directories.
+
+In this example, we will go to the DOS directory.  Type:
+ 
+  cd /pub/chess/DOS
+ 
+or cd DOS    
+
+  (NOTE: users of DELPHI may need to type:   cd "DOS")
+ 
+If you type "dir" you will see all the files and directories in that location. 
+There are quite a few.
+
+
+TRANSFERRING A FILE
+
+In order to transfer a file properly from the ftp site to your computer host,
+you need to set the correct transfer mode and use the right commands.  The
+files you need for an interface and timeseal need to be transferred using the
+"binary" mode.  The "binary" command sets the transfer mode to binary type (8
+bit, for true binary/executable data).  Then you need to have the file sent to
+you.  The "get" command transfers a file from the ftp site to you.
+
+In this example we will now transfer the software for ZIICS, a graphical
+interface that runs under DOS on PC's.  The file name for ZIICS is
+"ziics121.exe".  Here is what you would need to type:
+ 
+  binary
+  get ziics121.exe
+
+If you are done and do not wish to transfer any other files, type "quit" and
+you will exit from ftp.
+
+  quit
+
+If you have a direct internet connection using PPP/SLIP, the file should now
+be in your computer directory and you are ready to work on it. 
+
+If yuo do not have a direct connection, what you need to do is transfer the
+file from your computer host to your local PC or workstation.  This is done
+most commonly with "kermit" or "zmodem".  Check around locally for what is
+available and works best on your system.  After using kermit or zmodem, the
+file should then be in your directory for you to work on.
+
+
+FOR FURTHER ASSISTANCE
+
+Channel 1 is a great place to get help from people on-line at this chess
+server.  They can help you work through each of these steps.  You should also
+read the special help files for interfaces and timeseal; they have further
+details specific to those kinds of files.  And you can also contact the server
+admins for help.
+
+See also:  admins  addresses  chan_1  inetchesslib  interfaces  timeseal
+
+[Last modified: September 9, 1995 -- Friar]
+

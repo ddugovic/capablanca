@@ -1,0 +1,14 @@
+performance
+
+mamer's "who"(also known as "listplayers") command lists performance ratings
+for the players in the tourney.  A performance rating is what the player's 
+USCF(several other organizations use the same formula) rating would be if this
+tourney was the player's first tourney.  Here is the formula.
+
+         Perf. Rating = Avg. opp. rating + 400 * ((wins-losses)/rounds)
+
+Your performance rating is for the current tourney only.
+
+See also: listplayers, who
+
+[Last modified: September 1, 1998 -- toddmf]

@@ -1,0 +1,4 @@
+  Command:  addplayer
+  Purpose:  create an account for a user
+  Usage:    addplayer playername emailaddress realname
+  Examples: addplayer ColinPapa sms@babyville.net First M. Last

@@ -1,0 +1,4 @@
+  Command:  chksc
+  Purpose:  display which user is in which socket
+  Usage:    chksc n
+  Examples: chksc 3

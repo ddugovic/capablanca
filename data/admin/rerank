@@ -1,0 +1,14 @@
+
+rerank 
+
+Usage:  rerank name
+RESTRICTED TO ADMINISTRATORS.
+
+  Use this command to reset a player's rank if there has been a calculation
+error.
+
+See ahelp:  
+See help:   best  hbest  hrank  rank
+
+[Last modified: June 22, 1995 -- Friar]
+

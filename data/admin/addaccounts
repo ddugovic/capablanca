@@ -1,0 +1,101 @@
+addaccounts
+
+ This help file documents the rules for adding extra accounts for players.
+
+ The file is for the AFICS site, please feel free to modify the contents
+or admin names for your particular site. 
+
+Types of account allowed:
+
+    playing account or        | only 1 of these allowed per person
+    chatting account or       | admins may have one of these in addition 
+    playing/chatting account  | to their normal account - see below.
+
+                              - This is the default registered account.
+
+    blind account             - for blindfold chess ONLY! 
+
+                              - may shout with it, but NOT to be used as
+                              - an excuse to abuse/get round quota/get
+                              - past censor lists etc.
+
+                              - must use style 9 (although may set to
+                              - another style to examine afterward)
+
+    team account              - for team chess ONLY!
+                              - see rules for blind accounts
+
+                              - advise player not to let members other
+                              - than from his/her site to use it as
+                              - is responsible for their behaviour. 
+                              - this is not a hard fixed rule though.
+
+    computer account or       | maximum 1 per player 
+    'cyborg' account          | (more if automatic moving) 
+
+                              - non-automatic computers should NOT be
+                              - used as a shouting mechanism (except for
+                              - match pairings, greetings etc)
+
+                              - A cyborg account is where the player is
+                              - using a computer to analyse the moves,
+                              - but a human is deciding which one to play.
+                              - (can make a very strong player)
+
+                              - Useful if computer specifications/house
+                              - rules are placed in notes (eg no aborts)
+
+(any problems with the above three - remove immediately and comment the
+    player account)
+
+    admin account             - may be used to play/chat
+
+                              - advise to get a player account to save
+                              - getting questions in the middle of a game
+                 
+    tester account            - admins/programmers only. 
+                              - maximum of 2 per person (or more if only
+                              - for a temporary period)
+
+    helper account            - receives messages from players (eg bug)
+
+                              - admins only, unless authorised by Sparky
+                              - or sveshi (AFICS) 
+                              - do NOT put passwords in admin help files.
+
+1> Extra admins accounts.
+  Admins can have as many accounts as they wish as long as the above rules
+ are followed.
+
+2> Extra user accounts.
+
+    Must satisfy the following criterea:
+
+ 
+     1> Is not currently being sanctioned (eg on abuser list)
+
+     2> Comment file is clean or nearly clean (check the comments don't
+         assume because someone has more than one comment they have been
+         an abuser). Repeat offenders must be refused additional accounts.
+
+     3> The player is not known to cause (much) trouble.
+
+    If in doubt please check with sveshi (AFICS) first.
+
+   Must put in comments list of the player applying for it the name and type
+  of account
+
+     Eg. addcomment FishFood DAV's blind account
+
+   Must add in the realname of the account, the handle of the player and what
+  type of account it is.
+
+   Finally add it to a list with +listname [name] if appropriate.
+
+   Do NOT revert an additional account to a player account without good reason
+  (eg old account was destroyed somehow). Check with sveshi (AFICS) if unsure..
+
+See ahelp: accounts, addplayer
+See help: addlist, sublist
+
+[Last modified 11/28/95 - DAV]

@@ -1,0 +1,4 @@
+Command:  anews
+Purpose:  display anews entries _or_ details about an anews entry
+Usage:    anews [all|#[-#]]
+Examples: anews; anews all; anews 27; anews 50-65

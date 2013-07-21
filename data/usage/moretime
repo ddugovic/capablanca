@@ -1,0 +1,4 @@
+Command:  moretime
+Purpose:  add more seconds to your opponent's clock
+Usage:    moretime seconds
+Examples: moretime 90

@@ -1,0 +1,16 @@
+
+canewsf
+
+Usage: canewsf # message
+RESTRICTED TO ADMINISTRATORS.
+
+   This command allows you to add additional information about an anews item
+that had previously been created using 'canewsi'.  The '#' is the number of
+the news index and 'message' is the additional text.  You can also modify a
+previous anews item description and thus update the anews item easily.
+
+See ahelp:  canewsi
+See help:   anews
+
+[Last modified: September 14, 1995 -- Friar]
+

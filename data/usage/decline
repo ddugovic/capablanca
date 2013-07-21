@@ -1,0 +1,5 @@
+Command:  decline
+Purpose:  decline (turn down) an offer made to you by a user
+Usage:    decline [1-n, t all, abort, adjourn, draw, match, pause, player,
+          simul, switch, takeback]
+Examples: decline; decline 2; decline draw; decline cyee

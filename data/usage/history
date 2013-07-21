@@ -1,0 +1,4 @@
+Command:  history
+Purpose:  displays results of your or another user's recent games
+Usage:    history [user]
+Examples: history; history Rattlesnake

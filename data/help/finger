@@ -1,0 +1,54 @@
+
+finger
+
+Usage: finger [user]
+
+  Displays information about the given user. If no user is given, then
+your information is displayed.  Here is a sample display:
+
+|----------------------------------------------------------------------|
+ Statistics for Aquinas       On for: 55   Idle: 0
+ (examining game 9: Plato vs. Aristotle)
+
+          rating     RD     win   loss   draw  total   best
+ Blitz     1910     75.3     28     10      2     40   1936 (01-Jun-95)
+ Standard  1838     92.3     13      6      1     20   1838 (03-Jun-95)
+ Lightning ----    350.0      0      0      0      0
+ Wild      1876     94.3     15     10      0     25   1903 (05-Jun-95)
+
+ Timeseal: ON
+
+  1: <text>
+  2: <text>
+|----------------------------------------------------------------------|
+
+  The user's ratings for each type of chess are displayed, along with the
+Glicko RD (or index of ratings variability), the total results from games
+played, and the best or highest rating for each type.  You can also tell (1)
+whether the user is (1) currently logged on and, if so, for how long and
+whether his/she is idle, (2) playing, observing or examining a game and, if
+so, which game it is, and (3) currently running a version of timeseal or not. 
+Beneath the ratings are note lines (a user's "plan" or "notes") the user can
+add using the set command.
+
+
+SPECIAL NOTES: 
+
+(a) Your e-mail address is automatically displayed to you beneath your ratings
+table; it is NOT displayed to other users -- unless of course you include your
+address as part of your finger notes.
+
+(b) Best ratings and dates are only given *after* you have played 20 games of
+a given type.
+
+(c) If a user has not played rated games of a given type, the rating will be
+indicated as ---- and the RD will be 350.0.
+
+(d) If a user is not logged on, the display will indicate when he/she last
+disconnected and the timeseal section will not appear.
+
+See Also:  busy  examine  glicko  notes  observe  ratings  set  timeseal 
+variables 
+
+[Last modified: December 17, 1995 -- Friar]
+

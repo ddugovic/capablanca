@@ -1,0 +1,4 @@
+Command:  cbest
+Purpose:  displays 20 highest-rated computer players by chess category
+Usage:    cbest [b|s|l|w|B|S]     [default: bsl]
+Examples: cbest; cbest s

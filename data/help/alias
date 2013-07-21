@@ -1,0 +1,107 @@
+
+alias
+
+Usage: alias [word [string]]
+
+  Sets up a command alias so that "word" is equivalent to typing "string".  If
+"string" is omitted then the current value of "word" is displayed.  If both
+parameters are omitted, then all of your aliases are displayed.
+
+  "alias"             -- lists all of your aliases
+  "alias word"        -- gives your alias for "word"
+  "alias word string" -- creates/updates an alias for you so that typing
+                         "word" is equivalent to typing "string"
+
+  Use the "unalias" command to remove an alias.
+
+
+EXAMPLES
+
+  Here are some sample aliases that may be useful to you.  They are listed
+here in order to give you some idea of what is possible.  Get ideas from other
+users as well.
+
+     fun    say Fun game!
+     gg     say Good game!
+     gm     say Good move!
+     idle   set busy is busy.  Please 'message' to contact him.
+     mb     match @ 5 12
+     mood1  set formula f2 & f4
+     ms     match @ 10 10
+     ps     who as
+     pw     who aw
+     ty     say Thank you for the game.
+     w4     match @ 10 10 0 0 wild 4
+     wave   it waves to @
+
+
+SYSTEM ALIASES
+
+  There are many system aliases that everyone has by default; you do not need
+to set them up, they are already there.  Here is the list:
+
+     a             accept                .             tell .
+     bye           quit                  ,             tell ,
+     cls           help cls              !             shout
+     exit          quit                  :             it
+     f             finger                ?             help
+     go            goboard               *             kibitz
+     goto          goboard               +             addlist
+     hi            history               -             sublist
+     logout        quit                  #             whisper
+     m             match
+     more          next
+     p             who a
+     players       who a
+     re            refresh
+     saa           simallabort
+     sab           simabort
+     sadj          simadjourn
+     saadj         simalladjourn
+     sh            shout
+     sn            simnext
+     sp            simprev
+     t             tell                 
+     v             variables                  
+     vars          variables                  
+     w             who
+     znotl         znotify
+
+  Other system aliases are added from time to time.  The help files for the
+different commands will have the most updated information.
+
+WARNING:
+
+  Becareful to avoid using an alias that can also stand for another command on
+the server.  For example, "fg" could be a chess move (for f-pawn X g-pawn), so
+don't have "fg" be an alias.  For similar reasons, don't use "t" as an alias
+since it is already assigned as an alias for "tell".  For example, avoid using
+"hi" to mean not "history" but something else, like "tell @ Hello there.  How
+are you?"  If you later "unalias" your "hi" alias, the "hi" system alias for
+"history" may not come back automatically.
+
+SPECIAL NOTES:
+
+  (1) Aliases can use the "@" wildcard symbol and thus save you a lot of
+typing for routine statements or requests.  For example, using the "mb" alias,
+you would type "mb Shane" and have the same request sent as if you had typed
+"match Shane 5 12".
+
+  (2) Aliases are not transitive. This sequence of commands ...
+    
+    alias foo bar
+    alias bar baz
+    
+... will NOT result in "foo" being equivalent to "baz".
+
+  (3) Because of #3, use the full spelling of a command, not an abbreviation,
+when creating an alias.  This procedure also ensures that the alias will work
+properly.
+
+  (4) You may not create an alias for the quit command.
+
+
+See Also:  unalias  [and the various commands themselves, of course]
+
+[Last modified: December 17, 1995 -- Friar]
+

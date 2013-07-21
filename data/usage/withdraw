@@ -1,0 +1,5 @@
+Command:  withdraw
+Purpose:  remove an offer you had previously made to another user
+Usage:    withdraw [1-n, t all, abort, adjourn, draw, match, pause, player,
+          simul, switch, takeback]
+Examples: withdraw 3; withdraw pause; withdraw Shaughn

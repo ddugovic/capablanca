@@ -1,0 +1,11 @@
+ about              forfeit            manager_commands   setmanagerlevel    
+ addchaos           help               manager_help       settourneyvar     
+ addtotourney       index              manager_level      setstat           
+ announce           join               messman            showcommands      
+ chaos              keep               open               showhelpfile      
+ close              listmanagers       pause              shutdown          
+ create             listplayers        performance        swiss             
+ delete             listtourneys       rating             upset             
+ finger             listtourneyvars    resume             user_commands     
+ forfeit            loadedusers        setres             withdraw          
+                                                          who               

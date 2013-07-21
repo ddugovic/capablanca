@@ -1,0 +1,4 @@
+Command:  alias
+Purpose:  set/edit personal command alias; review alias or all aliases
+Usage:    alias [word [string]]
+Examples: alias; alias t1; alias t1 tell 1 @

@@ -1,0 +1,4 @@
+Command:  bell
+Purpose:  toggles your 'bell' variable on/off (1/0)
+Usage:    bell
+Examples: bell

@@ -1,0 +1,17 @@
+
+simmatch
+
+Usage: simmatch player
+
+  Requests a simul match with the given player.  That player must have
+his/her "simopen" flag on in order to accept simul requests. Once a match
+has started, you will be informed where in line you are.  You will play
+BLACK.
+
+  Simmatch can also be used to restart an adjourned simul match, or untimed
+games in simul form.
+
+See Also:  simadjourn  simalladjourn  simopen  simuls
+
+[Last modified: June 16, 1995 -- Friar]
+

@@ -1,0 +1,58 @@
+
+games
+
+Usage: games [#, word]
+
+  If no parameters are given, "games" lists all the games currently being
+played on the server.  The games are listed in order of the ratings of the
+players involved.  If a number is supplied as a parameter, only the game
+matching that number is displayed.  If a word (or even a single letter) is
+supplied, only games involving players whose handles begin with that word are
+displayed.  For example, "games gr" will show all games involving players
+whose handles begin with "gr".
+
+  Here is a sample games display and what the symbols mean:
+------------------------------------------------------------------------------
+25 (Exam.    0 Friar          0 Friar     ) [ uu  0   0] W:  1
+28 ++++ TryMe       1737 Jack       [ su 30  20]  22:27 - 23:17 (29-30) W: 16
+ 2 2274 OldManII    ++++ Peshkin    [ bu  2  12]   2:34 -  1:47 (39-39) B:  3
+29 1622 Vman        1609 PopKid     [ sr 10  10]   1:14 -  5:10 (21-22) B: 18
+32 1880 Raskapov    1859 RoboDweeb  [ br  2  12]   1:04 -  1:26 ( 9-10) B: 34
+ 1 1878 Roberto     1881 baraka     [psr 45  30]  30:35 - 34:24 (22-22) W: 21
+
+  6 games displayed (of 23 in progress)
+------------------------------------------------------------------------------
+
+  Reading from left to right: (i) game number; (ii) rating of user playing
+White; (iii) handle of White, (iv) rating of user playing Black; (v) handle of
+Black; (vi) type of match and time controls, (vii) current clock times for
+both players; (viii) current material strength for both players, (ix) who is
+on move and what move number it will be, and, lastly (x) the number of games
+listed in the display and how many in progress.  Ratings are ++++ for
+unregistered players and ---- for registered players who do not have a rating
+in this category.  Lastly, any games being examined are displayed.
+
+
+TYPE OF MATCH -- The format will be [Private] | [Category] | [Rated].
+
+  Private -- If a "p" is given, the game is private and not open for
+observation.  If not private, the space will be blank.  (See the "variables"
+help file.)
+
+  Category -- The possibilities are:
+       b   blitz
+       d   bughouse
+       l   lightning
+	 n   nonstandard game, such as different time controls for the players
+       s   standard
+       u   untimed (including simul-matches, simuls)
+       w   wild
+
+  Rated -- The possibilities are "r" for rated and "u" for unrated.
+
+
+See Also:  blitz  examine  lightning  match  simuls  standard  variables 
+untimed
+
+[Last modified: December 19, 1995 -- Friar]
+

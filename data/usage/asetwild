@@ -1,0 +1,4 @@
+  Command:  asetwild
+  Purpose:  modify the items for a user's wild finger information
+  Usage:    asetwild user rating wins losses draws RD
+  Examples: asetwild friar 1209 23 151 0 39.4

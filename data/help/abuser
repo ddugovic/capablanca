@@ -1,0 +1,22 @@
+
+abuser
+
+  The admins maintain a private list of individuals who have abused the chess
+server by intentionally disconnecting in lost positions.  If you suspect that
+someone disconnected intentionally, please contact an admin.  The admin will
+review the situation.  If you are unable to connect with your opponent in
+order to resume your game, you may also want to seek an adjudication.
+
+  If a user has too many stored games, the user may also be placed on the
+abuser list until more of the adjourned games are completed or adjudicated.
+
+  Being on the abuser list has these affects: (a) abusers may have match
+requests automatically declined if the opponent has "!abuser" in the formula,
+and (b) abusers who disconnect while playing a game forfeit the game
+automatically.
+
+See Also:  adjudication  etiquette  formula  shout_abuse  showlist  stored 
+variables
+
+[Last modified: September 12, 1995 -- Friar]
+

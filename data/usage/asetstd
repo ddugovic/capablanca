@@ -1,0 +1,4 @@
+  Command:  asetstd
+  Purpose:  modify the items for a user's standard finger information
+  Usage:    asetstd user rating wins losses draws RD
+  Examples: asetstd friar 1209 23 151 0 39.4

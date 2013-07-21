@@ -1,0 +1,4 @@
+  Command:  cnewst
+  Purpose:  change title of a regular news item
+  Usage:    cnewst # title
+  Examples: cnewst 180 Hello everyone!

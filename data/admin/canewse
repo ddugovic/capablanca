@@ -1,0 +1,18 @@
+canewse
+
+Usage: canewse # [n]
+RESTRICTED TO ADMINISTRATORS.
+
+  This command sets the expiration of the anews item to a number of days [n].
+The '#' is the number of the anews index.  If the number of days is not
+specified, the anews item will be perpetual; otherwise, it will expire in
+the specified number of days and be removed from the anews index altogether.
+The expiration of anews items will force the anews index out of its running
+sequence.
+
+NOTICE:  To expire an anews item immediately, use 'canewse # 0'.
+
+See ahelp:  canewsf canewsi canewsp canewst
+See help:   anews
+
+[Last modified: December 12, 1999 -- carlsbad]

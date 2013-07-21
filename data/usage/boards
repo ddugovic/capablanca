@@ -1,0 +1,4 @@
+Command:  boards
+Purpose:  list available positions for starting a game
+Usage:    boards [category]
+Examples: boards; boards openings

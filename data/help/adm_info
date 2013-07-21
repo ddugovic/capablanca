@@ -1,0 +1,31 @@
+
+adm_info
+
+Information about server administrators (admins)
+
+  This chess server is coordinated by several administrators ("admins") who
+ensure that the server is working properly and deal with problem situations
+and cases of abuse (see etiquette and abuser).  Certain commands that regulate
+the server can only be used by admins.
+
+  The group of admins is small in order to keep things fair and uniform. 
+For the moment, the server has a sufficient number of admins for its needs, so
+new admins are not being added (see adm_new).
+
+  If you have a question, problem situation or concern as a user of this
+server, feel free to contact an admin.  For the most part, they are designated
+by (*) on "who" lists.  They are also on channel 0 (the admin channel).  Type
+"in 0" to see which admins are logged on.  To see a current list of all
+admins, type "=admin".  The "admins" help file indicates the role each admin
+plays on the server.
+
+  Admins tend to listen to channel 1.  To contact several admins at once, you
+can "tell" to channel 1.  You can also "message" an admin, especially if you
+need to relay detailed information.  Special accounts have been set aside for
+feedback from users; these are listed in the "admins" help file.
+
+See Also:  abuser  adm_new  admins  channel  etiquette  inchannel 
+intro_welcome  message  tell  who
+
+[Last modified: September 9, 1995 -- Friar]
+

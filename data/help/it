@@ -1,0 +1,46 @@
+
+it
+
+Usage: it message
+
+  This command sends a message to all persons open to hear shouts.  "It" is
+similar to "shout" in that regard.  However, with "it" your chess server name
+(or "handle") is always the first word of the message.  Also, the "it" message
+may be preceded by various symbols depending on the chess server being used. 
+The symbol string --> is typical.  This command has two aliases: "i" and ":".
+
+  Here is an example: if your handle is HANDEL and you type "it thinks FICS
+is great!", users will see the following message displayed --
+
+	--> HANDEL thinks this server is great!
+
+You, as the sender, will see the following --
+
+	(##) HANDEL thinks this server is great!
+
+where ## is the number of users who received the message.
+
+SPECIAL NOTES: 
+
+  (a) Use "cshout" rather than "it" for chess-related messages.
+
+  (b) To contact just one user, use "tell".
+
+  (c) If you want to contact a specific group of users, "tell" to a channel.
+
+  (d) "It" and "shout" are similar.  Be familiar with their differences.
+
+  (e) Persons who "it" too much, or in less than appropriate ways, may be
+placed on the shout_abuse list.  Users on this list may only "shout" a certain
+number of times per minute.  To see whether you are on the shout_abuse list,
+or when you are permitted to "it" again, type "it" alone without a message. 
+Excessive abuse can lead to heavier restrictions.
+
+  (f) You can decide whether or not to hear an "it" from other users; setting
+the "shout" variable to 0 (zero) filters these from being sent to you.
+
+See Also:  alias  channel  channel_list  cshout  intro_talking  shout 
+shout_abuse  shout_quota  tell  variables
+
+[Last modified: December 19, 1995 -- Friar]
+

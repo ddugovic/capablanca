@@ -1,0 +1,24 @@
+
+takeback
+
+Usage: takeback [n]
+
+  Requests a takeback of 'n' half-moves in the current game.  If 'n' is
+omitted then 1 is assumed.  A "half-move" is defined as a move by one
+player.  To request that the last move made be changed (whether you were 
+the one to move last or your opponent moved last), you would request 
+"takeback".  If you wanted to change the last move made as well as the move 
+prior to that, request "takeback 2".
+
+  Here's an example: suppose you are playing White and your opponent has 
+just placed a piece on a square where it can be easily captured, and you 
+capture it.  Your opponent might realize the weak move he/she made and 
+request "takeback 2" so that he/she doesn't lose material so easily.  If 
+you wish, you can accept the "takeback 2" request and continue the game 
+from the previous position in the game.  Both moves would be reversed, and 
+it would be Black's move to make.
+
+See Also:  accept
+
+[Last modified: June 14, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  ustat
+Purpose:  display server statistics for last 24 hour period
+Usage:    ustat
+Examples: ustat

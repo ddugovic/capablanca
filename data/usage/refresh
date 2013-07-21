@@ -1,0 +1,4 @@
+Command:  refresh
+Purpose:  display the position and time of a game you are involved with
+Usage:    refresh [game|name]
+Examples: refresh; refresh 45; refresh IanO

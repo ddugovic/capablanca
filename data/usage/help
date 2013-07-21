@@ -1,0 +1,4 @@
+Command:  help
+Purpose:  read a help file
+Usage:    help [string]
+Examples: help; help match

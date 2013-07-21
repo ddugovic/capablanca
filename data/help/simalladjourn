@@ -1,0 +1,18 @@
+
+simalladjourn
+
+Usage: simalladjourn
+
+  Used by a player engaged in simultaneous chess matches.  Adjourns all boards
+in progress.  Use this command in special circumstances, such as your not
+being able to finish due to time constraints.  Please don't use this command
+if you are losing, of course.
+
+  To continue your game(s), use the simmatch command.
+
+  The standard alias for simalladjourn is "saadj".
+
+See Also:  simabort  simadjourn  simallabort  simmatch  simpass  simuls
+
+[Last modified: June 16, 1995 -- Friar]
+

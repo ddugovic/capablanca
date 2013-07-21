@@ -1,0 +1,43 @@
+
+jsave
+
+Usage:  jsave [slot] [user_name] [gamenumber]
+
+  This command is used to save games to your journal (see the "journal" help
+file).  You can save games from a "history" file or from another journal.
+
+To save from a "history" file
+-----------------------------
+
+  The general format is:  jsave slot user_name game_number.  For example:
+
+    jsave A Friar 3
+
+  where 'A' is your journal slot; 'Friar' is the handle of the player whose
+  game you want to save -- whether it is your handle or the handle of another
+  player; and '3' is the number of the game from that player's 'history' file.
+
+To save from another journal
+----------------------------
+
+  The general format is:  jsave slot user_name slot.  For example:
+
+    jsave B Rattlesnake A
+
+  where 'B' is your journal slot, 'Rattlesnake' is the handle of the player
+  whose journal game you want to transfer to your journal; 'A' is that
+  player's journal slot for that game.
+
+Using this journal-transfer feature, you can also relabel your own journal
+entries.  For example:
+
+  jsave A your_handle D
+
+will take the journal game in slot 'D' and copy it to journal slot 'A'.  At
+the moment, it is not possible to delete a slot (except by overwritting); that
+capability will be added in the future.
+
+See also:  history  journal
+
+[Last modified: December 25, 1995 -- Friar]
+

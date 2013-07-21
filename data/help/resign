@@ -1,0 +1,17 @@
+
+resign
+
+Usage: resign  [name]
+
+  Resigns the game you are playing and gives your opponent the win.  You will
+then be available for another game.
+
+  It is possible to resign an adjourned game by including your opponent's
+name.  For example, "resign Hawk" would resign your adjourned game with Hawk. 
+Before you do this, make sure that the game has been stored.  When you resign
+an adjourned game, a notification message will be sent to your opponent.
+
+See Also:  adjourn  intro_playing  stored
+
+[Last modified: October 8, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  mailmoves
+Purpose:  email to you the moves for current game you are involved with
+Usage:    mailmoves
+Examples: mailmoves

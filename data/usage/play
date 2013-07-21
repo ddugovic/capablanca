@@ -1,0 +1,4 @@
+Command:  play
+Purpose:  respond to an ad (from 'sought' display)
+Usage:    play index_#|handle
+Examples: play 5; play Rattlesnake

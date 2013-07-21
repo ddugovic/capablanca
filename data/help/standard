@@ -1,0 +1,48 @@
+
+standard
+
+  There are four types of regular (not wild or bughouse) chess played on this
+chess server: Untimed, Lightning, Blitz and Standard.
+
+  A game is "Standard" if the expected duration of the game is 15 minutes or
+more.  "Expected duration" is determined by a formula that takes into account
+both the Start time and the Increment (Inc) value.  Here is the formula:
+
+     Expected duration = (Start + Inc*2/3)
+
+  The following table shows the slowest Blitz and fastest Standard time
+controls, the dividing line if you will between those two types of matches.  
+[Thanks to schwartzeer for the calculations.  :)  ]
+
+     Slowest Blitz     Fastest Standard
+    ------------------------------------
+       Mins  Incr         Mins  Incr
+    ------------------------------------
+         0    22            0    23
+         1    20            1    21
+         2    19            2    20
+         3    17            3    18
+         4    16            4    17
+         5    14            5    15
+         6    13            6    14
+         7    11            7    12
+         8    10            8    11
+         9     8            9     9
+        10     7           10     8
+        11     5           11     6
+        12     4           12     5
+        13     2           13     3
+        14     1           14     2
+        --------           15     0
+
+  As you can see, not every game with more minutes to start is Standard and
+not every game with few minutes to start is Blitz.
+
+  You can list logged on users according to their Standard ratings by typing
+"who s".  "Standard" is also a variable that can be used in formulas in order
+to screen match requests.
+
+See Also:  blitz  formula  lightning  match  who
+
+[Last modified: December 25, 1995 -- Friar]
+

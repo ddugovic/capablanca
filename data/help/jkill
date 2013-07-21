@@ -1,0 +1,12 @@
+
+jkill
+
+Usage:    jkill slot
+
+  This command will erase a game from your journal.  For example: "jkill A"
+will erase the game saves in your journal slot "A".
+
+See Also:  jsave  journal
+
+[Last modified: February 3, 1996 -- Friar]
+

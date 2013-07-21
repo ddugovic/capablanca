@@ -1,0 +1,14 @@
+setcommandlevel
+
+Alias: setcl
+
+Usage: setcommandlevel <command> <level>
+
+This command sets the minimum manager level required to use <command> to
+<level>.  You can only modify the permissions of commands that require a
+level lower than yours to use.  The most common use for this is to disable
+a buggy command.
+
+See also: manager_level, showcommands
+
+[Last modified: September 12, 1998 -- toddmf]

@@ -1,0 +1,13 @@
+
+unseek
+
+Usage:  unseek [#]
+
+  Typing "unseek" alone will cancel *all* of your current ads for chess 
+matches.  Typing "unseek #" will cancel ad #, where the # is the ad index 
+number from the display "sought all".
+
+See also:  seek  sought
+
+[Last modified: August 18, 1996 -- Friar]
+

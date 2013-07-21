@@ -1,0 +1,17 @@
+
+cshout
+
+Usage: cshout message 
+LIMITED TO REGISTERED USERS
+
+  This command send a message to all users who are open to hear cshouts.  You,
+as the sender, will see displayed the number of users who heard your message.
+
+  NOTE: "Cshout" should be used ONLY for chess-related messages, such as
+questions about chess or announcing being open for certain kinds of chess
+matches.  Use "shout" for non-chess messages.
+
+See Also:  censor  it  shout  tell  variables
+
+[Last modified: October 8, 1995 -- Friar]
+

@@ -1,0 +1,5 @@
+Command:  znotify
+Purpose:  display current users on your notify list, and users for whom you
+          are on their notify lists, with idle times (unless supressed)
+Usage:    znotify [n]
+Examples: znotify; znotify n

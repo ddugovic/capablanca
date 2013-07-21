@@ -1,0 +1,43 @@
+
+notify
+
+Usage: +|-|= notify [user]
+LIMITED TO REGISTERED USERS
+
+  When a user is on your notification list, you will be notified each time
+that user logs onto or leaves the server.  Here are the variations of the
+command possible:
+
+    +notify user     Add "user" to notify list
+    -notify user     Remove "user" from notify list
+    =notify          Display your notify list
+
+  Also, when you are on another user's notification list, you will be sent a
+message that your entering the server was noted by that user.  If you want to
+be notified each time *any* user logs on or off, use the "pin" variable.  Use
+the "znotify" command to see which users currently logged on are on your
+notify list and which have you on their notify lists.
+
+  The size of your notify list is limited (type "limits" to see current size). 
+Fortunately, there is a way you can maximize the use of your notify list.  The
+solution involves the "notifiedby" variable.  If you are on another user's
+notify list and have your "notifiedby" variable set to 1, you will be notified
+by the server when that user logs on/off.  It will work the same way as if you
+had that user on your list: you will be *notified by* the other user's list! 
+Here's an example:
+
+    Hawk's notify list includes DAV *and* DAV has "notifiedby" set to 1
+
+will have the same effect as ...
+
+    Hawk's notify list includes DAV *and* DAV's list includes Hawk
+
+... except that one notify list entry (namely, DAV on Hawk's list) is doing
+the work of two entries.  That is how you can save on the length of your
+'notify' list.
+
+
+See Also:  addlist  limits  variables  znotify
+
+[Last modified: November 26, 1995 -- Friar]
+

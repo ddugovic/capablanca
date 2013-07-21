@@ -1,0 +1,4 @@
+  Command:  canewsp
+  Purpose:  change poster of an admin news item
+  Usage:    canewsp #
+  Examples: canewsp 180

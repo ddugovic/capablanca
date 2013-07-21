@@ -1,0 +1,12 @@
+
+gonum
+
+Usage: gonum #
+
+  This command is used by a person holding a simul match.  Play will move to
+board number # in the simul match.
+
+See Also:  goboard  simnext  simprev  simuls
+
+[Last modified: July 7, 1995 -- Friar]
+

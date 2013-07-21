@@ -1,0 +1,37 @@
+Introduction
+------------
+
+This chess server supports the 'timeseal' protocol for keeping more
+accurate track of players time usage.
+
+Unlike previous chess servers that had to have the timeseal code built
+in in this server uses a small external timeseal_decoder process whose
+sole purpose is to decode the timeseal protocol. You can enable this
+process (and thus enable timeseal support) using the -T option to
+chessd.
+
+The reasons I designed it this way are:
+
+    - it keeps the timeseal protocol secret, and the protocol relies
+      on its secrecy to prevent cheating
+    - it allows me to use GPLd code in the chess server while not
+      distributing the timeseal decoder source code
+
+
+Using timeseal
+--------------
+
+To use timeseal in your chess server just pass the location of your
+timeseal_decoder binary to the -T option. For example:
+
+		 bin/chessd -T bin/timeseal_decoder -p 5000
+
+If you also use the -R option to setup a secure chroot jail for your
+chess server then you must pass the -T option before the -R option.
+
+
+
+--------------------------------
+Andrew Tridgell
+tridge@chess.samba.org June 2002
+--------------------------------

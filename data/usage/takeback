@@ -1,0 +1,4 @@
+Command:  takeback
+Purpose:  requests (or accepts) taking back one or more moves in a game
+Usage:    takeback [n]     [default: 1]
+Examples: takeback; takeback 2

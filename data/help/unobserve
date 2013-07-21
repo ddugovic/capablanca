@@ -1,0 +1,18 @@
+
+unobserve
+
+Usage: unobserve [game,user]
+
+  Removes a game from your observation list.  You can give either the game
+number or the user whose game you want to unobserve.
+
+  For example, if you are observing game #34, KARPOV versus RETI, then
+"unobserve 34", "unobserve RETI" or "unobserve KARPOV" will remove this game
+from your observation list.
+
+  "Unobserve" used alone removes ALL GAMES from your observation list.
+
+See Also: allobservers  games  observe
+
+[Last modified: June 11, 1995 -- Friar]
+

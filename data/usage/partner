@@ -1,0 +1,4 @@
+Command:  partner
+Purpose:  ask a user to be your bughouse partner; remove partner setting
+Usage:    partner handle; partner
+Examples: partner Rattlesnake; partner

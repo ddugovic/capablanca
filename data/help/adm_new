@@ -1,0 +1,24 @@
+
+adm_new
+
+About becoming an FICS administrator
+
+  Thank you for asking about how someone becomes an FICS administrator
+("admin").  As the "adm_info" help file notes, the number of FICS admins is
+kept small for several reasons.  At the moment, we are not accepting
+applications from anyone to be an admin.  If additional admins are needed, we
+will contact you.
+
+  In the meantime, the best way for you to help with FICS needs is to monitor
+messages on the various FICS channels and help users who have questions, let
+us know about bugs you find (message to "bug"), and make suggestions about
+improvements you would like to see implemented (message to "suggestion" or to
+"helpfiles").  If you have code you'd like to contribute, contact one of the
+programming admins (see "admins" help file for a listing).  Typing "=admin"
+lists the current admins.  Typing "in 0" will give a list of admins currently
+logged on.
+
+See Also:  admins  adm_info
+
+[Last modified: September 9, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  tell
+Purpose:  send a message to an individual user or to a channel
+Usage:    tell user|channel_number message
+Examples: tell Loon Why is the sky blue?  tell 24 Anyone for bughouse?

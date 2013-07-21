@@ -1,0 +1,15 @@
+
+simabort
+
+Usage: simabort
+
+  Used by a player engaged in simultaneous chess matches.  Aborts the current
+board.  Use this command if the player you are playing is obnoxious or taking
+too long to make the next move.  Don't use it if you are losing, though.
+
+  The standard alias for simabort is "sa".
+
+See Also:  simadjourn  simallabort  simmatch  simpass  simuls
+
+[Last modified: June 16, 1995 -- Friar]
+

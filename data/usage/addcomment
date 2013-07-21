@@ -1,0 +1,4 @@
+  Command:  addcomment
+  Purpose:  place comment in a user's player file
+  Usage:    addcomment user comment
+  Examples: addcomment friar warned about misusing channel 1 ... again!

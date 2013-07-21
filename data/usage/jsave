@@ -1,0 +1,6 @@
+Command:  jsave
+Purpose:  save games to your journal
+Usage:    jsave slot [game_number | user_name [game_number | journal_slot |
+          user_name]]
+Examples: jsave A; jsave D 34; jsave F Friar 3; jsave C Sparky L;
+          jsave J jross bozky

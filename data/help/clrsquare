@@ -1,0 +1,13 @@
+
+clrsquare
+
+Usage: clrsquare square
+
+  This command is used in "bsetup" mode in order to make a square empty
+(blank).  For example, "clrsquare e4" would make square e4 empty.  Another way
+to clear a square is by typing "x@square", for example "x@e4".
+
+See Also:  bsetup
+
+[Last modified: February 3, 1996 -- Friar]
+

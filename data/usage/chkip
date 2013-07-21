@@ -1,0 +1,4 @@
+  Command:  chkip
+  Purpose:  display logged users from a given IP address
+  Usage:    chkip ip_address|handle 
+  Examples: chkip 129.46.4.2; chkip 129*; chkip guest45

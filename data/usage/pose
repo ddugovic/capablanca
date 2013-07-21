@@ -1,0 +1,4 @@
+  Command:  pose
+  Purpose:  execute a command on behalf of a user
+  Usage:    pose user command
+  Examples: pose Friar tell 0 Huzzah!

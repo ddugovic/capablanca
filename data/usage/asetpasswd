@@ -1,0 +1,4 @@
+  Command:  asetpasswd
+  Purpose:  change the password of a user
+  Usage:    asetpasswd user {password,*}
+  Examples: asetpasswd Hawk uhwidhl; asetpasswd Friar *

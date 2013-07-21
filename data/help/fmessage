@@ -1,0 +1,18 @@
+
+fmessage
+
+Usage: fmessage user message_number
+
+  You can forward a "message" you have received to another user by using the
+"fmessage" command.  In this way, you can share news with other users without
+having to retype the information each time.  Suppose, for example, the third
+message in your message list is something you want Hawk to read.  You type
+"fmessage Hawk 3".  When you do this, you will receive the feedback that your
+message has been forwarded to that user.  When you receive a forwarded
+message, it will be clearly designated as a FORWARDED message from a given
+user.
+
+See Also:  message
+
+[Last modified: April 28, 1996 -- Friar]
+

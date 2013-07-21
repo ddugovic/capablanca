@@ -1,0 +1,4 @@
+  Command:  asetbughouse
+  Purpose:  modify the items for a user's bughouse finger information
+  Usage:    asetbughouse user rating wins losses draws RD
+  Examples: asetbughouse friar 1209 23 151 0 39.4

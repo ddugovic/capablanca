@@ -1,0 +1,19 @@
+announce
+
+Alias: ann
+
+Usage: announce <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+The announce command causes the specified tourney to be announced in channel
+49.  The tourney announcement looks like this:
+
+mamer(TD)(49): *****Tourney Announcement*****
+\   Trny #5  3 0 r  SWISS 0-9999 6 plr(s).  tell mamer join 5. Avg: 1543.5 
+
+This announcement is also cshouted when the tourney is opened, but "announce"
+will only cshout the announcement once every four minutes.  Please do not spam
+channel 49 with tourney announcements; 1 or 2 per minute is sufficient.
+
+[Last modified: September 12, 1998 -- toddmf]

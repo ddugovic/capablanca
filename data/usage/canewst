@@ -1,0 +1,4 @@
+  Command:  canewst
+  Purpose:  change title of an admin news item
+  Usage:    canewst # title
+  Examples: canewst 180 Hello everyone!

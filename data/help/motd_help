@@ -1,0 +1,12 @@
+
+motd_help
+
+  The "motd" information help file -- Message Of The Day -- contains news
+items and other announcements that are displayed when you logon.  You can read
+these by typing "help motd".  Other news items are on the "news" bulletin
+board.
+
+See Also:  news 
+
+[Last modified: June 12, 1995 -- Friar]
+

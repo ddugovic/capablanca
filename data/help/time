@@ -1,0 +1,15 @@
+
+time
+
+Usage: time [game,user]
+
+  Shows the updated time remaining in the specific game for the players
+involved.  If no game is specified, the clock readings for your current game
+will be shown.  Revised clock times are also given as part of the "refresh"
+command; however, "time" will always show negative times whereas "refresh"
+will only list negative times if the interface handles them that way.
+
+See Also:  refresh
+
+[Last modified: October 8, 1995 -- Friar]
+

@@ -1,0 +1,15 @@
+
+asetv 
+
+Usage: asetv user instruction
+RESTRICTED TO ADMINISTRATORS.
+
+  This command executes "set" instructions as if they had been made by the
+user indicated.  For example, "asetv DAV shout 0" would set DAV's shout
+variable to 0.
+
+See ahelp:  pose
+See help:   set  variables
+
+[Last modified: October 1, 1995 -- Friar]
+

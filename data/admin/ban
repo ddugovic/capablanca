@@ -1,0 +1,26 @@
+
+ban
+
+Usage: [+,-,=]ban handle
+RESTRICTED TO ADMINISTRATORS.
+
+  Adds to (+ban), removes from (-ban) or lists users on (=ban) the ban list. 
+Users on the ban list cannot log onto the server.  The user's account will
+still be active, however.  As a result, autoregistration will screen out the
+user's email address and prevent additional accounts from being created from
+there, and the handle cannot be adopted by another user.
+
+  When you ban (or unban) a user, please leave a message in the player's
+comments file using the "addcom" command.  You may also want to lock the
+account by "asetpasswd handle *".
+
+  Concerning when to ban a user, please refer to the admin guidelines that
+have been developed.  See also help files on server conduct, such as abuser,
+etiquette and shout_abuse.  It is also best to consult without admins abut the
+case in question.  Documentation of user behavior is important.
+
+See ahelp:  addcom  asetpasswd  filter
+See help:   abuser  etiquette  lists  shout_abuse  showlists
+
+[Last modified: October 16, 1995 -- Friar]
+

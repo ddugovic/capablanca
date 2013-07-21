@@ -1,0 +1,56 @@
+
+register
+
+          ***                                              ***
+         ***   Registration is now automated using email!   ***
+          ***                                              ***
+
+
+  To get a registered account on this server, send a message to the following
+address ...
+
+    chess@caissa.onenet.net 
+
+... and use as the Subject: "Fics Registration".  The text of your message
+should read (please make the appropriate substitutions as indicated by the
+<>'s markers):
+
+  fics_addplayer <handle> "<First M. Last>" <email-address> <human|computer>
+
+**** Be sure to read "help handle" on the server's online help reguarding
+**** handle name policy!
+
+Quotation marks MUST be used around the name field.  Do NOT include the <>'s
+markers in your text; they are used above only to indicate where you need to
+place information.  If this is a human account, 'human' need not be specified;
+however, 'computer' MUST be used if you are registering a computer on FICS
+(see "computers" help file).
+
+  Here are two examples that would register Sparky with the correct name and
+email information:
+ 
+  fics_addplayer Sparky "Chris L. Petroff" chris@onenet.net              -OR-
+  fics_addplayer Sparky "Chris L. Petroff" chris@onenet.net human
+
+
+SPECIAL NOTES:
+
+(1)  PLEASE SELECT YOUR HANDLE CAREFULLY!  We do not change handles for
+accounts once they have been created.  So choose a handle that you are willing
+to keep.  If for some reason the handle you want is already taken, you will be
+notified.  To check in advance whether a handle is already being used, use the
+"handles" command.  Lastly, your handle must not be offensive!  Offensive
+handles will be removed.  (See "handle" help file.)
+
+(2)  ONLINE REGISTRATION WILL BE LIMITED.  Email registration provides
+security for users and reduces mistakes.  Contact an admin about registration
+if you have difficulties with email registration or if it is impossible.
+
+(3)  Please tell us if you are an FM, IM or GM (master's titles for
+international competition).  We can include you on our master's lists.
+
+
+See Also:  computers  handle  handles  showlists
+
+[Last modified: July 26, 1995 -- Sparky]
+

@@ -1,0 +1,83 @@
+
+intro_moving
+
+MAKING MOVES IN A CHESS MATCH
+
+  Once you have arranged for a match, you begin playing and moving the pieces
+around.  There are two ways to make chess moves during a match.  Many user's
+have a graphics interface.  In this case, the user moves the piece on the
+graphics board using the computer mouse, and the interface software translates
+this move into chess notation and sends the move to the server for processing. 
+Read the interfaces information file for a few details about graphics
+interfaces.
+
+  If you don't have a graphics interface, you will need to enter your moves
+using a keyboard.  In order to do this, you have to know what kind of chess
+notation the server uses.  Chess players use one of two different notational
+systems: descriptive and algebraic.  The server understands algebraic.  (The
+server also understands a computer version of chess notation; see below.)
+
+  In algebraic notation, each square has a unique label.  Each rank is labeled
+1 to 8, with the rank on White's side being 1.  Each file is labeled a to h,
+with the file on White's left side being a.  So each square has a file label
+and a rank label, with the file listed first.  In algebraic notation, each
+chess piece has its own symbol: k = king; q = queen; b = bishop; n = knight; r
+= rook; p = pawn (though the "p" is not really used).
+
+  Here is a sample of a match position as displayed in the default style 1. 
+For this example, White is at the bottom of the board and Black is at the top. 
+Symbols are in capital letters; the * means the piece is Black's.
+
+        ---------------------------------
+     8  |   | *R|   |   | *R|   | *K|   |
+        |---+---+---+---+---+---+---+---|
+     7  | *P|   |   | *B| *P| *P| *B| *P|
+        |---+---+---+---+---+---+---+---|
+     6  |   |   |   |   |   | *N| *P|   |
+        |---+---+---+---+---+---+---+---|
+     5  | *Q|   |   | *P|   |   | B |   |
+        |---+---+---+---+---+---+---+---|
+     4  |   |   |   |   |   | P |   |   |
+        |---+---+---+---+---+---+---+---|
+     3  |   |   | N | B | P |   |   |   |
+        |---+---+---+---+---+---+---+---|
+     2  | P | P |   |   | Q |   | P | P |
+        |---+---+---+---+---+---+---+---|
+     1  |   |   | R |   |   | R | K |   |
+        ---------------------------------
+          a   b   c   d   e   f   g   h
+
+  Black's king (*K) is on the g8 square; White's king (K) is on the g1
+square, and so on.  It is Black's move.  Suppose Black wants to place the
+knight (*N) on the e4 square.  The move to enter in algebraic would be Ne4.
+Moving pawns is simpler; you don't use the "p" for the piece and just give
+the square the pawn is moving to.  Suppose Black decides to move the pawn
+(*P) on the h7 square to the h6 square.  The move to enter would be h6.  In
+many board positions, more than one rook, knight or pawn could move to the
+same square.  In this case, you have to indicate which of the two pieces you
+want to move.  For example, suppose Black has knights on c2 and e2; they could
+both move to d4.  To move the knight on c2 to d4 you could type Ncd4, where
+the "c" serves to tell the server which knight to move.
+
+  In algebraic notation, captures are usually denoted by "x".  Suppose Black
+wants to capture White's b2 pawn (P) with the rook (R) on b8.  Black would
+enter the move Rxb2.  However, the server would also understand the simple Rb2
+and know that a capture is implied.  So, for this server, you can enter the
+square the piece will capture on.  To make a castle move, use O-O to castle on
+the king's side and O-O-O to castle on the queen's side.
+
+  Many computers want very explicit instructions on how to move pieces.
+This "computer" notation has the following format: square_from-square_to
+
+  For example, in the above board position, moving the Black rook from b8 to
+b2 would be entered b8-b2.  Piece symbols are never used; only the squares.
+The server understands computer notation as well.
+
+  In short, to move a piece during a chess match, enter the move.  Each time
+you and your opponent make a move, the server updates the board position and
+sends the new position to both you and your opponent.  It's that simple!
+
+See Also: interfaces  style
+
+[Last modified: June 16, 1995 -- Friar]
+

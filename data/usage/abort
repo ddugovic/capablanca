@@ -1,0 +1,4 @@
+Command:  abort
+Purpose:  to request that the game be cancelled
+Usage:    abort
+Examples: abort

@@ -1,0 +1,33 @@
+
+hrank
+
+Usage: hrank [user [b][s][w]]
+       hrank m-n [b][s][w]
+
+  The first usage shows the ranking of the given user and all human users with
+nearby rankings -- computers will be excluded from the rankings.  A second
+argument with one or more of the letters b, s, and/or w asks to show only
+blitz, standard, and/or wild ratings respectively.  If no second argument is
+given, rankings for all three types are shown.  For example, "rank foo bw"
+shows the blitz and wild ranking of the player whose handle is "foo".  If
+'user' is omitted, your rankings will be displayed.
+
+  The second usage shows all human users ranked between the rankings of M and
+N.  The optional third argument again limits which ratings are shown.  For
+example, "rank 1-30 sw" lists the human users with the highest 30 standard and
+wild ratings.  "hbest" lists the top 20 human users in a category.
+
+  The columns are always sorted by blitz, then standard, then wild.
+
+  Currently, all players with at least 20 games of a particular rating type
+are ranked.  If you ask for a player's rank and they do not yet have the 20
+games needed to be an active player, the player's current rating will be
+displayed in the table but a line (----) will precede the handle to indicate a
+provisional ranking.
+
+  To include computers in the list, use "rank".
+
+See Also: best  hbest  rank
+
+[Last modified: June 13, 1995 -- Friar]
+

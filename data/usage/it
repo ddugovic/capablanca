@@ -1,0 +1,4 @@
+Command:  it
+Purpose:  send message to users open to receive shouts
+Usage:    it message
+Examples: it thinks internet chess is wonderful!

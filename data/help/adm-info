@@ -1,0 +1,21 @@
+
+Information about FICS administrators
+
+  FICS is coordinated by several administrators ("admins") who ensure that
+FICS is working properly and deal with problem situations and cases of abuse
+(see etiquette).  Certain commands that regulate FICS can only be used by
+admins.
+
+  The group of admins is small in order to keep things fair and uniform.  For
+the moment, FICS has a sufficient number of admins for its needs, so new
+admins are not being added.
+
+  If you have a question, problem situation or concern as a FICS user, feel
+free to contact an admin.  They are designated by (*) on "who" lists.  To see
+a list of current admins, type "=admin".
+
+  Admins tend to listen to FICS channel 1.  To contact several admins at once,
+you can "tell" to channel 1.
+
+See Also:  admins etiquette intro0 channel tell who
+

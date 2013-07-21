@@ -1,0 +1,46 @@
+
+intro3
+
+DISPLAYING INFORMATION
+
+  There are several commands you can use for displaying general information:
+
+    command      information
+    -------      --------------------------------------------
+    help         describes a command, displays useful information, or
+                 lists all commands and their help file topics alphabetically
+    info         lists all help files for non-commands
+    who          lists current users
+    games        lists current games
+    allobservers lists all users observing a chess game (or games)
+    handle       lists registered users with names beginning with a given
+                 letter or letters
+    inchannel    lists all users who are listening to a given communication
+                 channel
+    uptime       how long the server has been running since its last startup
+    date         current date
+    time         current time
+    statistics   displays information about server usage
+    llogons      lists the last 30 or so logons/logoffs
+    best         displays highest ratings achieved for different types of
+                 chess matches
+    fixes        displays information about recent improvements
+
+Other commands display information about you or another user:
+
+    command      information
+    -------      --------------------------------------------
+    finger       displays general information about a user
+    history      displays information about a user's recent matches
+    stored       lists a user's stored games
+    pending      lists requests that have been made to and by you but have
+                 not yet been declined
+    variables    displays a user's current preferences and settings
+    assess       displays how you and another user's ratings would change
+                 if you were to play a rated chess match
+    logons       lists the last 10 or so logons for a user
+
+See Also: [the individual commands]
+
+[Last modified: June 16, 1995 -- Friar]
+

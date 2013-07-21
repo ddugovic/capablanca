@@ -1,0 +1,23 @@
+
+smoves
+
+Usage: smoves player1 {#, player2, journal_slot}
+
+  Displays the moves of player1's game.  You must designate either game # from
+player1's "history" table, player2 from player1's "stored" (adjourned) games,
+or a game from the user's journal.
+
+  Examples:
+
+    smoves Hawk 65              [for a history game]
+    smoves Hawk DAV             [for a stored game]
+    smoves Hawk K               [for a journal game]
+
+  Other useful commands:  (a) "examine" helps you review the game; (b)
+"mailstored" mails moves to you; (c) "sposition" displays current game
+position.
+
+See Also:  examine  history  journal  mailstored  sposition  stored
+
+[Last modified: December 17, 1995 -- Friar]
+

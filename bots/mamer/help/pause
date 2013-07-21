@@ -1,0 +1,15 @@
+pause
+
+Alias: pa
+
+Usage: pause <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+Change the tourney state from 'closed' (i.e.playing) to 'paused'.
+While paused, new rounds will not start even when all games of the previous
+round have finished.
+
+See also: resume, listtourneys
+
+[Last modified: Novemder 3, 2011 -- hgm]

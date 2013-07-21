@@ -1,0 +1,30 @@
+
+messages
+
+Usage: messages [user [text]] 
+LIMITED TO REGISTERED USERS
+
+  This command can do one of four things:
+
+  1)  "Messages" used alone will display all of the stored messages that have
+      been sent to you.
+
+  2)  "Messages user" will display all stored messages from you to that user
+      and from that user to you.
+
+  3)  "Messages #" will display the message numbered # in your list.
+
+  4)  "Messages user text" will send "text" to the user.  When you "message"
+      another user, the text of your "message" will be displayed to you for
+      confirmation.  If that user is on, he/she will see the message
+      displayed.  If the user is not on, he/she will need to use "message" in
+      order to read it.
+
+  Messages will be stored until they are cleared by the recipient.  In
+contrast, "tell"s are not stored.  When users log on, they are notified if
+they have any stored messages and (if so) how many they have.
+
+See Also:  clearmessages  tell 
+
+[Last modified: December 17, 1995 -- Friar]
+

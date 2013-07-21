@@ -1,0 +1,4 @@
+Command:  kibitz
+Purpose:  send message to all players and observers of a chess match
+Usage:    kibitz message
+Examples: kibitz What about Bxc6???

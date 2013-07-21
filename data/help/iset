@@ -1,0 +1,26 @@
+ 
+iset
+ 
+Usage: iset ivariable_name [value]
+ 
+  Ivariables are special variables that interface and bot authors can use to
+modify the output of the FICS server. They shouldn't normally be touched by
+a user and fiddling with them may cause the interface to malfunction (which
+can be reset by logging out then in again). Ivariables are not saved between
+sessions.
+
+Example:
+  iset defprompt 1
+ 
+  Each ivariable has a separate help file to explain how it is used.  Type
+"help iv_<variable>" to read a specific file.  For example, to read about the
+graph variable you would type "help iv_graph".
+
+When a ivariable has been modified, you will be informed of the new setting as
+a way of verifying it. Normally an interface should parse out this message so
+that users will not be confused.   
+ 
+See Also:  ivariables [and the many 'iv_' files, of course]
+ 
+[Last modified: August 1, 2000 -- DAV]
+

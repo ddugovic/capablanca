@@ -1,0 +1,4 @@
+Command:  clrsquare
+Purpose:  used in setup mode in order to empty a square (make it blank)
+Usage:    clrsquare square
+Examples: clrsquare e4; clrsquare h6

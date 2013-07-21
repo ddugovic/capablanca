@@ -1,0 +1,37 @@
+From nash@nomos.com Tue May 30 07:56:37 1995
+Content-Type: text/plain
+Mime-Version: 1.0 (NeXT Mail 3.3 v118.2)
+From: "Richard V. Nash" <nash@nomos.com>
+Date: Tue, 30 May 95 08:52:10 -0400
+To: danke%daimi.aau.dk.kris%dgate.org.chess%onenet.net.romeo@dcs.warwick.ac.uk
+Subject: Please remove nash@nomos.com and visus.com from help files
+Content-Length: 1130
+Status: RO
+X-Lines: 25
+
+Hello Chess Server Administrators,
+
+  I, nash@nomos.com, am getting dozens of emails everyday inquiring about  
+chess servers. I would like to stop this. Could you please remove any  
+reference to nash@nomos.com or nash@visus.com from the help files associated  
+with FICS. This is in both your running systems and versions of the code that  
+is being passed around or placed in ftp'able directories.
+
+  There are also references to ftp.visus.com in help files. These should also  
+be removed.
+
+  Could you also pass this message along to anybody that you know who may  
+have a copy of FICS but who I've missed on my search for FICS's.
+
+  That said, thanks to all of you for taking the FICS code and making it a  
+success! I'm so happy that my work to keep chess servers available and free  
+did not fail.
+
+Rich
+-----------------------+---------------------------+
+| Richard V. Nash      | NOMOS Corporation         |
+| nash@nomos.com       | Suite 400                 |
+| Tel. (412)-934-5477  | 2591 Wexford-Bayne Road   |
+| Fax. (412)-934-5488  | Sewickley, PA 15143       |
++----------------------+---------------------------+
+

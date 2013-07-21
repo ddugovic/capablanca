@@ -1,0 +1,36 @@
+
+play
+
+Usage:  play [#num | handle]
+
+  The "play" command is how you respond to a user's ad for a chess match.  You
+can select an ad either by its ad number ("index number") or by the handle of
+the user who placed the ad.  For example, if the ad were displayed as:
+    4  1563 TheDane     2   8 unrated blitz       0-9999
+you could respond to the ad by typing either (a) "play 4" or (b) "play
+TheDane".
+
+  When you respond to an ad, a check is made that your rating is in the range
+specified by the ad.  If the ad asks for a formula check, the user's formula
+is also examined.  If you meet these criteria, your response is forwarded to
+the user who placed the ad.
+
+  If the ad calls for auto start, the game begins at once.  If the ad calls
+for a manual start, the other user will be notified that you are challenging
+him/her to a match; he/she then can accept or decline your offer to play that
+match.
+
+Special Notes:
+
+(a) If you respond to an an ad and you receive the message "Bad index given;
+no such ad." it probably means that the ad has been removed, either by
+'unseek' or by starting a match.
+
+(b) If you are on the other user's 'noplay' list, your 'play' request will be
+rejected automatically.
+
+(c) (C)omputer accounts cannot accept seeks.
+
+See also:  match  noplay  seek  sought  unseek
+
+[Last modified: March 2, 1998 -- Friar]

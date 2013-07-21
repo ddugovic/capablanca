@@ -1,0 +1,17 @@
+
+notes
+
+  A registered user has up to 10 lines in their 'finger' display for posting
+information.  These lines are known as "finger notes", one's "plan" or just
+"notes".  Your 'notes' can be read by all users of the server, so be sure that
+it is information you want to make public.  The notes are numbered from 1 to
+10.
+
+  The lines are created, changed and deleted by using the 'set' command.  For
+example, "set 1 I love Wild 5!!!" will set your #1 finger note to: "I love
+Wild 5!!!".
+
+See Also:  finger  set
+
+[Last modified: December 17, 1995 -- Friar]
+

@@ -1,0 +1,17 @@
+
+accept
+
+Usage: accept [1-n, all, abort, adjourn, draw, match, pause, player, simul,
+switch, takeback]
+
+  Accepts an offer that has been made to you.  If no parameter is given and
+there is only one offer, you accept it.  If there is more than one offer
+pending (for example, multiple match offers) you will shown a list of pening
+offers and asked which one to accept.  Then you must specify which offer to
+accept.  You can either choose the offer by number, or by type (such as draw,
+adjourn, abort, or takeback).  "All" accepts all pending offers.
+
+See Also:  decline  pending  match  draw  adjourn  abort  takeback
+
+[Last modified: October 9, 1995 -- Friar]
+

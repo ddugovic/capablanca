@@ -1,0 +1,4 @@
+Command:  forward
+Purpose:  move forward in a sequence of moves in a game being examined
+Usage:    forward [#]       [default: 1]
+Examples: forward; forward 2

@@ -1,0 +1,14 @@
+cnewst
+
+Usage: cnewst # message
+RESTRICTED TO ADMINISTRATORS.
+
+   This command allows you to change the title of a news item that had
+previously been created using 'cnewsi'.  The '#' is the number of the news
+index and 'message' is the new title.  The message length limit in 'cnewsi'
+also applies here.
+
+See ahelp:  cnewse cnewsf cnewsi cnewsp
+See help:   news
+
+[Last modified: December 12, 1999 -- carlsbad]

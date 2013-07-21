@@ -1,0 +1,15 @@
+
+ahelp
+
+Usage:  ahelp [topic]
+RESTRICTED TO ADMINISTRATORS.
+
+  If a topic is specified, this command prints help on the given administrator
+topic.  If topic is omitted, this command lists help files that only admins
+may read.
+
+See ahelp:  admin_commands
+See help:   admins
+
+[Last modified: July 1, 1995 -- Friar]
+

@@ -1,0 +1,5 @@
+  Command:  shutdown
+  Purpose:  shutdown the server (disconnect it)
+  Usage:    shutdown [now,cancel,time] [comment]
+  Examples: shutdown now; shutdown cancel; shutdown 60; shutdown 600 In 
+            order to fix bugs that were causing crashes.

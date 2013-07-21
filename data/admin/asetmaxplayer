@@ -1,0 +1,21 @@
+
+asetmaxplayer
+
+Usage: asetmaxplayer [n]
+RESTRICTED TO ADMINISTRATORS.
+
+  With an argument, this command raises or lowers the level at which logons
+from non-admins will be filtered.  If an argument is supplied, it is checked
+to make sure it is both within the limits of the operating system and at least
+minimally safe.  Without an argument, the command displays detailed
+information about the current limits.
+
+  The greater of max_connections-50 and 200 is a threshhold for triggering
+guest login restrictions.  When the number of non-admin users is above that
+value, unregistered logins are turned away with a nice message.
+
+See ahelp:  
+See help:   limits
+
+[Last modified: October 9, 1995 -- Friar]
+

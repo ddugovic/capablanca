@@ -1,0 +1,4 @@
+Command:  style
+Purpose:  set the style variable for the board display
+Usage:    style n
+Examples: style 12

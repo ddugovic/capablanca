@@ -1,0 +1,40 @@
+
+boards
+
+Usage: boards [category]
+
+  If category is given then this lists all available boards for that 
+category.  If the parameter is omitted, then this lists all available
+categories.  The current board categories are:
+
+    standard
+    openings
+    wild
+    chessercizes
+    test
+    material-odds
+    misc
+
+  In order to find out what is loaded for one of these categories, type
+"boards <category>".  For example, "boards openings" will list the various
+openings you can start a game from.
+
+  In order to start a game from one of these positions, you need to use all of
+the arguments in the match command and also include the board category and the
+specific board you want.  For example:
+
+  match red 2 12 0 0 openings ruy-lopez
+    
+would request a blitz match with user "red" starting with the "ruy-lopez"
+opening position.
+
+
+SPECIAL NOTE
+
+  At the moment, you cannot access these boards through the examine feature,
+only match.
+
+See Also:  match  wild 
+
+[Last modified: September 22, 1995 -- Friar]
+

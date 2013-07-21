@@ -1,0 +1,4 @@
+Command:  logons
+Purpose:  lists recent logons/logoffs for the user
+Usage:    logons [user]
+Examples: logons; logons Friar

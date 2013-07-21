@@ -1,0 +1,20 @@
+
+hbest
+
+Usage: hbest [b|s|w]
+
+  Displays the 20 highest-rated human players in the three different ratings
+categories: Blitz, Standard and Wild.  Computers are excluded from the
+listing.  Use "best" to see the top 20 users, both humans and computers.
+
+  Using "hbest" alone will give all three lists.  Using one or more of the
+arguments b, s or w is a request to give only the blitz, standard and/or wild
+best lists, respectively.  For example, "best bw" will show the top 20 humans
+in the blitz and wild chess; the top standard players will not be listed.
+
+  Use "hrank" and "rank" to see where a given player is ranked.
+
+See Also:  best  hrank  rank 
+
+[Last modified: October 8, 1995 -- Friar]
+

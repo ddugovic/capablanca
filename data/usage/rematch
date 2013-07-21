@@ -1,0 +1,4 @@
+Command:  rematch
+Purpose:  challenge your last opponent to a game of the same type
+Usage:    rematch [string]
+Examples: rematch; rematch w5; rematch misc little_game

@@ -1,0 +1,14 @@
+
+open
+
+Usage: open
+
+  Toggles your 'open' variable open/not open [1/0].  When open is set to 1,
+you are open to receive match requests from other users.  When it is set to 0,
+you will not receive match requests from others, but you will be notified that
+such requests have been made to you and ignored automatically.
+
+See Also:  match  variables
+
+[Last modified: October 8, 1995 -- Friar]
+

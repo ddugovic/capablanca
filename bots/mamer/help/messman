@@ -1,0 +1,12 @@
+messman
+
+Alias: mm
+
+Usage: messman <string>
+
+Reserved for mamer managers (level 50 or higher)
+
+This command sends a message containing <string> to all of mamer's managers.
+This is useful for updating managers on mamer news.
+
+[Last updated: August 29, 1998 -- toddmf]

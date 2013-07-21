@@ -1,0 +1,23 @@
+
+adjourn
+
+Usage: adjourn
+
+  Sends a request to your opponent that a game be discontinued and saved for
+later play.  If a proposal to adjourn is pending for you, then typing adjourn
+(or accept) will accept the offer.  If your opponent is out of time, the
+adjourn request is accepted automatically (a courtesy adjournment).
+
+  Games that are adjourned can be resumed later by using the match command
+when your opponent is logged on.  They can be resigned even when your opponent
+is not logged on.  They can also be adjudicated by an admin (see
+"adjudication" help file).  For more information on these options, see the
+"adjournments" help file.  Use "stored" to view the list of your adjourned
+games.  If you log on and a user with whom you have an adjourned game is also
+on, you will be notified automatically that he/she is logged on.
+
+See Also:  accept  adjudication  adjournments  decline  match  pending  resign 
+stored
+
+[Last modified: December 17, 1995 -- Friar]
+

@@ -1,0 +1,23 @@
+
+forward
+
+Usage: forward [#]
+
+  This command is used by a person examining a game in order to move forward
+in the sequence of the game's moves.  The # is half_moves.  Example: "forward
+40" -- game will go forward 40 half-moves (20 for White and 20 for Black).  
+If # is not specified, 1 will be used.  If you type "forward 999" the game's
+final position will be displayed.
+
+SPECIAL NOTES
+
+(1)  This command does not work for new games, only stored games.
+
+(2)  This command works only on the mainline of stored games, not variations
+branching off from the main line or moves continuing a game from a stored
+position.
+
+See Also:  backward  examine
+
+[Last modified: November 26, 1995 -- Friar]
+

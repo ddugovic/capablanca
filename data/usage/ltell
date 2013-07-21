@@ -1,0 +1,4 @@
+Command:  ltell
+Purpose:  send a message to a list of users
+Usage:    ltell list message
+Examples: ltell computer hello to all our silicon buddies

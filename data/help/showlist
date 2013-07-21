@@ -1,0 +1,18 @@
+
+showlist
+
+Usage: showlist [list_name]
+
+  This command lists the handles of users on a given list.  The server
+maintains various special lists, such as the handles of admins and
+grandmasters on the server.  To display the names of available lists, type
+"showlist".  Each list will either be READ ONLY, meaning you can display the
+listing, or SECRET, meaning only admins can display the listing.  The alias
+for "showlist" is "=".  For example, "=admin" will list the handles of the
+server admins and "=computers" will list computers that have accounts on the
+server.
+
+See Also:  addlist  admins  lists  sublist
+
+[Last modified: September 2, 1995 -- Friar]
+

@@ -1,0 +1,20 @@
+
+noplay
+
+Usage: +|-|= noplay [user]
+
+  When a player is on your noplay list, all match requests from that player
+will be declined automatically.  Here are the variations of the command
+possible:
+
+    +noplay user     Add "user" to noplay list
+    -noplay user     Remove "user" from noplay list
+    =noplay          Display your noplay list
+
+  "Censor" will also filter a user's match requests.  Use a formula to filter
+match requests of particular types.
+
+See Also:  addlist  censor  formula
+
+[Last modified: December 17, 1995 -- Friar]
+

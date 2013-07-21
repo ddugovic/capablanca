@@ -1,0 +1,18 @@
+setmanagerlevel
+
+Alias: sml
+
+Usage: setmanagerlevel <handle> <manager level>
+
+Reserved for mamer managers (level 50 or higher)
+
+This command sets <handle>'s manager level.  You may only modify the
+levels of managers with a manager level lower than yours, and you can only
+set manager levels to levels lower than yours.  Use the "listmanagers"
+command for a list of all the mamer managers and their manager levels(and
+other useful manager information).
+
+See also: listmanagers
+
+[Last modified: September 12, 1998 -- toddmf]
+

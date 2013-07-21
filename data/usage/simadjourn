@@ -1,0 +1,4 @@
+Command:  simadjourn
+Purpose:  used in simuls to request (or accept) an adjournment of a game
+Usage:    simadjourn
+Examples: simadjourn

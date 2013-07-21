@@ -1,0 +1,4 @@
+Command:  date
+Purpose:  lists both local date/time at the server and GMT date/time
+Usage:    date
+Examples: date

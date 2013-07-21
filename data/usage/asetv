@@ -1,0 +1,4 @@
+  Command:  asetv
+  Purpose:  change's a user's variable settings for them
+  Usage:    asetv user instruction
+  Examples: asetv DAV shout 0; asetv Computer open 0

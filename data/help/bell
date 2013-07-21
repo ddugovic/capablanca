@@ -1,0 +1,12 @@
+
+bell
+
+Usage: bell
+
+  Toggles your 'bell' variable.  Equivalent to "set bell".  Having bell on
+affects beeps you may receive from the server or your interface.
+
+See Also:  variables 
+
+[Last modified: October 8, 1995 -- Friar]
+

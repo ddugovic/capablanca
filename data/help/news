@@ -1,0 +1,16 @@
+
+news
+
+Usage: news [#,all]
+
+  The command "news" alone will display the last 10 news items posted to the
+chess server bulletin board, "news #" will display news item #, and "news all"
+will display all news items in the news index.  Also, news items and other
+announcements that are part of the opening text when you logon are in the
+"motd" help file (for an explanation of the "motd" information, read the
+"motd_help" help file).
+
+See Also:  motd_help
+
+[Last modified: August 20, 1995 -- Friar]
+

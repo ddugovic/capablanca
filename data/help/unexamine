@@ -1,0 +1,14 @@
+
+unexamine
+
+Usage: unexamine
+
+  This command is used to stop examining a game.  "Unexamine" stops your
+participation in the analysis, and also stops your observer status.  The other
+examiners and observers may continue, however, even if you set up the examine
+to begin with.
+  
+See Also:  allobservers  examine  observe
+
+[Last modified: June 29, 1995 -- Friar]
+

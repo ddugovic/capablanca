@@ -1,0 +1,19 @@
+
+asetpasswd
+
+Usage: asetpasswd player {password,*}
+RESTRICTED TO ADMINISTRATORS.
+
+  This command sets the password of the player to the password given.  If '*'
+is specified then the player's account is locked, and no password will work
+until a new one is set by asetpasswd..
+
+  If the player is connected, he is told of the new password and the name of
+the admin who changed it, or likewise of his account status.  An email message
+is mailed to the player's email address as well.
+
+See ahelp:  
+See help:   password
+
+[Last modified: July 1, 1995 -- Friar]
+

@@ -1,0 +1,18 @@
+
+shout_quota
+
+  In order to encourage users to hold conversations in channels rather than
+with "shouts" the server has a shout quota.  A shout quota limits the
+frequency of a user's shouts (including "it"-type shouts).  For normal
+purposes, the standard shout quota is not a limitation.
+
+  Imposing more strict shout quotas is a sanction for cases of shout abuse.
+
+  If you type "shout" or "it" alone without any message, you will be informed
+about your current shout status: either (a) you may shout now, or (b) the time
+when you may next make a shout.
+
+See Also:  channel  etiquette  intro_talking  it  shout  shout_abuse
+
+[Last modified: August 28, 1995 -- Friar]
+

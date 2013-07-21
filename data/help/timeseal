@@ -1,0 +1,144 @@
+
+timeseal
+
+WHAT IS TIMESEAL?!
+
+  Timeseal is a program that has been developed to improve chess on internet.
+Netlag often causes players to lose valuable seconds or even minutes on their
+chess clocks.  Transmission time is counted against you, unless the chess
+server can tell exactly when information is transmitted.  What timeseal does
+is record your thinking time, so that transmission time is not counted against
+you.  Timeseal will not prevent netlag but it makes the games fairer when lag
+occurs.
+
+HOW DO I USE TIMESEAL?!
+
+  What you need to do is get a version of timeseal working on the computer
+that connects you to the chess server.  The timeseal program will work as a
+relay station, and will keep track of transimission times.
+
+  The following versions of timeseal are currently available (as of December
+17, 1995):
+
+      AIX-3.2-RISC-SOCKS
+      AIX-3.2-RISC
+      BSD386-1.0-i386
+      BSDOS-2.0-i386
+      HP-UX-A.09.05-9000.705
+      HP-UX-B.09.03-9000.42E
+      IRIX-4.0.5H.IP12-mips
+      IRIX-5.3-IP22-mips
+      IRIX64.6.0.1.IP21.mips
+      Linux-1.2.9-SOCKS
+      Linux-1.2.9-i586
+      OSF1-V3.0-alpha
+      SCO-3.2-i386
+      SunOS-4.1.4-sun4c
+      SunOS-5.4-386
+      SunOS-5.4-sun4d
+      TW-SunOS-TW2.0.1-twin2
+      ULTRIX-4.3-RISC
+      Windows-Winsock (file is called tmsl11j.zip)
+
+To see if anyone of these may fit the hardware you are using, do "uname -a" in
+your unix shell and see which unix system you have operating.  Then, determine
+whether you need one of the special Windows or SOCKS versions.
+
+
+TO DOWNLOAD TIMESEAL
+
+Follow these directions:
+
+(1) Login to your unix/inet provider. (VAX/VMS not supported yet).  Type
+    "uname -a" and remember the output.  You will need this output to figure
+    out which version of timeseal will work on your system.
+
+(2) Type "ftp 164.58.253.10" which will get you to the onenet ftp site.  When
+    you are asked for a login ID type: "ftp" or "anonymous".  When you are
+    asked for a password, type your email address.
+
+(3) Type "cd pub/chess/timeseal" (in order to get to the correct
+    onenet directory) and type "dir" (in order to see which versions of
+    timeseal are currently available).  Compare the available timeseal
+    versions to the type of unix operating system you have.
+
+(4) When you have found the timeseal version that will work on your system,
+    type "bin" (for "binary" transmission format) and then type "get
+    filename" (where "filename" is the name of the version from the
+    directory).
+
+(5) Wait for the ftp file transmission to complete, then type "quit".  The
+    file should now be in your current directory -- probably the home dir.
+
+(6) Type "gunzip filename", "chmod 700 filename", and "mv filename timeseal".
+    These various commands make the timeseal program available on your
+    operating system.  NOTE: There are times when using "chmod 700 filename"
+    does not work on your system.  In this case, try "chmod  755 filename".
+
+    Here is an example after you have ftp'd the version called
+    timeseal.ULTRIX-4.3-RISC.gz:
+
+    gunzip timeseal.ULTRIX-4.3-RISC.gz
+    chmod 700 timeseal.ULTRIX-4.3-RISC
+    mv timeseal.ULTRIX-4.3-RISC timeseal
+
+Now you are ready ... to go to the next step.  ;-)
+
+
+TO RUN TIMESEAL WITH YOUR INTERFACE
+
+  There are different procedures depending on which interface/system you are
+using. If you use Xwindows +Xboard / xics, then go to A); if you have winsock,
+then go to B); otherwise go to C).
+
+A) For Xwindows users, there are two methods (listed in order of preference). 
+Whichever approach you use, make sure that xboard and timeseal are in the same
+directory.  Use one or the other -- NOT BOTH!
+
+   (1) Use this command (it is the more direct, simpler approach):
+
+         ./xboard -ics -icshost 164.58.253.10 -telnet -telnetProgram timeseal
+
+   (2) Executing "./timeseal 164.58.253.10 5000 -p xxxx &" causes timeseal
+       to bind itself to port xxxx and wait for a connection to the chess
+       server.  Then you can start xboard / xics like this (remember to
+       exchange xxxx with a valid port number, like 5500, 5501, whatever you
+       like):
+
+         ./xboard -ics -icshost localhost -icsport xxxx
+         ./xics localhost xxxx
+
+       You MUST use the string "localhost".  Do NOT write the chess server
+       host because then timeseal will not be on.  "localhost" is a perfectly
+       valid address since it's aliased to 127.0.0.1 (loopback) which always
+       means the machine you are using.
+
+B) There are two steps: INSTALL and USE:
+
+   INSTALL:  Move the file tmseal.exe to the same directory as your client
+   program.  Create a program manager icon for TMSEAL, using the normal
+   methods.  (Select File|New from the program manager menu; click on New
+   Program Item, then in the dialog set the Directory field to the same
+   directory as above; set the command line to TMSEAL; you may check the Run
+   Minimized checkbox if you wish.)
+
+   USE:  Double-click on the TMSEAL icon before beginning your FICS session.
+   Then, in your client program, connect to "localhost" instead of the usual
+   "chess.onenet.net".  Soon the usual logon messages will appear.  Errors
+   if any will show up in the TMSEAL window.
+
+C) For other users (no xboard, no winsock) such as ziics, jiics, E-ICS, etc:
+
+   Modify your interface configuration to replace the normal telnet command
+   with: "./timeseal 164.58.253.10 5000".
+
+
+DONE!
+
+Questions?  Ask channel 1 or an admin.
+
+
+See Also:  chan_1  ftp_hints  interface  lag 
+
+[Written by Hawk, August 15, 1995; last modified: December 17, 1995 -- Friar]
+

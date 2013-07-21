@@ -1,0 +1,40 @@
+manager_level
+
+Here is a list of all of mamer's manager levels and their functions.  For a
+list of all mamer managers and their levels, use mamer's "listmanagers"
+command.
+
+Level 0  : All non-managers are level 0.
+
+Level 5  : Mamer managers who cannot use mamer's manager commands.  This level
+           is reserved for the rare case when a manager's manager ablities are
+           suspended.
+
+Level 10 : This is an introductory manager level.  Enough manager commands to
+           be able to run a tourney are available, and nothing more.
+
+Level 25 : This is the standard manager level.  The ability to add and remove
+           chaos points, keep tourneys in mamer's list for longer than two
+           hours, and other minor perks are now available.
+
+Level 50 : Managers at this level are co-mamer Vice Presidents.  Additional
+           abilites include the ability to shut down mamer and add players to 
+           a tourney manually.  Level 50 managers can also modify the manager
+           level of managers below level 50, send a message to all mamer 
+           managers, and modify some parts of mamer's player database, but
+           these commands are usually used by only the mamer COO.  Additional
+           responsibilities include keeping up to date with mamer activities,
+           consulting with the mamer COO when decisions need to be made, and
+           assisting less experienced managers.
+
+Level 75 : The manager at this level is mamer's Chief Operating Officer.  The
+           COO handles day to day operations of mamer.  These include new
+           manager applications, chaos point appeals, periodic review of the 
+           manager staff, keeping the manager staff updated, and basically all
+           non-programming mamer issues.
+
+Level 100: This level is reserved for mamer's programmer(mlong).
+
+See also: listmanagers
+
+[Last modified: September 12, 1998 -- toddmf]

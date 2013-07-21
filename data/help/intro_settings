@@ -1,0 +1,36 @@
+
+intro_settings
+
+SETTING YOUR PREFERENCES
+
+  Everyone starts out with certain default values and settings, but you may
+change them if you wish.  You change settings using the set command; you can
+view your current settings (or those of another user) using the variables
+command.
+
+  Some settings concern what information the server will transmit to you, such
+as communications from other players and notifications about games starting or
+users logging on/off.  Other settings concern chess matches, such as your
+default time controls, whether you will hear a bell when a new board
+position is sent to you, whether you will be sent a list of the moves for your
+game automatically when the game is completed (or adjourned), even the format
+used to send you the board position.
+
+  By changing these settings, you can create the kind of atmosphere you would
+like to have.  You can change these settings at any time, even during a given
+session.  For the most part, changes you make to your settings will be saved
+after you log off and you will not need to change the settings each time you
+log on.
+
+  Your password is also a special setting, although it is never displayed at
+any point.  When you register, you are given a logon password.  You may change
+your password at any point using the password command.
+
+  Lastly, it is possible for you to create special aliases to save you from
+typing phrases you use often.  Instead of typing the whole phrase, all you
+do is type your alias.
+
+See Also:  alias  password  set  variables
+
+[Last modified: July 7, 1995 -- Friar]
+

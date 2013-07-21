@@ -1,0 +1,5 @@
+Command:  rank
+Purpose:  display rank for user, rating or range of users by rank
+Usage:    rank [user [b][s][l][w][B][S]] -OR- rank m-n [b][s][l][w][B][S] -OR-
+          rank m [b][s][l][w][B][S]]                     [default: bsl]
+Examples: rank; rank zippy; rank 50-100; rank 1800; rank sB

@@ -1,0 +1,4 @@
+  Command:  summon
+  Purpose:  give special notice that you want a user to contact you NOW!
+  Usage:    summon player
+  Examples: summon Ramius

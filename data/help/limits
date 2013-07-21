@@ -1,0 +1,16 @@
+
+limits
+
+Usage: limits
+
+  "Limits" displays the various server limits currently in effect.  These
+include maximum numbers of players, channels, channels you can be in, persons
+on your notify list, your aliases, games you are observing, requests pending
+for you, people on your censor list, persons in a simul game, and messages you
+can receive.  Also, the minimum number of games that can be active, and the
+shout quota.
+
+See Also:  [the various commands and features]
+
+[Last modified: July 7, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  simpass
+Purpose:  used in simuls to pass when the simul player reaches your board
+Usage:    simpass
+Examples: simpass

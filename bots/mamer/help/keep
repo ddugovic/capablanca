@@ -1,0 +1,17 @@
+keep
+
+Alias: k
+
+Usage: keep <tourney number> <boolean>
+
+This command is used to edit the "keep" status of a tourney.  If the keep
+status is true, mamer will not automatically delete the tourney.  If it is
+false, mamer will automatically delete the tourney two hours after its
+completion.  "keep # 1" or "keep # y"(y is short for yes) will set the keep
+status to true. Using anything else but 1 or y will set it to false.  This
+command is most commonly used to save a scheduled tourney or a tourney with
+bugs so that it can be examined later.
+
+See also: delete
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,63 @@
+
+intro2
+
+COMMUNICATING
+
+  Communications among users are of two types: (a) messages, and (b) requests. 
+Messages basically involve conversations among users; the server merely
+transmits the messages.  Requests are different because they involve the
+server doing something about or during a chess match.
+
+
+MESSAGES
+
+  Suppose you want to say something to one or more users.  There are several
+commands you could use:
+
+    command      function
+    -------      --------------------------------------------
+    message      Send a user a message to be stored, even if the user is
+                 not logged on at that time
+    tell         Talk to one user, or users on one channel
+    xtell        Talk to one user, but allow for a continuing conversation
+                 with another user
+    channel      Listen to tells sent to a given channel
+    say          Talk to the user you are playing chess with (or just
+                 played a game with)
+    shout        Talk to all users who are open to shouts
+    cshout       Talk to all users who are open to shouts; message must be
+                 about chess
+    it           Special kind of shout
+    kibitz       Talk to all players and observers of a specific chess game
+    whisper      Talk to all observers of a specific chess game
+    censor       Prevents a given user's messages from reaching you
+
+  Read more about these commands in their own help files.  But, in general,
+"message" works like an answering machine, "tell" and "say" are like normal
+one-to-one conversations, "shout", "cshout" and "it" are for group talks,
+and "kibitz" and "whisper" are for commenting on a chess match you are
+observing.  Please observe chess server etiquette guidelines when using these
+commands.
+
+
+REQUESTS
+
+  Users need to make agreements about the kinds of chess matches they will be
+playing.  They also need to make agreements about various situations during
+the play of a chess match.  Requests serve as ways to reach agreements as well
+as take the agreed upon action.  For example, users need to request the start
+of a chess match.  When a match has been agreed upon, the server will start a
+match between those two users.  During a match, one player may need to
+adjourn; if an adjournment is agreed upon, the server will stop the match and
+save the game so that it can be resumed later.  Read intro6 for more
+information about chess matches and these special requests.
+
+  USEFUL HINT: At times, a lot of messages from various users will come across
+your screen.  To help you notice when a user has sent a message or request to
+you personally (rather than to users on FICS), you can set the
+highlight variable to to make them readily apparent (see highlight).
+
+See Also:  etiquette  intro6  [and the individual commands]
+
+[Last modified: June 16, 1995 -- Friar]
+

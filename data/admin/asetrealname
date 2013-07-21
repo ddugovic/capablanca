@@ -1,0 +1,14 @@
+
+asetrealname 
+
+Usage:  asetrealname user newname
+RESTRICTED TO ADMINISTRATORS.
+
+  This command sets the user's real name (as displayed to admins on finger
+notes) to "newname".
+
+See ahelp:  finger
+See help:   
+
+[Last modified: June 22, 1995 -- Friar]
+

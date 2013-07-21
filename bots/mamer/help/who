@@ -1,0 +1,43 @@
+who
+
+Usage: who <tourney number>
+
+This command lists all the players in the specified tourney and other
+information about the players in the tourney.
+
+:     Name              Rating Score Perfrm Upset  Results   
+:     ----------------- ------ ----- ------ ------ -------
+:  1 +ghettoCHECKMATE   [1651]  3.0  [2242] [ 573] +07b +02b +04w
+:  2 +TheOnlyOne        [1914]  2.0  [1764] [   0] +03b -01w +05w
+:  3 +westham           [1725]  2.0  [1843] [  47] -02w +04b +06w
+:  4 +frankenschach     [1772]  1.0  [1497] [   0] +05w -03w -01b
+:  5 +Arbakov           [1516]  1.0  [1443] [   0] -04b +06w -02b
+:  6 +Ostap             [forf]  0.0  [1251] [   0] -01w
+:
+:     Average Rating    1736.3
+
+The number in the leftmost column is the player's current ranking in the
+tourney.
+
+"Name" is the player's handle.  A "+" to the left indicates that the player is
+       currently logged in.  A "-" indicates that he is not.
+"Rating" is the player's FICS rating before the tourney started in the 
+       category of games played in the tourney. "forf" means the player is no
+       longer in the tourney.
+"Score" is the number of tourney points the player has.  1.0 is awarded for
+       each win, 0.5 for each draw, and 0.0 for each loss.
+"Perfrm" is the player's performance rating for the tourney.
+"Upset is the number of upset points the player has.
+"Results" is a grid of the tourney results. "+" represents a win, "=" 
+       represents a draw, and "-" represents a loss. The number following is
+       the ranking of the opponent in the tourney(see the leftmost column).
+       The letter following that is the color played. "b" is black; "w" is
+       white.
+"Average Rating" is the average rating of all the players in the tourney.
+       The ratings used are ratings when the players join the tourney.  
+
+NOTE: This is the same as the "listplayers" command.
+
+See also: listplayers, performance, upset
+
+[Last modified: August 29, 1998 -- toddmf]

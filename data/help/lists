@@ -1,0 +1,24 @@
+
+lists
+
+  The server maintains several lists in order to conduct its business.  You
+can use +/-/= to change and view the various lists.
+
+Examples (using the aliases):
+
+  +listname member    (Add member to listname -- addlist)
+
+  -listname member    (Remove member from listname -- sublist)
+
+  =listname           (View the members of listname -- showlist)
+
+  =                   (View the names of all lists and their status
+                      -- showlist)
+
+Certain lists can only be modified by an admin.  Other lists are for admin
+viewing only.  See showlist help file for details.
+
+See Also:  addlist  admin  showlist  sublist
+
+[Last modified: September 2, 1995 -- Friar]
+

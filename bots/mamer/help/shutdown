@@ -1,0 +1,11 @@
+shutdown
+
+Alias: sd
+
+Usage: shutdown
+
+Reserved for mamer managers (level 50 or higher)
+
+This command causes mamer to shut down and log off.
+
+[Last modified: September 1, 1998 -- toddmf]

@@ -1,0 +1,12 @@
+
+qtell
+
+USAGE: By TD programs, only
+
+  The qtell command is a special channel tell command designed for the TD
+programs that run tournaments on the chess server.  This command is not
+available to users or admins.
+
+See Also:  tell
+
+[Last modified: October 30, 1997 -- Friar]

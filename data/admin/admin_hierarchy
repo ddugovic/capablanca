@@ -1,0 +1,8 @@
+0   "Normal User"
+5   "Authorized Helper Person" (DAV says no, we can't do this.  Hmmm!)
+10  "Administrator"
+15  "Help File Librarian/Administrator"
+20  "Master Administrator"
+50  "Master Help File Librarian/Administrator"
+60  "Assistant Super User"
+100 "Super User"

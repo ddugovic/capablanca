@@ -1,0 +1,44 @@
+
+intro0
+
+                              W E L C O M E
+
+                                 to  the
+
+          F R E E  I N T E R N E T  C H E S S  S E R V E R  (FICS)
+
+
+  We have created several information files for users of this chess server. 
+The files describe different features of the server and give you some
+suggestions on how these features can help you enjoy internet chess.  Here is
+a directory of the information files and what topics each file covers:
+
+      File      Topics
+     ------     --------------------------------------------------
+     intro1     General information
+     intro2     Communicating
+     intro3     Displaying information
+     intro4     Setting your preferences
+     intro5     Special functions
+     intro6     Chess matches
+     intro7     Making moves in a chess match
+
+  To read information from one of these files, simply type "help intro#" using
+the appropriate number.  If you have questions after reading the files, there
+are several things you can do.  (1) Read the help file for a command you have
+a question about; your answer might be there.  (2) Contact users, especially
+administrators of the server (known as "admins"); they are very helpful.
+
+  To read a help file, type "help [topic]", without the square brackets,
+however.  If the topic is a command, the help file will give you information
+about the format for the command.  You can tell that it is a command because
+the first line will describe its format ("Usage").  Words in square brackets
+[] designate optional variables; including them affects the way your command
+will be processed.  In many cases, a help file will suggest other help files
+you may want to read.
+
+  Your suggestions about the information files (and help files, too) are
+welcome.  Feel free to "message helpfiles" with your comments.
+
+[Last modified: June 16, 1995 -- Friar]
+

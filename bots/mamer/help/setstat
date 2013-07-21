@@ -1,0 +1,23 @@
+setstat
+
+Alias: ss
+
+Usage: setstat <handle> <stat to set> <integer value>
+
+Reserved for mamer managers (level 50 or higher)
+
+This command is used to set <handle>'s tourney finger statistics in the event 
+that something goes wrong in a tourney.  Statistics that can be modified are:
+
+t - Modifies the "Tnys" (tourneys played) statistic.
+w - Modifies the "W" (wins) statistic.
+l - Modifies the "L" (losses) statistic.
+d - Modifies the "D" (draws) statistic.
+1 - Modifies the "1st" (first places) statistic.
+2 - Modifies the "2nd" (second places) statistic.
+3 - Modifies the "3rd" (third places) statistic.
+
+See also: finger
+
+[Last modified: September 3, 1998 -- toddmf]
+

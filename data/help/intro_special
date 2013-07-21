@@ -1,0 +1,25 @@
+
+intro_special
+
+SPECIAL FUNCTIONS
+
+  There are several commands that perform special functions beyond sending
+messages to other users, displaying information, modifying your settings or
+playing in a chess match.  Here are some useful ones:
+
+    command        function
+    -------        --------------------------------------------
+    alias          to make typing frequently-used phrases easier
+    examine        to analyze a game
+    mailmoves      mails to you the moves of a user's game
+    mailoldmoves   mails to you the moves of a user's last game        
+    oldmoves       allows you to view a user's last game
+    smoves         displays moves of a stored game
+    sposition      displays the last position of a stored game
+
+More functions will be added as time goes on.
+
+See Also: [the individual commands]
+
+[Last modified: July 7, 1995 -- Friar]
+

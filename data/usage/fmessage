@@ -1,0 +1,4 @@
+Command:  fmessage
+Purpose:  forward a message to a user
+Usage:    fmessages user message_#  [use # from your message list]
+Examples: fmessage DAV 3

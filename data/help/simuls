@@ -1,0 +1,76 @@
+
+simuls
+
+  "Simuls" = simultaneous chess matches; playing more than one opponent at a
+time.  It is possible to play more than one opponent simultaneously on the
+chess server.  Below are sections for Starting a Simul and for Joining a
+Simul.
+
+
+STARTING A SIMUL
+
+  In order to play more than one chess match simultaneously you need to do the
+following:
+
+1. Turn on your simopen flag with "simopen".  Announce your simul conditions
+   on shout and cshout enough to get the word out, but not so much as to annoy
+   users.
+
+2. Other users must then challenge you with "simmatch".
+
+3. Accept or reject the challenges as they come in.  You play WHITE in all
+   games.
+
+4. When you are satisfied that you have started the number of games that you
+   can handle, turn off your simopen flag.  You can see how many games you
+   are playing with "simgames".
+
+5. You can then start making moves on the board.  The "simnext" command moves
+   you to the next board; "simprev" moves you to the previous board.  You
+   will focus on one game at a time, going in a particular order.
+
+6. If you are bothered by how long a player is taking to make the next move,
+   you can abort that game with "simabort".  You are in control of these
+   limits since the games are untimed.
+
+7. When all matches you are playing are complete, you will get your results.
+
+Various commands you can use while running a simul include:  goboard, gonum, 
+simabort, simadjourn, simallabort, simalladjourn, simnext, simopen and
+simprev.
+
+
+JOINING A SIMUL
+
+  In order to play against a user who is open for playing simultaneous
+matches, here is what you do:
+
+1. Using the "simmatch" command, challenge the person you will be playing.
+   If the challenge is accepted, you will play BLACK.
+
+2. You will be informed when the simul player is coming to your board.  You
+   should be prepared to move either before or shortly after that player
+   arrives at your board.  If you do not move within a reasonable time
+   period, your game could be aborted.
+
+3. It is impolite to offer a draw unless that player is at your board.  It
+   could very easily confuse the simul player if offers come in from
+   different users at once.
+   
+4. If your game ends early, you may want to turn on your ginform flag so
+   that you can see the final result of the simul games.  You can also
+   observe the games; when the last game is over, you get the results.
+
+
+OBSERVING A SIMUL
+
+  You can observe all games in a simul once they have started by typing
+"observe simul_player".  All of the simul_player's simul games will be added
+to your observation list.  As the simul_player moves from board to board, so
+will you.  When the last game has ended, you will see the final results from
+the simul games.
+
+See Also:  observe  set  simmatch  simgames  [and other commands given above]
+
+[Last modified: August 15, 1995 -- Friar]
+

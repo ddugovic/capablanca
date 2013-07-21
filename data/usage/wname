@@ -1,0 +1,4 @@
+Command:  wname
+Purpose:  change name of White player in an examined or setup game
+Usage:    wname [string]
+Examples: wname; wname Kotov

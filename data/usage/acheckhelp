@@ -1,0 +1,3 @@
+  Command:  acheckhelp
+  Purpose:  check for missing help and usage files
+  Usage:    acheckhelp

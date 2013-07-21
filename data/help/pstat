@@ -1,0 +1,201 @@
+
+pstat
+
+The command pstat ("player statistics") displays the record one user has in 
+chess games against another user.  Statistics 'pstat' will not include 
+results prior to FICS version 1.22.0   pstat will only include statistics
+from your last 2500 games on the server.  In general, this command can be 
+used wit the following formats:
+
+  (a) pstat /o User1 -- gives your record against User1
+
+  (b) pstat User1 /o User2 -- gives the record for User1 against User2
+
+  For example, the command 'pstat knighttour /o afw' might display the 
+  following statistics:
+
+          knighttour's game statistics:
+
+          Results vs. afw:
+          Rated(W-L-D): 10-10-5    Unrated(W-L-D): 8-8-2
+
+  The counts are always with respect to the FIRST player -- it is the first
+player's record against the second player, in this case knighttour's record
+against afw.  The counts are summed across ALL types of chess matches.
+
+   (c) For the time being Old statistics can be accessed using the command: 
+       oldpstat (which is what pstat used to be).  The oldpstat command can
+       be used in the same format as in examples (a), (b) and (c); without
+       the flag /o. 
+
+   For example, the command 'oldpstat toddmf Obliviax" might display the 
+   following statistics:
+
+           Record for toddmf vs. Obliviax:
+
+                            wins     losses     draws
+                rated        407        345        68
+              unrated         14          6         4
+
+
+Other Notes:
+Pstat shows result summaries starting from your latest games and looks 
+backwards. 
+
+It is now possible to use the 'next' command in conunction with a helpfile and
+at the same time use the command 'next stats'.
+
+-------------------------------------------------------------------------------
+
+The parameters for pstat in the following usage format:
+
+ pstat [user] [type of results to show] [how to sort]
+
+ [user] is the name of the player whose statistics to be viewed
+ if a name is missing in this command, it will show your data.
+
+ [type of results to show] and [how to sort] is based on four sort parameters:
+ (opponent, eco code, etime and category/board)
+
+To specify results to show (ie. only those results/summaries will be shown) 
+use /o /e /t /b (opponent, eco, (e)time and board/category respectively) 
+followed by the parameter.(a) eco code is the Encylopedia of chess openings 
+code which describes which opening took place. It is a letter A-E followed by
+a two digit number.  
+
+
+1. Sort by ECO: /e
+
+To see what eco code corresponds to a named opening position - see help eco.
+
+   (a) pstat /o User1 /e <code>
+
+   For Example:
+
+         pstat /o DChessmaster /e B09
+
+         Your game statistics:
+
+         Results vs. DChessmaster ECO B09:
+         Rated(W-L-D): 2-30-1    Unrated(W-L-D): 0-0-0
+
+
+   (b) pstat User 1 /o User2 /e <code>
+
+   For Example:
+
+         pstat Bremen /o DChessmaster /e B09
+
+         Bremen's game statistics:
+
+         Results vs. DChessmaster(C) ECO B09:
+         Rated(W-L-D): 5-5-1    Unrated(W-L-D): 0-0-0
+ 
+2. Sort by time: /t
+
+etime is the maximum time 40 moves will take per player. 
+The formula is:  etime = time + 2/3 increment
+
+   For example: a 5 0 game is etime 5
+                a 2 12 game is etime 10
+                a 5 8 game is etime 6.7
+
+Please see help clocks for more details.
+This sort command is somewhat difficult, please read carefully.
+
+Results are grouped together in ranges of time and it's not possible to 
+specify a decimal number etime. So to request results for 5 8 (etime 6.7) 
+6.7 should be rounded down to 6.
+
+In the example above where etime is 6.7; you would have to use etime of 6
+
+   (a) pstat /t <etime>
+
+   For Example:
+
+         pstat /t 5
+
+         Your game statistics:
+
+         Results vs. DHessmaster(C) ECO B09:
+         Rated(W-L-D): 5-5-1    Unrated(W-L-D): 0-0-0
+
+ Show me the summary of my games that have etime 5 (covers 5<etime<=6).
+
+   (b) pstat User2 /t <etime>
+
+   For Example:
+
+         pstat volcano /t 6
+
+         volcano's game statistics:
+
+         Results etime 6<=etime<7:
+         Rated(W-L-D): 14-2-8    Unrated(W-L-D): 0-0-0
+
+
+
+
+3. Sort by category and board: /b
+
+Category and board are just like the match command (eg. bughouse, suicide, 
+wild 5), though the short cut for wild (w/#) does not work and chess is not 
+recognized. To get normal chess only use blitz, standard, lightning and 
+untimed as the category. Specify blitz and specifying etime as a non blitz 
+time control will give undefined results.
+
+
+To group results together /s followed by one or more o,e,t,b is used. 
+It doesn't make sense to specific a type to show and also have it grouped 
+together under that type so pstat /o Fred /so is illegal.
+
+ Examples:
+
+ pstat /o Fred /se
+
+ Show my results against Fred by eco code
+
+ pstat /e C21 /sob
+
+ Show my results in C21 by opponent and board/category
+
+
+ The following group ranges for etime are used:
+
+    0
+    0 < etime < 1
+    1 <= etime < 2
+    2 <= etime < 3
+    3 <= etime < 4
+    4 <= etime < 5
+    5 <= etime < 6
+    6 <= etime < 7
+    7 <= etime < 8
+    8 <= etime < 9
+    9 <= etime < 10
+   10 <= etime < 11
+   11 <= etime < 12
+   12 <= etime < 13
+   13 <= etime < 14
+   14 <= etime < 15
+   15 <= etime < 20
+   20 <= etime < 25
+   25 <= etime < 30
+   30 <= etime < 35
+   35 <= etime < 40
+   40 <= etime < 45
+   45 <= etime < 50
+   50 <= etime < 55
+   55 <= etime < 60
+   60 <= etime < 75
+   75 <= etime < 90
+   90 <= etime < 105
+  105 <= etime < 120
+  120 <= etime < 150
+  150 <= etime < 180
+  180 <= etime
+
+ 
+See also:  assess   eco   finger   match  
+ 
+[Last modified: Dec. 11, 2001 -- MAd]

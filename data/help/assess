@@ -1,0 +1,16 @@
+
+assess
+
+Usage: assess [user1 [user2]]
+
+  Displays how ratings will be affected by the possible outcomes of a chess
+match between two users.  If both parameters are omitted ("assess") and you
+are playing a game, then the command will display the possible ratings changes
+from your game with your current opponent (if you are not playing a game, you
+will be told that).  If only user1 is given ("assess user1"), then the command
+will display the possible ratings changes from a game you would have with
+user1.  If both parameters are given ("assess user1 user2"), then the command
+will display possible ratings results of a game between user1 and user2.
+
+[Last modified: October 8, 1995 -- Friar]
+

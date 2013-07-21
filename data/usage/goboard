@@ -1,0 +1,4 @@
+Command:  goboard
+Purpose:  in a simul match, move to a given player's board
+Usage:    goboard player|#
+Examples: goboard Shaughn; goboard 7

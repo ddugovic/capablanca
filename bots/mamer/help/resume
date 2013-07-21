@@ -1,0 +1,14 @@
+resume
+
+Alias: re
+
+Usage: resume <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+Change the tourney state from 'paused' to 'closed', and start the games
+of the next round when the previous round was finished.
+
+See also: pause, listtourneys
+
+[Last modified: Novemder 3, 2011 -- hgm]

@@ -1,0 +1,137 @@
+
+EGGO
+
+  EGGO stands for "Examine Great Games Online".  EGGO is an online database
+program that facilitates examining and analyzing great games from players such
+as Fischer, Kasparov, and Karpov.  Basically, EGGO allows you to examine a
+game except that the moves come from EGGO's database, not the chess server. 
+Currently, EGGO's database contains about 15000 to 20000 games.  Type "finger
+EGGO" for more information.
+
+  In order to use EGGO, send EGGO a command; EGGO then processes the command
+and returns the output to you.  See below for a list of commands and their
+descriptions.
+
+  EGGO can have only one primary user at a time, meaning only one person at a
+time can select the games to be examined.  However, once a game has been
+loaded for examination, other users can paticipate in examining and analyzing
+the game using the "mexamine" and "observe" features of the chess server.
+
+
+STARTING EGGO
+
+  First step, type "observe EGGO".  Second step, type "xtell EGGO begin".  If
+no other game is being examined, EGGO will make you the examiner -- you will
+then be able to examine a game from EGGO's library.  Otherwise, someone else
+is listed as EGGO's main examiner and you will only be able to examine that
+game for the moment.  If you want someone else to help examine a game with
+you, use the "mexamine" command.  When you are finished examining one game and
+want to examine another, simply use the examine command.  Lastly, use the
+unexamine command in order to leave EGGO.
+
+
+EGGO'S COMMANDS (list):
+
+     about        examine         help         revert         status
+     begin        forward         more         search         who
+
+
+EGGO'S COMMANDS (descriptions):
+
+  ABOUT
+
+    Usage: xtell eggo about
+
+    If someone is already examining an EGGO's game, this command will display
+    information about the game being examined.  This command is also useful
+    for knowing EGGO's status.  Anyone can use this command.
+
+  BEGIN
+
+    Usage: xtell eggo begin
+
+    If EGGO is not busy, this command starts an EGGO session.  If EGGO was
+    already in use, this command will have no effect.
+
+  EXAMINE
+
+    Usage: xtell eggo examine #
+
+    You may use this command after a successful "xtell eggo search" command.
+    For example, "xtell eggo examine 1" will begin examination of game #1 from
+    the search output.  You can repeat this command for other games from the
+    search output when you are finished examining your current game.  That is,
+    you can type "xtell eggo examine #" for the next game; you do not need to
+    "unexamine" the other game first.  (Please do not confuse this use of
+    examine with the normal "examine" command.)
+
+  FORWARD
+
+    Usage: xtell eggo forward [n]
+
+    When you are already examining an EGGO's game, you can go forward 1 or
+    more moves using "xtell EGGO forward [n]".  The default value for 'n'
+    is 1.  Currently, you cannot go forward more than 20 moves at one time.
+
+  MORE
+
+    Usage: xtell eggo more
+
+    This command allows you view the results of your search command.  It will
+    list the next 20 games in the list (if there are any).  You must be EGGO's
+    current user to use this command.
+
+  REVERT
+
+    Usage: xtell eggo revert
+
+    After making your own moves when examining an EGGO's game, you can go back
+    to your game's mainline by "xtell eggo revert".  (Please do not confuse
+    this command with the normal "revert" command.)
+
+  SEARCH
+
+    Usage: xtell eggo search [player1 {player2} {draw|nodraw}]
+
+    You may use this command after a successful "xtell EGGO begin".  The
+    purpose of this command is to search the EGGO game database for games by
+    particular players.  "Player1" must be one of the names EGGO recognizes;
+    use the "xtell EGGO who" command to see which names EGGO knows.  You can
+    use "draw" and "nodraw" to select a game with a particular result; they
+    are optional.  
+
+    "Search" alone without arguments will list the results of your previous
+    search.  Here are other examples:
+      xtell eggo search Capablanca
+      xtell eggo search Fischer nodraw
+      xtell eggo search Fischer Spassky
+      xtell eggo search Kasparov Karpov nodraw
+    You can view the results of the search with "xtell EGGO more".
+
+  STATUS
+
+    Usage: xtell eggo status
+
+    This command will display information about EGGO's current status, such as
+    whether EGGO is open or closed, and which game (if any) is being examined.
+
+  WHO
+
+    Usage: xtell eggo who
+
+    This command will list all of the "primary" players known to EGGO.  These
+    primary players are used in EGGO's search command.  Anyone can use this
+    command whether they are EGGO's current user or not.
+
+
+SPECIAL NOTES:
+
+(a) Since many of the EGGO commands are long, you might want to consider
+creating aliases for the commands you will use a lot (such as "xtell EGGO
+forward").  Suitable aliases will save you a lot of time as you play through
+these games from famous players.
+
+See Also:  alias  examine  mexamine
+
+[Written by Warrior August 18, 1995; last modified: August 21, 1995 -- Friar]
+

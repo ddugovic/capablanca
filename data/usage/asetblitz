@@ -1,0 +1,4 @@
+  Command:  asetblitz
+  Purpose:  modify the items for a user's blitz finger information
+  Usage:    asetblitz user rating wins losses draws RD
+  Examples: asetblitz friar 1209 23 151 0 39.4

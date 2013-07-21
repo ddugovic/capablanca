@@ -1,0 +1,35 @@
+
+lightning
+
+  There are four types of regular (not wild or bughouse) chess played on this
+chess server: Untimed, Lightning, Blitz and Standard.
+
+  A game is "Lightning" if the expected duration of the game is 3 minutes or
+less per player.  "Expected duration" is determined by a formula that takes
+into account both the Start time and the Increment (Inc) value.  Here is the
+formula:
+
+     Expected duration = (Start + Inc*2/3)
+
+  The following table shows the slowest Lightning and fastest Blitz time
+controls, the dividing line if you will between those two types of matches.
+
+     Slowest Lightning   Fastest Blitz
+    ------------------------------------
+       Mins  Incr         Mins  Incr
+    ------------------------------------
+         0     4            0    5
+         1     2            1    3
+         2     1            2    2
+        --------            3    0
+
+  As you can see, Lightning chess is very quick!
+
+  You can list logged on users according to their lightning ratings by typing
+"who L".  "Lightning" is also a variable that can be used in formulas in order
+to screen match requests.
+
+See Also:  blitz  formula  match  standard  untimed  who
+
+[Last modified: December 25, 1995 -- Friar]
+

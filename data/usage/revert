@@ -1,0 +1,4 @@
+Command:  revert
+Purpose:  return to the mainline of a chess game being examined (analyzed)
+Usage:    revert
+Examples: revert

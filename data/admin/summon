@@ -1,0 +1,15 @@
+
+summon
+
+Usage: summon player
+RESTRICTED TO ADMINISTRATORS.
+
+  This command gives a beep and a message to the player indicating that you
+want to talk with him/her.  The command is useful for waking someone up, for
+example a sleepy admin or an ignorant player.
+
+See ahelp:  
+See help:   
+
+[Last modified: June 22, 1995 -- Friar]
+

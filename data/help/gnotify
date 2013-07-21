@@ -1,0 +1,18 @@
+
+gnotify
+
+Usage: +|-|= gnotify [user]
+
+  When a player is on your gnotify list, you will be notified when that player
+begins a game on the server.  Here are the possible variations of the command:
+
+    +gnotify user     Add "user" to gnotify list
+    -gnotify user     Remove "user" from gnotify list
+    =gnotify          Display your gnotify list
+
+  Use "gin" variable to be notified regarding all games and when they begin.
+
+See Also:  addlist  gin  variables
+
+[Last modified: October 18, 1995 -- Friar]
+

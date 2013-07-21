@@ -1,0 +1,23 @@
+
+cmuzzle 
+
+Usage: [=,-,=]cmuzzle
+RESTRICTED TO ADMINISTRATORS.
+
+  Adds to (+cmuzzle), removes from (-cmuzzle) or lists users on (=cmuzzle) the
+cmuzzle list.  Users on the cmuzzle list cannot use "cshout".  Other forms of
+communication are not affected.
+
+  When you cmuzzle (or uncmuzzle) a user, please leave a message in the
+player's comments file using the "addcom" command.  Documentation of user
+behavior is important.
+
+  Concerning when to cmuzzle a user, please refer to the admin guidelines that
+have been developed.  See also help files on server conduct, such as abuser,
+etiquette and shout_abuse.
+
+See ahelp:  addcom  muzzle
+See help:   etiquette  lists  shout  shout_abuse
+
+[Last modified: October 16, 1995 -- Friar]
+

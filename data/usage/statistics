@@ -1,0 +1,4 @@
+Command:  statistics
+Purpose:  display summary information about ratings of server players
+Usage:    statistics
+Examples: statistics

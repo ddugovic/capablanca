@@ -1,0 +1,5 @@
+Command:  smoves
+Purpose:  display the moves of a stored, history or journal game
+Usage:    smoves UserA [#, UserB, journal_slot]
+Examples: smoves TheDane; smoves TheDane 87; smoves TheDane bozky;
+          smoves TheDane J

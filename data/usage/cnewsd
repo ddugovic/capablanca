@@ -1,0 +1,4 @@
+  Command:  cnewsd
+  Purpose:  delete last line of a regular news item
+  Usage:    cnewsd #
+  Examples: cnewsd 180

@@ -1,0 +1,174 @@
+
+bsetup
+
+Usage:  bsetup [argument]
+
+Summary: Bsetup mode is a special form of the "examine" mode that allows you
+to set up any position you want and then use examine mode to analyze it.  The
+standard alias for "bsetup" is "setup".
+
+ENTERING BSETUP MODE
+-------------------
+
+  There are two ways to enter bsetup mode: from scratch and from "examine"
+mode.  The difference in the two procedures concerns the start position of the
+board in bsetup mode: empty board versus a board position.
+
+  (a) FROM SCRATCH -- When nothing else is active (that is, you are not
+playing or examining another game), type either "bsetup" or "examine setup". 
+The board will be totally empty when you enter bsetup mode; you will have to
+place all of the pieces where you want to have them.
+
+  (b) FROM WITHIN EXAMINE MODE -- Typing "bsetup" during examine mode (namely
+while you are examining a game) places you in "examine bsetup" mode.  The move
+list is cleared and a new move list will be established.  However, the current
+board position will be used as the starting board position; you can then
+modify that position and arrange the pieces to be where you want them to be.
+
+USING BSETUP MODE
+----------------
+
+  There are several commands you can use in order to create a board position
+and designate which side is going to move next.
+
+  BSETUP CLEAR -- Typing the command "bsetup clear" will give you a new,
+blank, empty board.
+
+  BSETUP START -- Typing the command "bsetup start" will give you the regular
+starting position for a game of chess.
+
+  BSETUP board_category board -- You can load a non-standard board position if
+you want.  The chess server has several non-standard boards.  They can be
+listed by using the "board" command.  For example, "boards openings" will list
+the various openings you can start a game from and "boards wild" will list
+"wild" opening positions.  Note: you must first be in bsetup mode in order to
+create a given board position.
+  To create a suicide game, type "bsetup suicide".
+
+  BESETUP FEN position -- You can also set up complete board positions by
+supplying a FEN position.  For example:
+
+    bsetup fen rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR
+
+You have to indicate the pieces and blank squares on each rank of the chess
+board, starting with rank 8 (Black's back rank) and going from the a-file to
+the h-file.  The '/' mark divides one rank of pieces from another.  Letters in
+CAPS mean a White piece (such as 'K' for White King); small letters mean a
+Black piece (such as 'k' for Black King).  The numbers (such as 1, 3, 4 and 8)
+refer to the number of *consecutive* blank squares.  For example, the fen
+position given above is the one that occurs when White opens the game with
+Pd3.  NOTE: You just give the board position, not which side is to move;
+use "tomove" to modify whose move it is. 
+
+  Placing pieces -- There are two formats for placing pieces: case sensitive
+and designate color.  Either one works.  Here is a table of the formats.  For
+the "square" portion, enter a square in algebraic notation, such as e4 or h5. 
+You can use either "@" or "*" as the special symbol.
+
+                CASE SENSITIVE          DESIGNATE COLOR
+
+    Piece       White      Black        White       Black
+    -----       --------   --------     ---------   ---------
+    king        K@square   k@square     wk@square   bk@square
+    queen       Q@square   q@square     wq@square   bq@square
+    rook        R@square   r@square     wr@square   br@square
+    bishop      B@square   b@square     wb@square   bb@square
+    knight      N@square   n@square     wn@square   bn@square
+    pawn        P@square   p@square     wp@square   bp@square
+  
+  Clearing a square -- There are two ways you can clear a square and make it
+empty: either place an 'x' (meaning empty piece) or "clear" the square.
+
+    x@square
+    clrsquare square
+    bsetup clearsquare square
+
+For example, "x@e4", "clrsquare e4" and "bsetup clearsquare e4" would all have
+the same effect: making e4 an open square.  NOTE: you do not have to clear a
+square before placing a piece.  For example, if there is a Black Queen on e5,
+placing a Black Pawn on e5 will automatically remove the Black Queen.
+
+  BSETUP TOMOVE white|black -- Typing "bsetup tomove white" will have White be
+the player to move next.  Typing "bsetup tomove black" will have Black be the
+player to move next.  NOTE: You do not need to include the "bsetup" part of
+the command; the "tomove" command works alone once you are in bsetup mode.
+
+  BSETUP wcastle <rights>|bcastle <rights> -- You may also set the castling
+rights for the game.  Use "bsetup wcastle <rights>" and "bsetup bcastle
+<rights>" to set the castling rights for White and Black respectively.  The
+possible 'rights' are:
+
+   none    (no castling)
+   kside   (kingside only)
+   qside   (queenside only)
+   both    (both sides)
+
+When you load a board using bsetup the rights are set up automatically.  On a
+cleared board both player's rights are set to 'none'. Therefore if you use a
+ready made board and move the rooks and kings around, you will need to set the
+appropriate castling rights.  Castling rights are validated when you exit
+bsetup; if the rights are invalid, you will receive an error message.
+
+  BSETUP EPPOS <file> -- You can indicate whether an "en passant" capture is
+possible, as if a pawn had just been advanced two squares.  In this case, you
+need to specify the file of the pawn (a - h).  For example, "bsetup eppos c"
+would mean that a pawn on the c-file has just been moved from c7-c5 or from
+c2-c4, depending on the "tomove" setting.  NOTE: You need to have a pawn on
+the right square and have the correct player "tomove" in order for the eppos
+command to work; otherwise, you will get an error message.
+
+  RULES -- Lastly!  You can also change the rules for the chess game.  There
+are different rules for suicide chess, of course ("help suicide_chess"); but
+there are also different castling rules for Fischer Random chess ("help fr")
+and for certain kinds of wild chess ("help wild").  In order to use the
+correct rules, you need to use bsetup to change them.
+
+  bsetup fischer   [for Fischer Random chess]
+  bsetup standard  [for normal chess -- this is the default]
+  bsetup suicide   [for suicide chess]
+  bsetup wild      [for wild chess]
+
+
+EXITING BSETUP MODE
+------------------
+
+  BSETUP DONE -- Typing "bsetup done" will exit bsetup mode and start examine
+mode.  However, the position will be validated first.  For example, the player
+who is not about to move cannot be in check, pawns cannot be on the 1st or 8th
+ranks, each side must have a king, neither side can have more than one king.
+
+  If the position is valid, you will enter examine mode next.  If the position
+is invalid, a message will be sent to you and you will remain in bsetup mode.
+
+  UNEXAMINE -- Typing "unexamine" at any point will immediate cancel both
+bsetup and examine modes.
+
+
+SPECIAL NOTES:
+
+(a) Games in bsetup mode will be listed in the "games" display.
+
+(b) Users in bsetup mode will have comments to that effect in their finger
+displays and will have the symbol "#" next to their handles in "who" displays. 
+"Tells" to users in bsetup mode will give the feedback that the user is in
+bsetup mode.
+
+(c) You cannot create a position and then play a match with an opponent. 
+However, you can examine a game with another user, use "mexamine" to allow the
+other user to move the pieces, and you can alternate moves back and forth as
+if you were playing a game.  You will be in examine mode the whole time, of
+course, and the game will not appear in "history" displays.
+
+(d) At present, you cannot use "jsave" in order to save an examined or bsetup
+game to your "journal".  This capability is being developed.
+
+(e) A standard alias for "bsetup" is "setup".
+
+(f) You can change the names of the players of the game by using the "wname"
+and "bname" commands.
+
+See also:  alias  bname  board  clrsquare  examine  finger  fr  games  handle 
+history  journal  jsave  mexamine  suicide_chess  tell  unexamine  who  wild 
+wname
+
+[Last modified -- October 30, 1997 -- Friar]

@@ -1,0 +1,32 @@
+
+adjud_info
+
+  Games should be adjudicated as a win for a player only if the game is an
+obvious (theoretical) win.  For example, (a) K+R vs. K, or (b) up a queen in
+the middlegame.  You may also grant a win due to time IF (1) the player
+requests a win on this basis and (2) the conditions (namely clocking settings)
+warrant it.
+
+  If the player seeks a draw, then the game should be dead equal in the
+endgame.
+
+  Abort adjudications are appropriate if the game has lasted only a few moves
+and neither player can speak of an advantage: i.e., 1. d4 d5, 2. c4 c6, 3. Nf3
+could be aborted.  Games should *not* be aborted if one side has an advantage. 
+For example, 1. d4 d5, 2. c4 e6, 3. c5 should *not* be adjudicated as an
+abort, especially if white wants the abort.
+
+  In rare cases, it might be necessary to adjudicate a game that is in
+progress.  These occasions can occur when one opponent is a computer that
+either (a) fails to move, in which case an abort may be granted, or (b)
+continues play in a clearly drawn position, in which case a draw may be
+granted.
+
+  To list games for which adjudications have been requested, type "ahelp
+adjrequests".
+
+See ahelp:  adjudicate
+See help:   adjudication
+
+[Last modified: September 18, 1995 -- Friar]
+

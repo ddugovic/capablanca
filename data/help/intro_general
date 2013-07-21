@@ -1,0 +1,41 @@
+
+intro_general
+
+GENERAL INFORMATION
+
+  The internet has great capabilities for connecting people from all over the
+world.  This chess server is one way for networking individuals who enjoy
+chess.  Other chess servers (at least those we know about) are listed in the
+"addresses" file.  Among other things, a chess server allows users to play
+chess matches against each other, as well as communicate with each other.  The
+chess server (computer) is programmed to send players' chess moves and
+messages to the right users.  It also keeps track of various information.
+
+  In order to use the features, you need to type various commands.  In
+general, commands do one of four things: (a) help you play a chess match (see
+intro_playing), (b) send a message to one or more users (see intro_talking),
+(c) display information to you (see intro_information), (d) modify one of your
+settings, variables or notes (see intro_settings), or (e) have the server
+perform a special function (see intro_special).
+
+  Certain commands are restricted to server administrators ("admins") and
+cannot be used by regular users.  Some features are only available for
+registered users.  Only registered users can have rated chess games, have
+games stored after adjournment, have "finger" notes, and communicate using
+"shout", "kibitz" and "message" (see "intro_talking" help file).  If you
+intend to visit the server often, you will enjoy your visit more as a
+registered user.  Registration on this server is by email; type "help
+register" to learn the procedure.
+
+  New users might want to start off with simple features and gradually learn
+about the other functions as they go along.  To get a description of a
+particular command, type "help [command]" -- without the square brackets, of
+course.  For example, "help match" will give you information about the "match"
+command.  NOTE: you do not have to type the entire command in order to use it
+or read its help file; typing the first few letters will work in most cases.
+
+See Also:  addresses  adm_info  finger  intro_basics  intro_information 
+intro_settings  intro_special  intro_talking  notes  register
+
+[Last modified: September 28, 1995 -- Friar]
+

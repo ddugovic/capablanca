@@ -1,0 +1,14 @@
+
+admin
+
+Usage: admin
+RESTRICTED TO ADMINISTRATORS.
+
+  This command toggles your admin symbol (*) on/off.  This symbol appears in
+who listings.
+
+See ahelp: 
+See help:   who
+
+[Last modified: June 22, 1995 -- Friar]
+

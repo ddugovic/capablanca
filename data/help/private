@@ -1,0 +1,16 @@
+
+private
+
+Usage: set private [n]
+
+  "Private" is one of the variables you can set.  When private is non-zero,
+games you play cannot be observed by other users.  If private is 0, other
+users will be able to observe your game -- unless your opponent has private
+non-zero.  A private game is designated in "games" and "history" displays by
+the letter "p".  Also, if a game is private, the eco category is not displayed
+in the history table.
+
+See Also:  eco  games  history  observe  variables
+
+[Last modified: October 8, 1995 -- Friar]
+

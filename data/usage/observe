@@ -1,0 +1,4 @@
+Command:  observe
+Purpose:  add (or remove) a game from your observation list (toggles ON/OFF)
+Usage:    observe game|user
+Examples: observe 34; observe GMAnand

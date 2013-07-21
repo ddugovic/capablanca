@@ -1,0 +1,10 @@
+Usage: courtesyabort
+
+  If your opponent's flag has hit zero, this is a one-sided abort
+command. It is intended to abort the game if your opponent has gone
+net-dead or has terrible lag. It is considered good sportsmanship
+to do this rather than claim a win on time when your opponent doesn't
+have a fighting chance.
+
+See Also: flag
+

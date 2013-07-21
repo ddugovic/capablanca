@@ -1,0 +1,4 @@
+  Command:  quota
+  Purpose:  sets number of seconds in the shout quota
+  Usage:    quota n
+  Examples: quota 30

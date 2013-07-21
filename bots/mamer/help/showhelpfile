@@ -1,0 +1,11 @@
+showhelpfile
+
+Alias: shf
+
+Usage: showhelpfile <optional name of help file>
+
+The showhelpfile command displays the requested help file.  If you do not
+specify a file, the "index" file(a listing of all help files) will be
+displayed.
+
+[Last modified: September 1, 1998 -- toddmf]

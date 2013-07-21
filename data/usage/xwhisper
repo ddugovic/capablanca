@@ -1,0 +1,5 @@
+Command:  xwhisper
+Purpose:  send a message to observers of a game, regardless of 'primary'
+          setting
+Usage:    xwhisper name|# message 
+Examples: xwhisper sms Nb4 works; xkibitz 34 Dead draw now.

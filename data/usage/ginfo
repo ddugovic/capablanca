@@ -1,0 +1,4 @@
+Command:  ginfo
+Purpose:  display information about a game being played or examined
+Usage:    ginfo name|number
+Examples: ginfo 23; ginfo Clovis

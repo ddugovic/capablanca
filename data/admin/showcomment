@@ -1,0 +1,13 @@
+
+showcomment 
+
+Usage: showcomment user
+RESTRICTED TO ADMINISTRATORS.
+
+  This command will display all of the comments added to the user's account.
+
+See ahelp:  addcomment
+See help:   
+
+[Last modified: June 22, 1995 -- Friar]
+

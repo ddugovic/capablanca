@@ -1,0 +1,46 @@
+
+kiblevel
+
+Usage: set kiblevel rating
+
+  When many users are observing and commenting on a game, the kibitzes and
+whispers can be so numerous that following the commentary can be difficult. 
+This problem is especially true for special events, such as World Chess
+Championship games.  There was therefore a need to cut down on the amount of
+kibitzes and whispers a person might want to receive.  A kibitz filter,
+"kiblevel", was created in answer to this problem.
+
+  What the kiblevel variable does is limit the kibitzes and whispers you will
+hear to only users with a certain ability (either a given chess server rating
+or chess master title -- GM, IM, FM, NM).  You establish the kiblevel filter
+by using the kiblevel variable and the "set" command.  Here are the
+possibilities for kiblevel settings, and their results:
+
+    SAMPLE COMMANDS       RESULT
+    ------------------    ------------------------------------------------
+    set kiblevel 9999     Hear kibitzes/whispers only from titled users
+    set kiblevel 2000     Hear kibitzes/whispers from titled users and users
+                          with ratings of 2000 or higher
+    set kiblevel 0        Hear all kibitzes/whispers
+
+In terms of a user's rating, the highest rating of blitz/standard is chosen.
+
+  If you want to filter ALL kibitzes, use the "kibitz" variable setting
+instead and type "set kibitz 0".
+
+  Because problems with kibitz/whisper volume only on certain occasions, your
+kiblevel variable is reset back to 0 each time you log in.  That way, regular
+games will not be affected by your forgetting to set kiblevel back to a more
+suitable level.
+
+
+SPECIAL NOTES:
+
+(a) Kibitzes made by server admins who are "on duty" (and have their admin
+flag shown, namely a '*' in 'who' listings) are not filtered by this command
+in order to allow for necessary communication in special circumstances.
+
+See Also:  kibitz  set  variable  whisper
+
+[Last modified: October 8, 1995 -- Friar]
+

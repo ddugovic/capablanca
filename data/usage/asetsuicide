@@ -1,0 +1,4 @@
+  Command:  asetsuicide
+  Purpose:  modify the items for a user's suicide chess finger information
+  Usage:    asetsuicide user rating wins losses draws RD
+  Examples: asetsuicide friar 1209 23 151 0 39.4

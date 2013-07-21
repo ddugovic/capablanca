@@ -1,0 +1,4 @@
+Command:  pstat
+Purpose:  show game stats between two players
+Usage:    pstat <user>; pstat <user1> <user2>
+Examples: pstat knighttour; pstat freddy knighttour

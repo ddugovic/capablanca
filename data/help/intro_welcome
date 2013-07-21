@@ -1,0 +1,49 @@
+
+intro_welcome
+
+                              W E L C O M E
+
+                                 to  the
+
+          F R E E  I N T E R N E T  C H E S S  S E R V E R  (FICS)
+
+          *** If you are new here and would like to register,  ***
+          *** type "help register" to learn about the process. ***
+
+
+  We have created several introductory files for users of this chess server. 
+The files describe different features of the server and give you some
+suggestions on how these features can help you enjoy internet chess.  Here is
+a directory of the introductory files and what topics each file covers:
+
+     Introductory File     Topics Covered
+     -----------------     -------------------------------------
+     intro_basics          Basic commands; enough to get started
+     intro_general         General information
+     intro_information     Displaying information
+     intro_moving          Making moves in a chess match
+     intro_playing         Playing in chess matches
+     intro_settings        Setting your preferences
+     intro_special         Special functions
+     intro_talking         Communicating to other users
+     register              How to register on the server
+
+  In order to read information from one of these files (or any other help
+file), simply type "help file_name" using the appropriate file_name.
+
+  If you have questions after reading a file, there are several things you can
+do.  (1) Read the help file for a command you have a question about; your
+answer might be there.  Also, help files usually suggest related files you may
+want to read ("See Also").  (2) Contact users, especially administrators of
+the server (known as "admins"); they are very helpful.  Users on channel 1 are
+also a great help (see the "chan_1" help file).  in order to learn how to
+communicate, type "help intro_talking".  Registration on this server is by
+email; type "help register" to learn the procedure.
+
+  Your suggestions about the introductory files (and help files, too) are
+welcome.  Feel free to "message helpfiles" with your comments.
+
+See Also:  adm_info  chan_1  help  intro_general  intro_talking  next 
+register
+
+[Last modified: September 22, 1995 -- Friar]

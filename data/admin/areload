@@ -1,0 +1,11 @@
+
+areload
+
+Usage: areload
+RESTRICTED TO GODS
+
+  This reloads the server code without disturbing any games that are
+  in progress or losing connections to users.
+
+  This makes it possible to add new commands or fix bugs on the fly.
+

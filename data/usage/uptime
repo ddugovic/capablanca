@@ -1,0 +1,4 @@
+Command:  uptime
+Purpose:  displays some server statistics, such as time in operation
+Usage:    uptime
+Examples: uptime

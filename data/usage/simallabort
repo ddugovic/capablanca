@@ -1,0 +1,4 @@
+Command:  simallabort
+Purpose:  used in simuls to abort all games in progress
+Usage:    simallabort
+Examples: simallabort

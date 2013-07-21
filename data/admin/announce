@@ -1,0 +1,14 @@
+
+announce
+
+Usage: announce message
+RESTRICTED TO ADMINISTRATORS.
+
+  Broadcasts your message to all logged on users.  Announcements reach all
+users and cannot be censored in any way (such as by "set shout 0").
+
+See ahelp:  annunreg
+See help:   shout
+
+[Last modified: June 22, 1995 -- Friar]
+

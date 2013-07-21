@@ -1,0 +1,16 @@
+
+anews 
+
+Usage: anews [#, all]
+RESTRICTED TO ADMINISTRATORS.
+
+  This command is used to display anews (admin news) entries.  The entries are
+numbered.  "Anews #" displays that anews item.  "Anews all" will display all
+items.  Anews items are created by the "canewsi" command with further
+information archived by the "canewsf" command.
+
+See ahelp:  canewsf  canewsi  cnewsf  cnewsi
+See help:   motd_help  news
+
+[Last modified: September 14, 1995 -- Friar]
+

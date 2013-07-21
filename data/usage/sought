@@ -1,0 +1,4 @@
+Command:  sought
+Purpose:  display ads that users have made
+Usage:    sought [all]
+Examples: sought; sought all

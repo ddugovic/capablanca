@@ -1,0 +1,6 @@
+Command:  crank
+Purpose:  displays rank (excluding computer accounts) for a player or
+          range of players
+Usage:    crank [user [b][s][l][w][B][S]] -OR- crank m-n [b][s][l][w][B][S] 
+          -OR- crank m [b][s][l][w][B][S]]           [default: bsl]
+Examples: crank; crank 50-100; crank 1800; crank s; crank cyee bs

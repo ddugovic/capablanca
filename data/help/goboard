@@ -1,0 +1,13 @@
+
+goboard
+
+Usage: goboard player
+
+    This command is used by a person holding a simul match.  Play moves to the
+board for the specified player in a simul match.  Standard aliases are "go
+player" and "goto player".
+
+See Also:  gonum  simnext  simprev  simuls
+
+[Last modified: July 7, 1995 -- Friar]
+

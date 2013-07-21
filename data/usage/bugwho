@@ -1,0 +1,4 @@
+Command:  bugwho
+Purpose:  lists current bughouse games, partnerships and available partners
+Usage:    bugwho [g|p|u]
+Examples: bugwho; bugwho g; bugwho pu

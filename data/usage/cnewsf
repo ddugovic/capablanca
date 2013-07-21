@@ -1,0 +1,4 @@
+  Command:  cnewsf
+  Purpose:  change details of a regular news item
+  Usage:    cnewsf # message
+  Examples: cnewsf 180 New interface available.  Finger "author".

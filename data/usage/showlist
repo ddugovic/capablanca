@@ -1,0 +1,5 @@
+Command:  showlist
+Purpose:  display users who are on special lists
+Usage:    showlist [list_name]
+Alt:      =[list_name]
+Examples: showlist; =; showlist computer; =computer

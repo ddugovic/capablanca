@@ -1,0 +1,5 @@
+Command:  accept
+Purpose:  agree to an offer made by a user or opponent
+Usage:    accept [1-n, all, abort, adjourn, draw, match, pause, player,
+          simul, switch, takeback]
+Examples: accept; accept 2; accept draw; accept Shane

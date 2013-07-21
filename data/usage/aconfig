@@ -1,0 +1,4 @@
+  Command:  aconfig
+  Purpose:  display or change a server config option
+  Usage:    aconfig; aconfig <variable> <value>
+  Example:  aconfig IDLE_TIMEOUT 7200

@@ -1,0 +1,13 @@
+
+tomove
+
+Usage: tomove white|black
+
+  This command is used while in "bsetup" mode in order to designate which side
+will move next when you exit from bsetup mode.  For example, "tomove white"
+means that it will be White's move next.
+
+See Also:  bsetup
+
+[Last modified: February 3, 1996 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  journal
+Purpose:  display contents of a journal
+Usage:    journal [handle]
+Examples: journal; journal DAV

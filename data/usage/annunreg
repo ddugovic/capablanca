@@ -1,0 +1,4 @@
+  Command:  annunreg
+  Purpose:  broadcast message to all unregistered users logged on
+  Usage:    annunreg message
+  Examples: annunreg Type "help register" for information on how to register.

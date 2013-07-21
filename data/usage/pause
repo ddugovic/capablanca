@@ -1,0 +1,4 @@
+Command:  pause
+Purpose:  requests (or accepts) a pause during a chess match
+Usage:    pause
+Examples: pause

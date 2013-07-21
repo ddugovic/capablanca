@@ -1,0 +1,4 @@
+  Command:  asetemail
+  Purpose:  change the email address of a user
+  Usage:    asetemail user [address]
+  Examples: asetemail mlong; asetemail mlong nick@unix.univ.edu

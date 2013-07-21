@@ -1,0 +1,14 @@
+
+simallabort
+
+Usage: simallabort
+
+  Used by a player engaged in simultaneous chess matches.  Aborts all boards
+still in progress.
+
+  The standard alias for simallabort is "saa".
+
+See Also:  simabort  simadjourn  simalladjourn  simmatch  simpass  simuls
+
+[Last modified: June 16, 1995 -- Friar]
+

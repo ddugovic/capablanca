@@ -1,0 +1,4 @@
+Command:  hbest
+Purpose:  displays 20 highest-rated human players by chess category
+Usage:    hbest [b|s|l|w|B|S]     [default: bsl]
+Examples: hbest; hbest s

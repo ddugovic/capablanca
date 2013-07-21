@@ -1,0 +1,4 @@
+Command:  simmatch
+Purpose:  used to request a game in a simul event
+Usage:    simmatch player
+Examples: simmatch connex

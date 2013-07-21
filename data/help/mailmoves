@@ -1,0 +1,15 @@
+
+mailmoves
+
+Usage: mailmoves
+
+  Mails to you at to your email address the moves to the game you are playing
+or examining.
+
+NOTE:  This command concerns games in progress, not games that have been
+completed.  For completed games, use "mailstored".
+
+See Also:  mailstored  smoves
+
+[Last modified:  September 14, 1995 -- Friar]
+

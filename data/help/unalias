@@ -1,0 +1,12 @@
+
+unalias
+
+Usage: unalias word
+
+  Removes your personal alias for 'word'.  This alias will no longer be in
+use.  This command will not, however, remove default aliases.
+
+See Also:  alias 
+
+[Last modified: June 20, 1995 -- Friar]
+

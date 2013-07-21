@@ -1,0 +1,17 @@
+
+whisper
+
+Usage: whisper message 
+LIMITED TO REGISTERED USERS
+
+  Sends your message to all the observers of a game but NOT to the players. 
+For this reason, using whisper (rather than kibitz) is a more polite way of
+discussing a game with other observers without having your message heard by
+the two players.  (Only users with a 'kiblevel' variable setting might not
+receive your message.)  You must be observing or playing a game in order to
+use this command.  The standard alias for "whisper" is '#'.
+
+See Also:  alias  censor  kibitz  kiblevel  variable
+
+[Last modified: December 17, 1995 -- Friar]
+

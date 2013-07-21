@@ -1,0 +1,38 @@
+finger
+
+Alias: fi
+
+Usage: finger <optional handle>
+
+Use the "finger" command to find out a player's mamer statistics.  If you do
+not specify the handle, you will see your own statistics.  Here is a sample 
+"finger":
+
+:toddmf's Stats:
+:
+:Name               Tnys   W    L   D  1st 2nd 3rd Chaos Rating
+:----------------- ----- ---- ---- --- --- --- --- ----- ------
+:toddmf              751 1894  767 133 355 219   0     0   1.41
+:
+:Manager Level:  75
+
+"Name" is the handle of the player you are fingering.
+"Tnys" is the number of tourneys he/she has played in.
+"W" is the number of games he/she has won in tourneys.
+"L" is the number of games he/she has lost in tourneys.
+"D" is the number of games he/she has drawn in tourneys.
+"1st" is the number times he/she has finished in or tied for first place.
+"2nd" is the number times he/she has finished in or tied for second place.
+"3rd" is the number times he/she has finished in or tied for first place.
+"Chaos" is the number of Chaos Points he/she has.
+"Rating" is the player's mamer rating.
+"Manager Level" is only displayed for mamer managers.
+
+
+NOTE: "3rd"s have been recorded for a much shorter time than "1st"s and 
+      "2nd"s.  Thus, many players have finished in 3rd more than the amount 
+      of times indicated.
+
+See also: chaos, manager_level, mamer_rating
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,6 @@
+Command:  hrank
+Purpose:  displays rank (excluding computer accounts) for a player or
+          range of players
+Usage:    hrank [user [b][s][l][w][B][S]] -OR- hrank m-n [b][s][l][w][B][S] 
+          -OR- hrank m [b][s][l][w][B][S]]           [default: bsl]
+Examples: hrank; hrank 50-100; hrank 1800; hrank s; hrank cyee bs

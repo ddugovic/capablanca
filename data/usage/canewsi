@@ -1,0 +1,4 @@
+  Command:  canewsi
+  Purpose:  creates an anews item
+  Usage:    canewsi headline
+  Examples: canewsi New registration procedures!

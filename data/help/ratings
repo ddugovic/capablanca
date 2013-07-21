@@ -1,0 +1,54 @@
+
+ratings
+
+  Chess ratings serve two purposes: (a) they tell you your relative ability,
+and (b) are useful means for identifying and playing opponents of roughly your
+same ability.
+
+  This server utilizes the Glicko rating system developed by Mark E. Glickman
+(with assistance and corrections by Dmitry Dakhnovsky and server
+implementation by Vek and Hawk).  The full explanation of this system is given
+in the "glicko" help file.
+
+  In general, your rating will be adjusted by several factors: (a) the result
+of your game (win, loss, draw), (b) your opponent's rating, (c) the stability
+of your rating, and (d) the stability of your opponent's rating.  If you want
+to determine how your rating might change after a match with a given player,
+use the "assess" command.
+
+  At present, there are separate ratings for three kinds of chess: Standard,
+Blitz and Wild.  Your current rating is available on your "finger" file.  Once
+you have an established rating (20 or more games) in a given type, your
+highest established rating to date will also be displayed.  Players with
+established ratings will also have their ratings listed on several ranking
+lists (see the "best", "hbest", "rank" and "hrank" help files).
+
+  By default, the "who" command lists logged on users in order of their
+ratings.  This way, you can identify and match players of certain ratings. 
+You can also use ratings in your "formula" for filtering out match requests
+from other players.  Ratings can also be used to filter out kibitzes and
+whispers by the "kiblevel" variable.
+
+
+TRANSFERRING RATINGS FROM ANOTHER CHESS SERVER
+
+  It is possible to transfer your rating from another chess server to this
+server.  Contact an admin concerning which admin should process your request
+since different admins are on different chess servers.  In general, you will
+need to email your request to that admin.  Please use the subject line
+"Request for ratings transfer" and in the body of the email tell the admin
+your handle(s) on both chess servers.  Also be sure to "message" the admin on
+the other server so the admin can verify that you are the person you claim to
+be.
+
+SPECIAL NOTES:
+
+(a)  In the case of adjourned games that are resumed, ratings are adjusted by
+the users' ratings at the time the match is resumed rather than the ratings
+they had when the match was started.
+
+See Also:  assess  best  finger  formula  glicko  hbest  hrank  kiblevel 
+message  rank  who
+
+[Last modified: October 8, 1995 -- Friar]
+

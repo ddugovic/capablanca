@@ -1,0 +1,4 @@
+Command:  open
+Purpose:  toggles your open variable on/off (1/0)
+Usage:    open
+Examples: open

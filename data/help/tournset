@@ -1,0 +1,14 @@
+
+tournset
+
+Usage:  tournset user 0|1
+USE RESTRICTED TO TD PROGRAMS
+
+  The tournset command is used by Tournament Director (TD) programs that are 
+running tournaments.  It is used to set your tourney variable to ON (1) when 
+you have joined a tournament and to OFF (0) when the tournament is over.
+
+See also:  v_tourney
+
+[Last modified: February 10, 1997 -- Friar]
+

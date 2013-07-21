@@ -1,0 +1,3 @@
+Command:  iset
+Purpose:  set a interface variable
+Usage:    iset variable_name [value]

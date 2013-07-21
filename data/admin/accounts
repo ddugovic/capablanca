@@ -1,0 +1,19 @@
+
+accounts
+
+These accounts were created in order to aid admins with their work.  They
+shouldn't be used for any other purpose.  Some of these accounts have admin
+status.
+
+      adjudicate - an account for adjudication requests
+             Bug - an account for bug reports
+          filter - an account to log filtered sites/reasons for filtering
+      Suggestion - an account for suggestions
+        vacation - an account for admin holiday notification
+       helpfiles - an account for help file updating requests
+
+If you need to use an account but don't know the password, ask an admin who
+does.
+
+[Last modified: December 25, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  simgames
+Purpose:  display the number of simul games you or another user are in
+Usage:    simgames [player]
+Examples: simgames; simgames river

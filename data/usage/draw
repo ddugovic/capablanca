@@ -1,0 +1,4 @@
+Command:  draw
+Purpose:  requests (or accepts) a draw offer; it may include a move 
+Usage:    draw [move]
+Examples: draw; draw Kf7

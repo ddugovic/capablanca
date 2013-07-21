@@ -1,0 +1,4 @@
+Command:  pstat
+Purpose:  display previous results between two users
+Usage:    pstat [user1 [user2]]
+Examples: pstat; pstat Sparky; pstat DAV Thanatos;

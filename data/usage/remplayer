@@ -1,0 +1,4 @@
+  Command:  remplayer
+  Purpose:  remove an account completely
+  Usage:    remplayer name
+  Examples: remplayer ByeByeUser

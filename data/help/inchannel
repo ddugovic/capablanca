@@ -1,0 +1,14 @@
+
+inchannel
+ 
+Usage: inchannel [0-99]
+
+  Lists all users currently listening to the given channel.  If the
+channel number is omitted, then all users listening to all channels
+are displayed.  With this listing, you can tell which users will hear
+something you tell a given channel.
+
+See Also:  channel  tell
+
+[Last modified: June 11, 1995 -- Friar]
+
