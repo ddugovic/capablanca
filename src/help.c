@@ -43,7 +43,6 @@ static int help_page(int p, const char *dir, const char *cmd)
 	count = search_directory(dir, cmd, filenames, 1000);
 	if (count == 1) {
 		psend_file(p, dir, filenames[0]);
-		FREE(filenames[0]);
 		return COM_OK;
 	}
 	

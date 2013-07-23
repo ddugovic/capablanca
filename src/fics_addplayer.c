@@ -22,7 +22,7 @@
 
 static void usage(char *progname)
 {
-  d_printf( "Usage: %s [-l] [-n] UserName FullName EmailAddress\n", progname);
+  d_printf( "Usage: %s [-a level] [-l] [-n] UserName \"Full Name\" EmailAddress\n", progname);
   exit(1);
 }
 
@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
   int admin, i, ch;
   int p;
   char password[PASSLEN + 1];
-  char salt[3];
   char *text;
   struct player *pp;
 
@@ -57,9 +56,11 @@ int main(int argc, char *argv[])
       }
   }
 
-  funame = strdup(argv[argc-3]);
-  fname = strdup(argv[argc-2]);
-  email = strdup(argv[argc-1]);
+  if (argc > 3) {
+    funame = strdup(argv[argc-3]);
+    fname = strdup(argv[argc-2]);
+    email = strdup(argv[argc-1]);
+  }
   if (!funame || !fname || !email)
     usage(argv[0]);
 
@@ -97,10 +98,7 @@ int main(int argc, char *argv[])
     password[i] = 'a' + random() % 26;
   }
   password[i] = '\0';
-  salt[0] = 'a' + random() % 26;
-  salt[1] = 'a' + random() % 26;
-  salt[2] = '\0';
-  pp->passwd = strdup(chessd_crypt(password,salt));
+  pp->passwd = strdup(chessd_crypt(password, NULL));
   PFlagON(p, PFLAG_REG);
 /*  pp->network_player = !local; */
   PFlagON(p, PFLAG_RATED);

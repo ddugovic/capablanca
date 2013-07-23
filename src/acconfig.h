@@ -44,15 +44,8 @@
     fs_data, declared in sys/mount.h. (Ultrix)  */
 #undef HAVE_STATFS_FILLING_STRUCT_FS_DATA
 
-/*  Define, if you have crypt() and it is declared in either
-    crypt.h or unistd.h.  */
-#undef HAVE_CRYPT_DECLARED
-
 /*  Define this to be tv_usec, if your struct rusage has
     a member ru_utime.tv_usec.
     Define this to be tv_nsec, if your struct rusage has
     a member ru_utime.tv_nsec.  */
 #undef TV_USEC
-
-#undef HAVE_DLOPEN
-

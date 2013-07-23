@@ -576,7 +576,6 @@ static int process_password(int p, char *password)
   struct player *pp = &player_globals.parray[p];
   static int Current_ad;
   int p1;
-  char salt[3];
   int fd;
   struct in_addr fromHost;
   int messnum;
@@ -586,19 +585,14 @@ static int process_password(int p, char *password)
   turn_echo_on(pp->socket);
 
   if (pp->passwd && CheckPFlag(p, PFLAG_REG)) {
-    salt[0] = pp->passwd[3];
-    salt[1] = pp->passwd[4];
-    salt[2] = '\0';
-    if (strcmp(chessd_crypt(password,salt), pp->passwd)) {
+    if (strcmp(chessd_crypt(password,pp->passwd), pp->passwd)) {
       fd = pp->socket;
       fromHost = pp->thisHost;
       if (*password) {
 	pprintf(p, "\n\n**** Invalid password! ****\n\n");
-        d_printf("FICS (process_password): Bad password for %s [%s] [%s] [%s]\n",
-		pp->login, 
-		password, 
-		salt,
-		pp->passwd);
+        d_printf("FICS (process_password): Bad password for %s [%s]\n",
+		pp->login,
+		password);
       }
       player_clear(p);
       pp->logon_time = pp->last_command_time = time(0);
