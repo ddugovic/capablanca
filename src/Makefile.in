@@ -51,22 +51,20 @@ GEN_SRCS=adminproc.c algcheck.c board.c command.c talkproc.c comproc.c \
 	formula.c gamedb.c gamedb_old.c gameproc.c config.c \
 	lists.c malloc.c reload.c follow.c help.c news.c \
 	movecheck.c multicol.c network.c playerdb.c playerdb_old.c ratings.c \
-	utils.c variable.c vers.c eco.c matchproc.c \
+	utils.c variable.c eco.c matchproc.c \
 	obsproc.c pending.c gics.c setup.c shutdown.c seekproc.c \
 	parsers/parser.c parsers/genparser.c iset.c \
-	crypt.c crypt-md5.c crypt-md5c.c crypt-misc.c timeseal.c
+	crypt.c timeseal.c
 
 SRCS=$(GEN_SRCS) fics_addplayer.c ficsmain.c makerank.c
 
 OBJS=$(GEN_SRCS:.c=.o)
 
-VERSION=./newvers.sh
-
 ALL= chessd chessd.so chessd_addplayer makerank
 
 all: ${ALL}
 
-.autoheaders: proto.h parsers/parse_info.h
+.autoheaders: proto.h vers.h parsers/parse_info.h
 	touch .autoheaders
 
 chessd: .autoheaders ficsmain.o
@@ -81,20 +79,20 @@ chessd_addplayer: .autoheaders fics_addplayer.o $(OBJS)
 makerank: .autoheaders makerank.o 
 	$(CC) makerank.o $(OBJS) -o makerank $(LIBS)
 
-vers.c:
-	${VERSION}
-
 depend:
 	makedepend -- ${CFLAGS} ${MAKEDEPMORECFLAGS} -- ${SRCS}
 
 proto.h: $(GEN_SRCS)
 	awk -f mkproto.awk $(GEN_SRCS) > proto.h
 
+vers.h:
+	./vers.sh > vers.h
+
 parsers/parse_info.h: $(shell /bin/ls *.h | sed s/proto.h//g)
 	parsers/genstruct.pl -o parsers/parse_info.h $(CC) -E $(CFLAGS) includes.h
 
 clean: 
-	rm -f *.o $(OBJS) ${ALL} *~ vers.c proto.h parsers/parse_info.h .autoheaders
+	rm -f *.o $(OBJS) ${ALL} *~ proto.h vers.h parsers/parse_info.h .autoheaders
 
 distclean: clean
 	rm -rf Makefile autoconfig.h config.status config.cache config.log

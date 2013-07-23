@@ -1,40 +1,53 @@
 /*
- * Copyright (c) 1999
- *      Mark Murray.  All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY MARK MURRAY AND CONTRIBUTORS ``AS IS'' AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED.  IN NO EVENT SHALL MARK MURRAY OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
- * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- *
- * $FreeBSD: src/lib/libcrypt/crypt.c,v 1.14 2000/01/07 06:33:54 kris Exp $
- *
+   Copyright (C) Daniel Dugovic 2013.
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+
+/*
+  crypt.c is loosely based on an implementation (C) Mark Murray 1999.
+  It wrappers the standard crypt() function and does some sanity-checking
+  on the salt value.
  */
 
-#include "includes.h"
+#define _XOPEN_SOURCE 700
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+char *gen_salt(char *salt, const int len)
+{
+	static const char alphanum[] =
+		"0123456789"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"abcdefghijklmnopqrstuvwxyz";
+	int i;
+	for (i = 0; i < len; ++i) {
+		salt[i] = alphanum[random() % (sizeof(alphanum) - 1)];
+	}
+	salt[len] = '\0';
+	return salt;
+}
 
 char *chessd_crypt(const char *passwd, const char *salt)
 {
-	if (!strncmp(salt, "$1$", 3)) {
-		salt += 3;
-		salt = salt + strlen(salt) - strcspn(salt, "$");
-		return crypt_md5(passwd, salt);
+	if (salt != NULL) {
+		return crypt(passwd, salt);
 	}
-	return crypt_md5(passwd, salt);
+	// Creates salt for SHA-based encryption.
+	char sha_salt[20] = "$6$";
+	gen_salt(sha_salt+3, 16);
+	return crypt(passwd, sha_salt);
 }

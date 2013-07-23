@@ -46,18 +46,11 @@
     fs_data, declared in sys/mount.h. (Ultrix)  */
 #undef HAVE_STATFS_FILLING_STRUCT_FS_DATA
 
-/*  Define, if you have crypt() and it is declared in either
-    crypt.h or unistd.h.  */
-#undef HAVE_CRYPT_DECLARED
-
 /*  Define this to be tv_usec, if your struct rusage has
     a member ru_utime.tv_usec.
     Define this to be tv_nsec, if your struct rusage has
     a member ru_utime.tv_nsec.  */
 #undef TV_USEC
-
-#undef HAVE_DLOPEN
-
 
 /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
    */
@@ -80,6 +73,9 @@
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `crypt' library (-lcrypt). */
+#undef HAVE_LIBCRYPT
 
 /* Define to 1 if you have the `dl' library (-ldl). */
 #undef HAVE_LIBDL
@@ -145,9 +141,6 @@
 /* Define to 1 if you have the <sys/ioctl.h> header file. */
 #undef HAVE_SYS_IOCTL_H
 
-/* Define to 1 if you have the <sys/md5.h> header file. */
-#undef HAVE_SYS_MD5_H
-
 /* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
    */
 #undef HAVE_SYS_NDIR_H
@@ -163,6 +156,9 @@
 
 /* Define to 1 if you have <sys/wait.h> that is POSIX.1 compatible. */
 #undef HAVE_SYS_WAIT_H
+
+/* Define to 1 if you have the `time' function. */
+#undef HAVE_TIME
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H

@@ -1,0 +1,91 @@
+#!/usr/bin/expect -f
+# simple test script for lasker
+# Andrew Tridgell <lasker@tridgell.net>
+# NOTE: USERNAME and PASSWORD are case-sensitive
+
+if {$argc < 3} {
+    send_user "Usage: test.exp HOSTNAME USERNAME PASSWORD\n"
+    exit
+}
+
+set host [lrange $argv 0 0]
+set user [lrange $argv 1 1]
+set pass [lrange $argv 2 2]
+
+set timeout -1
+match_max 100000
+spawn tseal $host 5000
+expect "\rlogin: "
+send "$user\r"
+expect "password: "
+send "$pass\r"
+expect "fics% "
+
+send "who\r"
+expect "$user"
+expect "players displayed"
+expect "indicates system administrator."
+expect "fics% "
+
+send "who a\r"
+expect "$user"
+expect "players displayed"
+expect "indicates system administrator."
+expect "fics% "
+
+send "who z\r"
+expect "Command:  who"
+expect "See 'help who' for a complete description"
+expect "fics% "
+
+send "zzdf\r"
+expect "zzdf: Command not found."
+expect "fics% "
+
+send "help f\r"
+expect "'f' is a global alias for 'finger'"
+expect "fics% "
+
+send "help c\r"
+expect -- "-- Matches: "
+expect "help topics --"
+expect "clearmessages"
+expect "fics% "
+
+send -- "-notify admin\r"
+send "+notify admin\r"
+expect "added to your notify list."
+expect "fics% "
+
+send "+notify admin\r"
+expect "is already on your notify list."
+expect "fics% "
+
+send "=notify\r"
+expect -- "-- notify list: 1 names --"
+expect "fics% "
+
+send "toggle notify admin\r"
+expect "removed from your notify list."
+expect "fics% "
+
+send "set style 12\r"
+send "match $user\r"
+expect "<12> rnbqkbnr pppppppp -------- -------- -------- -------- PPPPPPPP RNBQKBNR"
+expect "fics% "
+
+send "e4\r"
+expect "<12> rnbqkbnr pppppppp -------- -------- ----P--- -------- PPPP-PPP RNBQKBNR"
+expect "fics% "
+
+send "e5\r"
+expect "<12> rnbqkbnr pppp-ppp -------- ----p--- ----P--- -------- PPPP-PPP RNBQKBNR"
+expect "fics% "
+
+send "unexamine\r"
+expect "You are no longer examining game"
+expect "fics% "
+
+
+send -- "quit\r"
+expect "Thank you for using a"

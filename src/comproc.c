@@ -327,27 +327,20 @@ int com_password(int p, param_list param)
 	struct player *pp = &player_globals.parray[p];
 	char *oldpassword = param[0].val.word;
 	char *newpassword = param[1].val.word;
-	char salt[3];
 
 	if (!CheckPFlag(p, PFLAG_REG)) {
 		pprintf(p, "Setting a password is only for registered players.\n");
 		return COM_OK;
 	}
 	if (pp->passwd) {
-		salt[0] = pp->passwd[3];
-		salt[1] = pp->passwd[4];
-		salt[2] = '\0';
-		if (strcmp(chessd_crypt(oldpassword,salt), pp->passwd)) {
+		if (strcmp(chessd_crypt(oldpassword,pp->passwd), pp->passwd)) {
 			pprintf(p, "Incorrect password, password not changed!\n");
 			return COM_OK;
 		}
 		free(pp->passwd);
 		pp->passwd = NULL;
 	}
-	salt[0] = 'a' + random() % 26;
-	salt[1] = 'a' + random() % 26;
-	salt[2] = '\0';
-	pp->passwd = strdup(chessd_crypt(newpassword,salt));
+	pp->passwd = strdup(chessd_crypt(newpassword, NULL));
 	pprintf(p, "Password changed to \"%s\".\n", newpassword);
 	return COM_OK;
 }

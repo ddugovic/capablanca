@@ -341,7 +341,7 @@ int com_addplayer(int p, param_list param)
   char *newemail = param[1].val.word;
   char password[PASSLEN + 1];
   char newplayerlower[MAX_LOGIN_NAME];
-  char salt[3];
+  struct player *pp1;
   int p1, lookup;
   int i;
 
@@ -366,25 +366,23 @@ int com_addplayer(int p, param_list param)
    player_remove(p1); 
    return COM_OK;
   }
-  player_globals.parray[p1].name = strdup(newplayer);
-  player_globals.parray[p1].login = strdup(newplayerlower);
-  player_globals.parray[p1].fullName = strdup(newname);
-  player_globals.parray[p1].emailAddress = strdup(newemail);
+  pp1 = &player_globals.parray[p1];
+  pp1->name = strdup(newplayer);
+  pp1->login = strdup(newplayerlower);
+  pp1->fullName = strdup(newname);
+  pp1->emailAddress = strdup(newemail);
   if (strcmp(newemail, "none")) {
     for (i = 0; i < PASSLEN; i++) {
       password[i] = 'a' + random() % 26;
     }
     password[i] = '\0';
-    salt[0] = 'a' + random() % 26;
-    salt[1] = 'a' + random() % 26;
-    salt[2] = '\0';
-    player_globals.parray[p1].passwd = strdup(chessd_crypt(password, salt));
+    pp1->passwd = strdup(chessd_crypt(password, NULL));
   } else {
     password[0] = '\0';
-    player_globals.parray[p1].passwd = strdup(password);
+    pp1->passwd = strdup(password);
   }
   PFlagON(p1, PFLAG_REG);
-/*  player_globals.parray[p1].network_player = 0; */
+/*  pp1->network_player = 0; */
   PFlagON(p1, PFLAG_RATED);
   player_add_comment(p, p1, "Player added by addplayer.");
   player_save(p1);
@@ -551,9 +549,9 @@ int com_annunreg(int p, param_list param)
 int com_asetpasswd(int p, param_list param)
 {
   struct player *pp = &player_globals.parray[p];
+  struct player *pp1;
   int p1, connected;
   char subject[400], text[10100];
-  char salt[3];
 
   if (!FindPlayer(p, param[0].val.word, &p1, &connected))
     return COM_OK;
@@ -568,22 +566,20 @@ int com_asetpasswd(int p, param_list param)
     pprintf(p, "You cannot set the password of an unregistered player!\n");
     return COM_OK;
   }
-  if (player_globals.parray[p1].passwd)
-    free(player_globals.parray[p1].passwd);
+  pp1 = &player_globals.parray[p1];
+  if (pp1->passwd)
+    free(pp1->passwd);
   if (param[1].val.word[0] == '*') {
-    player_globals.parray[p1].passwd = strdup(param[1].val.word);
-    pprintf(p, "Account %s locked!\n", player_globals.parray[p1].name);
+    pp1->passwd = strdup(param[1].val.word);
+    pprintf(p, "Account %s locked!\n", pp1->name);
     sprintf(text, "Password of %s is now useless.  Your account at our"
-                  " FICS has been locked.\n", player_globals.parray[p1].name);
+                  " FICS has been locked.\n", pp1->name);
       pprintf(p, "Please leave a comment to explain why %s's account"
-                 " was locked.\n", player_globals.parray[p1].name);
-      pcommand(p, "addcomment %s Account locked.\n", player_globals.parray[p1].name);
+                 " was locked.\n", pp1->name);
+      pcommand(p, "addcomment %s Account locked.\n", pp1->name);
   } else {
-    salt[0] = 'a' + random() % 26;
-    salt[1] = 'a' + random() % 26;
-    salt[2] = '\0';
-    player_globals.parray[p1].passwd = strdup(chessd_crypt(param[1].val.word, salt));
-    sprintf(text, "Password of %s changed to \"%s\".\n", player_globals.parray[p1].name, param[1].val.word);
+    pp1->passwd = strdup(chessd_crypt(param[1].val.word, NULL));
+    sprintf(text, "Password of %s changed to \"%s\".\n", pp1->name, param[1].val.word);
     pprintf(p, "%s", text);
   }
   if (param[1].val.word[0] == '*') {
@@ -595,7 +591,7 @@ int com_asetpasswd(int p, param_list param)
     if (connected)
       pprintf_prompt(p1, "\n%s\n", subject);
   }
-  mail_string_to_address(player_globals.parray[p1].emailAddress, subject, text);
+  mail_string_to_address(pp1->emailAddress, subject, text);
   player_save(p1);
   if (!connected)
     player_remove(p1);
