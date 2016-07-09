@@ -23,17 +23,17 @@
 
 typedef struct {
   char ECO[4];
-  char FENpos[74];
+  char FENpos[74]; _NULLTERM
 } ECO_entry;
 
 typedef struct {
   char NIC[6];
-  char FENpos[74];
+  char FENpos[74]; _NULLTERM
 } NIC_entry;
 
 typedef struct {
   char LONG[100]; // [HGM] used to be 80, which gave a buffer overrun on a 95-char long line in long9999.idx
-  char FENpos[74];
+  char FENpos[74]; _NULLTERM
 } LONG_entry;
 
 static ECO_entry *ECO_book[1096];
@@ -123,7 +123,7 @@ static void ECO_init()
   FILE *fp;
   char tmp[1024];
   char *ptmp= tmp;
-  char FENpos[73], ECO[4], onMove[2];
+  char FENpos[74], ECO[4], onMove[2];
   int i=0;
 
   fp= fopen_s(BOOK_DIR "/eco999.idx", "r");
@@ -164,7 +164,7 @@ static void NIC_init()
   FILE *fp;
   char tmp[1024];
   char *ptmp= tmp;
-  char FENpos[73], NIC[6], onMove[2];  
+  char FENpos[74], NIC[6], onMove[2];
   int i=0;
 
   fp= fopen_p("%s/nic999.idx", "r", BOOK_DIR);
@@ -201,7 +201,7 @@ static void LONG_init()
   FILE *fp;
   char tmp[1024];
   char *ptmp= tmp;
-  char FENpos[74], LONG[256], onMove[2];  
+  char FENpos[74], LONG[256], onMove[2];
   int i=0;
 
   fp= fopen_p("%s/long999.idx", "r", BOOK_DIR);

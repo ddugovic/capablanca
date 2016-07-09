@@ -217,7 +217,7 @@ GENSTRUCT struct move_t {
 	int doublePawn; /* Only used for board display */
 	char moveString[8]; _NULLTERM
 	char algString[8]; _NULLTERM
-	unsigned char FENpos[74]; _NULLTERM
+	char FENpos[74]; _NULLTERM
 	unsigned atTime;
 	unsigned tookTime;
 
