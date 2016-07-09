@@ -32,7 +32,7 @@ typedef struct {
 } NIC_entry;
 
 typedef struct {
-  char LONG[80];
+  char LONG[100]; // [HGM] used to be 80, which gave a buffer overrun on a 95-char long line in long9999.idx
   char FENpos[74];
 } LONG_entry;
 

@@ -29,6 +29,7 @@
   d - integer
   p - optional integer
   i - word or integer
+  j - word or signed integer
   n - optional word or integer
   s - string to end
   t - optional string to end
@@ -136,7 +137,7 @@ static struct command_type command_list[] = {
   {"simpass",		"",	com_simpass,	ADMIN_USER },
   {"simprev",           "",     com_simprev,    ADMIN_USER },
   {"sought",		"p",	com_sought,	ADMIN_USER },
-  {"smoves",		"wi",	com_smoves,	ADMIN_USER },
+  {"smoves",		"wj",	com_smoves,	ADMIN_USER },
   {"sposition",		"ww",	com_sposition,	ADMIN_USER },
   {"statistics",	"",	com_statistics,	ADMIN_USER },
   {"stored",		"o",	com_stored,	ADMIN_USER },

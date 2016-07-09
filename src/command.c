@@ -204,6 +204,7 @@ static int get_parameters(int command, char *parameters, param_list params)
       break;
 
     case 'i':
+    case 'j':
     case 'n':			/* optional or required word or integer */
       parameters = eatwhite(parameters);
       if (!*parameters)
@@ -214,7 +215,7 @@ static int get_parameters(int command, char *parameters, param_list params)
       } else {
 	(params)[i].type = TYPE_INT;
       }
-      if (ispunct(*parameters)) {
+      if (ispunct(*parameters) && (c != 'j' || (params)[i].type != TYPE_INT)) {
 	punc[0] = *parameters;
 	(params)[i].val.word = punc;
 	(params)[i].type = TYPE_WORD;

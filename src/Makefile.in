@@ -37,12 +37,12 @@ DYNEXP=-rdynamic
 ##
 ##  Binaries and Options to use
 ##
-CFLAGS += $(PICFLAG) -Wall @CFLAGS@ -DTDB_STANDALONE ${CHESSD_CFLAGS} -I${srcdir} -I${srcdir}/tdb
+CFLAGS += $(PICFLAG) -m32 -Wall @CFLAGS@ -DTDB_STANDALONE ${CHESSD_CFLAGS} -I${srcdir} -I${srcdir}/tdb
 
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 LIBS = @LIBS@ -lm 
-LNFLAGS = @LDFLAGS@ ${LIBS}
+LNFLAGS = @LDFLAGS@ -m32 ${LIBS}
 CHESSDDIR = ${PREFIX}/chessd
 
 TDB_SRC = tdb/tdb.c tdb/spinlock.c
@@ -73,13 +73,13 @@ chessd: .autoheaders ficsmain.o
 	$(CC) $(DYNEXP) $(CFLAGS) $(LNFLAGS) -o chessd ficsmain.o $(LIBS)
 
 chessd.so: .autoheaders $(OBJS)
-	$(CC) -shared -o chessd.so $(OBJS)
+	$(CC) -m32 -shared -o chessd.so $(OBJS)
 
 chessd_addplayer: .autoheaders fics_addplayer.o $(OBJS) 
-	$(CC) fics_addplayer.o $(CFLAGS) $(OBJS) $(LNFLAGS) -o chessd_addplayer $(LIBS)
+	$(CC) -m32 fics_addplayer.o $(CFLAGS) $(OBJS) $(LNFLAGS) -o chessd_addplayer $(LIBS)
 
 makerank: .autoheaders makerank.o 
-	$(CC) makerank.o $(OBJS) -o makerank $(LIBS)
+	$(CC) -m32 makerank.o $(OBJS) -o makerank $(LIBS)
 
 vers.c:
 	${VERSION}

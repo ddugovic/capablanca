@@ -924,21 +924,22 @@ static int CheckRepetition (int p, int g)
   char *pos1 = GetFENpos (g, numPly - 1); // current position
   char *pos2 = "";
   char *pos;
+  int  turn = numPly - 1;
 
   if (numPly < 8)  /* can't have three repeats any quicker. */
     return 0;
 
   if((game_globals.garray[g].white == p) != (numPly&1)) { // claimer has the move
     pos2 = pos1;
-    pos1 = GetFENpos (g, numPly - 2); // also check position before opponent's move (which could have pre-empted him)
+    pos1 = GetFENpos (g, turn = numPly - 2); // also check position before opponent's move (which could have pre-empted him)
   } // pos1 is now always a position where the opponent has the move
 
-  for (move_num = numPly - 2; // [HGM] FEN stored in moveList[numHalfMoves-1] !
+  for (move_num = numPly - 3; // [HGM] FEN stored in moveList[numHalfMoves-1] !
        move_num >= game_globals.garray[g].game_state.lastIrreversable - 1; move_num--) {
     pos = GetFENpos (g, move_num);
-    if (strlen(pos1) == strlen(pos) && !strcmp(pos1, pos))
+    if (!(turn - move_num & 1) && strlen(pos1) == strlen(pos) && !strcmp(pos1, pos))
       flag1++ == 2 && (s1 = move_num);
-    if (strlen(pos2) == strlen(pos) && !strcmp(pos2, pos))
+    if ( (turn - move_num & 1) && strlen(pos2) == strlen(pos) && !strcmp(pos2, pos))
       flag2++ == 2 && (s2 = move_num); // remember start of last two loops
 printf("%2d. %d-%d '%s' '%s' '%s'\n", move_num, flag1, flag2, pos1,pos2,pos);
   }

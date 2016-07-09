@@ -770,12 +770,13 @@ static char *FindHistory(int p, int p1, int game,char* type)
 {
   FILE *fpHist;
   static char fileName[MAX_FILENAME_SIZE];
-  int index;
+  int index, last = -1;
   long when;
   char typestr[4];
 
   sprintf(fileName, "%s/player_data/%c/%s.%s", STATS_DIR,
 	  player_globals.parray[p1].login[0], player_globals.parray[p1].login, STATS_GAMES);
+ again:
   fpHist = fopen_s(fileName, "r");
   if (fpHist == NULL) {
     pprintf(p, "No games in history for %s.\n", player_globals.parray[p1].name);
@@ -784,7 +785,17 @@ static char *FindHistory(int p, int p1, int game,char* type)
   do {
     fscanf(fpHist, "%d %*c %*d %*c %*d %*s %s %*d %*d %*d %*d %*s %*s %ld",
 	   &index, typestr, &when);
+    last = index; // [HGM] remember most recent game
   } while (!feof(fpHist) && index != game);
+
+  if(game < 0) { // [HGM] requested game relative to end
+    game += last + 1; // calculate absolute game number
+    if(game < 0) game += 100; // wrap
+    if(game >= 0) { // try again with valid absolute number
+      fclose(fpHist);
+      goto again;
+    }
+  }
 
   if (feof(fpHist)) {
     pprintf(p, "There is no history game %d for %s.\n", game, player_globals.parray[p1].name);
@@ -1075,6 +1086,9 @@ static void stored_mail_moves(int p, int mail, param_list param)
 
   if (!FindPlayer(p, param[0].val.word, &wp, &wconnected))
     return;
+
+  if (param[1].type == TYPE_WORD && sscanf(param[1].val.word, "%d", &(param[1].val.integer)) == 1 && param[1].val.integer < 0)
+    param[1].type = TYPE_INT; /* [HGM] allow negative number */
 
   if (param[1].type == TYPE_INT) { /* look for a game from history */
     fileName = FindHistory(p, wp, param[1].val.integer,&type);

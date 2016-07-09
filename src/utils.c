@@ -87,16 +87,21 @@ int mail_string_to_user(int p, char *subj, char *str)
 /* Process a command for a user */
 int pcommand(int p, char *comstr,...)
 {
+	static int recurse = 0;
 	struct player *pp = &player_globals.parray[p];
 	char *tmp;
 	int retval;
 	int current_socket = pp->socket;
 	va_list ap;
 	
+	if(recurse > 10) return COM_BADPARAMETERS; /* [HGM] guard against infinite recursion through bad aliasing */
+
 	va_start(ap, comstr);
 	vasprintf(&tmp, comstr, ap);
 	va_end(ap);
+	recurse++;
 	retval = process_input(current_socket, tmp);
+	recurse--;
 	free(tmp);
 	if (retval == COM_LOGOUT) {
 		process_disconnection(current_socket);
@@ -642,16 +647,20 @@ char *ratstrii(int rat, int p)
   return tmp[on - 1];
 }
 
+#define OVERRUN 99
+
 struct t_tree {
   struct t_tree *left, *right;
-  char name;			/* Not just 1 char - space for whole name */
+  char name[OVERRUN+1];         // [HGM] hack below caused crashing on some compilers
+//  char name;			/* Not just 1 char - space for whole name */
 };				/* is allocated.  Maybe a little cheesy? */
 
 struct t_dirs {
   struct t_dirs *left, *right;
   time_t mtime;			/* dir's modification time */
   struct t_tree *files;
-  char name;			/* ditto */
+  char name[OVERRUN+1];         // [HGM] ditto
+//  char name;			/* ditto */
 };
 
 static char **t_buffer = NULL; /* pointer to next space in return buffer */
@@ -704,7 +713,7 @@ static void t_mft(struct t_dirs *d)
 	    t = &(*t)->right;
 	  }
 	}
-	*t = malloc(sizeof(struct t_tree) + strlen(dp->d_name));
+	*t = malloc(sizeof(struct t_tree) - OVERRUN + strlen(dp->d_name));
 	(*t)->right = (*t)->left = NULL;
 	strcpy(&(*t)->name, dp->d_name);
       }
@@ -743,7 +752,7 @@ int search_directory(const char *dir, const char *filter, char **buffer, int buf
 	i = &(*i)->right;
     }
     if (!*i) {				/* if dir isn't in dir tree, add him */
-      *i = malloc(sizeof(struct t_dirs) + strlen(dir));
+      *i = malloc(sizeof(struct t_dirs) - OVERRUN + strlen(dir)); // [HGM] allocate just enough, even though struct promoised more
       (*i)->left = (*i)->right = NULL;
       (*i)->files = NULL;
       strcpy(&(*i)->name, dir);

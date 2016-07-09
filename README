@@ -1,6 +1,20 @@
 Introduction
 ------------
 
+This is a version of the internet chess server which supports a wider
+variety of variants, allowing other board sizes than 8x8 and more pieces
+than the 6 orthodox piece types. I renamed it 'capablanca', in remembrance
+of Jose Capablanca, who rediscovered and popularized Chess on a 10x8 board.
+(Which is one of the better known variants now supported, next to Xiangqi
+and Shogi.) It was derived from 'lasker', of which the original README is
+shown below.
+
+It also fixes some bugs that remained in the original code.
+
+H.G. Muller
+
+---------------------------------------------------------------------
+
 This is an enhanced version of the 'lasker' internet chess server. I
 started to enhance Lasker when I needed a working chess server for a
 local school. You can get the original 'lasker' release from
