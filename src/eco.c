@@ -128,17 +128,17 @@ static void ECO_init()
 
   fp= fopen_s(BOOK_DIR "/eco999.idx", "r");
   if (!fp) {
-    d_printf( "Could not open ECO file\n");
+    d_printf( "Could not open ECO file \"%s\"\n", BOOK_DIR "/eco999.idx");
     exit(1);
   }
   while (!feof(fp)) {
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
     sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[0-z]", ECO);
     ECO_book[i]= (ECO_entry *) malloc(sizeof(ECO_entry));
@@ -167,19 +167,19 @@ static void NIC_init()
   char FENpos[74], NIC[6], onMove[2];
   int i=0;
 
-  fp= fopen_p("%s/nic999.idx", "r", BOOK_DIR);
+  fp= fopen_s(BOOK_DIR "/nic999.idx", "r");
   if (!fp) {
-    d_printf( "Could not open NIC file\n");
+    d_printf( "Could not open NIC file \"%s\"\n", BOOK_DIR "/nic999.idx");
     exit(1);
   }
   while (!feof(fp)) {
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
     sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[.-z]", NIC);
     NIC_book[i]= (NIC_entry *) malloc(sizeof(NIC_entry));
@@ -204,19 +204,19 @@ static void LONG_init()
   char FENpos[74], LONG[256], onMove[2];
   int i=0;
 
-  fp= fopen_p("%s/long999.idx", "r", BOOK_DIR);
+  fp= fopen_s(BOOK_DIR "/long999.idx", "r");
   if (!fp) {
-    d_printf( "Could not open LONG file\n");
+    d_printf( "Could not open LONG file \"%s\"\n", BOOK_DIR "/long999.idx");
     exit(1);
   }
   while (!feof(fp)) {
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
     sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
-    fgets(ptmp, 1024, fp);
+    if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[^*\n]", LONG);
     LONG_book[i]= (LONG_entry *) malloc(sizeof(LONG_entry));
