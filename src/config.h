@@ -2,6 +2,7 @@
    Copyright (c) 1993 Richard V. Nash.
    Copyright (c) 2000 Dan Papasian
    Copyright (C) Andrew Tridgell 2002
+   Copyright (C) Daniel Dugovic 2016
    
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -23,6 +24,7 @@
 
 #ifndef _CONFIG_H
 #define _CONFIG_H
+#include "autoconfig.h"
 
 /* CONFIGURE THIS: The port on which the server binds */
 
@@ -50,7 +52,7 @@
 */
 
 /* define the directory that will be the root directory of FICS */
-#define FICSROOT "./"
+#define FICSROOT CHESSDDIR "/"
 
 #define CONFIG_DB         FICSROOT "config.tdb"
 #define NEWS_DB           FICSROOT "news.tdb"

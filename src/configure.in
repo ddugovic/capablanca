@@ -3,7 +3,8 @@ AC_INIT(acconfig.h)
 
 AC_CONFIG_HEADER(autoconfig.h)
 
-CHESSD_CFLAGS=""
+dnl This isn't a standard way to configure, but it works.
+CHESSD_CFLAGS="-DCHESSDDIR='\"/usr/local/chessd\"'"
 
 dnl Checks for programs.
 AC_PROG_CC

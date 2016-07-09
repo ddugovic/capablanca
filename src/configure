@@ -2149,7 +2149,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 ac_config_headers="$ac_config_headers autoconfig.h"
 
 
-CHESSD_CFLAGS=""
+CHESSD_CFLAGS="-DCHESSDDIR='\"/usr/local/chessd\"'"
 
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'

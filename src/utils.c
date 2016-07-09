@@ -1085,6 +1085,9 @@ FILE *fopen_p(const char *fmt, const char *mode, ...)
 		return NULL;
 	}
 	f = fopen(s, mode);
+	if (f == NULL) {
+		d_printf("Could not open file \"%s\" [%s]\n", s, strerror(errno));
+	}
 	free(s);
 	return f;
 }
