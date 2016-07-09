@@ -1,0 +1,14 @@
+*.o
+.autoheaders
+Makefile
+autoconfig.h
+autom4te.cache/
+chessd
+chessd.so
+chessd_addplayer
+config.log
+config.status
+makerank
+parsers/parse_info.h
+proto.h
+vers.h
