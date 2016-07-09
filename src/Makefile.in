@@ -16,6 +16,9 @@
 ##  This is the Makefile template; see machine dependant config.h for
 ##  more configuration options.
 
+ACLOCAL_AMFLAGS = --install -I m4
+SUBDIRS = tdb
+EXTRA_DIST = scripts/wrap-compiler-for-flag-check
 
 SHELL = /bin/sh
 srcdir = @srcdir@
