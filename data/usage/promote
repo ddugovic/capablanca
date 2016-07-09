@@ -1,0 +1,4 @@
+Command:  promote
+Purpose:  set the piece a pawn will be promoted to at the back rank
+Usage:    promote {q,r,b,[kn], ki}
+Examples: promote q; promote b

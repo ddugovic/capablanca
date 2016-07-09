@@ -1,0 +1,4 @@
+Command:  pobserve
+Purpose:  observe bughouse games of a user's partner
+Usage:    pobserve user
+Examples: pobserve GMAnand

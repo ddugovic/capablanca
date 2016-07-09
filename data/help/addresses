@@ -1,0 +1,39 @@
+
+address
+
+The Internet Chess Servers are services that you can telnet to and use to play
+chess with many other players around the world, both human and machine.
+
+The following is a list of the main servers using a version of FICS:
+
+  A-FICS: ics.onenet.net 5000          (164.58.253.10 5000)   Main US server
+  E-FICS: krypton.daimi.aau.dk 5000    (130.225.18.157 5000)  Main EURO server
+  D-FICS: dds.hacktic.nl 5000          (193.78.33.69 5000)    Dutch server
+  B-FICS: holly.csv.warwick.ac.uk 5000 (137.205.192.12 5000)  British server
+  ?-FICS: chess.unix-ag.uni-kl.de 5000 (131.246.89.3 5000)    German server
+  M-FICS: wisdom.weizmann.ac.il 5000   (132.76.80.77 5000)    Mid-east server
+
+Alternative sites:
+
+    chess.pitt.edu 5000           (136.142.81.40 5000)    USA, Pittsburg PA   
+    rogue.coe.ohio-state.edu 5000 (128.146.144.12 5000)   USA, Columbus, OH
+    getnet.com 4000               (204.157.9.29 4000)     USA, Phoenix, AZ
+          
+Internet Chess Club (commercial chess server):
+
+     chess.lm.com 5000       (192.231.221.16 5000)        USA, Pittsburgh, PA
+
+WWW-servers:
+
+          URL: http://chess.onenet.net/chess/
+
+FTP-servers:
+
+          chess.onenet.net         (164.58.253.10) 
+          ftp.math.uni-hamburg.de  (134.100.220.2)
+          ftp.daimi.aau.dk         [for timeseal files for use on Euro FICS]
+
+To connect to a chess server use: "telnet <address> 5000"
+To connect to an ftp server use: "ftp <server>" (Login: ftp, Passwd:
+\   <emailaddr>)
+

@@ -1,0 +1,15 @@
+
+asethandle
+
+Usage: asethandle oldname newname
+RESTRICTED TO ADMINISTRATORS.
+
+  This command changes the handle of the player from oldname to newname.  The
+various player information, messages, logins, comments and games should be
+automatically transferred to the new account.
+
+See ahelp:  asetpasswd
+See help:   
+
+[Last modified: June 22, 1995 -- Friar]
+

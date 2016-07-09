@@ -1,0 +1,16 @@
+showcommands
+
+Alias: sc
+
+Usage: showcommands
+
+This command displays a list of all of mamer's commands, their aliases, the
+minimum manager level needed to use them, and a short summary of the command's
+function.  If you are not a mamer manager, you can use the commands marked as
+level 0 commands.
+
+NOTE: The "showcommands" command is equivalent to the "help" command.
+
+See also: help, manager_level, usage
+
+[Last modified: August 29, 1998 -- toddmf]

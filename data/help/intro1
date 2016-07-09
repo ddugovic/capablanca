@@ -1,0 +1,35 @@
+
+intro1
+
+GENERAL INFORMATION
+
+  The internet has great capabilities for connecting people from all over
+the world.  This chess server is one way for networking individuals who enjoy
+chess.  Among other things, the chess server allows users to play chess
+matches against each other, as well as communicate with each other.  The chess
+server (computer) is programmed to send players' chess moves and messages to
+the right users.  It also keeps track of various information.
+
+  In order to use the features, you need to type various commands.  To list
+the various commands, type "help".  To get a description of a particular
+command, type "help [command]" -- without the square brackets, of course.
+NOTE: you do not have to type the entire command in order to use it or read
+its help file; typing the first few letters will work in most cases.
+
+  In general, commands do one of four things: (a) send a message to one or
+more users (see intro2), (b) display information to you (see intro3), (c)
+modify one of your settings/features/functions (see intro 4), or (d) have the
+server perform a special function.  Certain commands are restricted to server
+administrators ("admins") and cannot be used by regular users.
+
+  New users might want to start off with simple features and gradually learn
+about the other features as you go along.  The server allows you to determine
+how various information is sent to you.  For example, you can decide how a
+position in a chess game is displayed (see style).  You can also set your
+preferences about the types of chess matches you would like to have or types
+of messages you receive from others (see variables).
+
+See Also intro2 intro3 intro4 intro5
+
+[Last modified: June 16, 1995 -- Friar]
+

@@ -1,0 +1,4 @@
+Command:  say
+Purpose:  sends a message to your current or most recent opponent
+Usage:    say message
+Examples: say I have terrible lag right now <sigh>.

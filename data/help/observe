@@ -1,0 +1,38 @@
+
+observe
+
+Usage: observe [game,user]
+
+  Puts a game on your observation list.  You can give either the game number
+or the user whose game you want to observe.  For example, if game #34 is
+KARPOV versus RETI, then "observe 34", "observe RETI" or "observe KARPOV" will
+add this game to your observation list.  You can observe more than one game at
+once.
+
+  When you are observing a game, you will receive an updated board position
+and game information each time a move is made.  When a game you are observing
+ends, you will be given the result of the game.
+
+  Use the "unobserve" command to remove a game (or even all games) from your
+observation list.
+
+  Use "allobservers" to see who is observing a game (or all games) in
+progress).
+
+
+SPECIAL NOTES
+
+(a)  At one point "observe" used alone would remove all games from your
+observation list.  This function is now being phased out in favor of the
+"unobserve" command.  But be careful while both commands are still valid.
+
+(b)  It is possible to observe all simul games being played by the simul
+player by the command "observe simul_player".  All of the simul games in
+progress will be added to your observation list.  When the last simul game is
+finished, you will be given the result of the simul exhibition.
+
+
+See Also:  allobservers  games  simuls  unobserve
+
+[Last modified: October 8, 1995 -- Friar]
+

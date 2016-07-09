@@ -1,0 +1,15 @@
+
+quota 
+
+Usage: quota [n]
+RESTRICTED TO ADMINISTRATORS.
+
+  The command sets the number of seconds (n) for the shout quota, which
+affects only those persons on the shout quota list.  If no parameter (n) is
+given, the current setting is displayed.
+
+See ahelp:  lists
+See help:   it  shout  shout_abuse  shout_quota
+
+[Last modified: June 23, 1995 -- Friar]
+

@@ -1,0 +1,5 @@
+Command:  match
+Purpose:  challenge a user to a chess match
+Usage:    match user [rated|unrated] [Time] [Inc] [Black_Start Black_Inc]
+          [White|Black] [board_category board]
+Examples: match foxbat; match Marsalis 2 15 u

@@ -1,0 +1,4 @@
+Command:  pending
+Purpose:  lists all your non-declined offers from and made to users
+Usage:    pending
+Examples: pending

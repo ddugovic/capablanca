@@ -1,0 +1,25 @@
+
+moretime
+
+Usage: moretime seconds
+
+  Adds extra time (in seconds) to your opponent's clock when you are playing a
+game.  Maximum time you can add -- 600 seconds (if you try to add more than
+600 seconds, only 600 will be added).
+
+  In essence, using the moretime command means that you don't want your 
+opponent to worry so much about the time remaining on his/her clock, about 
+being flagged, and so on.  It is a useful command to use when your opponent 
+mentions a problem with transmission lags and you are using an interface 
+with the autoflag feature on.  You are under no obligation to give your 
+opponent more time, of course.
+
+  If you need more time, you can always ask your opponent to add time to your
+clock -- depending on the circumstances and their mood, they might grant your
+request.  But if you find that you frequently need more time when you play,
+consider playing with longer time controls.
+
+See Also:  abort  flag  match
+
+[Last modified: June 11, 1995 -- Friar]
+

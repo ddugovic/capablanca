@@ -1,0 +1,15 @@
+
+
+Alias: sr
+
+Usage: setres <tourney number> <white's handle> <black's handle> <result>
+
+Reserved for mamer managers (level 10 or higher)
+
+The setres command is used to set the result of a game that is unable to be
+completed by the players.  Normally, the result is set against the person who
+is unable to complete the game unless he has no mating material.  The <result>
+is "1" for a white win, "=" for a draw, and "0" for a black win.
+
+[Last modified: September 3, 1998 -- toddmf]
+

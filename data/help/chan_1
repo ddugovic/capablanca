@@ -1,0 +1,35 @@
+
+chan_1
+
+  Channel 1 is the server help channel.  Admins and other helpful,
+knowledgeable users monitor channel 1 and are ready to assist you.  It is also
+a general server discussion channel about server issues.
+
+  If you need assistance about something but don't know whom to contact, ask
+your question on channel 1.  Here's the procedure:
+
+(1) Type the following lines:
+
+  channel 1                     [this will turn channel 1 on for you]
+  tell 1 Can someone help me?   [this sends the message to channel 1]
+
+(2) Watch your screen for someone asking you what help you need.  You may be
+contacted directly (in a personal tell) or through channel 1 itself (so
+everyone can listen to to the discussion and help out).
+
+(3) If you want to continue talking on channel 1, type:
+
+  tell 1 <message>              [everyone on channel 1 will hear you]
+
+(4) When you are done, you can either stay on channel 1, in order to help
+others and/or learn from their questions, or turn off channel 1 by typing:
+
+  channel 1                     [this will set channel 1 to off for you]
+
+To see who is listening to channel 1 at any given moment, type "inch 1".  A
+list will appear.
+
+See Also:  adm-info  channel  inchannel  intro_talking  tell
+
+[Last modified: July 18, 1995 -- Friar]
+

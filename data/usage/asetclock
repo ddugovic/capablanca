@@ -1,0 +1,4 @@
+Command:  asetclock
+Purpose:  modify the clock time for a user playing a game
+Usage:    asetclock <name> hours:minutes:seconds
+Example:  asetclock friar 1:05:15

@@ -1,0 +1,5 @@
+Command:  xtell
+Purpose:  send a message to a user or to a channel, but not affect current
+          "tell" setting
+Usage:    xtell user|# message
+Examples: xtell sms Thanks for your help!; xtell 24 Partner up!

@@ -1,0 +1,66 @@
+
+intro_playing
+
+PLAYING IN CHESS MATCHES
+
+  This chess server's main purpose is to link users who want to play chess. 
+Among other things, the server allows you to contact other users about playing
+chess matches, checks to make sure that your moves are legal, keeps track of
+the board position while you play, and updates ratings of players after the
+match.
+
+
+STARTING A MATCH
+
+  The basic way of contacting a user about playing a chess match is by using
+the match command.  There is a separate help file for the match command, so we
+will not go into details here.  But here is the simplest way to ask another
+user for a match:
+
+  match user_name
+
+The other user will be asked to accept or decline your match request.  If the
+user accepts, the server will determine who plays White and Black and will
+notify you that a match has begun with that user.  The starting position will
+be sent to you, and play will begin.
+
+
+PLAYING A GAME
+
+  During a chess match, you and your opponent will moves the pieces on the
+board and also issue various commands or requests.  The help file
+"intro_moving" explains how to move the pieces on the board.  Here is a list
+of other commands and requests you may need to use during a match (remember
+that requests are sent to your opponent, not to the server, and must be
+accepted by your opponent in order to occur):
+
+    command      function
+    -------      --------------------------------------------
+    abort        request that a game be canceled
+    adjourn      request that the match be stopped, saved and continued at
+                 another time
+    draw         request that the chess match be declared a draw
+    flag         end the match because your opponent is out of time
+    moves        have FICS send you the moves to the match you are playing
+    pause        request that the match be suspended temporarily, but not
+                 adjourned
+    promote      set the kind of piece a pawn will be promoted to when it 
+                 reaches the back rank
+    refresh      display the current board position
+    resign       give your opponent the win, and end the match
+    say          communicate with your current (last) opponent
+    switch       request that you and your opponent change sides (colors)
+    takeback     request that one or move moves be taken back (canceled)
+    unpause      request that a paused match be resumed
+    withdraw     cancel a request you have made
+
+  It is possible to play matches with more than one user simultaneously, much
+like a simultaneous exhibition at many major chess tournaments.  If you are
+interested in playing more than one chess game at once, or interested in
+playing against someone with simultaneous matches, read the "simuls" file.
+
+See Also:  accept  adjournments  decline  intro_moving  match  pending  simuls 
+[and the individual commands]
+
+[Last modified: July 20, 1995 -- Friar]
+

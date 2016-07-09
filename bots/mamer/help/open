@@ -1,0 +1,16 @@
+open
+
+Alias: ot
+
+Usage: open <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+This causes the specified tourney to be opened, allowing players to join the
+tourney.  Mamer cshouts and tells channel 49 the tourney announcement when the
+tourney is opened.  Once a tourney is open, the only variables that can be
+changed are "Max Players" and "Style".
+
+See also: announce, listtourneyvars, settourneyvar
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,36 @@
+
+kibitz
+
+Usage: kibitz message 
+LIMITED TO REGISTERED USERS
+
+  Sends your message to all observers AND PLAYERS of a game, with these
+exceptions: (a) users with their kibitz variables set to 0 (off), and (b)
+users who have set a kiblevel.  You must be observing or playing a game in
+order to use this command.  The standard alias for kibitz is "*".
+
+  In order to listen to kibitzes, you must have your kibitz variable on ("set
+kibitz 1").  If you want to listen to kibitzes only from players of a given
+chess ability or higher, use the kiblevel variable.
+
+  When a kibitz is displayed, the kibitzer's rating will be shown (the higher
+of blitz and standard will be used).  However, (a) if the kibitzer has a chess
+master title (GM, IM, FM, NM), this title will be displayed instead of the
+rating; (b) if the kibitzer is an admin on duty, a '*' will be displayed.
+
+
+SPECIAL NOTES:
+
+(a)  It is considered bad manners to discuss the game with other observers by
+using kibitz because doing so might assist the players.  Instead, use
+"whisper" in order to discuss a game you and others are observing without
+interfering with the play of the game.
+
+(b)  If you are observing more than one game at once, using kibitz can be
+tricky.  It is possible for the kibitzed message to be sent to another game,
+if the game being observed changes suddenly. 
+
+See Also:  intro_talking  kiblevel  observe  set  variable  whisper
+
+[Last modified: October 8, 1995 -- Friar]
+

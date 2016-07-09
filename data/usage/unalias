@@ -1,0 +1,4 @@
+Command:  unalias
+Purpose:  removes a personal alias you had created previously
+Usage:    unalias word
+Examples: unalias chal; unalias t1

@@ -1,0 +1,43 @@
+
+register
+
+
+              *** Email registration is now automated! ***
+
+
+To get a registered account, send a message to this address:
+
+    chess@caissa.onenet.net 
+
+... and use as the Subject: "Fics Registration"
+
+Include a line like the following as the text of your message (please make the
+appropriate substitutions as indicated by the <>'s markers):
+
+    fics_addplayer <handle> "<First M. Last>" <email-address> <human|computer>
+
+Here is an example which would register Sparky with the correct name and email
+information:
+ 
+  Ex:   fics_addplayer Sparky "Chris L. Petroff" chris@onenet.net
+  or:   fics_addplayer Sparky "Chris L. Petroff" chris@onenet.net human
+
+
+SPECIAL NOTES:
+
+(1)  Quotation marks MUST be used around the name field.
+
+(2)  If this is a human account, 'human' need not be specified.  However,
+     'computer' MUST be used if you are registering a computer on FICS (see
+     "computers" help file).
+
+(3)  Do NOT include the <>'s markers in your text.  They are used above only
+     to indicate where you need to place information.
+
+(4)  Please tell us if you are an FM, IM or GM (master's titles for
+     international competition).
+
+
+See Also:  computers
+
+[Last modified: June 23, 1995 -- Friar]

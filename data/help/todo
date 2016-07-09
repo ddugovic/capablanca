@@ -1,0 +1,7 @@
+ 1. When your opponent puts you in check, it isn't noted in the last move.
+ 2. When you takeback, your opponent should be told to type "takeback" to
+    accept.
+ 3. Implement examine mode for history games.
+ 4. typing "match foo" without parameters should make a counteroffer to
+    foo with your own default parameters instead of accepting foo's offer.
+

@@ -1,0 +1,15 @@
+
+simnext
+
+Usage: simnext
+
+  Used by a player engaged in simultaneous chess matches.  Use simnext to
+move to the next game in the rotation so that you can make your next move
+in that game.  An alias for "simnext" is "sn".
+
+  To go to a specific board, use "goboard" or "gonum".
+
+See Also:  goboard  gonum  simuls  simmatch  simprev
+
+[Last modified: June 16, 1995 -- Friar]
+

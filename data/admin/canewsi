@@ -1,0 +1,21 @@
+
+canewsi
+
+Usage: canewsi message
+RESTRICTED TO ADMINISTRATORS.
+
+  This command adds a new item to the anews index.  The message is limited to
+45 characters for formating purposes.  In essence, the anews index works like
+a newspaper headline, giving admins enough information to know whether they
+should read the entire anews file for that item.  A list of recent anews items
+is displayed by the 'anews' command.
+
+  After creating the anews item, the command reports the anews item number
+along with a reminder to create an anews file if necessary.  This command
+replaced the 'createanews' command.
+
+See ahelp:  canewsf
+See help:   anews
+
+[Last modified: September 14, 1995 -- Friar]
+

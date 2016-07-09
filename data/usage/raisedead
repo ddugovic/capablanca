@@ -1,0 +1,4 @@
+  Command:  raisedead
+  Purpose:  restores an account that had been removed using "remplayer"
+  Usage:    raisedead oldname [newname]
+  Examples: raisedead Anibus; raisedead Xman Xwoman

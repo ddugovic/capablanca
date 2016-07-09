@@ -1,0 +1,26 @@
+
+withdraw
+
+Usage: withdraw [1-n, all, abort, adjourn, draw, match, pause, player, simul,
+switch, takeback]
+
+  Withdraws an offer that you have made to another user.  If no parameter is
+given and there is only one offer, the withdraw command with rescind your
+offer.  If you have more than one offer pending (for example multiple match
+offers) then you must specify which offer you want to withdraw.  You can
+choose the offer by number, by type, all offers, or by the player's name to
+whom you have made the offer.  For example, the command "withdraw match" will
+decline all pending match offers you have made.  The command "withdraw Shane"
+will withdraw the offer you made to Shane.
+
+NOTE: Several types of requests are withdrawn automatically in certain
+situations.  For example, if you have made a match request to user2 but then
+accept a match request from user1, FICS starts your match with user1 and
+withdraws your offer to user2; user2 is notified that you have started another
+match.
+
+See Also:  abort  accept  adjourn  draw  match  pause  pending  simul  switch
+takeback
+
+[Last modified: June 20, 1995 -- Friar]
+

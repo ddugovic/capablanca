@@ -1,0 +1,16 @@
+
+flip
+
+Usage: flip
+
+  "Flip" toggles the 'flip' variable on and off.  When 'flip' is on it causes
+the board display to be reversed -- either from White at bottom to Black at
+bottom, or vice versa.  Changing your flip setting may be especially useful
+when observing games or playing team games.  Using this command is equivalent
+to "set flip on"/"set flip off".  Because the 'flip' variable is affected,
+changes in 'flip' are permanent until you re-set it.
+
+See Also:  variables
+
+[Last modified: October 8, 1995 -- Friar]
+

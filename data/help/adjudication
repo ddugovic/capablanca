@@ -1,0 +1,46 @@
+
+adjudication 
+
+  Whenever possible, please finish games that have been adjourned.  You should
+attempt to complete the game by messaging your opponents, trying to find times
+to complete the games, and giving them ample opportunity to do so.  Users are
+on different time schedules, so patience should be practiced.
+
+  If -- after repeated attempts -- an opponent will not resume his/her game
+with you, you may request an adjudication.  You can ask for a game to be
+adjudicated as a win, a draw or to be aborted (you do not need an adjudication
+in order to resign a game; see the "resign" help file).  Adjudications are
+made by admins who are skilled at chess.  The admin will look at the position
+and decide on a result.  Please note that the admin's decision is final.  If a
+genuine mistake has been made, the adjudicator would probably like feedback,
+although at that stage nothing may change the result and the changes in
+ratings that may have occurred.  Adjudications take time and effort,
+especially on a server with many users, so only ask for an adjudication when
+you absolutely need one.
+
+  To request an adjucation, "message adjudicate <request>", that is, send a
+message to the special Adjudicate account ("Adjudicate" is not the handle of a
+user).  In your message for adjudication you should gove the name of your
+opponent and what you think the result should be -- win, draw or abort.  For
+example:
+
+    message adjudicate l want my game with DAV to be a draw; neither of us
+    can make progress or gain an advantage.
+
+If you have a certain line of play you will follow in order to preserve the
+win or draw, please mention it.
+
+  An admin will check the account regularly and decide the game.  You and your
+opponent will be messaged concerning the result.
+
+
+REMINDERS:
+
+(a) The command "stored" gives a list of your stored (adjourned) games.
+
+(b) "Match [opponent]" is used to continue resumed games.
+
+See also:  abuser  adjournments  match  stored
+
+[Last modified: October 17, 1995 -- Friar]
+

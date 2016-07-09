@@ -1,0 +1,12 @@
+#!/bin/sh
+# a simple shell script to keep chessd running
+# Andrew Tridgell <tridge@chess.samba.org> 
+
+cd $HOME/chessd || exit 1
+
+(
+	while :; do
+	      $HOME/bin/chessd -p 5000 -T $HOME/bin/timeseal_decoder -R $HOME/chessd -f
+	      sleep 10
+	done
+) >> chessd.log 2>&1

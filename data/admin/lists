@@ -1,0 +1,30 @@
+
+lists
+
+RESTRICTED TO ADMINISTRATORS.
+
+  There are several lists restricted to admin use.  They are:
+
+    abuser   for users who have abused server etiquette
+    cmuzzle  prevents user from using cshouts
+    computer identifies user as a computer
+    filter   prevents unreg logons from certain sites
+    fm       adds FM label to a user
+    gm       adds GM label to a user
+    im       adds IM label to a user
+    muzzle   prevents user from using shouts
+    quota    limits frequency of a user's shouts
+
+  To add a user to one of these lists, use "+list_name".  To remove a user,
+use "-list_name".  And "=list_name" lists users on that list.  For most lists,
+comments are automatically added to the user's file, and you may want to add
+one of your own comments as well in order to record your action and reasons.
+
+  Some lists are private, for admin reading only.  Some can be read by all
+users.  The "showlists" help file gives the security level for the lists. 
+
+See ahelp:  cmuzzle  filter  muzzle  quota
+See help:   abuser  etiquette  showlists
+
+[Last modified: June 26, 1995 -- Friar]
+

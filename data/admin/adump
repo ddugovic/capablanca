@@ -1,0 +1,8 @@
+
+adump
+
+Usage: adump
+RESTRICTED TO GODS
+
+This dumps the complete server internal state to a file called
+'globals.dat' in the main directory. Used for debugging.

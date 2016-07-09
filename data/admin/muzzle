@@ -1,0 +1,23 @@
+
+muzzle
+
+Usage: [=,-,=]muzzle
+RESTRICTED TO ADMINISTRATORS.
+
+  Adds to (+muzzle), removes from (-muzzle) or lists users on (=muzzle) the
+muzzle list.  Users on the muzzle list cannot use "shout" or "it".  They can,
+however, use "tell" (including tells to channels).
+
+  When you muzzle (or unmuzzle) a user, please leave a message in the player's
+comments file using the "addcom" command.  Documentation of user behavior is
+important.
+
+  Concerning when to muzzle a user, please refer to the admin guidelines that
+have been developed.  See also help files on server conduct, such as abuser,
+etiquette and shout_abuse.
+
+See ahelp:  addcom  cmuzzle
+See help:   etiquette  lists  shout  shout_abuse
+
+[Last modified: October 16, 1995 -- Friar]
+

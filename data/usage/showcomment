@@ -1,0 +1,4 @@
+  Command:  showcomment
+  Purpose:  display the comments in a user's file
+  Usage:    showcomment user
+  Examples: showcomment Rattlesnake

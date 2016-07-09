@@ -1,0 +1,4 @@
+Command:  ptell
+Purpose:  send a message to your bughouse partner
+Usage:    ptell string
+Examples: ptell Can you get me a pawn?

@@ -1,0 +1,3 @@
+Command:  rmatch
+Purpose:  allows tournament directors to start matches
+Usage:    rmatch user1 user2 <match params>

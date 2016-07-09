@@ -1,0 +1,33 @@
+
+chkpl 
+
+Usage: chkpl handle
+RESTRICTED TO ADMINISTRATORS.
+
+  This command displays server information about a given user.  Items
+displayed are:
+
+  number X in parray of size Y
+  name
+  login
+  fullName
+  emailAddress
+  socket
+  registered
+  last_tell
+  last_channel
+  logon_time
+  adminLevel
+  muzzled
+  cmuzzled
+  network_player
+  thisHost
+  lastHost
+  num_notify
+  num_comments
+
+See ahelp:  chkip
+See help:   finger
+
+[Last modified: October 8, 1995 -- Friar]
+

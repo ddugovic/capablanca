@@ -1,0 +1,13 @@
+
+whenshut
+
+Usage: whenshut
+
+  Using this command will display the time when a shutdown will occur.  If
+there is no shutdown of the server scheduled, the message displayed will be
+"No shutdown currently in progress".
+
+See Also:
+
+[Last modified: November 26, 1995 -- Friar]
+

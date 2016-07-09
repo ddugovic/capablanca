@@ -1,0 +1,13 @@
+
+finger
+
+  Private, confidential information about a user is revealed to admins when
+they use the "finger" command.  This information includes the player's real
+name, email address and whether the player has any comments attached to
+his/her account.
+
+See ahelp:  showcomment
+See help:   finger
+
+[Last modified: June 22, 1995 -- Friar]
+

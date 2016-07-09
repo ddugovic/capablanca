@@ -1,0 +1,13 @@
+
+moves
+
+Usage: moves [game,user]
+
+  Displays the moves to the specified game.  If a game is not specified, moves
+to the game you are playing will be displayed.  Command applies only to games
+in progress, not to stored games.
+
+See Also:  mailstored  smoves
+
+[Last modified: September 14, 1995 -- Friar]
+

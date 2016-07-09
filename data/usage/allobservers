@@ -1,0 +1,4 @@
+Command:  allobservers
+Purpose:  list users currently observing games on the server
+Usage:    allobservers [game,user]
+Examples: allobservers; allobservers 43; allobservers Hawk

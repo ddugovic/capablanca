@@ -1,0 +1,4 @@
+Command:  stored
+Purpose:  list your or another user's stored (adjourned) games
+Usage:    stored [user]
+Examples: stored; stored Marsalis

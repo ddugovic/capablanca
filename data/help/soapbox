@@ -1,0 +1,39 @@
+
+Soapbox
+
+  It is my hope that the source code to quality chess server software
+will be available to the internet community for free. It could be the
+FICS, the ICS, or some other new software, it doesn't matter.
+
+  When Michael Moore started the chess server years ago, it was his
+intention to provide free access to it to everyone. He distributed the
+server code freely in the hope that server sites might spring up and
+flourish. Unfortunately, the situation exists today where one small
+group of people have hoarded the source code and refuse to allow
+any alternate servers start. I hope that my efforts in re-writing
+a public domain server has the effect to improve the server, both in
+substance and in administration.
+
+  If the FICS catches on and replaces the ICS (unlikely), then we win. If
+the ICS is released as source code to the public and the FICS dies, then
+we win. If the FICS and ICS go on coexisting perhaps someday sharing the
+same ratings server, we win.
+
+  The only way we lose is if the status-quo is maintained and the only
+source of internet chess is controlled by a few individuals.
+
+Richard Nash
+
+SoapboxII (The revenge of soapbox! :) )
+
+  Since then, ICS went free and we all lived (almost) happily, however
+ICS became ICC and wanted to charge $49 to play chess.
+  Now, I understand that the ICC code had lots of work put into it and its
+writer deserves something. However in the spirit of how ICS was set up, I
+and others feel asking for donations would be better and no pay or else
+attitute.
+  So, a band of programmers and ex-admins of ICC got together to rewrite
+the out of date FICS code and this is what you are using now.
+  FICS is free.  Enjoy it.
+
+      Dan,DAV,foxbat,friar,grimm,hawk,loon,mann,Shane,Sparky et al. 

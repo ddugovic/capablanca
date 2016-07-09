@@ -1,0 +1,41 @@
+
+SERVER COMMANDS [taken from ONENET chess site]
+
+  The following text is displayed when you telnet to ics.onenet.net and log in
+through the admin doorway.
+
+/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
+| It's BACK!!  ;-> Sveshi's Power-Admin command set:  Commands now defined:  | 
+|                                                                            |
+|  'ckemail'  - search for anything you like in the address database.        |
+|               (will show matches for any part of email, realname)          |
+|   'ckname'  - search for A NAME (two words) in the address database.       |
+|    'cklog'  - search connect log for a player.                             |
+|     'host'  - Tells you an alpha host name from the numeric.               |
+|  'players'  - gives last 24 autoregister attempts.                         |
+|     'uscf'  - Searches for the USCF rating of a person (two words)         |
+|     'fide'  - Searches for the ELO rating of a person (two words)          |
+|   'icswho'  - Print name and email info for a player handle                |
+|                                                                            |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Friar's notes
+-------------
+  The commands are typed at the server prompt.  They may come in handy when
+trying to verify certain user information or dealing with problem situations,
+such as duplicate accounts or whether a user is a titled chess master.
+
+
+Usage                       Result
+______________________      _____________________________________________
+
+ckemail string              Hits for 'string' in address database
+ckname name1 name2          Hits for 'name1 name2' in address database
+cklog user_handle           Lists connect log for user_handle
+host ip_number              Provides alpha name for IP address
+players                     Lists last 24 autoregister attempts
+uscf name1 name2            USCF rating for 'name1 name 2'
+fide name1 name2            FIDE rating for 'name1 name 2'
+icswho user_handle          Real_name and email address for user_handle
+
+[Last update: September 24, 1995 -- Friar]

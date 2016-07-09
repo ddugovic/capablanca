@@ -1,0 +1,15 @@
+
+aconfig
+
+Usage: aconfig variable value
+RESTRICTED TO ADMINISTRATORS.
+
+  sets the server config variable 'variable' to 'value'
+
+  If used with no parameters then displays all current server
+  variables
+
+  If the value is set to '-' then the variable is deleted
+
+  Example:
+    aconfig SERVER_LOCATION Canberra, Australia

@@ -1,0 +1,15 @@
+delete
+
+Alias: del
+
+Usage: delete <tourney number>
+
+Use the "delete" command to delete the specified tourney.  The most common
+usage of this is to delete a tourney in which there are not enough players to
+close and start.  Mamer deletes tourneys that are not "kept" two hours after
+their completion.  Please do not delete the tourneys before then, as many 
+users view the standings of recent tourneys.
+
+See also: close, keep
+
+[Last modified: August 29, 1998 -- toddmf]

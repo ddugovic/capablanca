@@ -1,0 +1,11 @@
+
+asetlight
+
+Usage: asetlight handle rating won lost drew RD
+RESTRICTED TO ADMINISTRATORS.
+
+  This command allows admins to set a user's statistics for lightning games. 
+The parameters are self-explanatory: rating, # of wins, # of losses, # of
+draws, and ratings deviation.
+
+See ahelp:  asetblitz asetwild asetstd

@@ -1,0 +1,57 @@
+
+blitz
+
+  There are four types of regular (not wild or bughouse) chess played on this
+chess server: Untimed, Lightning, Blitz and Standard.
+
+  A game is "Blitz" if the expected duration of the game is between 3 and 15
+minutes per player.  "Expected duration" is determined by a formula that takes
+into account both the Start time and the Increment (Inc) value.  Here is the
+formula:
+
+     Expected duration = (Start + Inc*2/3)
+
+Thus, a Blitz game is one that is expected to last between 3 and 15 minutes
+for each player (or from 10 to 30 minutes combined).  Lightning games are
+those with expected durations less than 3 minutes per player, while Standard
+games are those with expected durations more than 15 minutes per player.
+
+  The following table shows the dividing lines between Blitz and Lightning on
+the one hand and Blitz and Standard on the other hand. those two types of
+matches.   [Thanks to schwartzeer for the original calculations between Blitz
+and Standard.  :)  ]
+
+    Slowest Lightning   Fastest Blitz       Slowest Blitz     Fastest Standard
+   ------------------------------------    ------------------------------------
+      Mins  Incr         Mins  Incr           Mins  Incr         Mins  Incr
+   ------------------------------------    ------------------------------------
+        0     4            0    5              0    22            0    23
+        1     2            1    3              1    20            1    21
+        2     1            2    2              2    19            2    20
+       --------            3    0              3    17            3    18
+                                               4    16            4    17
+                                               5    14            5    15
+                                               6    13            6    14
+                                               7    11            7    12
+                                               8    10            8    11
+                                               9     8            9     9
+                                              10     7           10     8
+                                              11     5           11     6
+                                              12     4           12     5
+                                              13     2           13     3
+                                              14     1           14     2
+                                              --------           15     0
+
+  For example, a game with a Start of 2 minutes will be Blitz if the Increment
+is from 2 to 19; but it will be Lightning with an Inc of 0 or 1 and Standard
+if the Inc is 20 or higher.
+
+  You can list logged on users according to their Blitz ratings by typing "who
+b" (by default, ratings in 'who' listings will be blitz unless you specifiy
+otherwise).  "Blitz" is also a variable that can be used in formulas in order
+to screen match requests.
+
+See Also:  formula  lightning  match  standard  untimed  who
+
+[Last modified: December 25, 1995 -- Friar]
+

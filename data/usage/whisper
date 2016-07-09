@@ -1,0 +1,4 @@
+Command:  whisper
+Purpose:  send a message to observers of a game but NOT to the players
+Usage:    whisper message
+Examples: whisper But why can't White just take the pawn?!

@@ -1,0 +1,43 @@
+
+set
+
+Usage: set variable_name [value]
+
+  You have a number of predefined variables that control the behavior of your
+account.  This command allows you to control those variables and modify their
+settings.  Generally, if "value" is omitted, the variable is toggled ON/OFF
+(0/1).
+
+Examples:
+  set shout 0
+  set f4 !private & !computer !abuser
+  set time 10
+  set inc 0
+  set auto 1
+  set style 12
+
+  To see the list of all of variables you can control, type "help variables". 
+There are also other special uses of the "set" command, as follows.
+
+BUSY MESSAGE
+
+  If you will be idle for a while, you can have a brief message displayed to
+users when they "tell" you something.  Read the "busy" help file for details.
+
+FINGER NOTES
+
+  You can have up to 10 information lines that can be displayed when someone
+uses the "finger" command.  These text lines are modified by typing "set n
+<text>" where 'n' can be any integer from 1-10.  You can erase one of your
+lines by typing "set n" without any text.  (See "notes" help file.)
+
+FORMULA
+
+  You can filter out match requests by setting a formula.  Your formula may
+include certain variables you can also set.  Read the "formula" help file for
+details.
+
+See Also:  busy  finger  formula  notes  variables
+
+[Last modified: December 17, 1995 -- Friar]
+

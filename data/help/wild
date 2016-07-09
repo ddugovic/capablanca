@@ -1,0 +1,45 @@
+
+wild
+
+  Wild is a little different than the other categories of boards in that
+the starting positions are non-standard.  Because wild games are fundamentally
+different than regular chess, they are rated separately from blitz and
+standard chess games.  The wild ratings, however, do not take into account the
+time controls; all wild games are rated on the same basis.
+
+  Here are the major variations of wild that are rated:
+
+Style 1:  In this variant both sides have the same set of pieces as in normal
+chess.  The white king starts on d1 or e1 and the black king starts on d8 or
+e8, and the rooks are in their usual positions.  Bishops are always on
+opposite colors.  Subject to these constraints the position of the pieces on
+their first ranks is random.  Castling is done similarly to normal chess:  o-o-
+o indicates long castling and o-o short castling.
+
+Style 2:  In this variant the usual set of pieces is arranged randomly on the
+first and eighth ranks, with the constraint that Black's arrangement is always
+a mirror image of White's.  Castling is not allowed.
+
+Style 3:  In this variant the set of pieces is randomly chosen (subject to the
+constraint that there is one king of each color).  It is quite possible to get
+more than the normal number of a given piece, such as three rooks or two
+queens.  The pieces are placed on the first rank behind the pawns, the
+position of Black's pieces mirrors White's placement, and castling is not
+allowed.
+
+Style 4:  In this variant a random set of pieces is generated.  These pieces
+are placed randomly for White and Black behind the rank of pawns, subject to
+the constraint that the bishops must be balanced.
+
+Style 5:  In this variant, each player has the usual set of pieces.  However,
+they are placed in a very unusal position.  Pawns start on their 7th rank
+rather than their 2nd rank!  They are, therefore, one move away from becoming
+queens.  The pieces are placed on their 8th rank rather than the 1st rank. 
+When the game starts, it will look like the board is upside down, with White's
+pieces starting on Black's side of the board, and vice versa.  But don't let
+this fool you.
+
+See Also:  boards  match
+
+[Last modified: September 11, 1995 -- Friar]
+

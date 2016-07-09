@@ -1,0 +1,14 @@
+
+znotify
+
+Usage: znotify
+
+  Lists all users currently logged on who: (a) are on your notify list, and
+(b) have you on their notify lists.  Two separate lists are displayed.  See
+the notify command and notifiedby variable for information about what being on
+these lists means.  An alias for "znotify" is "znotl".
+
+See Also:  alias  notify  unnotify  variables
+
+[Last modified July 1, 1995 -- Friar]
+

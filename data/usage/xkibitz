@@ -1,0 +1,4 @@
+Command:  xkibitz
+Purpose:  send a message to a game, regardless of 'primary' setting
+Usage:    xkibitz name|# message 
+Examples: xkibitz sms Nb4 works; xkibitz 34 Dead draw now.

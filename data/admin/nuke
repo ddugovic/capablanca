@@ -1,0 +1,16 @@
+
+nuke 
+
+Usage: nuke user
+RESTRICTED TO ADMINISTRATORS.
+
+  This command disconnects the user from the server.  The user is informed
+that she/he has been nuked by the admin named and a comment is automatically
+placed in the user's files (if she/he is a registered user, of course).  Do
+not nuke someone for fun!
+
+See ahelp:  
+See help:   etiquette  shout_abuse
+
+[Last modified: July 1, 1995 -- Friar]
+

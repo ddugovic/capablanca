@@ -1,0 +1,18 @@
+
+backward
+
+Usage: backward [#]
+
+  This command is used by a person examining a game in order to move backward
+in the sequence of the game's moves.  If # is not specified, 1 will be used.
+
+  In the case of a stored game, you may move forward again using the "forward"
+command, but in the case of a new game you will need to move the pieces again.
+
+SPECIAL NOTE: The "revert" command is a way to move backward to the branch
+from the main variation being examined.
+  
+See Also:  examine  forward  revert
+
+[Last modified: June 29, 1995 -- Friar]
+

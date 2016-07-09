@@ -1,0 +1,23 @@
+swiss
+
+The swiss system is a fairly complicated pairing system(books have been 
+written on it).  Here is a short summary.  For the first round, the players 
+are ranked by rating. The top player of the top half plays the top player of 
+the bottom half, the #2 player from the top half plays the #2 player from the
+bottom half, and so on. Colors alternate for the top players. A sample first 
+round pairing for an 8 player tourney would be 1-5, 6-2, 3-7, 8-4.  After each
+round, the players are sorted again.  This time, they are sorted by score in 
+the tourney(1.0 for each win, 0.5 for each draw, 0.0 for each loss).  The 
+swiss algorithm mentioned above is then applied to each group.  As the tourney
+goes on, the number of groups(and thus the number of groups with an odd number
+of players) grows.  There are many techniques used to pair players that are at
+least very close in score while avoiding having two players play each other 
+more than once and giving very lopsided color distribution(for example, having
+4 whites and one black in a 5 round tourney) which are beyond the scope of
+this short summary.  To sum up, you play people who are doing close to as well
+(or poorly) as you in the tourney, you play close to an equal number of
+games with white as with black, and you don't play the same player twice.  
+Mamer does its best to make good swiss pairings, but occasionally it will
+produce some odd pairings.
+
+[Last modified: September 1, 1998 -- toddmf]

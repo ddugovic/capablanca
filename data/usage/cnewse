@@ -1,0 +1,4 @@
+  Command:  cnewse
+  Purpose:  change expiry of a regular news item
+  Usage:    cnewse # expiry
+  Examples: cnewse 180 2

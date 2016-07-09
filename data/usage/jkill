@@ -1,0 +1,4 @@
+Command:  jkill
+Purpose:  erase games from your journal
+Usage:    jkill slot
+Examples: jkill A; jkill L

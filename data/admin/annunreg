@@ -1,0 +1,15 @@
+
+annunreg
+
+Usage:  annunreg message
+RESTRICTED TO ADMINISTRATORS.
+
+  Broadcasts your message to all logged on unregistered users, and admins,
+too.  Announcements reach all unregistered users and admins and cannot be
+censored in any way (such as by "set shout 0").
+
+See ahelp:  announce
+See help:   shout
+
+[Last modified: June 22, 1995 -- Friar]
+

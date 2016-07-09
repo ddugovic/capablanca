@@ -1,0 +1,4 @@
+Command:  quit
+Purpose:  exit the server (when you are not playing a match)
+Usage:    quit
+Examples: quit

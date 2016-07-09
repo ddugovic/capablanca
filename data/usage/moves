@@ -1,0 +1,4 @@
+Command:  moves
+Purpose:  displays moves to a current game
+Usage:    moves [game,user]
+Examples: moves; moves 56; moves Cthulhu

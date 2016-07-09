@@ -1,0 +1,13 @@
+
+chksc 
+
+Usage: chksc n
+RESTRICTED TO ADMINISTRATORS.
+
+  Shows which user is logged on to socket n.
+
+See ahelp:  
+See help:   
+
+[Last modified: October 11, 1995 -- Friar]
+

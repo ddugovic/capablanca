@@ -1,0 +1,5 @@
+Command:  messages
+Purpose:  display 1 or more stored messages -OR- send a message to a user
+Usage:    messages [user [text]|#|m-n]
+Examples: messages; messages Shane; messages Ramius Thanks for your help!;
+          messages 13; messages 2-9

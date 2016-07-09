@@ -1,0 +1,5 @@
+Command:  addlist
+Purpose:  add information to a list
+Usage:    addlist list information
+Alt:      +list information
+Examples: addlist noplay Friar; +noplay Friar

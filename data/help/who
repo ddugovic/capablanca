@@ -1,0 +1,125 @@
+
+who
+
+Usage: who [o][r][f][a][R][U][s][b][L][A][l][t][v][n][1-3][B]
+  
+  Displays a list of users who are connected to the server according to the
+parameters you give.  Typing "who" alone, without any arguments, will list all
+users according to their blitz ratings.
+  
+USERS TO DISPLAY
+  o: Only open players.
+  r: Only players for rated matches.
+  f: Only free players (not playing a game).
+  a: Only available players (open & free).
+  R: Only registered players.
+  U: Only unregistered players.
+  #: Only the top (1), middle (2) or lower (3) third of users.
+  B: Only users with bughouse partners set.
+
+ORDER OF DISPLAY
+  s: Standard rating.
+  b: Blitz rating.
+  L: Lightning rating.
+  A: Lists players alphabetically.
+  l: Same as above but without rating/game info.  [lower case "L"]
+
+FORMAT OF DISPLAY
+  t: Terse.
+  v: Verbose.
+  n: Win-loss record.
+
+  For example, "who aRsA" would display an alphabetical listing (A) of
+registered players (R) who are available for matches (a) along with their
+ratings from games using standard time controls (s).  NOTE: both the capital
+letters and the order of the options are important, but you *may* use spaces
+between the various letters.
+
+
+THE REGULAR (terse) DISPLAY
+
+  The following table is an example of what the "who" request will display. 
+(Only a portion of a much larger listing is given here.)
+
+2255^OldManII(C)    1879 Chopin         1625:Flash          1251:Juan         
+2163 Heringer       1838^asu            1612 Lesiege        ---- Jerard       
+2099^AmacaballoFat  1799^Kael           1587:Boutros        ----:Tomato(TD)   
+2084^Torr           1783:GARP           1572^chessnut       ++++:arc          
+2074:loon(*)        1774:grimm          1556#jethro         ++++^ASESINO      
+2072 death(FM)      1760:Tsang          1555.billard        ++++.beto         
+
+  The format is <rating> <status> <handle>.
+
+Rating:  Only one set of ratings are displayed -- the default is blitz unless
+  another rating is requested.    The entry ---- means this user is registered
+  but does not have a rating for this type of chess.  The entry ++++ means
+  that the user is unregistered and thus has no rating.
+
+Status codes:
+  ^   involved in a game
+  ~   running a simul match
+  :   not open for a match
+  #   examining a game
+  .   inactive for 5 minutes or longer
+      not busy
+
+Special handle codes:
+  *         admin
+  B         blindfold account
+  C         computer account
+  T         team account
+  TD        Tournament Director program
+  FM/IM/GM  titles for international chess masters
+
+
+THE VERBOSE DISPLAY
+
+  The following table shows sample entries from a "who v" request -- where the
+"v" means "verbose" style of the "who" command.  A complete display, of
+course, would be rather long ... one line for each user logged on who fits the
+parameters of the who request..
+
+ +---------------------------------------------------------------+
+ |      User              Standard    Blitz        On for   Idle |
+ +---------------------------------------------------------------+
+ | 22   OldManII          2172        2256         4:09          |
+ | 40 u Torr              ----        2084           14          |
+ |   X  loon              2015        2074           11          |
+ | 35   Chopin            ----        1879            4          |
+ |   Xu Juan              1336        1251           20     19   |
+ |  4 U ASESINO           ++++        ++++           18          |
+ |                                                               |
+ |     95 Players Displayed                                      |
+ +---------------------------------------------------------------+
+  
+Going from left to right in the display:
+ 
+                 ## -- the number of the game the user is playing
+                  X -- not open for games
+                  u -- open for unrated games only
+                  U -- unregistered player
+             <name> -- the player's "handle"
+    Standard rating -- the player's rating from standard games
+       Blitz rating -- the player's rating from blitz games
+             On for -- (in hours/minutes) how long the player has been on
+               Idle -- (in hours/minutes) how the player has been idle
+  Players Displayed -- the number of current users fitting the who request
+
+
+THE WIN-LOSS RECORD DISPLAY
+
+  The format for the win-loss record display is simple.  Here is an example:
+
+Name               Stand     win loss draw   Blitz    win loss draw    idle
+----------------   -----     -------------   -----    -------------    ----
+<user>             ----        0    0    0   2018      92   56   26      10 
+
+  The order is again by blitz, unless specified otherwise.  This information
+is also available on an individual basis by using the "finger" command.
+
+
+See Also:  blindfold  blitz  bughouse  computers  examine  finger 
+intro_information  observe  ratings  team
+
+[Last modified: December 25, 1995 -- Friar]
+

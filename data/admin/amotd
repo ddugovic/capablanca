@@ -1,0 +1,7 @@
+
+This is the admin motd.  Type "help motd" to see the user motd. 
+ 
+ Admin command helpfiles are shown by ahelp.  Many don't have helpfiles yet.
+ "ahelp admin_commands" gives a list of all the admin commands.
+ Type "anews" for admin news.  "anews all" to catch up if you forgot.
+__________________________________________________________________________

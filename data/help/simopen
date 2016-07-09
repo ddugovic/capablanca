@@ -1,0 +1,14 @@
+
+simopen
+
+Usage: simopen
+
+  Toggles your 'simopen' variable 0/1.  Equivalent to "set simopen".  If
+simopen is 1, then you are open to play more than one chess game at a time:
+have a simultaneous chess exhibition.  More details are in the "simuls" help
+file.
+
+See Also:  simuls  variables
+
+[Last modified: June 22, 1995 -- Friar]
+

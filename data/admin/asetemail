@@ -1,0 +1,16 @@
+
+asetemail
+
+Usage: asetemail player [address]
+RESTRICTED TO ADMINISTRATORS.
+
+  Sets the email address of the player to the address given.  If the address
+is omited, then the player's email address is cleared.  The person's email
+address is revealed to them when they use the "finger" command, but no other
+users -- except admins -- will have another player's email address displayed.
+
+See ahelp:  finger
+See help:   finger
+
+[Last modified: June 22, 1995 -- Friar]
+

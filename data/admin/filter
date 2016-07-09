@@ -1,0 +1,22 @@
+
+filter
+
+Usage: [+,-,=]filter ip
+RESTRICTED TO ADMINISTRATORS.
+
+
+  This list bans unreg logins from a site where "ip" is a full or partial ip
+address.  The number of levels in the "ip" affects how much filtering is made. 
+An "ip" of 123.124.125.126 will ban a machine, 123.124.125 will ban the
+server, and 123.124  will probably ban the whole site.  A special account has
+been established for documenting the need to filter logins: "filter".
+
+  When you filter a site, please leave a message in the filter account:
+"message filter <explanation>".  To read the log of messages in this account,
+type "ahelp filtered".
+
+See ahelp:  accounts  lists
+See help:   
+
+[Last modified: July 16, 1995 -- Friar]
+

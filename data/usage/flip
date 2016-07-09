@@ -1,0 +1,4 @@
+Command:  flip
+Purpose:  toggles board display between White-at-bottom and White-at-top
+Usage:    flip
+Examples: flip

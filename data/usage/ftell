@@ -1,0 +1,4 @@
+Command:  ftell
+Purpose:  forward tells to channel 0, or cancel this function
+Usage:    ftell user_name; ftell
+Examples: ftell idiotUser; ftell

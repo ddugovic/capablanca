@@ -1,0 +1,4 @@
+Command:  tomove
+Purpose:  used in setup mode in order to designate which side will move next
+Usage:    tomove white|black
+Examples: tomove white; tomove black

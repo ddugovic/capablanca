@@ -1,0 +1,8 @@
+
+toggle
+
+Usage: toggle list information
+
+Toggles information in a list. If the 'information' is already in the
+specified list then it is removed, otherwise it is added.
+

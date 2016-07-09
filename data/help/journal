@@ -1,0 +1,54 @@
+
+journal
+
+  The journal feature is a way to save games as long as you want to.  History
+games, remember, get overwritten as you play more games; only the most recent
+games are saved.  The journal feature allows you to save games for a longer
+period of time.
+
+  The journal file for most players has 26 available slots.  These slots are
+denoted by the single letters from A to Z.  Games in your journal are referred
+to by their letters.
+
+  There are two things you need to know in order to make this feature work for
+you: (i) how to save a game to your journal, and (ii) how to review a game
+from your journal.
+
+
+SAVING A GAME TO A JOURNAL
+--------------------------
+
+  The "jsave" command is used to save games to your journal.  Please refer to
+that help file for details
+
+
+SHOWING THE CONTENTS OF A JOURNAL
+---------------------------------
+
+  To read the contents of a journal, type:
+
+  journal [user_name]
+
+If the user_name is omitted, then the contents of your journal will be
+displayed.
+
+  There are several commands you can use in order to display information about
+an individual game: (a) examine; (b) smoves; and (c) mailstored.  See those
+help files for further details.
+
+
+PRIVATE JOURNALS
+----------------
+
+  It is possible to hide your journal from other users (except admins) by
+using the 'jprivate' variable:
+
+  set jprivate 1   ---   hides your journal
+
+  set jprivate 0   ---   allows others to access your journal
+
+
+See also:  examine  history  jsave  mailstored  smoves  variables
+
+[Last modified: December 25, 1995 -- Friar]
+

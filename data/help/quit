@@ -1,0 +1,16 @@
+
+quit
+
+Usage: quit
+
+  This command exits you from the server.  "Bye" and "exit" are default
+aliases for "quit".
+
+SPECIAL NOTE:  This command cannot be used if you are in the middle of a chess
+match.  If you need to leave during a match, first ask your opponent for an
+adjournment and explain why.
+
+See Also:  adjourn  alias 
+
+[Last modified: October 8, 1995 -- Friar]
+

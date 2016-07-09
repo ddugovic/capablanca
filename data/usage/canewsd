@@ -1,0 +1,4 @@
+  Command:  canewsd
+  Purpose:  delete last line of an admin news item
+  Usage:    canewsd #
+  Examples: canewsd 180

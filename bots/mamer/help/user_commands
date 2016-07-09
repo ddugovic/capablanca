@@ -1,0 +1,16 @@
+user_commands
+
+finger           | fi    |   0 | Displays the stats for a user.
+help             | h     |   0 | List commands and descripts.
+join             | j     |   0 | Request to enter a tourney.
+listmanagers     | lm    |   0 | Displays the Managers list.
+listtourneys     | lt    |   0 | Displays the tournament list.
+listtourneyvars  | vars  |   0 | Displays the tournament variables.
+listtourneygames | games |   0 | Displays the tournament games.
+listplayers      | lp    |   0 | Displays the players in the tourney.
+showcommands     | sc    |   0 | List commands and descripts.
+showhelpfile     | shf   |   0 | Shows a help file.
+who              | who   |   0 | Displays the tournament games.
+withdraw         | with  |   0 | Remove yourself from a tourney.      
+
+[Last modified: September 1, 1998 -- toddmf]

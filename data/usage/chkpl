@@ -1,0 +1,6 @@
+
+chkpl 
+  Command:  chkpl
+  Purpose:  check server information about a user
+  Usage:    chkpl handle|parray#
+  Examples: chkpl schert; chkpl 20

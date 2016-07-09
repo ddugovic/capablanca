@@ -1,0 +1,4 @@
+Command:  simnext
+Purpose:  used in simuls to move to the next board in the simul
+Usage:    simnext
+Examples: simnext

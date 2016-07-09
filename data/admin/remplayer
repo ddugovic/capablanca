@@ -1,0 +1,23 @@
+
+remplayer
+
+Usage:  remplayer name
+RESTRICTED TO ADMINISTRATORS.
+
+   Removes an account.  A copy of its files are saved under .rem.* which can
+be found in the appropriate directory (useful in case of an accident).
+   
+   The account's details, messages, games and logons are all saved as 'zombie'
+files.  These zombie accounts are not listed in handles or totals.  Although a
+handle may have been removed, it is not possible for another user to register
+with this handle -OR- to register for a new account using email registration. 
+The autoregister program checks for regular as well as remplayered accounts.
+
+   Please do not use this command unless necessary, such as for multiple
+accounts or inappropriate handles.  To stop a player from having access to an
+account, it may be preferable to use the "asetpasswd" command instead.
+
+See also: addplayer  asetpasswd  raisedead
+
+[Last modified:  October 17, 1995 -- Friar]
+

@@ -1,0 +1,11 @@
+
+cls_info
+
+  Typing "help cls" will clear your screen and set the cursor at the top. 
+This command may be useful if you need to clear your screen suddenly for some
+reason (like the boss).  Server messages will soon appear again, however.
+
+See Also:  
+
+[Last modified: July 11, 1995 -- Friar]
+

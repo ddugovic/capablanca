@@ -1,0 +1,6 @@
+Usage: servers
+
+  Lists all servers that are known to the main ratings server. Many of the
+machines listed may be out of date or not currently operating, but this
+will give you a place to start looking for a different server.
+

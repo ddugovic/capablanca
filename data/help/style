@@ -1,0 +1,33 @@
+
+style
+
+Usage: style n
+
+  Sets your 'style' variable to n.  Equivalent to "set style n".  This command
+allows you to choose among the various board display options.
+ 
+ 1.   Standard ICS board in ascii format (default)
+ 2.   USA-Today Sports Center-style board
+ 3.   Experimental vt-100 ANSI board for dark backgrounds
+ 4.   Experimental vt-100 ANSI board for light backgrounds
+ 5.   Style suggested by ajpierce@med.unc.edu
+ 6.   Email Board suggested by Thomas Fought (tlf@rsch.oclc.org)
+ 7.   Miniature board
+ 8.   ICS interface maker board -- raw data dump
+ 9.   last 2 moves only (previous non-verbose mode)
+10.   Alternate raw dump
+11.   Same as 8, but with verbose moves ("P/e3-e4", instead of "e4")
+12.   Similar to style 10.
+13.   Displays board in color for SGI machines -- white versus purple pieces
+      with purple and black squares (for b/w monitors it would display as bold
+      and regular).
+
+  Some graphics interfaces work only with specific board styles.  Determine
+which one is best for your set up.
+
+  Suggestions on different styles are always welcome.
+
+See Also:  interfaces  variables
+
+[Last modified: November 26, 1995 -- Friar]
+

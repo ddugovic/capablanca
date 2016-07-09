@@ -1,0 +1,62 @@
+#!/usr/bin/expect -f
+# simple test setup script for lasker
+# Andrew Tridgell <lasker@tridgell.net>
+
+if {$argc < 3} {
+    send_user "Usage: setup.exp HOSTNAME USERNAME PASSWORD\n"
+    exit
+}
+
+set host [lrange $argv 0 0]
+set user [lrange $argv 1 1]
+set pass [lrange $argv 2 2]
+
+set timeout -1
+match_max 100000
+
+spawn telnet $host 5000
+expect "\rlogin: "
+send "admin\r"
+expect "Press return to enter the FICS"
+send "\r"
+expect "fics% "
+
+send "addplayer admin none The Admin\r"
+expect "Added: "
+expect "fics% "
+
+send "asetpass admin $pass\r"
+expect "has changed your password"
+expect "fics% "
+
+# login again
+spawn telnet $host 5000
+expect "\rlogin: "
+send "$user\r"
+expect "password: "
+send "$pass\r"
+expect "fics% "
+
+send "who\r"
+expect "$user"
+expect "players displayed"
+expect "indicates system administrator."
+expect "fics% "
+
+send "aconfig\r"
+expect "fics% "
+
+send "aconfig SERVER_LOCATION test location\r"
+expect "fics% "
+
+send "aconfig SERVER_HOSTNAME test\r"
+expect "fics% "
+
+send "aconfig HEAD_ADMIN_EMAIL nobody@samba.org\r"
+expect "fics% "
+
+send "aconfig\r"
+expect "fics% "
+
+send "quit\r"
+expect "Thank you"

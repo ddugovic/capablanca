@@ -1,0 +1,12 @@
+
+ptell
+
+Usage: ptell string
+
+  This form of communication is used during a bughouse match.  "Ptell" will
+send a message to your partner; no one else will receive it.
+
+See Also:  bughouse  tell
+
+[Last modified: November 26, 1995 -- Friar]
+

@@ -1,0 +1,19 @@
+
+decline
+
+Usage: decline [1-n, all, abort, adjourn, draw, match, pause, player, simul,
+switch, takeback]
+
+  Decline an offer that has been made to you.  If no parameter is given and
+there is only one offer, you decline it.  If there is more than one offer (for
+example multiple match offers), then you must specify which offer you want to
+decline.  You can decline offers in several ways: by number, by type, all
+offers, or by the player's name making the offer.  For example, the command
+"decline match" will decline all pending match offers you have been given. 
+The command "decline Shane" will decline the offer made by Shane.
+
+See Also:  abort  accept  adjourn  draw  match  pause  pending  simul  switch
+takeback
+
+[Last modified: June 20, 1995 -- Friar]
+

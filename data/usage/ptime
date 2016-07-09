@@ -1,0 +1,4 @@
+Command:  ptime
+Purpose:  display the clock times in your bughouse partner's game
+Usage:    ptime
+Examples: ptime

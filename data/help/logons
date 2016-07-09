@@ -1,0 +1,13 @@
+
+logons
+
+Usage: logons [user]
+
+  Shows the last 10 or so logons for the given user.  Displayed will be the
+date, time and IP address for your connection.  Example: "logons Mozart".  If
+"user" is omitted then your last logons are displayed.
+
+See Also: llogons
+
+[Last modified: November 26, 1995 -- Friar]
+

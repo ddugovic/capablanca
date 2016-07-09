@@ -1,0 +1,4 @@
+Command:  unobserve
+Purpose:  remove a game (or all games) from your observation list
+Usage:    unobserve [game,user]
+Examples: unobserve 25; unobserve GMKasparov; unobserve (removes all games)

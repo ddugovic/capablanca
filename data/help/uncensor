@@ -1,0 +1,12 @@
+
+uncensor
+
+Usage: uncensor [user]
+
+  Removes 'user' from your censor list.  If 'user' is omitted then the
+entire list is cleared.
+
+See Also:  censor  intro2
+
+[Last modified: June 20, 1995 -- Friar]
+

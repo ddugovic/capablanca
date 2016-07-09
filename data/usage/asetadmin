@@ -1,0 +1,4 @@
+  Command:  asetadmin
+  Purpose:  sets admin level of a user (certain restrictions apply)
+  Usage:    asetadmin user adminlevel
+  Examples: asetadmin Sparky 10

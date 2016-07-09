@@ -1,0 +1,37 @@
+
+lag
+
+  Games over the internet are affected by lag -- the time it takes for the
+electronic transmission of moves and game positions.  As a result, some of
+your clock time in a chess match is used up by lag time rather than thinking
+time.
+
+  There are many ways for you to get around this problem with transmission
+lag:
+
+    (a) Play games with a higher increment per move and, in general, longer
+        time controls in general.
+
+    (b) Play unrated games for a while until the lag problem seems to have
+        improved.
+
+    (c) Tell your opponent about your lag.  In response, your opponent might
+        do one of several things:
+        (i)    Give you more time occasionally.
+        (ii)   Turn autoflag off (if they have that feature), or at least
+               decide not to flag you as soon as your time hits 0:00.
+        (iii)  Agree to abort your game, and cancel it.
+        (iv)   Agree to adjourn your game, and continue it later.
+        (v)    Ignore your information and play on as usual (your opponent is
+               under no obligation to give you a break because of lag).
+
+    (d) Use the "timeseal" program if it works for your computer system and
+        configuration.  Using timeseal, your clock is not deducted for lag
+        time, just thinking time.  Read the "timeseal" help file for details.
+
+NOTE: It is not unethical for someone to flag you when you have lag.
+
+See Also:  abort  flag  match  moretime  timeseal
+
+[Last modified: September 19, 1995 -- Friar]
+

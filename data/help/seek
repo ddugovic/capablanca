@@ -1,0 +1,102 @@
+seek
+
+Usage: seek [time inc] [rated|unrated] [white|black] [crazyhouse] [suicide]
+            [wild #] [auto|manual] [formula] [rating-range]
+
+  The "seek" command allows you to post an advertisement for a chess 
+game of the  specified type.  The various parameters of the "seek" 
+command are as follows:
+
+     PARAMETER       COMMENTS
+     ---------       --------
+     time            minutes to start with for each player [default: your Time 
+                     variable setting]
+     inc             seconds added to each clock per move [default: your Inc
+                     variable setting]
+     rated/unrated   type of match; may be abbreviated by "r" and "u" 
+                     [default: your Rated variable setting]
+     white/black     designated colour you will have; may be abbreviated by "w"
+                     and "b" [default: no colour specified]
+     crazyhouse      see "help crazyhouse" if you are not familiar with this
+                     chess variant; may be abreviated by "zh"
+     suicide         see "help suicide" if you are not familiar with this
+                     chess variant
+     wild #          wild chess variant, if any, such as wild 1, wild 2, wild 
+                     fr, etc.; a shortcut for wild # is w#, but wild fr has no 
+                     shortcut [default: regular chess]
+     auto/manual     indicates whether a game will start automatically when 
+                     the ad is responded to, or if the person who placed the 
+                     ad has the option to decline responses; may be 
+                     abbreviated by "a" and "m" [default: auto start]
+     formula         indicates whether your formula will used to screen 
+                     responses to your ad; may be abbreviated by "f" [default:
+                     formula is not checked]
+     rating-range    indicates rating qualifications for the opponents, such 
+                     as 1300-1800 [default: 0000-9999]
+
+Note: If settings for time, inc or rated/unrated are not given, your 
+"variables" settings will be used.  Example A: if your variables settings have 
+Time = 5, Inc = 0, and rated = 0 then typing "seek" would be the same as 
+typing "seek 5 0 u".  Example B: if your variables settings have Time = 5, Inc 
+= 12, then typing "seek 2" would be the same as typing "seek 2 12". 
+
+When you place an ad, it will be displayed to users in this general format:
+
+    Hawk(2700) seeking 5 0 rated blitz [white] m ("play 2" to respond)
+
+
+FREQUENTLY ASKED QUESTIONS:
+
+(1)  Who will see my ad when it is posted? -- To have your ad displayed 
+to a user the moment you make it, the other user must have his/her 
+"seek" variable set to 1 and the ad must agree with his/her formula (see 
+"help formula").  Otherwise, users can type "sought" to display current 
+ads (see "help sought").
+
+(2)  How can I see ads displayed? -- There are two ways: (a) type "set 
+seek 1" and see ads displayed when they are created (type "set seek 0" 
+to cancel these postings; see "help v_seek"); (b) type "sought" to 
+display current ads for which are you eligible (see "help sought").
+
+(3)  How many ads can I place at once? -- This value is set in the server code
+when it is compiled.  To see the current limit for active seek ads, type
+"limits".
+
+(4) How can I see my own ad? -- You need to type "sought all" (see "help 
+sought").
+
+(5)  How do I withdraw an ad I have placed? -- Use the "unseek" command 
+(see "help unseek").
+
+(6)  How do I respond to an ad? -- Use the "play" command (see "help 
+play").
+
+(7)  What happens to my "open" variable when I post an ad or respond to 
+an ad? -- Nothing.  The value for your "open" variable does not change.  
+For example, you can have "open=0" but still place ads and repsond to 
+them.
+
+(8)  What does the "manual" option do exactly? -- When you place a 
+"seek" ad using manual start and a user responds to your ad, you will be 
+sent a "match" request.  You will then have the option of accepting or 
+declining that user's offer to play your advertised match
+
+SPECIAL NOTES:
+
+(a) Users on your 'noplay' list will not be able to respond to your seek ad;
+the 'play' command will be rejected automatically.
+
+(b) (C)omputer accounts can issue seeks, but they cannot answer them.
+
+(i) The server software uses your history (and your opponent's) to determine
+who will get White. Starting from the bottom, for each entry we compare the
+colour you had and the one your opponent had. If they match, we look at the
+next entry. If they don't match we swap them and that is your colour for this
+game. If there are fewer than 10 entries for one player we assume the missing
+colour is the opposite of the one we know about. If they both run out together,
+or all 10 entries match, the colour is randomly chosen.
+
+See also:  crazyhouse  formula  fr  history  limits  match  noplay  play  sought
+           suicide  unseek  variables  v_inc  v_open  v_seek  v_time  wild
+
+[Last modified: February 17, 1999 -- pgv]

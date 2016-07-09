@@ -1,0 +1,4 @@
+  Command:  asethandle
+  Purpose:  change the handle of a user
+  Usage:    asethandle oldname newname
+  Examples: asethandle StupidName BetterName

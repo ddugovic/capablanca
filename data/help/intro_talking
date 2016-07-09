@@ -1,0 +1,67 @@
+
+intro_talking
+
+COMMUNICATING TO OTHER USERS
+
+  There are several commands you could use for communicating with other users. 
+Here is a list, followed by some comparisons.
+
+    command      function
+    --------     --------------------------------------------
+    +channel     Listen to tells sent to a given channel (-channel to leave a
+                 chanel)
+    cshout       Talk to all users who are open to shouts; message must be
+                 about chess
+    it           Special kind of shout
+    kibitz       Talk to all players and observers of a specific chess game
+    message      Send a user a message to be stored, even if the user is not
+                 logged on at that time
+    ptell        Talk to your bughouse partner
+    say          Talk to the user you are playing chess with (or have just
+                 played a game with)
+    shout        Talk to all users who are open to shouts
+    tell         Talk to one user, or users on one channel
+    whisper      Talk to all observers of a specific chess game
+    xtell        Talk to one user, but allow for a continuing conversation
+                 with another user
+
+  In general, "message" works like an answering machine, " ptell", "tell" and
+"say" are like normal one-to-one conversations, "shout", "cshout", "it" and
+"tell <channel>" are for group talks, and "kibitz" and "whisper" are for
+commenting on a chess match you are observing.  Channel 1 is the server help
+channel (see the chan_1 help file).
+
+
+RECEIVING MESSAGES
+
+  In general, you will receive every message sent to all users, to users on
+channels you are listening to, and to you personally.  However, you can decide
+not to be open to certain kinds of communications.  The "shout" and "tell"
+variables can be set to limit what you will hear (read the intro_settings help
+file).  You can also decide not to hear anything from a given user (the
+"censor" command).
+
+  The "message" command is used to send a message to a user and have it
+stored.  This command can also be used to read (and re-read) old messages that
+have been sent to you as well as old messages you have sent to other users. 
+The "clear" command is used to erase old messages you have received.
+
+
+SPECIAL NOTES
+
+(a)  At times, a lot of messages from various users will come across your
+screen.  To help you notice when a user has sent a message or request to you
+personally (rather than to all users on the server), you can set the highlight
+variable to to make them readily apparent (see highlight).
+
+(b)  Unregistered users (guests) are limited to the "tell" and "xtell"
+commands.
+
+(c)  Please observe chess server etiquette guidelines when using these
+commands.
+
+See Also:  chan_1  etiquette  highlight  intro_playing  intro_settings 
+shout_abuse  [and the individual commands of course]
+
+[Last modified: December 19, 1995 -- Friar]
+

@@ -1,0 +1,13 @@
+canewsp
+
+Usage: canewsp #
+RESTRICTED TO ADMINISTRATORS.
+
+   This command allows you to change the poster of an anews item. The 'Posted
+by <admin>' line at the end of the anews item will reflect the admin account
+which executed the command.  The '#' is the number of the anews index.
+
+See ahelp:  canewse canewsf canewsi canewst
+See help:   anews
+
+[Last modified: December 12, 1999 -- carlsbad]

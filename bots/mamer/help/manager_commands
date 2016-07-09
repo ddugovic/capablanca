@@ -1,0 +1,23 @@
+manager_commands
+
+addchaos         | ac    |  25 | Adds (or subs) chaos points.
+announce         | ann   |  10 | Announce the tournament to the working
+\   channel.
+addtotourney     | att   |  50 | Add a user to a tourney.
+create           | cr    |  10 | Creates a new tournament.
+close            | cl    |  10 | Closes and starts a tournament.
+delete           | del   |  10 | Deletes a tournament.
+forfeit          | fo    |  10 | Remove a user from a tourney.
+keep             | k     |  25 | Keep a tourney in memory.
+listrank         | rank  | 100 | Displays player rank.
+loadedusers      | lu    |  25 | Displays the loaded users.
+messman          | mm    |  50 | Message all of the Managers.
+open             | ot    |  10 | Opens the tournament to players.
+setinfo          | si    | 100 | Set a user's finger info.
+setmanagerlevel  | sml   |  50 | Sets manager's level.
+setres           | sr    |  10 | Sets the result of a game.
+setstat          | ss    |  50 | Sets a specific finger stat.
+settourneyvar    | stv   |  10 | Sets a Tourney's Variables.
+shutdown         | sd    |  50 | Shuts down Mamer.
+
+[Last modified: September 1, 1998 -- toddmf]

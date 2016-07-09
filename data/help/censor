@@ -1,0 +1,21 @@
+
+censor
+
+Usage: +|-|= censor [user]
+
+  When a player is on your censor list, you will not hear anything from
+him/her when he/she tells, shouts, matches, kibitzes, whispers and says.  When
+users on your censor list send you a direct message using "tell", they will be
+notified of their being on your censor list.  Here are the variations of the
+command possible:
+
+    +censor user     Add "user" to censor list
+    -censor user     Remove "user" from censor list
+    =censor          Display your censor list
+
+  Note that "noplay" only filters match requests, not other communications.
+
+See Also:  addlist  kibitz  noplay  say  shout  tell  whisper
+
+[Last modified: December 17, 1995 -- Friar]
+

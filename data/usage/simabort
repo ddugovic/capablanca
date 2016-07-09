@@ -1,0 +1,4 @@
+Command:  simabort
+Purpose:  used in simuls to request (or accept) an abort of a game
+Usage:    simabort
+Examples: simabort

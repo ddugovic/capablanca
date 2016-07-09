@@ -1,0 +1,5 @@
+  Command:  adjudicate
+  Purpose:  make a decision about a game's result
+  Usage:    adjudicate white_player black_player abort|draw|white|black
+  Examples: adjudicate Hawk Sparky draw; adjudicate Hawk Sparky white;
+            adjudicate Hawk Sparky black; adjudicate Hawk Sparky abort

@@ -1,0 +1,22 @@
+
+remote
+
+Usage: remote USER command
+
+  This command allows you to remotely control another logged in user,
+  if you are in their "remote" list. The player you are controlling
+  will receive a message telling them who issued a command and what
+  command was issued.
+
+  This command is intended to make controlling computer accounts easier.
+
+  To add a player to your remote list use the command:
+    +remote USER
+
+  To remove a player from your remote list use the command:
+    -remote USER
+
+  To see who is in your remote list use the command:
+    =remote
+
+See Also:  channel

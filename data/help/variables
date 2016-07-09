@@ -1,0 +1,85 @@
+
+variables
+
+Usage: variables [user]
+
+  This command will display the variables of the given user.  If no user is
+given then your variable settings will be displayed.  Here are the variables
+that will be displayed.
+
+VARIABLE INFORMATION
+
+  Name        Function
+  ----        --------
+  automail    If non-zero, the moves of your games will be mailed to you
+              upon completion; your e-mail address will be used (make sure it
+              is correct; if not, contact an admin).
+  bell        If non-zero, a ^G or bell will be sent when a board update
+              is done.  In most cases, you will hear a beep.
+  cshout      If non-zero, you will hear cshouts.  If zero, you will not.
+  f1-f9       Special variables for the formula.
+  flip        If is non-zero, rotates the board the opposite way (for
+              example, instead of White at the bottom, Black will be at the
+              bottom).
+  formula     The formula used to filter match requests, that is, decline
+              them automatically.
+  gin         If non-zero, you will be notified when games begin or end.
+  height      Sets the number of lines of text you will receive before a
+              [next] break occurs; usually the screen height.
+  highlight   If non-zero, player's names who tell you stuff will be
+              highlighted.
+  jprivate    If non-zero, the user's journal cannot be read by others.  If
+              zero, it is open to be read by other users.
+  kibitz      If non-zero, you will hear kibitz's from observers of your
+              games.
+  kiblevel    Limits kibitzes and whispers you will receive to users who have
+              the given rating or higher.  Value is reset to 0 when you
+              logout.
+  language    Selects a help file in this language, if available.  The default
+              is English.  Spanish is also available.
+  mailmess    If non-zero, messages to you will be mailed to your e-mail
+              address automatically.
+  notifiedby  If non-zero, you will be notified by the server when users
+              having you on their notify lists log on/off.  If zero, you will
+              not receive such notifications.  Use of notifiedby can cut down
+              on the size of notify lists (see "notify" help file for
+              details).
+  open        If non-zero, you are willing to accept match requests.  If
+              zero, you will not receive match requests.
+  pin         If non-zero, you will be informed when any user connects to or
+              disconnects from the server.
+  pgn         If non-zero, mails games to you in PGN format.  If zero,
+              regular, column format will be used.
+  private     If non-zero, then all games you play will be private regardless
+              of your opponent's 'private' variable; no observers will be
+              permitted.
+  prompt      This string will be your prompt.  Use 'set prompt' to restore
+              the system default.  (Caution: some graphics interfaces may need
+              certain prompts in order to work correctly.)
+  rated       If zero, your game will not be rated.
+              If non-zero, and all of these conditions hold, then your game
+              will be rated:
+                1: Your opponent's rated variable is non-zero
+                2: The time controls for the game qualify as a rated game
+                3: There are no time-odds
+                4: The game started position is standard.
+  ropen       If zero, you will only be open to match requests from users who
+              have the same setting for "rated".  If non-zero, you will
+              receive other requests as well.
+  shout       If non-zero, you will hear shouts.  If zero, you will not.
+  simopen     If non-zero, you are willing to accept simul requests. This
+              variable is always set to 0 when you log in.
+  style       The style of board to use.
+  tell        If non-zero, you will hear tell's and say's from unregistered
+              users.  If zero, you will not.
+  width       Sets the width of your display (from 32 to 240).
+  1-10        This sets your information that is displayed when someone
+              fingers you.  You can set these 'notes' to an arbitrary string
+              of length 100.  You can display information in ten slots,
+              numbered 1-10.
+
+See Also:  bell  cshout  finger  flip  formula  highlight  journal  kibitz 
+kiblevel  notes  private  set  shout  simuls  style  tell
+
+[Last modified: December 25, 1995 -- Friar]
+

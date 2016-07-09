@@ -1,0 +1,30 @@
+
+chkgame
+
+Usage: chkgame #
+RESTRICTED TO ADMINISTRATORS.
+
+  This command is a debugging tool primarlity, but might be useful for other
+occasions as well.  The following information on a game is displayed:
+
+Current stored info for game # (garray[#]):
+Initial white time: #    Initial white increment #
+Initial black time: #    Initial black increment #
+Time of starting: DATE
+Game is: User1 (rating) vs. User2 (rating)
+White parray entry: #    Black parray entry #
+Game is not bughouse or link to partner's game not found.
+    [versus bughouse links exist]
+Game is rated [or unrated]
+Game is not private [or is private]
+Games is of type blitz  [or other type]
+## halfmove(s) have been made
+White's time #    Black's time #
+The clock is [is not] ticking
+Game status: GAME_NEW [versus GAME_EXAMINE for instance]
+
+See ahelp:  
+See help:  games
+
+[Last modified: December 25, 1995 -- Friar]
+

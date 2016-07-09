@@ -1,0 +1,40 @@
+mamer_rating
+
+mamer rating formula
+--------------------
+
+ Pre_tourney stats:
+   pre_wins
+   pre_draws
+   pre_losses
+   pre_rating  - this is what we have to initialize
+
+ 
+ From the tourney just completed:
+   tourn_wins, tourn_draws, tourn_losses
+
+ Post tourney stats: stuff that is saved.
+   post_wins, post_draws, post_losses, post_rating
+
+
+ Calculations:
+  tourn_expect = sigma(over all rounds) {1/[1+10^(delta/400)]}
+         delta = player_FICS_rating - opponent_FICS_rating
+
+    pre_expect = (pre_wins + 0.5*pre_draws)/pre_rating
+
+     post_wins = pre_wins + tourn_wins
+    post_draws = pre_draws + tourn_draws
+   post_losses = pre_losses + tourn_losses
+
+   post_rating = (post_wins + 0.5*post_draws)/(pre_expect + tourn_expect)
+
+
+  Comments:
+----------------
+Ratings will tend to be near 1.0, and a typical range is 0.5 to 1.5.
+Ratings are initialized based on your win percentage.
+
+ Questions, comments, suggestions?? contact mlong.
+
+[Last modified: August 19, 1998 -- fpawn & mlong]

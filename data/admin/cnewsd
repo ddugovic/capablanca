@@ -1,0 +1,9 @@
+cnewsd
+
+Usage: cnewsd #
+RESTRICTED TO ADMINISTRATORS.
+
+This command removes the last line of a news item
+
+See ahelp:  cnewse cnewsi cnewsp cnewst
+See help:   news

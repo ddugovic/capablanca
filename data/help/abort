@@ -1,0 +1,27 @@
+
+abort
+
+Usage: abort
+
+  The "abort" request is used in two situations during a chess game.
+
+  (1) You wish to abort the game for some reason.  "Abort" sends a request to
+your opponent that your game be aborted.  Your opponent can accept or decline
+your offer.  If a proposal to abort has been sent to you, then typing "abort"
+(or "accept") will accept the offer.
+
+  (2) Your opponent has run out of time and you believe that a problem has
+occured with the connection to the chess server.  Rather than "flag" your
+opponent and claim a win on time, you can "abort" the game.  (This function is
+the old "courtesyabort" command just made easier to use.)  If you are both out
+of time, however, (a) the abort command will be sent as a request, but (b) you
+can "flag" and the result will be a draw.
+
+  An aborted game is canceled; no changes in ratings occur, the game is not
+stored, and it is not listed in history or counted as a completed game in your
+statistics.
+
+See Also:  accept  decline  flag  lag  pending
+
+[Last modified: October 8, 1995 -- Friar]
+

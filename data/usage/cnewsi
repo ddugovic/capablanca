@@ -1,0 +1,4 @@
+  Command:  cnewsi
+  Purpose:  create a regular news item
+  Usage:    cnewsi headline
+  Examples: cnewsi New timeseal versions done!

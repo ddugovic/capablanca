@@ -1,0 +1,24 @@
+
+allobservers
+
+Usage: allobservers [game,user]
+
+  If a game is specified then all users observing or examining that game are
+displayed.  However, if there are no observers for that game, nothing will be
+displayed.
+
+  If no game is specified, then all users observing or examining games in
+progress are displayed.  However, if there are no observers or examining for
+ANY game, nothing will be displayed.
+
+  The display will have this format: Game #, Players, Observers.  For example:
+
+      Observing 18 [DAV vs. friar]: Thumper, Charity, Shane
+      Examining 29 (scratch): #Friar, loon
+
+For examined games, there are examiners (people changing the position, noted
+by #) and observers.
+
+See Also:  examine  observe 
+
+[Last modified: June 29, 1995 -- Friar]

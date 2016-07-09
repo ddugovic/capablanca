@@ -1,0 +1,20 @@
+
+addcomment 
+
+Usage: addcomment user comment
+RESTRICTED TO ADMINISTRATORS.
+
+  Places "comment" in the user's comments.  If a user has comments, the number
+of comments is indicated to admins using the "finger" command.  The comments
+themselves are displayed by the "showcomments" command.
+
+  Please add comments when action is taken regarding the user's account, such
+as admin actions, changes in settings or even complaints from other users. 
+Comments provide a ready source of documentation and reference for all admins
+to review as needed.
+
+See ahelp:  finger  showcomment
+See help:   
+
+[Last modified: September 14, 1995 -- Friar]
+

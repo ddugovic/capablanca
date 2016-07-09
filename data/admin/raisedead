@@ -1,0 +1,20 @@
+
+raisedead
+
+Usage:  raisedead oldname [newname]
+RESTRICTED TO ADMINISTRATORS
+
+   Restores an account that has been previously removed using "remplayer". 
+The zombie files from which it came are removed.  Under most circumstances,
+you restore the account to the same handle it had before (oldname).  However,
+in some circumstances you may need to restore the account to a different
+handle, in which case you include "newname" as the new handle.  After
+"raisedead", you may need to use the "asetpasswd" command to get the player
+started again as a registered user, especially if the account had been locked
+by setting the password to *.
+
+See ahelp:  addplayer  asethandle  asetpasswd  remplayer
+See help:   
+
+[Last modified:  July 1, 1995 -- Friar]
+

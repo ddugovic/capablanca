@@ -1,0 +1,4 @@
+  Command:  announce
+  Purpose:  broadcast message to all users logged on
+  Usage:    announce message
+  Examples: announce Type "observe 45" for the world championship game.

@@ -1,0 +1,18 @@
+
+mexamine
+
+Usage: mexamine user
+
+  This command is used by a person examining a game in order to allow other
+users to move the pieces and execute commands in examine mode.  The user must
+first be observing the game in order for "mexamine" to work.  Here are the
+steps: (1) enter examine mode, (2) have another user "observe" that game, (3)
+"mexamine that_user".
+
+NOTE:  As long as there is at least one examiner, the game continues even if
+the first examiner leaves that game.
+  
+See Also:  examine  observe
+
+[Last modified: September 22, 1995 -- Friar]
+

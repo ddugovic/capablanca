@@ -1,0 +1,5 @@
+Command:  whenshut
+Purpose:  display whether a shutdown is in progress and, if so, when it will
+          occur
+Usage:    whenshut
+Examples: whenshut

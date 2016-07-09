@@ -1,0 +1,4 @@
+Command:  backward
+Purpose:  move backward in the game sequence as you examine a game
+Usage:    backward [#]     [default: 1]
+Examples: backward; backward 2

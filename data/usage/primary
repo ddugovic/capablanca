@@ -1,0 +1,4 @@
+Command:  primary
+Purpose:  designate which game is 'primary' for purposes of observation
+Usage:    primary name|#
+Examples: primary DAV; primary 21

@@ -1,0 +1,13 @@
+loadedusers
+
+Alias: lu
+
+Usage: loadedusers
+
+Reserved for mamer managers (level 25 or higher)
+
+This command lists all players who have sent mamer a tell since it has been
+logged in.  This can be used to find out if a player who is having trouble
+using mamer has even reached the point of sending a tell to it.
+
+[Last modified: August 29, 1998 -- toddmf]

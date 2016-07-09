@@ -1,0 +1,35 @@
+Projects for FICS:
+
+Big projects:
+
+1. Set up commands for examine mode; allow examiners to add or remove pieces
+   to or from a position.  Also allow users to clear the board except for
+   kings.
+
+2. Network many servers together.
+
+
+Medium projects:
+
+3. Rank information in RAM.  UpdateRank takes too long.
+
+
+Smaller projects:
+
+4. Channel names (like "admin channel") instead of channel numbers
+   ("channel 0").  If we do this, I think we could seriously consider
+   eliminating the "shout" and "it" commands.
+
+5. Draw offers and aborts for adjourned games.
+
+6. On line registration.  I don't see any reason not to allow this now that
+    we also have autoreg by e-mail.
+
+7. Apparently some limits are not checked; MAX_CHANNEL, MAX_ALIAS, probably
+   some others as well.  We should fix this.
+
+Well, these are my immediate thoughts; feel free to add your own, or to
+program these.
+
+[Last modified: November 16, 1995 -- hersco]
+

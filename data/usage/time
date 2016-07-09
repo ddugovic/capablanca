@@ -1,0 +1,4 @@
+Command:  time
+Purpose:  displays the current clock time for a game in progress
+Usage:    time [game, user]
+Examples: time; time 45; time Hawk

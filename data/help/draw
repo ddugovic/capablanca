@@ -1,0 +1,22 @@
+
+draw
+
+Usage: draw
+
+  Requests a draw from your opponent.  A draw means that you neither win nor
+lose your chess match -- the game will be a tie.  Ratings are affected,
+however, unless it was an unrated match.
+
+  If your opponent had offered you a draw, then the command draw (or accept)
+would accept the draw offer.  To decline a draw offer, either use the decline
+command or make a move instead.
+
+  This command also claims a draw in the case of the 50 move rule or
+3 times repetition.  In the case of a draw being requested, the chess server
+will check for these conditions.  If one of them is present, the game will be
+drawn even without the opponent accepting the draw.
+
+See also: accept  decline
+
+[Last modified: June 11, 1995 -- Friar]
+

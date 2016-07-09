@@ -1,0 +1,4 @@
+Command:  shout
+Purpose:  send message to all users open to receive shouts
+Usage:    shout message
+Examples: shout Time to go!  Bye-bye!!!

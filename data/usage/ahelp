@@ -1,0 +1,4 @@
+  Command:  ahelp
+  Purpose:  prints special admin help files
+  Usage:    ahelp [topic]
+  Examples: ahelp; ahelp ban

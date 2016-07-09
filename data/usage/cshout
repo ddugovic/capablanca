@@ -1,0 +1,4 @@
+Command:  cshout
+Purpose:  send message to users who are open to receive cshouts
+Usage:    cshout message
+Examples: cshout Anyone for 2 5 rated?

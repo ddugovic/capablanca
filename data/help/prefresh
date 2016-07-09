@@ -1,0 +1,12 @@
+
+prefresh
+
+Usage: prefresh
+
+  This command will display your partner's game during a bughouse match.  In
+essence, it is "refresh" for your bughouse partner's game. 
+
+See Also:  bughouse  refresh
+
+[Last modified: December 17, 1995 -- Friar]
+

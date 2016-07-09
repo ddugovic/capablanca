@@ -1,0 +1,18 @@
+Things I've worked on: (foxbat)
+ 
+ratings.c    3.10.95 - if 2 0 rated players play a rated game, Rb_S can go
+                       negative, which is bad for the sqrt function.  added
+                       a filter to stop this.  Also the pow(x,y) funtion
+                       expects floating point args, so changed 10 to 10.0
+ 
+ratings.c    3.11.95 - added code to increment the number of games played and
+                       Rb_total/Rs_total's in the rating_update function.
+ 
+comproc.c    3.11.95 - in com_match, added filters so the 'rated' variables
+                       must match before a match request is issued. 
+ 
+gamedb.c     3.12.95 - if a rated game was drawn, the 'Winner' column in hist
+  and                  was showing whoever was white, so I changed these 2
+gameproc.c             files to show that it was 'Drawn'.  also limited the
+                       character length of names in history to 9.
+ 

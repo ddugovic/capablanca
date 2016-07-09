@@ -1,0 +1,4 @@
+Command:  news
+Purpose:  list recent news items -OR- display details of a news item
+Usage:    news [all|#[-#]]
+Examples: news; news all; news 11; news 35-50

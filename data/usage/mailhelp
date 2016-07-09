@@ -1,0 +1,4 @@
+Command:  mailhelp
+Purpose:  email a help file to you (or show files that can be emailed)
+Usage:    mailhelp [filename]
+Examples: mailhelp; mailhelp intro_welcome

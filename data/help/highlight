@@ -1,0 +1,20 @@
+
+highlight
+
+Usage: set highlight [0-15]
+
+  Highlight is one of the variables you can change with the "set" command. 
+When highlight is non-zero and you receive a personal tell, the sender's
+handle will be displayed in a different style thus making the tell more
+obvious on your screen.  Other information, such as your location in a ranking
+list or who list, will also be displayed to you in a different style thus
+making it easier to read.
+
+  There are 15 possible styles.  However, the way they appear on your screen
+will depend on many factors.  Try they out to see which style works best for
+you.  "Set highlight 0" turns the highlight to neutral (off).
+
+See Also:  rank  set  tell  variables  who
+
+[Last modified: October 8, 1995 -- Friar]
+

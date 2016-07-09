@@ -1,0 +1,17 @@
+withdraw
+
+Alias: with
+
+Usage: withdraw <tourney number>
+
+Use this command to withdraw from(in other words, leave) a tourney.  If the
+tourney has not started yet, you may withdraw without penalty.  However, if 
+you leave a tourney in progress, you will gain chaos points equal to 10 times 
+the number of rounds you miss.  If you were playing in a round robin tourney, 
+the results of your games will all be set to 0-0.  If you were playing in a 
+swiss, the results of your completed games will stand, but you will lose
+remaining games by forfeit.
+
+See also: chaos, swiss
+
+[Last modified: September 1, 1998 -- toddmf]

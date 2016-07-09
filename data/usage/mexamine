@@ -1,0 +1,4 @@
+Command:  mexamine
+Purpose:  allow another user to examine a game with you
+Usage:    mexamine user
+Examples: mexamine connex

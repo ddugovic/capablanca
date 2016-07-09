@@ -1,0 +1,17 @@
+cnewse
+
+Usage: cnewse # [n]
+RESTRICTED TO ADMINISTRATORS.
+
+  This command sets the expiration of the news item to a number of days [n].
+The '#' is the number of the news index.  If the number of days is not
+specified, the news item will be perpetual; otherwise, it will expire in the
+specified number of days and be removed from the news index altogether.  The
+expiration of news items will force the news index out of its running sequence.
+
+NOTICE:  To expire a news item immediately, use 'cnewse # 0'.
+
+See ahelp:  cnewsf cnewsi cnewsp cnewst
+See help:   news
+
+[Last modified: December 12, 1999 -- carlsbad]

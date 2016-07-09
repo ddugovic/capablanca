@@ -1,0 +1,32 @@
+ NOTE: This file dates back to 1996, and some of the information in it
+       is no longer accurate. However, it has been preserved because it
+       contains interesting historical information.
+
+     This program is an automated Tournament Direct for use with online
+ Chess servers mainly FICS.  If it is used with anything other than    
+ FICS at this time it will crash with out question.  It is programmed  
+ to respond to the parsing of FICS text only.  Fred Baumgarten         
+ originally wrote this code because there was a need and Chevier Joel  
+ the creator of Tomato would not share the code.  Fred gave me the code
+ in mid 1995 with the stipulation I not release it to anyone.  I       
+ have modified and (I hope) improved mame (now mamer).
+     Jean (current programmer of Tomato) and I are working very
+ closely on developing similar features and improving both tournament
+ directors.  Our current project is to create a rating system that will
+ be used by both Mamer and Tomato.
+     
+     Mamer stands for "manage me". Plus the -r- for the
+ differentiation between mame (Fred's) code and mamer (mlong's) code.
+     Fred's words follow: The intention to write this tournament director
+ program came out of the need to have such a program. Tomato - used at
+ FICS and written by darkside was not released to the public. Darkside
+ even did not want to accept a non disclosure agreement - so I decided
+ to write such a program myself. The program is written in C and will
+ support a bunch of new features soon. It is beta state since Version
+ 0.5 but there _are_ bugs. 
+ Fred Baumgarten <dc6iq@insl1.etec.uni-karlsruhe.de>. Have fun !!!
+
+ Mamer is maintained and coded here on FICS by mlong.  PLEASE! FOR BUGS
+ PERTAINING TO MAMER TALK TO mlong.
+
+[Last modified: September 12, 1998 -- toddmf]

@@ -1,0 +1,15 @@
+
+pose
+
+Usage: pose user command
+RESTRICTED TO ADMINISTRATORS -- Super Users ONLY!!!
+
+  Executes 'command' as if it were typed by 'user'.  This command goes beyond
+the "asetv" command because "asetv" relates only to variable settings while
+"pose" relates to ALL commands a user might execute.
+
+See ahelp:  asetv
+See help:   
+
+[Last modified: October 1, 1995 -- Friar]
+

@@ -1,0 +1,15 @@
+
+asetwild
+
+Usage: asetwild handle rating won lost drew RD
+RESTRICTED TO ADMINISTRATORS.
+
+  This command allows admins to set a user's statistics for Wild games.  The
+parameters are self-explanatory: rating, # of wins, # of losses, # of draws,
+and ratings deviation.
+
+See ahelp:  asetblitz  asetstd
+See help:  glicko  ratings
+
+[Last modified: July 17, 1995 -- Friar]
+

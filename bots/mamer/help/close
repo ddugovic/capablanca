@@ -1,0 +1,16 @@
+close
+
+Alias: cl
+
+Usage: close <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+This command closes the specified tourney and starts it, preventing more
+players from joining.  If the amount of players who have joined reaches the
+"Max Players" set in the tourney's variables, the tourney will close and start
+automatically.
+
+See also: listtourneyvars, settourneyvar
+
+[Last modified: August 29, 1998 -- toddmf]

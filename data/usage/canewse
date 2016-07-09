@@ -1,0 +1,4 @@
+  Command:  canewse
+  Purpose:  change expiry of an admin news item
+  Usage:    canewse # expiry
+  Examples: canewse 180 2

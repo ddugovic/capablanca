@@ -1,0 +1,17 @@
+
+untimed
+
+  There are four types of regular (not wild or bughouse) chess played on this
+chess server: Untimed, Lightning, Blitz and Standard.
+
+  A game is "Untimed" if the clocks will not be used when playing the game. 
+In this case, both the Start and the Increment are 0.  For example, "match
+friar 0 0" would request an untimed game against Friar.  The clocks in an
+untimed game will not move (though interfaces may handle this in different
+ways).  Also, "flag" will not work since the times will never be below 0
+seconds.  Lastly, Untimed games are always unrated.
+
+See Also:  blitz  lightning  match  standard
+
+[Last modified: December 17, 1995 -- Friar]
+

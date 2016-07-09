@@ -1,0 +1,16 @@
+To get a registered account, send a message to AdminGuy:
+
+mess AdminGuy  fics_addplayer <handle> "<First M. Last>" <email-address> 
+
+	NOTE1: quotes have to be around the name field.
+	NOTE2: do not include the <>'s in your mail.  They only indicate
+               where you need to place information.
+
+	An example would be like the following, which would register
+        AdminGuy with the correct name and email information.
+ 
+  Ex:   fics_addplayer AdminGuy "I. M. Admin" chris@onenet.net
+
+ 	Please tell us if you will be playing with a computer (meaning
+        that a COMPUTER is deciding what moves to make), or if you are an 
+        FM, IM or GM (master's titles for international competition). 

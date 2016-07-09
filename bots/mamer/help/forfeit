@@ -1,0 +1,21 @@
+forfeit
+
+Alias: fo
+
+Usage: forfeit <handle> <tourney number>
+
+Reserved for mamer managers (level 10 or higher)
+
+The "forfeit" command forfeits the specified handle from the specified 
+tourney. If a player is forfeited from an open tourney, he is removed from the
+tourney with no penalty.  If the tourney is in progress when the player is
+forfeited, the player will gain chaos points equal to 10 times the number of 
+rounds he/she missed.  Please remove these chaos points if you feel they are 
+unwarranted. If the tourney is in progress and it is a round robin, the
+results of the player's games are all set to 0-0.  If the tourney is in
+progress and it is a swiss, the player's results for completed games stand, 
+but he/she loses all uncompleted games by forfeit.
+
+See also: chaos, swiss
+
+[Last modified: September 1, 1998 -- toddmf]

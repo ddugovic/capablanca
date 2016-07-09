@@ -1,0 +1,27 @@
+
+busy
+
+Usage: set busy string
+
+  Sets your "busy" string.  When your busy string is set and people "tell"
+something to you, they will get your busy string as a response.  Your busy
+string (if on) will also be displayed right below your name when someone
+"fingers" you.  NOTE: Your busy string can be no longer that 45 characters.
+
+Examples of busy strings you might use are:
+  set busy is really busy right now.
+  set busy will be back in 5 minutes.
+  set busy will be idle for a while...
+
+  Typing any command cancels your "busy" status; you don't have to clear it
+yourself.
+
+  It is useful to use an alias for your busy string, if you intend to use it
+frequently.  For example:
+  alias idle set busy is away from the keyboard right now
+would set your busy string to "is away from the keyboard right now".
+
+See also:  alias  finger  set  tell
+
+[Last modified: October 22, 1995 -- Friar]
+

@@ -1,0 +1,18 @@
+
+_help
+
+Type ...             In Order To ...
+------------------   --------------------------------------------------
+help chan_1          learn how to ask someone for help
+help commands        list all commands
+help help            learn how to read help files
+help intro_general   get basic information about the chess server
+help intro_welcome   get basic information about the introductory files
+help register        learn how to register on this server
+index                print a list of categories of help files
+index all            list all help files, by categories
+info                 to list all informational (non-command) help files
+quit                 exit the chess server and end your session
+set shout off        reduce the amount of information on your screen while
+                     you read the various help files
+

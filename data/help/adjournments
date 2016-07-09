@@ -1,0 +1,45 @@
+
+adjournments
+
+  Adjourned games are stored by the server until one of three things occurs:
+(a) the game is later resumed and completed, (b) one player resigns, or (c)
+the game is adjudicated.  Adjourned games can also be examined for purposes of
+analysis.  Typed "stored" to view the list of your adjourned games.  Games are
+adjourned either by agreement of both players or if a player disconnects
+suddenly; games are not adjourned if the server crashes, however.
+
+
+RESUMING AN ADJOURNED GAME
+
+  Your game can be resumed when your opponent is logged on to the server. 
+Type "match opponent_name" to request that you and your opponent continue your
+game.  Your opponent can either accept or decline this request.
+
+
+RESIGNING AN ADJOURNED GAME
+
+  Your game can be resigned even when your opponent is not logged on.  Type
+"resign opponent_name" to do this.  Your opponent will be notified of your
+decision.
+
+
+ADJUDICATION OF AN ADJOURNED GAME
+
+  If you have difficulty resuming your game with your opponent after repeated
+attempts, you can have your game adjudicated by an admin.  The "adjudication"
+help file outlines the procedure to follow for requesting an adjudication.
+
+
+EXAMINING AN ADJOURNED GAME
+
+  You can examine an adjourned game using the "examine" command.  You will be
+able to analyze possible continuations of the game.  For the most part, this
+analysis has the same restrictions as adjournments for over-the-board chess
+games: consultation is permitted.  However, when your game resumes, you must
+play without consultation or notes of any kind.
+
+
+See Also:  adjourn  adjudication  examine  match  resign  stored
+
+[Last modified: July 20, 1995 -- Friar]
+

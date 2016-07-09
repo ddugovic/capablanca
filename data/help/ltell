@@ -1,0 +1,9 @@
+
+lell
+ 
+Usage: ltell list message
+
+ltell is like xtell but it sends your message to every player on the
+specified list. So for example you could say hello to every computer
+player using:
+       ltell computer hello

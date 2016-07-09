@@ -1,0 +1,4 @@
+  Command:  asetrealname
+  Purpose:  change the real name of a user
+  Usage:    asetrealname user newname
+  Examples: asetrealname DAV A. W. Kin

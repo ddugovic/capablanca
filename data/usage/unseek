@@ -1,0 +1,4 @@
+Command:  unseek
+Purpose:  cancel one or all ads you have placed for chess matches
+Usage:    unseek [index_#]
+Examples: unseek; unseek 7

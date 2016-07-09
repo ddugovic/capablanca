@@ -1,0 +1,13 @@
+
+switch
+
+Usage: switch
+
+  Requests to switch sides with your opponent.  Switching sides can only be
+done before the first move of a rated game, or anytime during an unrated game. 
+Your opponent can "accept" or "decline".
+  
+See Also:  accept  decline
+
+[Last modified: June 12, 1995 -- Friar]
+

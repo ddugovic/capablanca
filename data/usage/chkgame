@@ -1,0 +1,4 @@
+  Command:  chkgame
+  Purpose:  displays information about a current game
+  Usage:    chkgame game#|handle
+  Examples: chkgame 56; chkgame TheDane

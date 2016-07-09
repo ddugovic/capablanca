@@ -1,0 +1,5 @@
+Command:  finger
+Purpose:  display ratings and/or notes about yourself or another user
+Usage:    finger [user] [/[b][s][l][w][B][S]] [r][n]
+Examples: finger; finger TheViking; finger TheViking r; finger TheViking n;
+          finger TheViking /wS r

@@ -1,0 +1,13 @@
+
+clearmessages
+
+Usage: clearmessages [user]
+
+  Clears any message(s) previously messaged to you.  If 'user' is omitted, all
+messages will be cleared.  If 'user' is included, only the messages from that
+user to you will be cleared.
+
+See Also:  messages
+
+[Last modified: June 16, 1995 -- Friar]
+

@@ -1,0 +1,179 @@
+
+formula
+
+Usage: set formula <formula-expression>
+
+
+SUMMARY
+
+  The formula variable filters out match requests.  If you have a formula set,
+then any match request not satisfying your formula is automatically declined;
+you will be notified that the offer was made and rejected by your formula.  If
+you make an offer that fails a player's formula, you will be given this
+feedback.  A user's formula and f-variable settings are displayed using the
+"variables" command.  You disable (turn off) your formula by typing "set
+formula".  This will, in essence, erase your current formula setting.
+
+  Here are some simple examples, with descriptions in [] brackets:
+
+    blitz        [match must be blitz]
+    !wild        [match must be non-wild]
+    inc >= 10    [match must have an increment of 10 or higher]
+
+  Create or modify a formula by using the "set" command.  For example, "set
+formula blitz".  Special variables (f1-f9) can also be established using the
+"set" command; these variables make it easier to modify your formula depending
+upon your mood.
+
+
+CREATING A FORMULA
+
+  (1) Decide whether you will be changing your formula often.  If so, think
+about using f-variables to make these changes easier.
+
+  (2) Decide exactly what kinds of filters you want to have, such as type of
+game, time controls, and kinds of opponents.
+
+  (3) Review the available formula operators and pre-defined variables (listed
+below) to see which ones fit your needs.
+
+  (4) Write out your formula and f-variables on paper to make sure that their
+"logic" works.
+
+  (5) Enter the logical expressions for the f-variables and formula using the
+"set" command.
+
+  Changing your f-variables and formula follows the same procedures.
+
+
+FORMULA VARIABLES
+
+  Several variables are allowed in formula settings.  Some of these variables
+hold numerical information while others are Boolean (true/false, 1/0).  Here
+is a list of allowed variables, where Boolean variables are denoted by "(B)":
+
+  The following variables are allowed in formulas:
+
+      Variable        Description
+      ------------    ---------------------------------------------------
+      abuser          1 if opponent is on the abuser list; 0 otherwise (B)
+      assessdraw      How many rating points you will gain/lose by drawing a
+                      chess match
+      assessloss      How many rating points you will lose by losing a chess
+                      match
+      assesswin       How many rating points you will gain by winning a chess
+                      match
+      blitz           1 if match is blitz in type; 0 otherwise (B)
+      computer        1 if opponent is a computer; 0 otherwise (B)
+      inc             Increment time for each player
+      lightning       1 if match is lightning in type; 0 otherwise (B)
+      maxtime(n)      The maximum time n moves will take for BOTH players
+                      (in seconds) [you must supply the 'n' value]
+      mymaxtime(n)    The maximum time n moves will take YOU (in seconds)
+                      [you must supply the 'n' value]
+      myrating        Your rating
+      nonstandard     1 if the game will have different time controls for the
+                      two players; 0 otherwise (B)
+      private         1 if game will be private; 0 otherwise (B)
+      rated           1 if game will be rated; 0 otherwise (B)
+      rating          Opponent's rating
+      ratingdiff      The difference between opponent's rating and your
+                      rating [rating - myrating]
+      registered      1 if opponent is a registered user; 0 otherwise (B)
+      standard        1 if game will be standard in type; 0 otherwise (B)
+      timeseal        1 if opponent has timeseal; 0 otherwise (B)
+      time            Start time for each player
+      untimed         1 if game will not involve the clock; 0 otherwise (B)
+      wild            1 if game will be wild in type; 0 otherwise (B)
+
+  Also, the word "minutes" is allowed after a number that is not enclosed in
+parentheses (but right now, you must use "1 minutes"; the singular is not
+recognized).  The word has the effect of multiplying the previous number by
+60, thus turning minute-values into seconds-values -- important for the
+maxtime and mymaxtime variables.  For example, "2 minutes" would yield the
+value of "120".
+
+
+FORMULA OPERATORS
+
+  The following formula operators are allowed; their order of precedence in
+the calculations and evaluations is listed.  Sometimes more than one set of
+symbols leads to the same result.  When functions in the formula have equal
+precedence, the precedence is from left to right.
+
+  Symbol   Function                                 Precedence
+  ------   -------------------------------          ----------
+    !     not; negation                                  1
+    -     minus [as in -20 or -variable]                 1
+    *     multiplication                                 2
+    /     division                                       2
+    +     addition                                       3
+    -     subtraction                                    3   
+    <     less than                                      4
+    <=    less than or equal to [ =< also works]         4
+    >     greater than                                   4
+    >=    greater than or equal to [ => also works]      4
+    =     equals [ == also works]                        5
+    !=    not equals  [ <> also works]                   6
+    &     and  [ && also works as does 'and']            7
+    |     or   [ || also works as does 'or']             8
+
+  Parentheses () are allowed in formulas and function as they do in numerical
+equations: expressions within parentheses are evaluated first.  You can use
+the pound sign '#' after your settings to provide comments and reminders to
+yourself.  NOTE: The program divides by a fudge factor of .001 instead of
+dividing by 0.
+
+
+USER-DEFINED FORMULA VARIABLES (f-variables)
+
+  F1 through f9 are user-defined formula variables changed by using the "set"
+command.  These variables can return either numerical or Boolean results. 
+They make it easy to change one part of your formula without retying the whole
+thing, or to adjust your formula depending on your mood.  For example, if your
+various f-variables were ...
+
+      f1  rated & time=5 & inc=0   # rated 5 minute games
+      f2  ratingdiff
+      f3  maxtime(40) >= 2*8minutes   # at least 8 mins each for 40 moves
+      f4  f2>400   # I want a REAL fight
+      f5  !abuser
+      f6  standard | (ratingdiff<200 & blitz)
+
+... then, depending on your mood, you could type one of the following:
+
+      set formula f1 & f5   # rated 5 min. games only
+      set formula f2 > -100   # long games, decent competition
+      set formula f1 & !f4
+-or-  set formula f2 >= 0 | blitz
+
+  You define an f-variable using the "set" command.  With respect to the above
+examples, you would type such lines as ...
+ 
+  set f2 ratingdiff
+  set f4 f2>400   # I want a REAL fight
+  set f5 !abuser
+
+***  Special Note  ***
+Be careful how you write the f-variables.  Make sure they have the proper
+sequence.  For example, f5 can refer to f2 but f5 cannot refer to f8.
+
+
+MAXTIME EXAMPLE
+
+  Using maxtime sets the expected total time for the game.  If your formula
+(or f-variable) included the following expression ...
+
+      maxtime(30) <= 10 minutes
+
+... this would allow no more than 10 minutes total time for the first 30 moves
+of the game (5 minutes for each player, or any other combination).  
+
+
+CREDITS:  Formula program for FICS written by Dave Herscovici (hersco)
+
+
+See Also:  assess  blitz  lightning  match  timeseal  variables 
+
+[Last modified: December 17, 1995 -- Friar]
+

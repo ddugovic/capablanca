@@ -1,0 +1,58 @@
+
+history
+
+Usage: history [user]
+
+  Shows the results of the last 10 or so games that 'user' played.  If no
+user handle is specified, your history will be displayed to you.  There are
+columns in the history display for the players and their ratings (as
+adjusted by the result of the match), the winner, the type of match
+(blitz/standard, rated/unrated), the type of opening and the date.
+
+
+EXAMPLE
+
+  Here is the history header, a sample line from User 1's history file, and an
+explanation of this line:
+
+                  Opponent    Type         ECO End Date
+23: + 1681 W 1521 User 2      [ br  2  12] A84 Res Fri Apr 21 06:29:12 1995
+
+  Explanation
+  --------------------------------------------------------------------------
+    23 -- Game number in User 1's history
+     + -- User 1's result; '+' means Won; '-' means Lost; '=' means Draw.
+  1681 -- User 1's revised rating given the result
+     W -- User 1's color in the match
+  1521 -- User 2's revised rating given the result
+    br -- Category of game -- 'b' Blitz; 'd' bughouse; 'l' Lightning;
+            'n' Nonstandard times; 's' Standard; 'u' Untimed; 'w' Wild
+          Rated/unrated --'r' Rated; 'u' Unrated
+          a 'p' in fron of these codes would mean a Private match
+  2 12 -- The time controls for the match
+   ECO -- The ECO (Encyclopedia of Chess Openings) classification of the
+          opening moves of the match
+   Res -- How the match ended; 'Res' for Resignation; 'Mat' for Mate; 'Fla'
+          for Flag, or time forfeit; 'Agr' for Agreed to a draw; 'Rep' for
+          three-time Repetiion of position (same player to move); 'NM' for
+          Neither player has Material for delivering mate; 'Adj' for result
+          was adjudicated.
+  The date and time of the match are also given.
+
+  Here is how to read this example: User1 (playing White; blitz rating now
+1681) Won (+) against User2 (blitz rating now 1521) in a rated (r) blitz (b)
+match using the time controls of 2 minutes to start and 12 second increments
+on Friday April 21, 1995, at 06:29 hours when User 2 resigned (Res); the type
+of opening (ECO) was A84.
+
+SPECIAL NOTES:
+
+(a) ECO will not be given for games that are "private" (see the variables help
+    file).
+
+(b) Games in history can now be examined.
+
+See Also:  adjudication  eco  examine  games  match  variables
+
+[Last modified: December 19, 1995 -- Friar]
+

@@ -1,0 +1,13 @@
+cnewsp
+
+Usage: cnewsp #
+RESTRICTED TO ADMINISTRATORS.
+
+   This command allows you to change the poster of a news item. The 'Posted by
+<admin>' line at the end of the news item will reflect the admin account which
+executed the command.  The '#' is the number of the news index.
+
+See ahelp:  cnewse cnewsf cnewsi cnewst
+See help:   news
+
+[Last modified: December 12, 1999 -- carlsbad]

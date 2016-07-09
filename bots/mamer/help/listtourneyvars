@@ -1,0 +1,46 @@
+listtourneyvars
+
+Alias: vars <tourney number>
+
+Usage: listtourneyvars
+
+This command lists thr variables for the specified tourney number.  Here is a 
+sample variable listing:
+
+:           (T)ime:     4
+:      (I)ncrement:     0
+:         (R)ounds:     0
+:    Max (P)layers:    16
+:           (M)ode:     r (r)ated or (u)nrated
+:          (S)tyle:     s (s)wiss or (r)oundrobin
+:        (V)ariant:     w (w)ild, (r)egular, (b)ug, or (s)uicide
+:      (W)ild Type:    10 (0), (1), (2), (3), (4), (5), (8), (9)8a, (10)fr
+:     Rating (L)ow:     0
+:    Rating (H)igh:  9999
+:
+:          Manager:  toddmf
+
+The letters in () refer to the variable shortcut to be used when changing a
+value for a variable.  Here is what the variables mean:
+
+    Time         -- Same as always: minutes to start the game with
+    Increment    -- Same as always: additional seconds per move
+    Rounds       -- Number of rounds in the tourney. If this is 0, mamer will 
+                    choose an optimal number of rounds.
+    Max Players  -- The tourney will automatically close and start when this
+                    many players have joined.
+    Mode         -- Will the tourney games be rated or unrated?
+    Style        -- Round Robin(everyone plays everyone) or Swiss System(system
+                    where, generally speaking, players play opponents with the
+                    same score in the tourney each round).
+    Variant      -- What type of game is being played? Regular is used for
+                    blitz, standard, and lightning.
+    Wild Type    -- This only appears when Variant is set to Wild. This is the
+                    type of wild that will be played.
+    Rating Low   -- Players with a rating lower than this cannot join.
+    Rating High  -- Players with a rating higher than this cannot join.
+    Manager      -- The handle of this tourney's manager.
+
+See also: settourneyvar, swiss
+
+[Last modified: September 1, 1998 -- toddmf]

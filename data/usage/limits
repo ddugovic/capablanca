@@ -1,0 +1,4 @@
+Command:  limits
+Purpose:  display current server limits and settings
+Usage:    limits
+Examples: limits

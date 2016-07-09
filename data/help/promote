@@ -1,0 +1,15 @@
+
+promote
+
+Usage: promote {q,r,b,[kn]}
+
+  Designates the piece that a pawn will be promoted to when it reaches
+the back rank.  This is set automatically at the beginning of each game
+to 'q'.  The setting can be changed during the game at any point.
+
+SPECIAL NOTE:  You must designate how a pawn will be promoted BEFORE it
+reaches the back rank, not afterwards.  The current setting will be used when
+the pawn reaches the 8th rank.
+
+[Last modified: October 8, 1995 -- Friar]
+

@@ -1,0 +1,17 @@
+
+ptime
+
+Usage: ptime
+
+  This command is used during a bughouse match in order to display the current
+clock times in your partner's game.
+
+SPECIAL NOTES:
+
+(a) The ptime command is _not_ related to the ptime variable.  The ptime
+variable concerns having the current time displayed along with the server
+prompt.  See 'help v_ptime' for details.
+
+See Also:  bughouse  time  v_ptime
+
+[Last modified: March 26, 1997 -- Friar]

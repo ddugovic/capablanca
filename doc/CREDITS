@@ -1,0 +1,79 @@
+This is the credits file from Dan's original lasker release. 
+
+For more credits please see http://chess.samba.org/ and the CVS logs
+
+ Andrew Tridgell
+ chess@tridgell.net
+
+
+---------------------
+A brief credits file.  The first part are people I'd like to thank,
+and the second part are messages that have to be placed here
+for legal reasons.
+
+I would like to thank Michael Moore for starting the
+chess server many moons ago.  I don't know where he
+is today, but his legacy is all of these chess servers
+(chessd, FICS, ICC, chess.net)
+
+Thanks to Richard Nash.  Mr. Nash wrote
+most of my original code, and without him who knows
+where the state of Internet Chess would be.
+
+I'd also like to thank the people who contributed to the ICS
+code that Nash authored.  This includes all developers from the
+years that Nash's code has been around.
+
+I'll specifically thank the FICS contributors.  Without FICS, 
+this project wouldn't exist today.  Much thanks to David Flynn (DAV).
+He still doesn't support chessd, but perhaps one day he will.
+
+Poul-Henning Kamp and Mark Murray.  Their code developed for FreeBSD
+was used in the password handling routines in chessd.  I owe you a beer, phk.
+
+And of the chessd project:
+
+Chaz Randles - Emotional support, countless design discussions, consulting.
+
+Hristo Doichev - Letting me know that I was doing the right thing with going
+		forward with chessd.  Various programming work.
+
+Gian-Carlo Pascutto - Being with me the entire way, both mentally and
+		with help with testing and programming.
+
+Vance Ray -  Letting me know how I could use a real database server for
+		managing the players, games, etc.  This is unimplemented,
+		but I'm looking into writing it myself (or, preferred) having
+		someone implement this.
+
+Brent D. Rockwood - Contributing the chessd logo.  He also may takeover as
+			the webmaster in the future :)  (Wink, wink, nudge, nudge)
+
+
+Thanks to everyone who help made chessd possible!		
+-Dan Papasian
+bugg@bugg.strangled.net
+
+
+And, for legal reasons:
+
+Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All
+rights reserved.
+
+License to copy and use this software is granted provided that it
+is identified as the "RSA Data Security, Inc. MD5 Message-Digest
+Algorithm" in all material mentioning or referencing this software
+or this function.
+
+License is also granted to make and use derivative works provided
+that such works are identified as "derived from the RSA Data
+Security, Inc. MD5 Message-Digest Algorithm" in all material
+mentioning or referencing the derived work.
+
+RSA Data Security, Inc. makes no representations concerning either
+the merchantability of this software or the suitability of this
+software for any particular purpose. It is provided "as is"
+without express or implied warranty of any kind.
+
+These notices must be retained in any copies of any part of this
+documentation and/or software.

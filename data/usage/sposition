@@ -1,0 +1,5 @@
+Command:  sposition
+Purpose:  display position for a stored, history or journal game
+Usage:    sposition user_a [user_b|history#|journal_slot]
+Examples: sposition  Len; sposition Len Loon; sposition Len 86; 
+          sposition Len B

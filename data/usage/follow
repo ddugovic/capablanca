@@ -1,0 +1,4 @@
+Command:  follow
+Purpose:  Automatically observe all of a user's games, or cancel this function.
+Usage:    follow user; follow
+Examples: follow Binford; follow

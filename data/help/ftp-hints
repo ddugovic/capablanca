@@ -1,0 +1,66 @@
+The Internet Chess Library (chess.onenet.net) is an anonymous FTP archive 
+containing a large amount of chess information and programs (~200MB). 
+
+All of the FICS Graphical interfaces are available there, and much more,
+and access is free.  It is available via your favorite Web browser, like
+Netscape or Mosaic (URL: http://chess.onenet.net/chess) or simply ftp
+(file transfer protocol), a very common program available on most Unix
+systems and many others.  Web access would be best and most intuitive,
+but instruction for using ftp follow:
+
+-----------------------------------------------------------------------------
+
+The most standard command to initiate an ftp connection to the ICL would
+be (from your host's prompt, not FICS's):
+ 
+     ftp chess.onenet.net
+  or ftp 164.58.253.10
+ 
+If this seems to be garbage to your system, you'll need to find out more
+from a local systems administrator.
+
+If you connect to the server, you will be asked for a Username (type
+"anonymous") and a Password (as it will tell you, give your email address).
+Note: chess.onenet.net and caissa.onenet.net are the same machine currently.
+
+   ftp chess.onenet.net
+ 
+   Connected to chess.onenet.net. 
+   220 caissa.onenet.net FTP server (Version wu-2.4(1) Tue Oct 11 11:29:11 1994)
+   ready
+   Name (your-host.your-domain:your-username): anonymous
+   331 Guest login ok, send your complete e-mail address as password.
+   Password:  your@email.address
+ 
+In this example, we will go to the DOS directory.  All files and directories 
+in the current directory can be seen with "dir".  "cd" changes directories.  
+a "/" separates directory names when specifying directories within 
+directories. "help" will give you a list of available commands in ftp.
+ 
+   cd /pub/chess/DOS
+ 
+or cd DOS    
+
+( users of DELPHI may need to type:   cd "DOS" )
+ 
+"dir" will show you all the files and directories here.  There are quite
+a few.  We will now transfer the software for ZIICS, a graphical interface
+which runs under DOS on PC's.  The "binary" command sets the transfer
+mode to binary type (8 bit, for true binary/executable data).  The "get"
+command transfers a file.
+ 
+   binary
+   get ziics121.exe
+
+If you are done, "quit" will exit you from ftp.
+
+   quit
+
+Now all you need to do is transfer the file to your local PC or workstation,
+assuming you do not have a direct Internet connection or PPP/SLIP.  This is
+done most commonly with "kermit" or "zmodem".  Check around locally for
+what is available.
+ 
+Channel 1 is a great place to get help help from people on-line at FICS.
+
+See also: interfaces, addresses

@@ -1,0 +1,47 @@
+
+shout
+
+Usage: shout message 
+LIMITED TO REGISTERED USERS
+
+  Displays your message to all users who are open to hear shouts.  Returns
+the number of users who heard your shout.  "Shout" has an alias of "!".
+
+  Here is an example: if your handle is HANDEL and you type "shout This server
+is great!", users will see the following message displayed --
+
+	HANDEL shouts: This server is great!
+
+You, as the sender, will see the following --
+
+	(##) HANDEL shouts: This server is great!
+
+where ## is the number of users who received the message.
+
+  All users have a set shout quota, a limit on how many shouts can be made
+within a given period of time.  Further details are given in the "shout_quota"
+help file.
+
+
+SPECIAL NOTES: 
+
+  (a) Use "cshout" rather than "shout" for chess-related messages.
+
+  (b) To contact just one user, use "tell".
+
+  (c) If you want to contact a specific group of users, "tell" to a channel.
+
+  (d) "It" and "shout" are similar.  Be familiar with their differences.
+
+  (e) Persons who "shout" in less than appropriate ways, may be placed on the
+shout_abuse list or given other sanctions (such as "muzzle").
+
+  (f) You can decide whether or not to hear a "shout" from other users;
+setting the "shout" variable to 0 (zero) filters these from being sent to you
+("set shout off" or "set shout 0").
+
+See Also:  channel  cshout  intro_talking  it  shout_abuse  shout_quota  tell 
+variables
+
+[Last modified: October 17, 1995 -- Friar]
+

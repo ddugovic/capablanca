@@ -1,0 +1,24 @@
+
+help
+
+Usage: help [topic]
+
+  Prints information on the given topic.  If topic is omitted, then "help"
+will provide instructions for displaying several, useful help files.  Also,
+typing "help commands" will list all commands.
+
+  When you request information about a command, the help file will describe
+the format for the command ("Usage").  Words in square brackets [] designate
+optional variables; including them affects the way your command will be
+processed.
+
+  Some help files are longer than one screen.  To continue reading the file,
+type "next" (or its alias "more").
+
+  If you need help while on the server, use channel 1 to contact people who
+can help you (see chan_1 help file).
+
+See Also:  chan_1  index  intro_information  intro_welcome  next
+
+[Last modified: October 8, 1995 -- Friar]
+

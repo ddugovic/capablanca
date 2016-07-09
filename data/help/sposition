@@ -1,0 +1,12 @@
+
+sposition
+
+Usage: sposition player1 player2
+
+  Displays the position of the stored game between player1 and player2.  This
+command only displays the game position; use "examine" for analysis.
+
+See Also:  examine  smoves  stored
+
+[Last modified: December 25, 1995 -- Friar]
+

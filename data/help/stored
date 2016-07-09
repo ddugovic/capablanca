@@ -1,0 +1,32 @@
+
+stored
+
+Usage: stored [user]
+
+  Displays all of the stored games of 'user' or of yourself if 'user' is
+omitted.  Adjourned games are stored (but not games lost due to a server
+crash).  To resume an adjourned game, have both players logged on the server
+and use the "match" command.
+
+  Several other commands involve stored games.  "Examine" allows you to review
+and analyze a game.  "Mailstored" mails the moves to you.  "Sposition" will
+display the last position of the game.  "Smoves" will display the moves of
+the game.  You can also have an adjourned game adjudicated by an admin (see
+the "adjudication" help file).
+
+
+SPECIAL NOTES:
+
+(a)  Users who have too many stored games may be placed on the abuser list. 
+Having up to 10 stored games is fine, but many more games beyond that will
+raise concerns.  Please complete your adjourned games in a reasonable time or
+ask for an adjudication.
+
+(b)   It is possible to resign one of your stored games, even when your
+opponent is not logged on.
+
+See Also:  abuser  adjourn  adjudication  examine  mailstored  match  resign 
+smoves  sposition
+
+[Last modified: October 8, 1995 -- Friar]
+

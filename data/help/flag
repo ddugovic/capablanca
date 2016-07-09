@@ -1,0 +1,40 @@
+
+flag
+
+Usage: flag
+
+  This command asks the chess server to check the clock time for you and your
+opponent.  The effect of the command depends upon whether one or both of you
+are out of time (chess clock reads zero or negative).
+
+  (i)  If your opponent has run out of time but you have time, then "flag"
+will claim the win for you.
+
+  (ii) If both you and your opponent are out of time, then "flag" will claim a
+draw.
+
+  (iii) If your opponent has time left, you will be given an error message by
+the server when you use "flag".
+
+  If your opponent appears to have lost his/her connection or hasn't responded
+in a reasonable amount of time, he/she probably has a systems lag.  Use the
+command "abort" to end the game like a good sport and not have your opponent
+lose the game through no fault of his/her own.
+
+SPECIAL NOTES:
+
+(a) Some users have interface programs that automatically flag you when you
+have run out of time.  This practice is legal.  If you find yourself losing
+many games from being flagged when you have system lags or take longer to
+think about moves, then consider using longer time controls.
+
+(b) If your opponent's clock reads zero (0:00) on your screen, it does not
+*always* mean that your opponent has no time left for the game.  The server
+keeps the official times for both players.  These times are re-sent after each
+move.  Transmission lag or using timeseal may cause the official time to be
+different than the times shown on your screen.
+
+See Also:  abort  draw  lag  timeseal
+
+[Last modified: November 26, 1995 -- Friar]
+

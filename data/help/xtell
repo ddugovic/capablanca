@@ -1,0 +1,21 @@
+
+xtell
+
+Usage: xtell user message
+
+  The "xtell" command sends a message to a user, just like "tell" does. 
+However, "xtell" will not alter the setting for who-you-told-last.  A "tell"
+sends a message *and* resets the who-you-told-last variable to a new user. 
+The "xtell" command will leave this setting intact, meaning that you can still
+use the "." alias to "tell" to a person you are having a conversation with. 
+The "xtell" command allows for a brief comment to someone while you are having
+a longer chat with someone else.
+
+SPECIAL NOTES:
+
+(a) Xtell works only with tells to players, not to channels.
+
+See Also:  alias  tell
+
+[Last modified: October 8, 1995 -- Friar]
+

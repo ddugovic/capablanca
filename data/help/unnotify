@@ -1,0 +1,12 @@
+
+unnotify
+
+Usage: notify [user]
+
+  Removes user from your notification list.  If no user is specified, the
+command will remove *all* users from your notification list.
+
+See Also:  notify  znotify
+
+[Last modified: June 20, 1995 -- Friar]
+

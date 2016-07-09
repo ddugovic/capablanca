@@ -1,0 +1,19 @@
+
+addplayer
+
+Usage: addplayer playername emailaddress realname
+RESTRICTED TO ADMINISTRATORS.
+
+  Adds a local player to the server with the handle of "playername".  For
+example:
+
+  addplayer Hawk u940456@daimi.aau.dk Henrik Gram
+
+If there is no email address, use "none".  Settings can be revised using
+asetemail, asethandle ans asetname.
+
+See ahelp:  asetemail  asethandle  asetrealname  raisedead  remplayer
+See help:   register
+
+[Last modified: September 14, 1995 -- Friar]
+

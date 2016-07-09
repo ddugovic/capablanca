@@ -1,0 +1,4 @@
+Command:  resign
+Purpose:  give your opponent the win in your current (or stored) game
+Usage:    resign [name]
+Examples: resign; resign Sparky

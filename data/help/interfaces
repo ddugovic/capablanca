@@ -1,0 +1,216 @@
+
+interfaces
+
+  It is possible to play chess matches on the server by typing your moves and
+having board positions displayed in a simple style.  However, it is also
+possible to use a graphics interface for making moves and displaying board
+positions.  A graphics interface is a software program designed to decode the
+information sent to you by FICS and display board information using stylized
+graphics.  It also allows you to make moves by moving pieces on its board
+using a mouse.
+
+  Which graphics interface will work best for you will depend upon the kind
+of computer you are using, and the way you are being connected to the server.
+Many graphics interfaces are available at the main chess ftp site
+(ics.onenet.net).  Feel free to ask FICS users about what is working best for
+them, and feel free to examine the files at ics.onenet.net.
+
+  If you use a graphics interface, you will need to select the board style
+that is most appropriate for your software.
+
+See Also: set  style  variables
+
+
+List of interfaces
+------------------
+
+  Listed in this helpfile are details of graphical interfaces.  Often it is
+difficult to play chess using the 'ASCII' boards the server generates.  They
+aren't easy to see, and are affected by other information such as shouts.  The
+graphical ones give you a proper chess board on which to view your pieces,
+making your chess easier to play.
+
+Here's a summary:
+
+=============================================================================
+Graphical    Required Computer Operating        Interface  Location
+Interface    System and Software                Program    at ICL
+Program                                         Author
+==============================================================================
+ZIICS     #  DOS, modem                         Zek        pub/chess/DOS
+GIICS        DOS, modem                         LLama      pub/chess/DOS
+Monarc       DOS, modem                        *Kevster    pub/chess/DOS
+JIICS        DOS, VGA, modem, mouse             Peluri     pub/chess/DOS  
+NGIICS       DOS, TCP/IP                        LLama      pub/chess/DOS
+Raja      #  MS Win3, modem and SLIP/PPP        Christian  pub/chess/Win3
+Gilchess     MS Win3, modem                     Bloodrake  pub/chess/Win3
+bludrake     MS Win3, modem                     Bloodrake  pub/chess/Win3
+SLICS     #  MS Win3, TCP/IP                    dfong      pub/chess/Win3
+Toolkit   ## MS Win3, TCP/IP and/or modem       MaDHaTteR  pub/chess/Win3
+WinBoard     WinNT or W95, TCP/IP and/or modem  mann       pub/chess/Win3
+PMICS        OS/2, TCP/IP and/or modem          woof       pub/chess/DOS
+XBoard    #  Unix, X11R4, TCP/IP and/or modem   mann       pub/chess/X
+xics         Unix, X11R3 , TCP/IP              *observer   pub/chess/X
+cics         TCP/IP and C, ASCII terminal      *observer   pub/chess/Unix
+NeXTICS      NeXT, TCP/IP and/or modem          red        pub/chess/NeXT
+MacICS       Mac                               *douglas    pub/chess/Macintosh
+E-ICS        Mac, Modem                        *douglas    pub/chess/Macintosh
+MacICS-TCP   Mac, TCP/IP                        eew        pub/chess/Macintosh
+Aics         Amiga, TCP/IP and/or modem         Christian  pub/chess/Amiga
+AmyBoard     Amiga, TCP/IP and/or modem         JochenW    pub/chess/Amiga
+============================================================================== 
+
+#   Recommended and popular.
+##  Not yet working well on FICS.
+*   No account on FICS yet. 
+
+Note:  The handles of the authors may refer to the handles of people at the
+       old Aics.  Certain ones may be different people here or non-existent.
+       Most interfaces should work; both the authors and the FICS programmers
+       would like feedback if you have problems with one here.
+
+
+  The listing will explain which interfaces will run on your particular
+set-up and in which directory to find it. It may have comments from the
+users/authors of the interfaces to help you choose.
+
+  If you have any further questions or trouble please contact an admin.
+
+Instructions for getting an interface
+-------------------------------------
+
+  The above graphical interfaces can be found at the anonymous ftp site
+chess.onenet.net  (URL: ftp://ftp.onenet.net/)  Most come with some
+instructions.  :-)
+
+  Pick one, use ftp (read the "ftp_hints" help file for assistance), Netscape
+or some similar software to access it over the Internet, transfer it to your
+local PC system or workstation via your preferred method (zmodem, kermit for
+most non tcp/ip dialup connections), unpack it (most use standard archival
+software or are self-extracting), and set it up.  :-)
+
+Comments on interfaces
+----------------------
+
+  This listing will explain the interfaces in a little more detail.  Many have
+comments from the users/authors of the interfaces.  Also indicated are the
+directories at onenet.net that hold the interfaces.
+
+ If you have any further questions or trouble please contact an admin.
+
+
+PC and compatibles (Using DOS and modem): pub/chess/DOS 
+-----------------------------------------
+
+  ZIICS by Zek:
+    A very popular interface for the PC.  ZIICS requires a regular modem
+    connection and a graphics adapter (VGA, EGA, CGA or Hercules).  In VGA
+    there are several styles of sets from 32 pixels per square to 56 pixels
+    per square (almost fills the screen vertically).  You can configure the
+    colors and the functions of the buttons by editing a text file.
+    [comment by Zek]
+
+  GIICS by LLama:
+
+  JIICS by Peluri:
+    You will need VGA and a mouse to use this.
+
+  Monarc by Kevster:
+
+
+PC and compatibles (Using DOS and TCP/IP): pub/chess/DOS
+------------------------------------------
+
+  NGIICS by LLama:
+
+
+PC and compatibles (Using Windows and modem): pub/chess/Win3
+---------------------------------------------
+
+  Raja (elephant) by Christian:
+    Works well with Win95.  Noticable speed increase (and its not even 32 bit
+    yet!). Tested with 486-DX4-100.  [note from Christian]
+
+  Gilchess by Azorduldu:
+
+  bludrake by Bloodrake:
+
+
+PC and compatibles (Using Windows and TCP/IP): pub/chess/Win3
+----------------------------------------------
+
+  SLICS by dfong:
+
+  Toolkit by MaDHaTteR:
+    Should work here soon.
+
+
+PC and compatibles (Using Windows NT(or 95) and TCP/IP): pub/chess/Win3
+--------------------------------------------------------
+
+  WinBoard by mann:
+    finger mann for the latest details.
+
+
+PC and compatibles (OS/2 PM ): pub/chess/DOS
+------------------------------
+
+  PMICS by woof:
+
+
+Unix (Xwindows): pub/chess/X
+----------------
+
+  XBoard by mann:
+    Certainly the best of the Unix interfaces and still is being supported to
+    work better at FICS.  Owners of Unix machines are well advised to get this
+    interface.  It is also suitable for use with GNUchess.   [comment by DAV] 
+    Finger mann for the latest details.
+
+  xics by observer:
+
+
+Unix (vt100 terminal): pub/chess/Unix
+----------------------
+
+  cics by observer:
+
+
+NeXT: pub/chess/NeXT
+-----
+
+  NeXTICS by red:
+
+
+MAC: pub/chess/Macintosh
+----
+
+  MacICS by douglas:
+
+
+MAC (Modem): pub/chess/Macintosh
+------------ 
+
+  E-ICS by douglas:
+
+
+MAC (TCP\IP): pub/chess/Macintosh
+-------------
+
+  MacTCP by eew:
+
+
+Amiga: pub/chess/Amiga:
+------
+
+  Aics by Christian:
+    Will work with 2.04 Kickstart and should be compatible with newer
+    versions.
+
+  AmyBoard by JochenW:
+
+
+See also:  ftp_hints
+
+[Last modified: December 25, 1995 -- Friar]
+

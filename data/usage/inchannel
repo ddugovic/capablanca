@@ -1,0 +1,5 @@
+Command:  inchannel
+Purpose:  lists the channels a user is in, or who is in a given channel, or
+          all users in a range of chanels, or all users in all channels
+Usage:    inchannel [user|m[-n]]
+Examples: inchannel; inchannel Solid; inchannel 1; inchannel 90-95

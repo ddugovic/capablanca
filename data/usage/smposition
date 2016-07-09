@@ -1,0 +1,6 @@
+Command:  smposition
+Purpose:  display both position and moves for a stored, history or journal 
+          game
+Usage:    smposition user_a [user_b|history#|journal_slot]
+Examples: smposition  Len; smposition Len Loon; smposition Len 86; 
+          smposition Len B

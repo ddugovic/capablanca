@@ -1,0 +1,4 @@
+Command:  info
+Purpose:  list the information (non-command) help files
+Usage:    info
+Examples: info

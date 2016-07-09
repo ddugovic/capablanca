@@ -1,0 +1,14 @@
+
+uptime
+
+Usage: uptime
+
+  Displays some server statistics, such as how long the server has been in
+continuous operation, the number of current players and games, the highest
+number of players and games, and the maximum number of players who can be
+logged on.
+
+See Also:  games  statistics  totals  who
+
+[Last modified: July 7, 1995 -- Friar]
+

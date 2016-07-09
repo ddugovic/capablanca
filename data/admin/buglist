@@ -1,0 +1,95 @@
+FICS bugs as of 7/22/95:
+
+The bugs followed by a (?) are not verified.  They could be caused
+by some operator error or other anomoly.  After verification by a 
+few admins that they do not exist, they will be removed from the list.
+
+FIXED  If you are observing a game and type moves it says that you are
+	not playing, observing, or examining a game.
+
+2.  The ratings system needs to be verified for accuracy.  Several
+	people have reported discrepencies. (E.g. According to the
+	formulas, RD can increase only due to the passage of time,
+	never because of playing a game.  Yet sometimes people who
+	have just played play again and their RD increases.  According
+	to Glickman, this must be a bug.  (Courtesy fritzl))
+
+3.  Draw by repetition being claim even though a position only came up
+	on time. (?)
+
+FIXED  Some people stay logged into channels and notify lists even though
+	they are not logged in.
+
+FIXED  Private games can be watched by repeated typing refresh.
+
+6.  When challanged to a wild 5 game, after accepting, it becomes a
+	wild 0 game. Reported several times.  (?)
+
+7.  An ambiguity in the move list occurs when two rooks can capture on 
+	the same square. (?)
+
+8.  The width variable is not considered in who. Some reports even say
+	that it is not considered at all.
+
+9.  History recognizes a stalemate as a win for the person who stalemated. (?)
+
+10.  When you want to log in as an unregistered user, if you first choose
+	a handle which is already registered, the server tells you to hit
+	return and try again.  But it doesn't let you try again!  It 
+	disconnects you instead.
+
+11.  When loading a 2 12 rated game on move 19, an unrated untimed game
+	on move 1 comes up. (?)
+
+FIXED  Even if kibitz is set to 0, you still hear kibitzes.
+
+13.  The time and date that is sent with mailmoves is wrong. (?)
+
+FIXED  When you offer an abort, your opponent is not told to type abort
+	to accept.
+
+15.  Unregistered players can set stats and make notify lists and keep
+	a history, from login to login!
+
+16.  Before the game the server reports "your new RD is x."  However, after
+	the game, x does not correspond with your new RD.
+
+17.  When someone makes the move "bc3" the server needs to check for Bishop
+	captures c3 or Pawn captures c3.
+
+FIXED  Wins can be awarded on time even if there are no pieces left. (?)
+
+19.  There are discrepencies in the 'assess' command's predictions. (?)
+
+FIXED  Wild5 reverses the players ratings in the match challenge. (?)
+	(Has been report for other games too.)
+
+21.  After mailing old moves, the server claims "No such game," but it
+	still mails the moves. (?)
+
+22.  Someone sends a draw offer and then they move, which causes the
+	server to decline the draw.  Then the person types decline
+	and it sends another draw offer. (?)  
+
+23.  When a player has two adjourned games, the 'accept' command tried to
+	load the other.  The players are unable to play each other.  (See
+	pdeck Jun 7) (?)
+
+24.  A player cannot play 0 8 (or any other increment) because it parses as
+	untimed.  (?)
+
+25.  When a player is challenged to a normal match, and then a wild match by
+	a different person, if the normal game is accepted, the game becomes
+	a wild match with the person who challenged to the normal game. (?)
+
+26.  If a player has been idle for example for 2:30 (2 hours 30 minutes), 
+	when someone tells something to that person it says the player has
+	been idle for only 30 minutes (not 2:30).
+
+FIXED  If you do 'sa' for say, it tries to simabort instead.
+
+28.  With auto=1, drawn games are not sent. (?)
+
+[Last Modified:  July 22, 1995 -- Marsalis]
+
+

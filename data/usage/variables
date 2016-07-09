@@ -1,0 +1,4 @@
+Command:  variables
+Purpose:  display the variable settings for yourself or another user
+Usage:    variables [user]
+Examples: variables; variables McKeork

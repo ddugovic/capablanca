@@ -1,0 +1,6 @@
+Command:  seek
+Purpose:  place an ad for a chess match
+Usage:    seek [time inc] [rated|unrated] [white|black] [w#] [auto|manual] 
+          [formula] [rating-range]
+Examples: seek; seek 5; seek 5 0; seek r; seek w5; seek 2 12 u m; seek f; 
+          seek 1600-1800 m f; seek 10 25 r b w5 m f 2000-9999

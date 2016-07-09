@@ -1,0 +1,67 @@
+
+intro_information
+
+DISPLAYING INFORMATION
+
+  There are several types of information that are available about users, games
+and the server.  You can have this information displayed to you by using
+various commands.
+
+
+USER INFORMATION
+
+    command      information
+    -------      --------------------------------------------
+    best         Displays highest ratings achieved for different types of
+                 chess matches (includes computers)
+    finger       Displays general information about a user
+    handle       Lists registered users with names beginning with a given
+                 letter or letters 
+    hbest        Displays highest ratings achieved for different types of
+                 chess matches (excludes computers)
+    history      Displays information about a user's recent matches
+    hrank        Lists users and ratings within the range of ranks specified
+                 (rankings exclude computers)
+    inchannel    Lists all users who are listening to a given communication
+                 channel 
+    rank         Lists users and ratings within the range of ranks specified
+                 (rankings include computers)
+    stored       Lists a user's stored games
+    variables    Displays a user's current preferences and settings
+    who          Lists current users
+
+
+GAME INFORMATION
+
+    command      information
+    -------      --------------------------------------------
+    allobservers Lists all users observing a chess game (or games)
+    assess       Displays how you and another user's ratings would change
+                 if you were to play a rated chess match
+    eco          Displays information about the opening used in the game
+    games        Lists current games
+
+
+SERVER INFORMATION
+
+    command      information
+    -------      --------------------------------------------
+    date         Current date 
+    help         Describes a command, displays useful information, or
+                 lists all commands and their help file topics alphabetically
+    info         Lists all "information" help files for non-commands
+    llogons      Lists the last 30 or so logons/logoffs
+    logons       Lists the last 10 or so logons for a user
+    news         Lists recent news items about the server
+    statistics   Displays information about server usage
+    time         Displays current time at the server site
+    uptime       Displays how long the server has been running since its last
+                 startup, and various server statistics and parameters
+
+  Also, the "totals" help file gives updated information about registered and
+active users on the server.
+
+See Also: [the individual commands]
+
+[Last modified: July 7, 1995 -- Friar]
+

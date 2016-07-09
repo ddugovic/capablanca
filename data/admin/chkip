@@ -1,0 +1,19 @@
+
+chkip
+
+Usage: chkip ip_address
+RESTRICTED TO ADMINISTRATORS.
+
+  This command returns the names and IPs of all users currently logged on from
+a given IP address.  You can use the '*' wildcard in this command.  For
+example:
+
+  chkip 129.1.*
+
+will give all users with IP's beginning with "129.1.1".
+
+See ahelp:  
+See help:   
+
+[Last modified: October 8, 1995 -- Friar]
+

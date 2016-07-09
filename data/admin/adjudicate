@@ -1,0 +1,26 @@
+
+adjudicate
+
+Usage: adjudicate white_player black_player result
+RESTRICTED TO ADMINISTRATORS.
+
+  Adjudicates a game between white_player and black_player.  The result is one
+of: abort, draw, white, black.  "Abort" cancels the game (no win, loss or
+draw), "white" gives white_player the win, "black" gives black_player the win,
+and "draw" gives a draw.  Both white_player and black_player will be notified
+by server messages concerning the adjudication.
+
+  In most cases, the game will be a stored (adjourned) game for which one
+opponent has made an adjudication request.  To list games for which
+adjudications have been requested, type "ahelp adjrequests".  However, there
+may be occasions when a game in progress needs to be adjudicated online --
+such as when a computer fails to move or cannot accept a draw in a clearly
+drawn position.
+
+  For guidelines about adjudications, see "adjud_info".
+
+See ahelp:  adjud_info
+See help:   adjourn  adjudicate_request  stored
+
+[Last modified: September 18, 1995 -- Friar]
+

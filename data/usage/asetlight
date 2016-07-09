@@ -1,0 +1,4 @@
+  Command:  asetlight
+  Purpose:  modify the items for a user's lightning finger information
+  Usage:    asetlight user rating wins losses draws RD
+  Examples: asetlight friar 1209 23 151 0 39.4

@@ -1,0 +1,4 @@
+Command:  copygame
+Purpose:  copy a game so that it can be examined
+Usage:    copygame [user_name|number|o]
+Examples: copygame Sparky; copygame 7; copygame o; copygame

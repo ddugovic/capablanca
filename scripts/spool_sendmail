@@ -1,0 +1,18 @@
+#!/bin/sh
+# simple mail spool handler for chessd
+# Andrew Tridgell <tridge@chess.samba.org>
+
+shopt -s nullglob
+
+cd $HOME/chessd || exit 1
+
+(
+while :; do
+   for f in spool/mail.*; do
+	    if /usr/lib/sendmail -t < $f; then
+	       /bin/rm -f $f
+	    fi  
+   done
+   sleep 60
+done
+) >> spool.log 2>&1

@@ -1,0 +1,23 @@
+
+partner
+
+Usage: partner user_name
+
+  This command is used in order to ask another user to become your partner for
+a bughouse match.  The other user will need to accept or decline the offer. 
+If the other user accepts the partner offer, the two of you will then be able
+to hold bughouse matches against other partnerships and the two of you can be
+identified using the "bugwho p" command as being available for bughouse
+matches.
+
+  You can only 'partner' users who are open for bughouse partnerships. i.e.,
+have their bugopen variable set to 1.  To see which users are available for a
+bughouse partnership, type "bugwho u".  If you 'partner' a user, your bugopen
+variable is automatically set to 1.
+
+  If you type "partner" alone, it will cancel any partnership you have, though
+it will not affect your bugopen variable setting.
+
+See Also:  accept  bughouse  bugwho  decline  pending  v_bugopen  who
+
+[Last modified: August 5, 1997 -- Friar]

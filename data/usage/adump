@@ -1,0 +1,4 @@
+  Command:  adump
+  Purpose:  dump internal state of server
+  Usage:    adump
+

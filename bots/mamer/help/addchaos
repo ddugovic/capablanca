@@ -1,0 +1,16 @@
+addchaos
+
+Alias: ac
+
+Usage: addchaos <handle> <points>
+
+Reserved for mamer managers (level of 25 or higher)
+
+Use this command to give <points> chaos points to <handle>. If you do not
+specify the number of points, 1 will be added.  To take chaos points away, add
+a negative number of chaos points ("addchaos abc -10" removes 10 of abc's 
+chaos points).
+
+See also: chaos
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,28 @@
+
+eco
+
+Usage: eco [game]
+
+  This command displays the category of the opening being played in the game
+requested, whether a game being played or examined.
+
+  eco        gives information about the game you are playing
+  eco 2      gives information about game 2
+  eco hawk   gives information about the game hawk is playing
+
+  The display includes several kinds of information about the opening being
+played in the game:
+
+   ECO[ ##]  Encyclopedia of Chess Openings classification
+   NIC[ ##]  New In Chess classification
+  LONG[ ##]  Name of opening
+
+The number in the [] is the ## halfmoves used for classifying this game's
+opening according to the data base being used.
+
+  ECO information is also given in a user's "history" display.
+
+See Also:  history
+
+[Last modified: August 15, 1995 -- Friar]
+

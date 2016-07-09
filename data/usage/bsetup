@@ -1,0 +1,4 @@
+Command:  bsetup
+Purpose:  begin bsetup mode and execute special bsetup commands
+Usage:    bsetup [command]
+Examples: bsetup; bsetup wild 5; bsetup start; bsetup clear; bsetup done

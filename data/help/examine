@@ -1,0 +1,94 @@
+
+examine
+
+Usage:  examine [player1 [player2, game_number]
+
+  This command starts a game in the examine mode where you, as the examiner,
+can move the pieces for both white and black, take moves back and analyze side
+variations.  You can examine a new game from scratch, a stored (adjourned)
+game, a finished game from "history" or a game in someone's "journal".
+
+
+STARTING EXAMINE MODE
+
+  There are four ways to begin an examine session:
+
+  1) New Game from Scratch -- "Examine" used alone without any player names
+     begins examine mode for a new game and, in essence, you will be playing
+     yourself.  Typing "match your_handle" is also a way to enter examine mode
+     for a new game.
+
+  2) Stored Games (adjourned) -- "Examine player1" will examine your stored
+     game against player1 (if one exists).  "Examine white_player
+     black_player" will examine the stored game (adjourned) between the two
+     players.  Example: "examine dav thedane".
+
+  3) Completed Game from History -- "Examine player1 game_number" will examine
+     that game from player1's "history".  Example: "examine theviking 45".
+
+  4) Game from a Journal -- "Examine player1 game_slot" will examine that game
+     from player1's "journal" (unless the journal is private, namely
+     "jprivate" variable has been set to non-zero).  Example: "examine sms B".
+
+
+EXAMINE MODE
+
+  No matter how you start the examine functions, the game will be played from
+the starting position, not the last, stored position.
+
+  While in examine mode, you can move the pieces in order to set up a position
+and/or analyze side variations.  There are three special commands you can use
+when examining a stored game:
+
+    forward [#]      goes forward # moves (default n=1)
+
+    backward [#]     goes backward # moves (default n=1)
+
+    revert           goes back to the main variation (the last branch)
+
+For new games, only "backward" works; the other commands have no affect since
+there is no main line stored.  Therefore, once you go backward, you will need
+to move the pieces again in order to move forward.
+
+  Lastly, the command "unexamine" leaves the examine mode and ends your
+analysis of the game.
+
+
+GROUP EXAMINE
+
+  Other users can also examine the game you are reviewing.  But must you
+decide who these other examiners are.  Here are the steps involved:
+
+  (1) The other examiner must first "observe" your game.
+
+  (2) You, as the main examiner, must type "mexamine <user>" in order to give
+      "user" access to the examine mode.
+
+  As long as there is at least one designated examiner of a game, the analysis
+can continue even when the first examiner who started the examine session
+leaves.
+
+  In order to communicate with another examiner of the game, it is best to use
+the "kibitz" command.  If you use "whisper", the game's observers but not
+examiners will hear your message.
+
+
+SPECIAL NOTES
+
+(1)  Players examining games have a # next to their handles in the (short)
+"who" display, and examined games are listed in both the "games"  and
+"allobservers" displays.
+
+(2)  "Unexamine" stops your participation in the analysis, and also stops your
+observer status.  Other examiners of the game may continue, however, even if
+you started the examine session initially.
+
+(3)  Clock times displayed are unimportant, of course, since time is not a
+factor when analyzing games.
+
+
+See Also:  allobservers  backward  forward  games  history  kibitz  journal  
+match  mexamine  observe  stored  unexamine  variables  whisper  who
+
+[Last modified: December 17, 1995 -- Friar]
+

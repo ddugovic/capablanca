@@ -1,0 +1,14 @@
+listmanagers
+
+Alias: lm
+
+Usage: listmanagers
+
+This command displays a list of all the managers, their manager level, the
+total number of tourneys they have managed, and the date of the last tourney
+they managed.  Managers marked with a "+" before their handle are currently
+online.
+
+See also: manager_level
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,4 @@
+Command:  bname
+Purpose:  change name of Black player in an examined or setup game
+Usage:    bname [string]
+Examples: bname; bname Kotov

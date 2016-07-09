@@ -1,0 +1,4 @@
+Command:  toggle
+Purpose:  add/removes information on a list
+Usage:    toggle list information
+Examples: toggle follow Tridge

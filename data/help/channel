@@ -1,0 +1,52 @@
+
+channel
+
+Usage: channel [0-99]
+
+  Turns the specified channel on and off.  If the channel is on, messages sent
+to that channel will appear on your screen.  If the channel number is omitted,
+all channels to which you are tuned will be turned off.
+
+  Channel 1 is the general help channel, and of special importance to users. 
+The "chan_1" has more details about its use, and gives the general procedure
+for using a channel.
+
+See Also:  chan_1  inchannel  say  tell
+
+-------------------------------------------------------------------------
+List of currently defined channels:
+
+   0    Admins Only                     2    Chess server discussion
+   1    General Help                    3    FICS Programmers' Channel
+
+   8    Youth Channel                  18    The Gambit Channel
+  20    Forming Team games          21,22    Playing team games
+  23    Forming SIMULS                 46    Forming tournaments (Tomato)
+                                       47    Tomato managers
+
+  32    Movies                         35    Music
+  33    Quacking & Other Duck Topics   36    Mathematics & Physics
+  34    Sports                         37    Philosophy
+
+  50    General Unlimited Gab          51    The Hormone Channel
+
+  60    Chess Theory                   64    Computer Chess
+  65    World Chess Championship
+
+  69    Latin                          75    Russian
+  70    Danish                         76    Dutch 
+  71    Scandinavian                   77    French
+  72    German                         78    Greek
+  73    Spanish                        79    Icelandic
+  74    Italian                        80    Chinese
+
+  84    Macintosh Channel
+
+  90    The STC BUNCH (Players who like 30- to 120-minute Time Controls.)
+  97    Politics Channel
+  98    Zippy the Pinhead's Own Channel
+  99    `The Street Corner Where Nothing Happens'
+-------------------------------------------------------------------------
+
+[Last modified: September 12, 1995 -- Friar]
+

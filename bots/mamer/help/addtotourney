@@ -1,0 +1,18 @@
+addtotourney
+
+Alias: att
+
+Usage: addtotourney <handle> <tourney number>
+
+Reserved for mamer managers (level of 50 or higher)
+
+This command forces <handle> to join the specified tourney number. Its main
+usage is to quickly create a test tourney, but it can also be used to get a
+player new to mamer in to a tourney that is about to start when he/she cannot
+figure out how to join.  If you use this command in this fashion, please
+inform the player how to join future tourneys so that the player does not rely
+on managers to add him/her to the tourney.
+
+See also: join
+
+[Last modified: August 29, 1998 -- toddmf]

@@ -1,0 +1,160 @@
+FICSFAQ (Frequently Asked Questions)
+
+  The admins at this site can be very busy so, if you find a bug or have
+questions, read this file first:
+
+1> How do I register?
+     Read the "register" help file -- "help register".
+
+2> What is network vs local:
+     It has to do with distributed ratings -- contact an admin if you get this
+     one.
+
+3> Can I have more than one account?
+     Only if for blind/computer/admin/team reasons.
+
+4> Can I register more than one computer?
+     Yes.
+
+5> Can I have more than one person using my email?
+     Yes.
+
+6> Can more than one person share an account for team games?
+     Yes, WEENIES is an example.
+
+7> Can I be an admin?
+     Read the "admin-new" help file -- "help admin-new".
+
+8> Can I help with programming.
+     Ask hawk.
+
+9> Who's programming?
+     Dan/DAV/foxbat/grimm/hawk/Len/Mann/Shane,etc
+     Thanks to Friar for some help files.
+     And Cthulu(clong) for ECO database - coming soon.
+     Thanks to Richard Nash (red) and Michael Moore for the old fics code.
+
+10> Where else can I play FREE chess?
+     ics.onenet.net 5000   helium.daimi.aau.dk 5000 
+     pitt.chess.edu 5000   anemone.daimi.aau.dk 5000
+     arapaho.cse.ucsc.edu 5000
+     If you know of more FREE sites tell us.
+
+11> Where do I get an interface from?
+     pub/chess  on ftp ics.onenet.net (use anonynous ftp)
+
+12> Where can I get the latest code from.
+     pub/chess/Unix on ftp ics.onenet.net (use anonynous ftp)
+     help files are in the oldest version FICS.tar.gz
+
+13> I don't like admin x.  Admin y is treating me badly.
+     See Sparky (onenet) and hawk (helium)
+
+14> Darooha, arcsin and POTZY have come for a peek.  What gives?
+     Sometimes people pretend to be them.
+     Do not abuse them if they log on.
+     Our code is GNU - they can use our ideas and code on ICC if they
+     want.  Remember who wrote it first.
+
+15> What is ICC?
+     Don't ask -- no free advertising -- you pay $49 for chess there.  :)
+
+16> Can I shout about ICC?
+     Yes, sure.  Given a choice to pay $49 or $0.  I'd take the $0.
+
+17> Should I advertise FICS?
+     Yes do so.  Watch you don't get nuked on ICC, though.  Do help ads there.
+     Remember, Burger King burgers are free. :)
+
+18> I can't shout! 
+     Are you unreg or have you been muzzled?
+
+19> I can't play rated.
+     Have both of you set rated 1?
+     Have you got the network vs local bug.
+
+20> How do I use the -->name  thing I see displayed?
+     Use "it" "i" or ":" followed by a message
+
+21> The Hormone channel(51) has been reinstated I notice.
+     Yes, but cleanish language only. This is a family server.
+     Don't say something you wouldn't say in front of someone's kids.
+     But maybe you would :)
+
+22> The board is the wrong way up:
+     Problem flip in style 12 -- old ZIICS and SLICS are affected.
+
+23> Can't promote (xboard).
+     Try e7e8 for a queen.
+
+24> How do I continue a game that was adjourned?
+     "match" the player again, and it will resume the game if the player
+     accepts
+
+25> I can't castle after king takeback.
+     We know.
+
+26> I can castle through check.
+     This has been observed once.
+
+27> Takeback gives wrong lastmove info.
+     A bug.
+
+28> Simuls don't work.
+     They were broken once; they should be okay now.
+
+29> My rating is over/under inflated
+     There may be a bug somewhere.
+
+30> +alias/+censor etc don't work.
+     Try alias/unalias and censor/uncensor for now.
+
+31> I've got an old account here, I can't remember my password.
+     Ask an admin for help -- be ready to verify your email address.
+
+34> Stats gives silly info.
+     We know.
+
+35> Is there any wild?
+     Yes .. and rated, too.
+
+36> Zippy won't shut up, too many shouts.
+     Use censor [name], cshout (sshout on ICC) is coming.
+
+37> How many channels can I be in?
+     As many as you like, don't be in too many though as this takes
+     up file space; do "help channel" for predefined ones.
+
+39> The "who" listing appears staggered.
+     Fixed soon.
+
+40> How do I withdraw a match request?
+     Type "withdraw".
+
+41> I'm getting lag -- what can I do?
+     Either Ctrl C to escape or use adjourn.
+     Otherwise get your opponent to do "moretime #"  where # <= 600 seconds.
+
+42> I suddenly got a Connection closed message.
+     1> There has been a shutdown
+     2> There has been a crash -- please bear with us.
+     3> The server dumped you for some reason.
+     4> You got nuked.
+
+43> How long do shutdowns last and why?
+     About 10 seconds.
+     Sometimes we need to add new code or fix bugs -- please bear with us.
+
+44> I get unprintable characters / delete don't work.
+     Being fixed.
+
+45> How do I get further help?
+     Follow these steps:
+     (a) "channel 1"
+     (b) "tell 1 help me!"
+     (c) When you are done, you can type "channel 1" exit this channel.
+
+46> How do I pause a long file from scrolling?
+     Use ctrl q and ctrl s -- or use your scroll bar.
+     Also, "set height ##" fixes how many lines will be displayed at a time.
+

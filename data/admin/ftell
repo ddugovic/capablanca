@@ -1,0 +1,8 @@
+ftell
+
+Usage: ftell user
+
+   This command forwards all further conversation between an admin and a
+   user to all those listening in channel 0.
+   It is unset as soon as the user logs off or ftell is typed without a
+   parameter.

@@ -1,0 +1,5 @@
+Command:  set
+Purpose:  fix a value of a variable or line in your finger notes
+Usage:    set variable_name [value]
+Examples: set shout 0; set time 5; set inc 0; set formula !wild && rated;
+          set 1 G'day!  I'm Mark from Perth, Australia.

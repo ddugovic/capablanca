@@ -1,0 +1,16 @@
+
+refresh
+
+Usage: refresh [game]
+
+  Redisplays the given game position and clock times.  If 'game' is omitted,
+then the current game you are playing or observing will be redisplayed.  This
+command is especially useful if you are using an ascii board style and it
+scrolls off the screen, or if you want to confirm the current board position
+and/or clock times.  (Time can also be confirmed by the "time" command.)  The
+alias for "refresh" is "re".
+
+See Also:  games  style  time
+
+[Last modified: November 26, 1995 -- Friar]
+

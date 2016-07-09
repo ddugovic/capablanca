@@ -1,0 +1,14 @@
+
+statistics
+
+Usage: statistics
+
+  Displays some statistics on all the players together.  For each type of
+rated chess, the table gives (a) the average rating, (b) the standard
+deviation (or variability) of the ratings, and (c) the number of rated players
+(including provisional ratings).
+
+See Also:  totals  uptime
+
+[Last modified: October 8, 1995 -- Friar]
+

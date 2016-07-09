@@ -1,0 +1,4 @@
+Command:  llogons
+Purpose:  lists recent logons and logoffs for the server
+Usage:    llogons
+Examples: llogons

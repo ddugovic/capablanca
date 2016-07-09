@@ -1,0 +1,4 @@
+Command:  handles
+Purpose:  lists registered handles beginning with a certain string
+Usage:    handles [string]
+Examples: handles; handles g

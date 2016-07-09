@@ -1,0 +1,5 @@
+Command:  mailstored
+Purpose:  email a stored, history or journal game to you
+Usage:    mailstored player1  [#, player2, journal_slot]
+Examples: mailstored Len; mailstored Len 87; mailstored Len fpawn;
+          mailstored Len K

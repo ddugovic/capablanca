@@ -1,0 +1,5 @@
+Command:  oldmoves
+Purpose:  display moves of the user's last played chess match
+Usage:    oldmoves [user]
+Examples: oldmoves; oldmoves TheDane
+[NOTE:    smoves is a better command to use]

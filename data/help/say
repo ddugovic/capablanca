@@ -1,0 +1,18 @@
+
+say
+
+Usage: say message
+
+  Transmits your message to your current opponent if you are playing a
+game.  If you are not playing a game, the message is sent to the last
+opponent you had in your current logon session.
+
+  "Say" is an easy form of "tell" as you can see, because you do not need to
+enter the user's name.  "Say" differs from "kibitz": both commands send a
+message to your opponent, but "kibitz" also sends the same message to any
+observers of your game and kibitzes can be filtered in various ways.
+
+See Also:  intro_talking  kibitz  kiblevel  tell
+
+[Last modified: October 8, 1995 -- Friar]
+

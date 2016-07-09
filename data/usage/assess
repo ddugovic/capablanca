@@ -1,0 +1,6 @@
+Command:  assess
+Purpose:  calculate expected changes to ratings from a chess match
+Usage:    assess [game# | user1 [user2
+          [lightning|blitz|standard|suicide|wild]]]
+Examples: assess; assess 23; assess Sparky; assess DAV Thanatos;
+          assess DAV Thanatos standard

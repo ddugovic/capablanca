@@ -1,0 +1,4 @@
+  Command:  asetmaxplayer
+  Purpose:  changes level at which logons will be restricted
+  Usage:    asetmaxplayer level
+  Examples: asetmaxplayer 250

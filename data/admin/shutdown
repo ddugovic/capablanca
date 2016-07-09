@@ -1,0 +1,29 @@
+
+shutdown
+
+Usage: shutdown [now,cancel,time,die] [comment]
+RESTRICTED TO ADMINISTRATORS.
+
+  This command shuts down the server, but with different consequences.  If the
+parameter is omitted or is 'now' then the server is immediately halted cleanly
+(including games being saved).  If a time is given then a countdown commences
+and the server is halted when time is up; "time" is given in seconds (not
+minutes).  If 'cancel' is given then the countdown is stopped.  If the
+parameter is 'die', the server will be halted immediately without saving
+games; this version can be useful for debugging purposes, but users will need
+to be warned in advance because the consequences differ from a normal,
+announced shutdown.
+
+  You can add an optional comment to this command.  If there is a comment, it
+will be displayed to users each time the countdown is updated.  Having a
+comment is a useful way to explain the reason for the shutdown and cut down on
+the number of questions admins will have to answer about the shutdown.
+
+  Using "announce" may be useful during a coutdown so that users can be
+informed of special information, such as how long the shutdown will last.
+
+See ahelp:  announce
+See help:   
+
+[Last modified: December 25, 1995 -- Friar]
+

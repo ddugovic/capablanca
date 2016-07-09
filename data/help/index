@@ -1,0 +1,20 @@
+
+index
+
+Usage: index [topic]
+
+    Prints information on the given topic.  If topic is omitted, then "index"
+will list the various topics in the index.
+
+  When you request information about a topic, you will be given a list of
+various commands that relate to that topic as well as information files of
+interest.  You can access files on the various commands and information files
+using the "help" command.
+
+  If you need help while on the server, use channel 1 to contact people who
+can help you (see chan_1 help file).
+
+See Also:  chan_1  help  intro_information  intro_welcome
+
+[Last modified: July 20, 1995 -- Friar]
+
