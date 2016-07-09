@@ -195,7 +195,7 @@ int com_pstat(int p, param_list param)
       player_remove(p2);
     return COM_OK;
   }
-  sprintf(fname, "%s/player_data/%c/%s.gstats", STATS_DIR, player_globals.parray[p1].login[0], player_globals.parray[p1].login);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.gstats", player_globals.parray[p1].login[0], player_globals.parray[p1].login);
   if ((fp = fopen_s(fname, "r")) != NULL) {
     while (!feof(fp)) {
       if (fscanf(fp, "%s %d %d %d\n", Name, &win, &draw, &loss) != 4) {

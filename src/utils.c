@@ -1075,11 +1075,12 @@ FILE *fopen_p(const char *fmt, const char *mode, ...)
 	char *s = NULL;
 	FILE *f;
 	va_list ap;
+	int x;
 	va_start(ap, mode);
-	vasprintf(&s, fmt, ap);
+	x = vasprintf(&s, fmt, ap);
 	va_end(ap);
 	if (!s) return NULL;
-	if (strstr(s, "..")) {
+	if (x == -1 || strstr(s, "..")) {
 		d_printf("Invalid filename [%s]\n", s);
 		free(s);
 		return NULL;

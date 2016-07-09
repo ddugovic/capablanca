@@ -290,7 +290,7 @@ static void load_ratings(void)
 	FILE *fp;
 	int i;
 
-	fp = fopen_p("%s/newratingsV%d_data", "r", STATS_DIR, STATS_VERSION);
+	fp = fopen_p(STATS_DIR "/newratingsV%d_data", "r", STATS_VERSION);
 	if (!fp) {
 		d_printf( "CHESSD: Can't read ratings data!\n");
 		return;
@@ -340,7 +340,7 @@ static void save_ratings(void)
 	FILE *fp;
 	int i;
 	
-	fp = fopen_p("%s/newratingsV%d_data", "w", STATS_DIR,STATS_VERSION);
+	fp = fopen_p(STATS_DIR "/newratingsV%d_data", "w", STATS_VERSION);
 	if (!fp) {
 		d_printf( "CHESSD: Can't write ratings data!\n");
 		return;
@@ -1069,13 +1069,13 @@ static int GetRankFileName(char *out, int type)
 {
   switch (type) {
     case TYPE_BLITZ:
-	sprintf(out, "%s/rank.blitz", STATS_DIR);
+	sprintf(out, STATS_DIR "/rank.blitz");
 	return type;
     case TYPE_STAND:
-	sprintf(out, "%s/rank.std", STATS_DIR);
+	sprintf(out, STATS_DIR "/rank.std");
 	return type;
     case TYPE_WILD:
-	sprintf(out, "%s/rank.wild", STATS_DIR);
+	sprintf(out, STATS_DIR "/rank.wild");
 	return type;
     default:
 	return -1;

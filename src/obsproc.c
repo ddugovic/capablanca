@@ -519,7 +519,7 @@ static int old_mail_moves(int p,int mail, param_list param)
       connected = 1;
   }
  
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR,
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s",
           player_globals.parray[p1].login[0], player_globals.parray[p1].login, STATS_GAMES);
   fp = fopen_s(fname, "r"); /* old moves now looks in history to save mem - DAV */
 
@@ -774,7 +774,7 @@ static char *FindHistory(int p, int p1, int game,char* type)
   long when;
   char typestr[4];
 
-  sprintf(fileName, "%s/player_data/%c/%s.%s", STATS_DIR,
+  sprintf(fileName, STATS_DIR "/player_data/%c/%s.%s",
 	  player_globals.parray[p1].login[0], player_globals.parray[p1].login, STATS_GAMES);
  again:
   fpHist = fopen_s(fileName, "r");
@@ -822,7 +822,7 @@ static char *FindHistory2(int p, int p1,int game, char* Eco,char* End)
   int index;
   long when;
   
-  sprintf(fileName, "%s/player_data/%c/%s.%s", STATS_DIR,
+  sprintf(fileName, STATS_DIR "/player_data/%c/%s.%s",
           player_globals.parray[p1].login[0], player_globals.parray[p1].login, STATS_GAMES);
   fpHist = fopen_s(fileName, "r");
   if (fpHist == NULL) {
@@ -947,8 +947,8 @@ static void ExamineJournal(int p,int p1,char slot)
 			player_globals.parray[p1].name);
 	} else {
 		char *fname;
-		asprintf(&fname, "%s/player_data/%c/%s.journal",
-			 STATS_DIR, name_from[0],name_from);
+		asprintf(&fname, STATS_DIR "/player_data/%c/%s.journal",
+			 name_from[0],name_from);
 		slot = toupper(slot);
 
 		if ((type = get_journalgame_type (p,fname,slot)) == '\0') {
@@ -1460,7 +1460,7 @@ int com_history(int p, param_list param)
       connected = 1;
   }
 
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, player_globals.parray[p1].login[0],
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", player_globals.parray[p1].login[0],
           player_globals.parray[p1].login, STATS_GAMES);
   pgames(p, p1, fname);
   if (!connected)
@@ -1495,7 +1495,7 @@ int com_journal(int p, param_list param)
       player_remove(p1);
     return COM_OK;
   }
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, player_globals.parray[p1].login[0],
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", player_globals.parray[p1].login[0],
 	  player_globals.parray[p1].login, STATS_JOURNAL);
   pjournal(p, p1, fname);
   if (!connected)
@@ -1531,8 +1531,8 @@ int com_jkill(int p, param_list param)
     return COM_OK;
   }
 
-  sprintf(fname, "%s/player_data/%c/%s.journal",
-      STATS_DIR, pp->login[0],pp->login);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.journal",
+      pp->login[0],pp->login);
   sprintf (fname_new,"%s.w",fname);
 
   Journal = fopen_s(fname, "r");
@@ -1586,7 +1586,7 @@ static void jsave_journalentry(int p,char save_spot,int p1,char from_spot,char* 
     return;
   }
 
- sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, name_from[0],
+ sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", name_from[0],
           name_from, STATS_JOURNAL);
 
  j = (struct journal*) malloc (sizeof(struct journal));
@@ -1722,7 +1722,7 @@ int com_jsave(int p, param_list param)
   if (param[2].type == TYPE_INT) {
 
   /* grab from a history */
-    sprintf (fname,"%s/player_data/%c/%s.%s",STATS_DIR,pp->login[0],pp->login, STATS_JOURNAL);
+    sprintf (fname,STATS_DIR"/player_data/%c/%s.%s",pp->login[0],pp->login, STATS_JOURNAL);
     jsave_history(p, to[0], p1, param[2].val.integer,fname); 
 
   } else {
@@ -1758,7 +1758,7 @@ int com_jsave(int p, param_list param)
   
   /* grab from a journal */
 
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0],
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", pp->login[0],
           pp->login, STATS_JOURNAL);
   jsave_journalentry(p,to[0],p1, from[0], fname);
 

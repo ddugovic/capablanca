@@ -446,15 +446,13 @@ int com_logons(int p, param_list param)
 		int p1, connected;
 		if (!FindPlayer(p, param[0].val.word, &p1, &connected))
 			return COM_OK;
-		sprintf(fname, "%s/player_data/%c/%s.%s", 
-			STATS_DIR, 
+		sprintf(fname, STATS_DIR "/player_data/%c/%s.%s",
 			player_globals.parray[p1].login[0], 
 			player_globals.parray[p1].login, STATS_LOGONS);
 		if (!connected)
 			player_remove(p1);
 	} else {
-		sprintf(fname, "%s/player_data/%c/%s.%s", 
-			STATS_DIR, 
+		sprintf(fname, STATS_DIR "/player_data/%c/%s.%s",
 			pp->login[0], 
 			pp->login, 
 			STATS_LOGONS);

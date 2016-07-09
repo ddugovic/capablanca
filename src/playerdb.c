@@ -563,13 +563,13 @@ void player_write_login(int p)
 	char fname[MAX_FILENAME_SIZE];
 	
 	if (CheckPFlag(p, PFLAG_REG)) {
-		sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0], pp->login, STATS_LOGONS);
+		sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", pp->login[0], pp->login, STATS_LOGONS);
 		write_p_inout(P_LOGIN, p, fname, 8);
 	}
-	sprintf(fname, "%s/%s", STATS_DIR, STATS_LOGONS);
+	sprintf(fname, STATS_DIR "/%s", STATS_LOGONS);
 	write_p_inout(P_LOGIN, p, fname, 30);
 	/* added complete login/logout log to "logons.log" file */
-	sprintf(fname, "%s/%s", STATS_DIR, "logons.log");
+	sprintf(fname, STATS_DIR "/%s", "logons.log");
 	write_p_inout(P_LOGIN, p, fname, 0);
 }
 
@@ -579,13 +579,13 @@ void player_write_logout(int p)
 	char fname[MAX_FILENAME_SIZE];
 	
 	if (CheckPFlag(p, PFLAG_REG)) {
-		sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0], pp->login, STATS_LOGONS);
+		sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", pp->login[0], pp->login, STATS_LOGONS);
 		write_p_inout(P_LOGOUT, p, fname, 8);
 	}
-	sprintf(fname, "%s/%s", STATS_DIR, STATS_LOGONS);
+	sprintf(fname, STATS_DIR "/%s", STATS_LOGONS);
 	write_p_inout(P_LOGOUT, p, fname, 30);
 	/* added complete login/logout log to "logons.log" file */
-	sprintf(fname, "%s/%s", STATS_DIR, "logons.log");
+	sprintf(fname, STATS_DIR "/%s", "logons.log");
 	write_p_inout(P_LOGOUT, p, fname, 0);
 }
 
@@ -599,7 +599,7 @@ int player_lastdisconnect(int p)
   char ipstr[20];
   char loginName[MAX_LOGIN_NAME];
 
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0], pp->login, STATS_LOGONS);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", pp->login[0], pp->login, STATS_LOGONS);
   fp = fopen_s(fname, "r");
   if (!fp)
     return 0;
@@ -910,7 +910,7 @@ int player_simul_over(int p, int g, int result)
 static void GetMsgFile (int p, char *fName)
 {
 	struct player *pp = &player_globals.parray[p];
-	sprintf(fName, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0],
+	sprintf(fName, STATS_DIR "/player_data/%c/%s.%s", pp->login[0],
 		pp->login, STATS_MESSAGES);
 }
 
@@ -1353,18 +1353,18 @@ int player_kill(char *name)
   sprintf(fname2, "%s/%c/.rem.%s", PLAYER_DIR, name[0], name);
   rename(fname, fname2);
   RemHist (name);
-  sprintf(fname, "%s/player_data/%c/%s.games", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.games", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.games", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.games", name[0], name);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.comments", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.comments", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.comments", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.comments", name[0], name);
   rename(fname, fname2);
 
-  sprintf(fname, "%s/player_data/%c/%s.logons", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.logons", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.logons", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.logons", name[0], name);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.messages", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.messages", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.messages", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.messages", name[0], name);
   rename(fname, fname2);
   return 0;
 }
@@ -1376,17 +1376,17 @@ int player_rename(char *name, char *newname)
   sprintf(fname, "%s/%c/%s", PLAYER_DIR, name[0], name);
   sprintf(fname2, "%s/%c/%s", PLAYER_DIR, newname[0], newname);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.games", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/%s.games", STATS_DIR, newname[0], newname);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.games", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/%s.games", newname[0], newname);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.comments", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/%s.comments", STATS_DIR, newname[0], newname);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.comments", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/%s.comments", newname[0], newname);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.logons", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/%s.logons", STATS_DIR, newname[0], newname);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.logons", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/%s.logons", newname[0], newname);
   rename(fname, fname2);
-  sprintf(fname, "%s/player_data/%c/%s.messages", STATS_DIR, name[0], name);
-  sprintf(fname2, "%s/player_data/%c/%s.messages", STATS_DIR, newname[0], newname);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.messages", name[0], name);
+  sprintf(fname2, STATS_DIR "/player_data/%c/%s.messages", newname[0], newname);
   rename(fname, fname2);
   return 0;
 }
@@ -1398,17 +1398,17 @@ int player_reincarn(char *name, char *newname)
   sprintf(fname, "%s/%c/%s", PLAYER_DIR, newname[0], newname);
   sprintf(fname2, "%s/%c/.rem.%s", PLAYER_DIR, name[0], name);
   rename(fname2, fname);
-  sprintf(fname, "%s/player_data/%c/%s.games", STATS_DIR, newname[0], newname);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.games", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.games", newname[0], newname);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.games", name[0], name);
   rename(fname2, fname);
-  sprintf(fname, "%s/player_data/%c/%s.comments", STATS_DIR, newname[0], newname);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.comments", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.comments", newname[0], newname);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.comments", name[0], name);
   rename(fname2, fname);
-  sprintf(fname, "%s/player_data/%c/%s.logons", STATS_DIR, newname[0], newname);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.logons", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.logons", newname[0], newname);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.logons", name[0], name);
   rename(fname2, fname);
-  sprintf(fname, "%s/player_data/%c/%s.messages", STATS_DIR, newname[0], newname);
-  sprintf(fname2, "%s/player_data/%c/.rem.%s.messages", STATS_DIR, name[0], name);
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.messages", newname[0], newname);
+  sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.messages", name[0], name);
   rename(fname2, fname);
   return 0;
 }
@@ -1420,7 +1420,7 @@ int player_num_comments(int p)
 
 	if (!CheckPFlag(p, PFLAG_REG))
 		return 0;
-	sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, pp->login[0],
+	sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", pp->login[0],
 		pp->login, "comments");
 	return lines_file(fname);
 }
@@ -1433,7 +1433,7 @@ int player_add_comment(int p_by, int p_to, char *comment)
 
   if (!CheckPFlag(p_to, PFLAG_REG))
     return -1;
-  sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, player_globals.parray[p_to].login[0],
+  sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", player_globals.parray[p_to].login[0],
 	  player_globals.parray[p_to].login, "comments");
   fp = fopen_s(fname, "a");
   if (!fp)
@@ -1449,7 +1449,7 @@ int player_show_comments(int p, int p1)
   char fname[MAX_FILENAME_SIZE];
 
   if (CheckPFlag(p1, PFLAG_REG)) {
-    sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR, player_globals.parray[p1].login[0],
+    sprintf(fname, STATS_DIR "/player_data/%c/%s.%s", player_globals.parray[p1].login[0],
   	  player_globals.parray[p1].login, "comments");
     if (psend_file(p, NULL, fname))
       pprintf(p, "There are no comments to show for %s.\n", player_globals.parray[p1].name);

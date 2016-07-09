@@ -208,7 +208,7 @@ static void makerank(void)
     printf("Sorting %d %s.\n", sortnum, rnames[rtype]);
     qsort(sortme, sortnum, sizeof(ENTRY *), sortfunc);
     printf("Saving to file.\n");
-    asprintf(&fName, "%s/rank.%s", STATS_DIR, rnames[rtype]);
+    asprintf(&fName, STATS_DIR "/rank.%s", rnames[rtype]);
     fp = fopen_s(fName, "w");
     free(fName);
 

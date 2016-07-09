@@ -900,7 +900,7 @@ int process_disconnection(int fd)
       player_save(p);
     } else {			/* delete unreg history file */
       char fname[MAX_FILENAME_SIZE];
-      sprintf(fname, "%s/player_data/%c/%s.games", STATS_DIR, pp->login[0], pp->login);
+      sprintf(fname, STATS_DIR "/player_data/%c/%s.games", pp->login[0], pp->login);
       unlink(fname);
     }
   }

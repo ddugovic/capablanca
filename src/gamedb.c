@@ -1146,10 +1146,10 @@ static long OldestHistGame(char *login)
 	FILE *fp;
 	long when;
 	
-	fp = fopen_p("%s/player_data/%c/%s.%s", "r", STATS_DIR,
+	fp = fopen_p(STATS_DIR "/player_data/%c/%s.%s", "r",
 		     login[0], login, STATS_GAMES);
 	if (fp == NULL) {
-		fp = fopen_p("%s/player_data/%c/.rem.%s.%s", "r", STATS_DIR,
+		fp = fopen_p(STATS_DIR "/player_data/%c/.rem.%s.%s", "r",
 			     login[0], login, STATS_GAMES);
 	}
 	if (!fp) return 0;
@@ -1203,8 +1203,7 @@ void RemHist(char *who)
 	char Opp[MAX_LOGIN_NAME];
 	long When, oppWhen;
 
-	fp = fopen_p("%s/player_data/%c/%s.%s", "r", 
-		     STATS_DIR,
+	fp = fopen_p(STATS_DIR "/player_data/%c/%s.%s", "r",
 		     who[0], who, STATS_GAMES);
 	if (!fp) {
 		return;
@@ -1685,10 +1684,10 @@ void game_write_complete(int g, int isDraw, char *EndSymbol)
 		d_printf( "Trouble writing history file %s", fname);
 	}
 	
-	sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR,
+	sprintf(fname, STATS_DIR "/player_data/%c/%s.%s",
 		player_globals.parray[wp].login[0], player_globals.parray[wp].login, STATS_GAMES);
 	write_g_out(g, fname, 40, isDraw, EndSymbol, player_globals.parray[wp].name, &now);
-	sprintf(fname, "%s/player_data/%c/%s.%s", STATS_DIR,
+	sprintf(fname, STATS_DIR "/player_data/%c/%s.%s",
 		player_globals.parray[bp].login[0], player_globals.parray[bp].login, STATS_GAMES);
 	write_g_out(g, fname, 40, isDraw, EndSymbol, player_globals.parray[bp].name, &now);
 	
@@ -1698,7 +1697,7 @@ void game_write_complete(int g, int isDraw, char *EndSymbol)
 		Result = 1;
 	else
 		Result = 0;
-	sprintf(fname,"%s/player_data/%c/%s.gstats", STATS_DIR, player_globals.parray[game_globals.garray[g].white].login[0], player_globals.parray[game_globals.garray[g].white].login);
+	sprintf(fname, STATS_DIR "/player_data/%c/%s.gstats", player_globals.parray[game_globals.garray[g].white].login[0], player_globals.parray[game_globals.garray[g].white].login);
 	if ((CheckPFlag(bp, PFLAG_REG)) && (CheckPFlag(wp, PFLAG_REG)) && (game_globals.garray[g].type != TYPE_WILD))
 		game_save_playerratio(fname,player_globals.parray[game_globals.garray[g].black].name,Result,game_globals.garray[g].rated);
 	if (isDraw)
@@ -1707,7 +1706,7 @@ void game_write_complete(int g, int isDraw, char *EndSymbol)
 		Result = 1;
 	else
 		Result = 0;
-	sprintf(fname,"%s/player_data/%c/%s.gstats", STATS_DIR, player_globals.parray[game_globals.garray[g].black].login[0], player_globals.parray[game_globals.garray[g].black].login);
+	sprintf(fname, STATS_DIR "/player_data/%c/%s.gstats", player_globals.parray[game_globals.garray[g].black].login[0], player_globals.parray[game_globals.garray[g].black].login);
 	if ((CheckPFlag(bp, PFLAG_REG)) && (CheckPFlag(wp, PFLAG_REG)) && (game_globals.garray[g].type != TYPE_WILD))
 		game_save_playerratio(fname,player_globals.parray[game_globals.garray[g].white].name,Result,game_globals.garray[g].rated);
 }
