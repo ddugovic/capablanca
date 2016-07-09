@@ -128,7 +128,7 @@ static struct List *list_find(int p, enum ListWhich l)
 		list_find1(p, l);
 	}
 
-	fp = fopen_p("%s/%s", "r", LISTS_DIR, ListArray[l].name);
+	fp = fopen_p(LISTS_DIR "/%s", "r", ListArray[l].name);
 	if (!fp) {
 		return NULL;
 	}
@@ -399,7 +399,7 @@ int list_addsub(int p, char* list, char* who, int addsub)
         pprintf_prompt(p1, "You have been %s the %s list by %s.\n",
                                     addrem, listname, pp->name);
 
-    sprintf(filename, "%s/%s", LISTS_DIR, listname);
+    sprintf(filename, LISTS_DIR "/%s", listname);
     fp = fopen_s(filename, "w");
     if (fp == NULL) {
       d_printf( "Couldn't save %s list.\n", listname);

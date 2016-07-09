@@ -192,8 +192,7 @@ static int WritePlayerFile_v100(int p)
 		return -1;
 	}
 
-	fp = fopen_p("%s/%c/%s", "w", 
-		     PLAYER_DIR, 
+	fp = fopen_p(PLAYER_DIR "/%c/%s", "w",
 		     player_globals.parray[p].login[0], 
 		     player_globals.parray[p].login);
 	if (!fp) {
@@ -255,7 +254,7 @@ int player_read(int p, char *name)
 
 	pp->login = stolower(strdup(name));
 
-	sprintf(fname, "%s/%c/%s", PLAYER_DIR, pp->login[0], pp->login);
+	sprintf(fname, PLAYER_DIR "/%c/%s", pp->login[0], pp->login);
 	fp = fopen_s(fname, "r");
   
 	if (pp->name)
@@ -474,7 +473,7 @@ int showstored(int p)
   char dname[MAX_FILENAME_SIZE];
   multicol *m = multicol_start(50); /* Limit to 50, should be enough*/
   
-  sprintf(dname, "%s/%c", ADJOURNED_DIR, pp->login[0]);
+  sprintf(dname, ADJOURNED_DIR "/%c", pp->login[0]);
   dirp = opendir(dname);
   if (!dirp) {
     multicol_end(m);
@@ -1308,7 +1307,7 @@ int player_search(int p, char *name)
     return p1 + 1;
   }
   /* exact match with registered player? */
-  sprintf(pdir, "%s/%c", PLAYER_DIR, name[0]);
+  sprintf(pdir, PLAYER_DIR "/%c", name[0]);
   count = search_directory(pdir, name, buffer, 1000);
   if (count > 0 && !strcmp(name, *buffer)) {
     goto ReadPlayerFromFile;	/* found an unconnected registered player */
@@ -1349,8 +1348,8 @@ int player_kill(char *name)
 {
   char fname[MAX_FILENAME_SIZE], fname2[MAX_FILENAME_SIZE];
 
-  sprintf(fname, "%s/%c/%s", PLAYER_DIR, name[0], name);
-  sprintf(fname2, "%s/%c/.rem.%s", PLAYER_DIR, name[0], name);
+  sprintf(fname, PLAYER_DIR "/%c/%s", name[0], name);
+  sprintf(fname2, PLAYER_DIR "/%c/.rem.%s", name[0], name);
   rename(fname, fname2);
   RemHist (name);
   sprintf(fname, STATS_DIR "/player_data/%c/%s.games", name[0], name);
@@ -1373,8 +1372,8 @@ int player_rename(char *name, char *newname)
 {
   char fname[MAX_FILENAME_SIZE], fname2[MAX_FILENAME_SIZE];
 
-  sprintf(fname, "%s/%c/%s", PLAYER_DIR, name[0], name);
-  sprintf(fname2, "%s/%c/%s", PLAYER_DIR, newname[0], newname);
+  sprintf(fname, PLAYER_DIR "/%c/%s", name[0], name);
+  sprintf(fname2, PLAYER_DIR "/%c/%s", newname[0], newname);
   rename(fname, fname2);
   sprintf(fname, STATS_DIR "/player_data/%c/%s.games", name[0], name);
   sprintf(fname2, STATS_DIR "/player_data/%c/%s.games", newname[0], newname);
@@ -1395,8 +1394,8 @@ int player_reincarn(char *name, char *newname)
 {
   char fname[MAX_FILENAME_SIZE], fname2[MAX_FILENAME_SIZE];
 
-  sprintf(fname, "%s/%c/%s", PLAYER_DIR, newname[0], newname);
-  sprintf(fname2, "%s/%c/.rem.%s", PLAYER_DIR, name[0], name);
+  sprintf(fname, PLAYER_DIR "/%c/%s", newname[0], newname);
+  sprintf(fname2, PLAYER_DIR "/%c/.rem.%s", name[0], name);
   rename(fname2, fname);
   sprintf(fname, STATS_DIR "/player_data/%c/%s.games", newname[0], newname);
   sprintf(fname2, STATS_DIR "/player_data/%c/.rem.%s.games", name[0], name);

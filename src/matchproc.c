@@ -756,7 +756,7 @@ int com_match(int p, param_list param)
       } else if (board[0]) { /* not bughouse */
         char fname[MAX_FILENAME_SIZE];
 
-        sprintf(fname, "%s/%s/%s", BOARD_DIR, category, board);
+        sprintf(fname, BOARD_DIR "/%s/%s", category, board);
         if (!file_exists(fname)) {
           pprintf(p, "No such category/board: %s/%s\n", category, board);
           return COM_OK;

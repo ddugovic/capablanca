@@ -1064,7 +1064,7 @@ int game_read(int g, int wp, int bp)
     game_globals.garray[g].white_rating = player_globals.parray[wp].s_stats.rating;
     game_globals.garray[g].black_rating = player_globals.parray[bp].s_stats.rating;
   }
-  fp = fopen_p("%s/%c/%s-%s", "r", ADJOURNED_DIR, player_globals.parray[wp].login[0],
+  fp = fopen_p(ADJOURNED_DIR "/%c/%s-%s", "r", player_globals.parray[wp].login[0],
 	     player_globals.parray[wp].login, player_globals.parray[bp].login);
   if (!fp) {
     return -1;
@@ -1100,9 +1100,9 @@ int game_delete(int wp, int bp)
   char fname[MAX_FILENAME_SIZE];
   char lname[MAX_FILENAME_SIZE];
 
-  sprintf(fname, "%s/%c/%s-%s", ADJOURNED_DIR, player_globals.parray[wp].login[0],
+  sprintf(fname, ADJOURNED_DIR "/%c/%s-%s", player_globals.parray[wp].login[0],
 	  player_globals.parray[wp].login, player_globals.parray[bp].login);
-  sprintf(lname, "%s/%c/%s-%s", ADJOURNED_DIR, player_globals.parray[bp].login[0],
+  sprintf(lname, ADJOURNED_DIR "/%c/%s-%s", player_globals.parray[bp].login[0],
 	  player_globals.parray[wp].login, player_globals.parray[bp].login);
   unlink(fname);
   unlink(lname);
@@ -1118,7 +1118,7 @@ int game_save(int g)
 
 	wp = &player_globals.parray[gg->white];
 	bp = &player_globals.parray[gg->black];
-	asprintf(&fname, "%s/%c/%s-%s", ADJOURNED_DIR, wp->login[0],
+	asprintf(&fname, ADJOURNED_DIR "/%c/%s-%s", wp->login[0],
 		 wp->login, bp->login);
 	fp = fopen_p("%s", "w", fname);
 	if (!fp) {
@@ -1132,7 +1132,7 @@ int game_save(int g)
 	/* Create link for easier stored game finding */
 	if (bp->login[0] != wp->login[0]) {
 		char *lname;
-		asprintf(&lname, "%s/%c/%s-%s", ADJOURNED_DIR, bp->login[0],
+		asprintf(&lname, ADJOURNED_DIR "/%c/%s-%s", bp->login[0],
 			 wp->login, bp->login);
 		link(fname, lname);
 		free(lname);
@@ -1191,7 +1191,7 @@ static void RemoveHistGame(char *file, int maxlines)
 
     oppWhen = OldestHistGame(Opponent);
     if (oppWhen > When || oppWhen <= 0L) {
-      sprintf(GameFile, "%s/%ld/%ld", HISTORY_DIR, When % 100, When);
+      sprintf(GameFile, HISTORY_DIR "/%ld/%ld", When % 100, When);
       unlink(GameFile);
     }
   }
@@ -1215,7 +1215,7 @@ void RemHist(char *who)
 		oppWhen = OldestHistGame(Opp);
 		if (oppWhen > When || oppWhen <= 0L) {
 			char *fName;
-			asprintf(&fName, "%s/%ld/%ld", HISTORY_DIR, When % 100, When);
+			asprintf(&fName, HISTORY_DIR "/%ld/%ld", When % 100, When);
 			unlink(fName);
 			free(fName);
 		}
@@ -1671,7 +1671,7 @@ void game_write_complete(int g, int isDraw, char *EndSymbol)
 			fclose(fp);
 			now++;
 		}
-		sprintf(fname, "%s/%ld/%ld", HISTORY_DIR, (long) now % 100, (long) now);
+		sprintf(fname, HISTORY_DIR "/%ld/%ld", (long) now % 100, (long) now);
 		fp = fopen_s(fname, "r");
 	} while (fp);   /* terminates when the file doesn't exist */
 	

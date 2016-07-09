@@ -106,7 +106,7 @@ static int LoadEntries(void)
 
   for (letter1 = 'a'; letter1 <= 'z'; letter1++) {
     printf("Loading %c's.\n", letter1);
-    sprintf(pathInput, "%s/%c", PLAYER_DIR, letter1);
+    sprintf(pathInput, PLAYER_DIR "/%c", letter1);
     asprintf(&command, "ls -1 %s", pathInput);
     fpPlayerList = popen(command, "r");
     free(command);
@@ -122,7 +122,7 @@ static int LoadEntries(void)
       if (e.name[0] != letter1)
 	printf("File %c/%s:  wrong directory.\n", letter1, e.name);
       else {
-	sprintf(pathInput, "%s/%c/%s", PLAYER_DIR, letter1, e.name);
+	sprintf(pathInput, PLAYER_DIR "/%c/%s", letter1, e.name);
 	if (GetPlayerInfo(pathInput, &e)) {
 	  if ((list[n] = malloc(sizeof(ENTRY))) == NULL) {
 	    d_printf( "malloc() failed!\n");

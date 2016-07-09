@@ -188,7 +188,7 @@ int gen_addgen(struct parse_string *p, const char *fmt, ...)
 	int n;
 	va_list ap;
 	va_start(ap, fmt);
-	n = vasprintf(&buf, fmt, ap);
+	n = m_vasprintf(&buf, fmt, ap);
 	va_end(ap);
 	if (addgen_alloc(p, n + 1) != 0) {
 		if (buf) free(buf);

@@ -1007,7 +1007,7 @@ static int board_read_file(char *category, char *gname, struct game_state_t *gs)
   int onFile = -1;
   int onRank = -1;
 
-  fp = fopen_p("%s/%s/%s", "r", BOARD_DIR, category, gname);
+  fp = fopen_p(BOARD_DIR "/%s/%s", "r", category, gname);
   if (!fp)
     return 1;
 
@@ -1432,7 +1432,7 @@ static void wild_update(board_t b, int style)
     FILE *fp;
     int onPiece;
 
-    fp = fopen_p("%s/wild/%d", "w", BOARD_DIR, style);
+    fp = fopen_p(BOARD_DIR "/wild/%d", "w", style);
     if (!fp) {
       d_printf( "CHESSD: Can't write wild style %d\n", style);
       return;

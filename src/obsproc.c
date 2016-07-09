@@ -739,10 +739,10 @@ static void ExamineAdjourned(int p, int p1, int p2)
 	p1Login = player_globals.parray[p1].login;
 	p2Login = player_globals.parray[p2].login;
 
-	fp = fopen_p("%s/%c/%s-%s", "r", ADJOURNED_DIR, *p1Login, p1Login, p2Login);
-	if (!fp) fp = fopen_p("%s/%c/%s-%s", "r", ADJOURNED_DIR, *p2Login, p1Login, p2Login);
-	if (!fp) fp = fopen_p("%s/%c/%s-%s", "r", ADJOURNED_DIR, *p2Login, p2Login, p1Login);
-	if (!fp) fp = fopen_p("%s/%c/%s-%s", "r", ADJOURNED_DIR, *p1Login, p2Login, p1Login);
+	fp = fopen_p(ADJOURNED_DIR "/%c/%s-%s", "r", *p1Login, p1Login, p2Login);
+	if (!fp) fp = fopen_p(ADJOURNED_DIR "/%c/%s-%s", "r", *p2Login, p1Login, p2Login);
+	if (!fp) fp = fopen_p(ADJOURNED_DIR "/%c/%s-%s", "r", *p2Login, p2Login, p1Login);
+	if (!fp) fp = fopen_p(ADJOURNED_DIR "/%c/%s-%s", "r", *p1Login, p2Login, p1Login);
 	if (!fp) {
 		pprintf(p, "No stored game between \"%s\" and \"%s\".\n",
 			player_globals.parray[p1].name, player_globals.parray[p2].name);
@@ -809,7 +809,7 @@ static char *FindHistory(int p, int p1, int game,char* type)
   else
     *type = typestr[1];
 
-  sprintf(fileName, "%s/%ld/%ld", HISTORY_DIR, when % 100, when);
+  sprintf(fileName, HISTORY_DIR "/%ld/%ld", when % 100, when);
   return(fileName);
 }
 
@@ -841,7 +841,7 @@ static char *FindHistory2(int p, int p1,int game, char* Eco,char* End)
   }
   fclose(fpHist);
 
-  sprintf(fileName, "%s/%ld/%ld", HISTORY_DIR, when % 100, when);
+  sprintf(fileName, HISTORY_DIR "/%ld/%ld", when % 100, when);
   return(fileName);
 }
 
@@ -941,7 +941,7 @@ static void ExamineJournal(int p,int p1,char slot)
 		return;
 	}
 
-	fpGame = fopen_p("%s/%c/%s.%c", "r", JOURNAL_DIR, name_from[0],name_from,slot);
+	fpGame = fopen_p(JOURNAL_DIR "/%c/%s.%c", "r", name_from[0],name_from,slot);
 	if (fpGame == NULL) {
 		pprintf(p, "Journal entry %c is not available for %s.\n", toupper (slot),
 			player_globals.parray[p1].name);
@@ -983,7 +983,7 @@ int com_examine(int p, param_list param)
         ExamineScratch(p, param, 1);
         return COM_OK;
     } else if (param[1].type == TYPE_WORD) {
-      sprintf(fname, "%s/%s/%s", BOARD_DIR, param[0].val.word, param[1].val.word);
+      sprintf(fname, BOARD_DIR "/%s/%s", param[0].val.word, param[1].val.word);
       if (file_exists(fname)) {
         ExamineScratch(p, param, 0);
         return COM_OK;
@@ -1039,7 +1039,7 @@ int com_stored(int p, param_list param)
       connected = 1;
   }
 
-  sprintf(dname, "%s/%c", ADJOURNED_DIR, player_globals.parray[p1].login[0]);
+  sprintf(dname, ADJOURNED_DIR "/%c", player_globals.parray[p1].login[0]);
   dirp = opendir(dname);
   if (!dirp) {
     pprintf(p, "Player %s has no games stored.\n", player_globals.parray[p1].name);
@@ -1116,7 +1116,7 @@ static void stored_mail_moves(int p, int mail, param_list param)
         if (((wincstring[0] - 'a' + 1) > MAX_JOURNAL) && (player_globals.parray[wp].adminLevel < ADMIN_ADMIN) && (!titled_player(p,player_globals.parray[wp].login))) {
           pprintf (p,"%s's maximum journal entry is %c\n",player_globals.parray[wp].name,toupper((char)(MAX_JOURNAL + 'A' - 1)));
         } else {
-          sprintf(fileName2, "%s/%c/%s.%c", JOURNAL_DIR, name_from[0],name_from,wincstring[0]);
+          sprintf(fileName2, JOURNAL_DIR "/%c/%s.%c", name_from[0],name_from,wincstring[0]);
           fpGame = fopen_s(fileName2, "r");
           if (fpGame == NULL) {
             pprintf(p, "Journal entry %c is not available for %s.\n", toupper(wincstring[0]),
@@ -1548,8 +1548,8 @@ int com_jkill(int p, param_list param)
     rename (fname_new,fname);
     if (empty)
        unlink (fname);
-    sprintf(fname, "%s/%c/%s.%c",
-         JOURNAL_DIR, pp->login[0],pp->login,tolower(kill[0]));
+    sprintf(fname, JOURNAL_DIR "/%c/%s.%c",
+         pp->login[0],pp->login,tolower(kill[0]));
     unlink(fname);
     pprintf (p,"Journal entry %c deleted.\n",kill[0]);
   } else { 
@@ -1569,7 +1569,7 @@ static void jsave_journalentry(int p,char save_spot,int p1,char from_spot,char* 
   char* name_to = pp->login;
   struct journal* j;
 
-  sprintf(fname, "%s/%c/%s.%c", JOURNAL_DIR, name_from[0],name_from,from_spot);
+  sprintf(fname, JOURNAL_DIR "/%c/%s.%c", name_from[0],name_from,from_spot);
   Game = fopen_s(fname, "r");
   if (Game == NULL) {
      pprintf(p, "Journal entry %c not available for %s.\n", toupper(from_spot), player_globals.parray[p1].name);
@@ -1577,7 +1577,7 @@ static void jsave_journalentry(int p,char save_spot,int p1,char from_spot,char* 
      }
   fclose (Game);
   
-  sprintf(fname2, "%s/%c/%s.%c", JOURNAL_DIR, name_to[0],name_to,save_spot);
+  sprintf(fname2, JOURNAL_DIR "/%c/%s.%c", name_to[0],name_to,save_spot);
 
   if (file_copy(fname, fname2) != 0) {
     pprintf (p,"Copy in jsave_journalentry failed!\n");
@@ -1626,7 +1626,7 @@ static void jsave_history(int p,char save_spot,int p1,int from,char* to_file)
 		return;
 	} 
 
-	sprintf(jfname, "%s/%c/%s.%c", JOURNAL_DIR, name_to[0],name_to,save_spot);
+	sprintf(jfname, JOURNAL_DIR "/%c/%s.%c", name_to[0],name_to,save_spot);
 	unlink(jfname); /* necessary if cp is hard aliased to cp -i */
 	sprintf(command, "cp %s %s",HistoryFname,jfname);
 	if (file_copy(HistoryFname, jfname) != 0) {

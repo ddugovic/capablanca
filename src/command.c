@@ -1125,7 +1125,7 @@ int com_acheckhelp(int p, param_list param)
 
 	for (count=i=0; command_list[i].comm_name; i++) {
 		char *fname;
-		asprintf(&fname, "%s/%s", USAGE_DIR, command_list[i].comm_name);
+		asprintf(&fname, USAGE_DIR "/%s", command_list[i].comm_name);
 		if (!file_exists(fname)) {
 			pprintf(p, "Usage for command '%s' is missing%s\n",
 				command_list[i].comm_name,

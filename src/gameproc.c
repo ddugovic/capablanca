@@ -1536,10 +1536,10 @@ int com_boards(int p, param_list param)
     category = param[0].val.word;
   if (category) {
     pprintf(p, "Boards Available For Category %s:\n", category);
-    sprintf(dname, "%s/%s", BOARD_DIR, category);
+    sprintf(dname, BOARD_DIR "/%s", category);
   } else {
     pprintf(p, "Categories Available:\n");
-    sprintf(dname, "%s", BOARD_DIR);
+    sprintf(dname, BOARD_DIR);
   }
   dirp = opendir(dname);
   if (!dirp) {
@@ -1728,7 +1728,7 @@ int com_simmatch(int p, param_list param)
 
   if ((param[1].type == TYPE_WORD) && (param[2].type == TYPE_WORD)) {
 
-    sprintf(fname, "%s/%s/%s", BOARD_DIR, param[1].val.word , param[2].val.word);
+    sprintf(fname, BOARD_DIR "/%s/%s", param[1].val.word , param[2].val.word);
     if (!file_exists(fname)) {
       pprintf(p, "No such category/board: %s/%s\n", param[1].val.word , param[2].val.word);
       return COM_OK;

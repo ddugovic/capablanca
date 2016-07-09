@@ -220,14 +220,14 @@ int com_raisedead(int p, param_list param)
   stolower(newplayerlower);
 
   /* First make sure we have a player to raise. */
-  sprintf (plrFile, "%s/%c/.rem.%s", PLAYER_DIR, playerlower[0], playerlower);
+  sprintf (plrFile, PLAYER_DIR "/%c/.rem.%s", playerlower[0], playerlower);
   if (!file_exists (plrFile)) {
     pprintf(p, "No deleted player %s.\n", player);
     return COM_OK;
   }
 
   /* Now check for registered player. */
-  sprintf (plrFile, "%s/%c/%s", PLAYER_DIR, newplayerlower[0], newplayerlower);
+  sprintf (plrFile, PLAYER_DIR "/%c/%s", newplayerlower[0], newplayerlower);
   if (file_exists (plrFile)) {
     pprintf(p, "A player named %s is already registered.\n", newplayerlower);
     pprintf(p, "Obtain a new handle for the dead person.\n");

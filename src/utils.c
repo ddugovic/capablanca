@@ -1072,24 +1072,22 @@ char *fd_gets(char *line, size_t maxsize, int fd)
 */
 FILE *fopen_p(const char *fmt, const char *mode, ...)
 {
-	char *s = NULL;
+	char s[MAX_FILENAME_SIZE];
 	FILE *f;
 	va_list ap;
 	int x;
 	va_start(ap, mode);
-	x = vasprintf(&s, fmt, ap);
+	x = vsprintf(&s, fmt, ap);
 	va_end(ap);
 	if (!s) return NULL;
 	if (x == -1 || strstr(s, "..")) {
 		d_printf("Invalid filename [%s]\n", s);
-		free(s);
 		return NULL;
 	}
 	f = fopen(s, mode);
 	if (f == NULL) {
 		d_printf("Could not open file \"%s\" [%s]\n", s, strerror(errno));
 	}
-	free(s);
 	return f;
 }
 
