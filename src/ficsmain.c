@@ -166,18 +166,6 @@ static void do_chroot(const char *dir)
 	setrlimit( RLIMIT_CORE, &rlp );
 }
 
-/*
-  give a decent backtrace on segv
-*/
-static void segv_handler(int sig)
-{
-	char cmd[100];
-	snprintf(cmd, sizeof(cmd), "/home/mics/bin/backtrace %d > /home/mics/chessd/segv_%d 2>&1", 
-		 (int)getpid(), (int)getpid());
-	system(cmd);
-	_exit(1);
-}
-
 int main(int argc, char *argv[])
 {
 	int i, foreground, port;
@@ -216,8 +204,6 @@ int main(int argc, char *argv[])
 	}  
 
 	signal(SIGTERM, TerminateServer);
-	signal(SIGSEGV, segv_handler);
-	signal(SIGBUS, segv_handler);
 	signal(SIGINT, TerminateServer);
 	signal(SIGPIPE, BrokenPipe);
 

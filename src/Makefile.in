@@ -171,6 +171,7 @@ install: $(ALL)
 	cp -u ${srcdir}/../data/boards/caparandom/* ${CHESSDDIR}/data/boards/caparandom
 	cp -u ${srcdir}/../data/boards/seirawan/* ${CHESSDDIR}/data/boards/seirawan
 	cp -u ${srcdir}/../data/boards/seirawan/* ${CHESSDDIR}/data/boards/spartan
+	cp -u ${srcdir}/../data/stats/newratingsV2_data ${CHESSDDIR}/data/stats
 	perl -e 'mkdir("${CHESSDDIR}/players/$$_",0755) for ("a".."z")'
 	perl -e 'mkdir("${CHESSDDIR}/games/history/$$_",0755) for ("0".."99")'
 	perl -e 'mkdir("${CHESSDDIR}/games/journal/$$_",0755) for ("a".."z")'
