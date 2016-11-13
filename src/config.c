@@ -123,6 +123,10 @@ int config_get_int(const char *name, int default_v)
 	/* this trick allows config variables to show up in 'aconfig' as
 	   soon as they are used */
 	if (!data.dptr) {
+#if 1
+		/* somehow this prevents a segmentation fault */
+		printf("%s=%d\n", name, default_v);
+#endif
 		char *s = NULL;
 		data.dsize = asprintf(&s, "%d", default_v) + 1;
 		data.dptr = s;

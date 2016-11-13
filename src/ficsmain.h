@@ -27,6 +27,8 @@
 #define MESS_MOTD "motd"
 #define MESS_ADMOTD "admotd"
 #define MESS_UNREGISTERED "unregistered"
+#define MESS_FULL "full"
+#define MESS_FULL_UNREG "full_unreg"
 
 #define STATS_MESSAGES "messages"
 #define STATS_LOGONS "logons"
