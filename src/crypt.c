@@ -22,7 +22,8 @@
   on the salt value.
  */
 
-#define _XOPEN_SOURCE 700
+#include <crypt.h>
+#include <mcrypt.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -15,6 +15,7 @@ AC_PROG_LN_S
 AC_PROG_INSTALL
 
 dnl Checks for libraries.
+AC_CHECK_LIB(mcrypt, mcrypt_check_version, [], [exit -1])
 AC_CHECK_LIB(crypt, crypt, [], [exit -1])
 AC_CHECK_LIB(dl, dlopen, [], [exit -1])
 dnl Replace `main' with a function in -lm:

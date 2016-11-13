@@ -74,7 +74,7 @@ chessd: .autoheaders ficsmain.o
 	$(CC) $(DYNEXP) $(CFLAGS) $(LNFLAGS) -o chessd ficsmain.o $(LIBS)
 
 chessd.so: .autoheaders $(OBJS)
-	$(CC) -shared -o chessd.so $(OBJS)
+	$(CC) -shared -o chessd.so $(OBJS) $(LIBS)
 
 chessd_addplayer: .autoheaders fics_addplayer.o $(OBJS) 
 	$(CC) fics_addplayer.o $(CFLAGS) $(OBJS) $(LNFLAGS) -o chessd_addplayer $(LIBS)
