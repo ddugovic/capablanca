@@ -148,7 +148,6 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/games/journal
 	install -d -m0755 ${CHESSDDIR}/games/adjourned
 	install -d -m0755 ${CHESSDDIR}/data/stats/player_data
-	install -d -m0755 ${CHESSDDIR}/data/stats/user.stats
 	install -d -m0755 ${CHESSDDIR}/data/lists
 	cp -u ${srcdir}/../data/lists/td ${CHESSDDIR}/data/lists
 	cp -u ${srcdir}/../data/admin/[a-z]* ${CHESSDDIR}/data/admin
