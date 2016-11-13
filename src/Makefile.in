@@ -52,7 +52,7 @@ TDB_SRC = tdb/tdb.c tdb/spinlock.c
 
 GEN_SRCS=adminproc.c algcheck.c board.c command.c talkproc.c comproc.c \
 	formula.c gamedb.c gamedb_old.c gameproc.c config.c \
-	lists.c malloc.c reload.c follow.c help.c news.c \
+	lists.c reload.c follow.c help.c news.c \
 	movecheck.c multicol.c network.c playerdb.c playerdb_old.c ratings.c \
 	utils.c variable.c eco.c matchproc.c \
 	obsproc.c pending.c gics.c setup.c shutdown.c seekproc.c \
@@ -148,6 +148,7 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/games/journal
 	install -d -m0755 ${CHESSDDIR}/games/adjourned
 	install -d -m0755 ${CHESSDDIR}/data/stats/player_data
+	install -d -m0755 ${CHESSDDIR}/data/stats/user.stats
 	install -d -m0755 ${CHESSDDIR}/data/lists
 	cp -u ${srcdir}/../data/lists/td ${CHESSDDIR}/data/lists
 	cp -u ${srcdir}/../data/admin/[a-z]* ${CHESSDDIR}/data/admin

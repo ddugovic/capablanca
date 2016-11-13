@@ -3,6 +3,7 @@ AC_PREREQ([2.60])
 AC_INIT(acconfig.h, [2.2])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_CONFIG_HEADER(autoconfig.h)
+AC_USE_SYSTEM_EXTENSIONS
 
 dnl This isn't a standard way to configure, but it works.
 CHESSD_CFLAGS="-DCHESSDDIR='\"/usr/local/chessd\"'"

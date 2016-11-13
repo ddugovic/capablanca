@@ -17,7 +17,7 @@
 */
 
 
-
+#if 0
 #undef malloc
 #undef free
 #undef calloc
@@ -36,4 +36,5 @@
 #define realloc m_realloc
 
 #define free(x) m_safe_free((void **)&(x), __FILE__, __LINE__)
+#endif
 #define FREE(x) ((x)?free(x),(x)=NULL:0)
