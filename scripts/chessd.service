@@ -1,0 +1,15 @@
+[Unit]
+Description=Job that runs the chessd daemon
+Documentation=man:chessd(1)
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=chessd
+Group=chessd
+WorkingDirectory=/usr/local/chessd
+ExecStart=/usr/local/chessd/bin/chessd -f -p 5000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
