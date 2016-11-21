@@ -134,8 +134,6 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/data/boards/super
 	install -d -m0755 ${CHESSDDIR}/data/boards/crazyhouse
 	install -d -m0755 ${CHESSDDIR}/data/boards/fischerandom
-	install -d -m0755 ${CHESSDDIR}/data/boards/fr
-	install -d -m0755 ${CHESSDDIR}/data/boards/zh
 	install -d -m0755 ${CHESSDDIR}/data/boards/shatranj
 	install -d -m0755 ${CHESSDDIR}/data/boards/xiangqi
 	install -d -m0755 ${CHESSDDIR}/data/boards/shogi
