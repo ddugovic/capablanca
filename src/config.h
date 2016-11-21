@@ -40,7 +40,7 @@
 /* These must be absolute paths because some mail daemons may be called */
 /* from outside the pwd */
 
-#define MAX_ADVERTS 24
+#define MAX_ADVERTS -1
 /* These small files are printed when users log in
    They can be used for advertisements or to promote server features
    MAX_ADVERTS = the number of adverts you have

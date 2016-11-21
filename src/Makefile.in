@@ -121,6 +121,7 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/players
 	install -d -m0755 ${CHESSDDIR}/spool
 	install -d -m0755 ${CHESSDDIR}/data/admin
+	install -d -m0755 ${CHESSDDIR}/data/adverts
 	install -d -m0755 ${CHESSDDIR}/data/book
 	install -d -m0755 ${CHESSDDIR}/data/help
 	install -d -m0755 ${CHESSDDIR}/data/usage

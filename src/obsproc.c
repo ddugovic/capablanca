@@ -631,7 +631,7 @@ void ExamineScratch(int p,  param_list param,int setup)
     pprintf(p, "Starting a game in examine (setup) mode.\n");
 
   if (category[0]) {
-    pprintf(p, "Loading from catagory: %s, board: %s.\n", category, board);
+    pprintf(p, "Loading from category: %s, board: %s.\n", category, board);
   }
 
   game_globals.garray[g].FENstartPos[0] = 0; // [HGM] new shuffle game
