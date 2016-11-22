@@ -1,8 +1,8 @@
 /*
    Copyright (c) 1993 Richard V. Nash.
    Copyright (c) 2000 Dan Papasian
-   Copyright (C) Andrew Tridgell 2002
-   Copyright (C) Daniel Dugovic 2016
+   Copyright (C) 2002 Andrew Tridgell
+   Copyright (C) 2016 Daniel Dugovic
    
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
