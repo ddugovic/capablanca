@@ -1,7 +1,8 @@
 
 examine
 
-Usage:  examine [player1 [player2, game_number]
+Usage:  examine [player1 [player2, game_number, journal_slot]]     _or_
+        examine b category [board]
 
   This command starts a game in the examine mode where you, as the examiner,
 can move the pieces for both white and black, take moves back and analyze side

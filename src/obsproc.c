@@ -2,6 +2,7 @@
    Copyright (c) 1993 Richard V. Nash.
    Copyright (c) 2000 Dan Papasian
    Copyright (C) Andrew Tridgell 2002
+   Copyright (C) Daniel Dugovic 2016
    
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -563,43 +564,46 @@ void ExamineScratch(int p,  param_list param,int setup)
   struct player *pp = &player_globals.parray[p];
   char category[100], board[100], parsebuf[100];
   char *val;
-  int confused = 0;
   int g;
 
   category[0] = '\0';
   board[0] = '\0';
 
-  if ((param[0].val.string != pp->name) &&
-      (param[1].type == TYPE_WORD)) {
-        strcpy(category, param[0].val.string);
-        strcpy(board, param[1].val.string);
-  } else if (param[1].type != TYPE_NULL) {
-
+  if (param[0].type == TYPE_WORD) {
+    if (param[1].type == TYPE_WORD) {
+      strcpy(category, param[1].val.word);
+      if (param[2].type == TYPE_WORD)
+        strcpy(board, param[2].val.word);
+    } else if (!strcmp(param[0].val.string, pp->name) && param[1].type == TYPE_STRING) {
       val = param[1].val.string;
-
-      while (!confused && (sscanf(val, " %99s", parsebuf) == 1)) {
+      while (sscanf(val, " %99s", parsebuf) == 1) {
         val = eatword(eatwhite(val));
-        if ((category[0] != '\0') && (board[0] == '\0'))
-          strcpy(board, parsebuf);
-        else if (isdigit(*parsebuf)) {
-          pprintf(p, "You can't specify time controls.\n");
-          return;
-        } else if (category[0] == '\0')
+        if (category[0] == '\0') {
+          if (isdigit(*parsebuf)) {
+            pprintf(p, "You can't specify time controls.\n");
+            return;
+          }
           strcpy(category, parsebuf);
-        else
-          confused = 1;
+        } else if (board[0] == '\0') {
+          strcpy(board, parsebuf);
+        } else {
+          pprintf(p, "Can't interpret %s in match command.\n", parsebuf);
+          return;
+        }
       }
-      if (confused) {
-        pprintf(p, "Can't interpret %s in match command.\n", parsebuf);
-        return;
-      }
+    }
   }
-
-
-  if (category[0] && !board[0]) {
-    pprintf(p, "You must specify a board and a category.\n");
-    return;
+  if(!strcmp("wild", category) && (!strcmp("sc", board) || !strcmp("seirawan", board))) {
+    strcpy(category, board);
+    board[0] = '\0';
   }
+  if (category[0] != '\0' && board[0] == '\0')
+    strcpy(board, "0"); // variants: provide default board
+  // [HGM] allow some shortcuts for variant names
+  if(!strcmp("sc", category)) {
+    strcpy(category, "seirawan");
+  }
+  d_printf("CHESSD: Examine category: %s, board: %s.\n", category, board);
 
   g = game_new();
 
@@ -632,6 +636,7 @@ void ExamineScratch(int p,  param_list param,int setup)
 
   if (category[0]) {
     pprintf(p, "Loading from category: %s, board: %s.\n", category, board);
+    d_printf("CHESSD: Loading from category: %s, board: %s.\n", category, board);
   }
 
   game_globals.garray[g].FENstartPos[0] = 0; // [HGM] new shuffle game
@@ -642,7 +647,7 @@ void ExamineScratch(int p,  param_list param,int setup)
     game_globals.garray[g].status = GAME_EXAMINE;
     if (board_init(g,&game_globals.garray[g].game_state, category, board)) {
       pprintf(p, "PROBLEM LOADING BOARD. Examine Aborted.\n");
-      d_printf( "CHESSD: PROBLEM LOADING BOARD. Examine Aborted.\n");
+      d_printf("CHESSD: PROBLEM LOADING BOARD. Examine Aborted.\n");
       pp->game = -1;
       game_remove(g);
       return;
@@ -689,6 +694,7 @@ static int ExamineStored(FILE * fp, int p, char type)
   if (type == 'w' || type == 'n') {
     if (ReadGameAttrs_exam(fp, g) < 0) {
       pprintf(p, "Either this is an old wild/nonstandard game or the gamefile is corrupt.\n");
+      d_printf("CHESSD: Either this is an old wild/nonstandard game or the gamefile is corrupt.\n");
       game_remove(g);
       return -1;
     }
@@ -978,23 +984,22 @@ int com_examine(int p, param_list param)
        pprintf(p, "You are playing a game.\n");
   } else if (param[0].type == TYPE_NULL) {
     ExamineScratch(p, param, 0);
-  } else if (param[0].type != TYPE_NULL) {
-    if ((param[1].type == TYPE_NULL) && (!strcmp(param[0].val.word,"setup"))) {
-        ExamineScratch(p, param, 1);
-        return COM_OK;
-    } else if (param[1].type == TYPE_WORD) {
-      sprintf(fname, BOARD_DIR "/%s/%s", param[0].val.word, param[1].val.word);
-      if (file_exists(fname)) {
-        ExamineScratch(p, param, 0);
-        return COM_OK;
-      }
-    }
-    if (!FindPlayer(p, param[0].val.word, &p1, &p1conn))
-      return COM_OK;
-
-    if (param[1].type == TYPE_INT)
+  } else if (param[0].type == TYPE_WORD && !strcmp(param[0].val.word,"setup")) {
+    ExamineScratch(p, param, 1);
+  } else if (param[0].type == TYPE_WORD && param[1].type != TYPE_NULL &&
+             !strcmp(param[0].val.word,"b")) {
+    if (param[2].type == TYPE_NULL)
+      sprintf(fname, BOARD_DIR "/%s/0", param[1].val.word);
+    else if (!strcmp(param[1].val.word,"wild") && !strcmp(param[2].val.word,"seirawan"))
+      sprintf(fname, BOARD_DIR "/%s/0", param[2].val.word);
+    else
+      sprintf(fname, BOARD_DIR "/%s/%s", param[1].val.word, param[2].val.string);
+    if (file_exists(fname))
+      ExamineScratch(p, param, 0);
+  } else if (FindPlayer(p, param[0].val.word, &p1, &p1conn)) {
+    if (param[1].type == TYPE_INT) {
       ExamineHistory(p, p1, param[1].val.integer); 
-    else {
+    } else {
       if (param[1].type == TYPE_WORD) {
 
         /* Lets check the journal */

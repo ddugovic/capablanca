@@ -65,7 +65,7 @@ static struct command_type command_list[] = {
   {"decline",		"n",	com_decline,	ADMIN_USER },
   {"draw",		"",	com_draw,	ADMIN_USER },
   {"eco",               "n",    com_eco,        ADMIN_USER }, 
-  {"examine",           "on",   com_examine,    ADMIN_USER },
+  {"examine",           "ono",  com_examine,    ADMIN_USER },
   {"finger",		"oo",	com_stats,	ADMIN_USER },
   {"flag",		"",	com_flag,	ADMIN_USER },
   {"flip",		"",	com_flip,	ADMIN_USER },
