@@ -1,4 +1,4 @@
-      //--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 // config.h - default configuration parameters if the config file doesn't
 //            exist, or the value isn't in the config file.  Can be
 //            overridden during the build by using the DEFINES flags.
@@ -26,8 +26,6 @@
 //
 // Revision 1.1  1996/09/30 20:52:48  moses
 // Initial revision
-//
-//
 //--------------------------------------------------------------------------
 
 #ifndef _CONFIG_
@@ -38,7 +36,7 @@
 #endif
 
 #ifndef DEFAULT_PATH
-#define DEFAULT_PATH "/home/hgm/mamer"
+#define DEFAULT_PATH "/usr/local/chessd/mamer"
 #endif
 
 #ifndef DEFAULT_HELP_FILE_PATH
@@ -58,7 +56,7 @@
 #endif
 
 #ifndef DEFAULT_HOSTNAME
-#define DEFAULT_HOSTNAME "ics.onenet.net"
+#define DEFAULT_HOSTNAME "localhost"
 #endif
  
 #ifndef DEFAULT_PORT
@@ -70,11 +68,11 @@
 #endif
 
 #ifndef DEFAULT_USERNAME
-#define DEFAULT_USERNAME "mamertesti"
+#define DEFAULT_USERNAME "mamer"
 #endif
 
 #ifndef DEFAULT_PASSWORD
-#define DEFAULT_PASSWORD "passwordgoeshere"
+#define DEFAULT_PASSWORD "password"
 #endif
 
 #ifndef ABUSE_INCREMENT_VALUE
@@ -106,11 +104,11 @@
 #endif
 
 #ifndef DEFAULT_TIME
-#define DEFAULT_TIME 4
+#define DEFAULT_TIME 3
 #endif
 
 #ifndef DEFAULT_INCREMENT
-#define DEFAULT_INCREMENT 0
+#define DEFAULT_INCREMENT 2
 #endif
 
 #ifndef DEFAULT_ROUNDS

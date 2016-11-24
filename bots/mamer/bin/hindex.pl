@@ -1,12 +1,12 @@
 #!/usr/local/bin/perl
 
-$dirpath = "/home/mlong/mamer/help/";
+$HELP_DATA_PATH = "/usr/local/chessd/mamer/help";
 
-opendir(FILELIST, "$dirpath");
+opendir(FILELIST, "$HELP_DATA_PATH");
 @allfiles = readdir(FILELIST);
 closedir(FILELIST);
 
-open(OUT, ">$dirpath/index");
+open(OUT, ">$HELP_DATA_PATH/index");
 $i = 0;
 $j = 0;
 $offset = $#allfiles/4;

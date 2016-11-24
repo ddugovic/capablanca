@@ -148,6 +148,11 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/games/adjourned
 	install -d -m0755 ${CHESSDDIR}/data/stats/player_data
 	install -d -m0755 ${CHESSDDIR}/data/lists
+	install -d -m0755 ${CHESSDDIR}/mamer
+	install -d -m0755 ${CHESSDDIR}/mamer/data
+	install -d -m0755 ${CHESSDDIR}/mamer/help
+	install -d -m0755 ${CHESSDDIR}/mamer/players
+	install -d -m0755 ${CHESSDDIR}/mamer/logs
 	cp -u ${srcdir}/../data/lists/[a-z]* ${CHESSDDIR}/data/lists
 	cp -u ${srcdir}/../data/admin/[a-z]* ${CHESSDDIR}/data/admin
 	cp -u ${srcdir}/../data/book/[a-z]* ${CHESSDDIR}/data/book
@@ -176,6 +181,11 @@ install: $(ALL)
 	perl -e 'mkdir("${CHESSDDIR}/games/journal/$$_",0755) for ("a".."z")'
 	perl -e 'mkdir("${CHESSDDIR}/data/stats/player_data/$$_",0755) for ("a".."z")'
 	perl -e 'mkdir("${CHESSDDIR}/games/adjourned/$$_",0755) for ("a".."z")'
+	cp -u ${srcdir}/../bots/mamer/mamer.config ${CHESSDDIR}/mamer
+	cp -u ${srcdir}/../bots/mamer/bin/* ${CHESSDDIR}/mamer
+	cp -u ${srcdir}/../bots/mamer/data/* ${CHESSDDIR}/mamer/data
+	cp -u ${srcdir}/../bots/mamer/help/* ${CHESSDDIR}/mamer/help
+	perl -e 'mkdir("${CHESSDDIR}/mamer/players/$$_",0755) for ("a".."z")'
 
 etags:
 	etags *.[ch] */*.[ch]

@@ -1,11 +1,11 @@
 #!/usr/local/bin/perl
 
-$PLAYER_DATA_PATH = "/home/mlong/mamer/players";
-$OUTFILE = "/home/mlong/mamer/data/rank.new";
+$PLAYER_DATA_PATH = "/usr/local/chessd/mamer/players";
+$OUTFILE = "/usr/local/chessd/mamer/data/rank.new";
 
 # you should not have to change this its just where it belongs
 @dirList = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
-	    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_");
+            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_");
 
 &main();
 
