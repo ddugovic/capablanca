@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Command.cc - Source file for the Command class
+// Command.cpp - Source file for the Command class
 //
 // Matthew E. Moses
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: Command.cc,v $
+// $Log: Command.cpp,v $
 // Revision 1.8  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -38,7 +38,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: Command.cc,v 1.8 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: Command.cpp,v 1.8 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Command.hh"
 

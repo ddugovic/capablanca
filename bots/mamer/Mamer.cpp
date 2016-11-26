@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Mamer.cc - Source file for the Mamer class
+// Mamer.cpp - Source file for the Mamer class
 //
 // Matthew E. Moses & Michael A. Long
 //
@@ -11,7 +11,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: Mamer.cc,v 1.17 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: Mamer.cpp,v 1.17 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Mamer.hh"
 
@@ -1408,7 +1408,7 @@ Command *Mamer::FindCommand(char *comm, char *user) {
    4)  a BRIEF description of the command's function
    5)  the parameter types for each parameter (see comments above)
    6)  what code to use when telling the user they did something wrong (see TellUser)
-   7)  and the function pointer to the CommandEntry.cc code that is this command */
+   7)  and the function pointer to the CommandEntry.cpp code that is this command */
 
 //- BuildCommandList ---------------------------------------------------------
 void Mamer::BuildCommandList(void) {
@@ -1983,7 +1983,7 @@ int Mamer::GenerateTourneyNumber(void) {
 }
 
 
-// $Log: Mamer.cc,v $
+// $Log: Mamer.cpp,v $
 // Revision 1.17  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //

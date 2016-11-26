@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// TourneyParameters.cc - Source file for the TourneyParameters class
+// TourneyParameters.cpp - Source file for the TourneyParameters class
 //
 // Matthew E. Moses & Michael A. Long
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: TourneyParameters.cc,v $
+// $Log: TourneyParameters.cpp,v $
 // Revision 1.2  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -19,7 +19,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: TourneyParameters.cc,v 1.2 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: TourneyParameters.cpp,v 1.2 1998/09/10 19:57:17 mlong Exp $";
 
 #include "TourneyParameters.hh"
 

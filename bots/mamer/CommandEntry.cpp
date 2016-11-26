@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// CommandEntry.cc - Source file for the CommandEntry
+// CommandEntry.cpp - Source file for the CommandEntry
 //
 // Matthew E. Moses & Michael A. Long
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: CommandEntry.cc,v $
+// $Log: CommandEntry.cpp,v $
 // Revision 1.13  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -48,7 +48,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: CommandEntry.cc,v 1.13 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: CommandEntry.cpp,v 1.13 1998/09/10 19:57:17 mlong Exp $";
 
 #include "CommandEntry.hh"
 #include "Mamer.hh"

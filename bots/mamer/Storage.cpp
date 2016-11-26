@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Storage.cc - Source file for the Storage class
+// Storage.cpp - Source file for the Storage class
 //
 // Matthew E. Moses && Michael A. Long
 //
@@ -9,14 +9,14 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: Storage.cc,v $
+// $Log: Storage.cpp,v $
 // Revision 1.1  1998/09/10 19:57:17  mlong
 // Initial revision
 //
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: Storage.cc,v 1.1 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: Storage.cpp,v 1.1 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Storage.hh"
 

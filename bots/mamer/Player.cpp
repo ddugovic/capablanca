@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Player.cc - Source file for the Player class
+// Player.cpp - Source file for the Player class
 //
 // Matthew E. Moses && Michael A. Long
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: Player.cc,v $
+// $Log: Player.cpp,v $
 // Revision 1.4  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -28,7 +28,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: Player.cc,v 1.4 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: Player.cpp,v 1.4 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Player.hh"
 

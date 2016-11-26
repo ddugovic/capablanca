@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// User.cc - Source file for User class
+// User.cpp - Source file for User class
 //
 // Matthew E. Moses
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: User.cc,v $
+// $Log: User.cpp,v $
 // Revision 1.10  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -40,7 +40,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: User.cc,v 1.10 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: User.cpp,v 1.10 1998/09/10 19:57:17 mlong Exp $";
 
 #include "User.hh"
 

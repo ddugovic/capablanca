@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Game.cc - Source file for the Game class
+// Game.cpp - Source file for the Game class
 //
 // Matthew E. Moses && Michael A. Long
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: Game.cc,v $
+// $Log: Game.cpp,v $
 // Revision 1.3  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -23,7 +23,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: Game.cc,v 1.3 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: Game.cpp,v 1.3 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Game.hh"
 

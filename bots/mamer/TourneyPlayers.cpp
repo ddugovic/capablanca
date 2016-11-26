@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// TourneyPlayers.cc - Source file for the TourneyPlayers class
+// TourneyPlayers.cpp - Source file for the TourneyPlayers class
 //
 // Matthew E. Moses && Michael A. Long
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: TourneyPlayers.cc,v $
+// $Log: TourneyPlayers.cpp,v $
 // Revision 1.7  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -27,7 +27,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: TourneyPlayers.cc,v 1.7 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: TourneyPlayers.cpp,v 1.7 1998/09/10 19:57:17 mlong Exp $";
 
 #include "TourneyPlayers.hh"
 

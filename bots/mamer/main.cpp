@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// main.cc - main source file that starts Mamer
+// main.cpp - main source file that starts Mamer
 //
 // Matthew E. Moses
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: main.cc,v $
+// $Log: main.cpp,v $
 // Revision 1.4  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -26,7 +26,7 @@
 //
 //--------------------------------------------------------------------------
 
-//static char RCSid[] = "$Id: main.cc,v 1.4 1998/09/10 19:57:17 mlong Exp $";
+//static char RCSid[] = "$Id: main.cpp,v 1.4 1998/09/10 19:57:17 mlong Exp $";
 
 #include "Mamer.hh"
 
@@ -45,11 +45,9 @@ int main(int argc, char **argv) {
 	    gMamer.Shutdown();
 	}
 	else
-//	    cerr << "ERROR: couldn't open server connection!" << endl;
-;
+	    cerr << "ERROR: couldn't open server connection!" << endl;
     else
-//	cerr << "ERROR: couldn't initialize mamer!" << endl;
-;
+	cerr << "ERROR: couldn't initialize mamer!" << endl;
     exit(0);
 } //- End of main
 

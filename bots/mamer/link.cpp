@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// link.cc - Source file for the link list classes
+// link.cpp - Source file for the link list classes
 //
 // Matthew E. Moses
 //
@@ -9,7 +9,7 @@
 // $Author: mlong $
 // $Locker:  $
 //
-// $Log: link.cc,v $
+// $Log: link.cpp,v $
 // Revision 1.5  1998/09/10 19:57:17  mlong
 // lots of little bug fixes and a few new features
 //
@@ -38,7 +38,7 @@
 //
 //--------------------------------------------------------------------------
 
-// static char RCSid[] = "$Id: link.cc,v 1.5 1998/09/10 19:57:17 mlong Exp $";
+// static char RCSid[] = "$Id: link.cpp,v 1.5 1998/09/10 19:57:17 mlong Exp $";
 
 #include "link.hh"
 

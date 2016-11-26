@@ -1,2 +1,9 @@
 *.o
+.autoheaders
+.deps/
+Makefile
+autoconfig.h
+autom4te.cache/
+config.log
+config.status
 mamer
