@@ -21,32 +21,32 @@
 #include "Storage.hh"
 
 //- Constructor -----------------------------------------------------------
-Storage::Storage(char *n, int wt) {
+Storage::Storage(const char *n, int wt) {
   strcpy(name, n);
   value = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Storage::Storage(char *n, float wt) {
+Storage::Storage(const char *n, float wt) {
   strcpy(name, n);
   floatValue = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Storage::Storage(char *n, double wt) {
+Storage::Storage(const char *n, double wt) {
   strcpy(name, n);
   floatValue = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Storage::Storage(char *n, float f, int i) {
+Storage::Storage(const char *n, float f, int i) {
   strcpy(name, n);
   floatValue = f;
   value = i;
 }
 
 //- Constructor -----------------------------------------------------------
-Storage::Storage(char *n, float f, int i, int r) {
+Storage::Storage(const char *n, float f, int i, int r) {
   strcpy(name, n);
   floatValue = f;
   value = i;

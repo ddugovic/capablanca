@@ -70,19 +70,19 @@ class Tourney : public Link {
 
   void Announce(void);
 
-  int AddPlayer(char *, int, float);
-  int RemovePlayer(char *);
+  int AddPlayer(const char *, int, float);
+  int RemovePlayer(const char *);
   void SetVariable(int, int);
-  void SetVariable(int, char *);
-  char *GetWild(int);
+  void SetVariable(int, const char *);
+  const char *GetWild(int);
   void CalculateAverage();
 
   void SortPlayers();
   int GetSortValueCount(double);
-  Player *GetSortPlayer(char *);
+  Player *GetSortPlayer(const char *);
   Player *GetSortPlayer(int);
 
-  TourneyPlayers *GetPlayer(char *);
+  TourneyPlayers *GetPlayer(const char *);
   int GetPlayerCount();
   int GetVariant();
   int GetRound();
@@ -96,7 +96,7 @@ class Tourney : public Link {
   int PairPlayers(TourneyPlayers *, TourneyPlayers *);
   void UnPairPlayer(TourneyPlayers *);
   void AssignColors(TourneyPlayers *, TourneyPlayers *);
-  int SetGameResult(char *, char *, int);
+  int SetGameResult(const char *, const char *, int);
 
   long GetStartDate();
   long GetEndDate();

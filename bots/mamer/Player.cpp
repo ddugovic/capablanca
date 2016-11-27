@@ -33,32 +33,32 @@
 #include "Player.hh"
 
 //- Constructor -----------------------------------------------------------
-Player::Player(char *n, int wt) {
+Player::Player(const char *n, int wt) {
   strcpy(name, n);
   value = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Player::Player(char *n, float wt) {
+Player::Player(const char *n, float wt) {
   strcpy(name, n);
   floatValue = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Player::Player(char *n, double wt) {
+Player::Player(const char *n, double wt) {
   strcpy(name, n);
   floatValue = wt;
 }
 
 //- Constructor -----------------------------------------------------------
-Player::Player(char *n, float f, int i) {
+Player::Player(const char *n, float f, int i) {
   strcpy(name, n);
   floatValue = f;
   value = i;
 }
 
 //- Constructor -----------------------------------------------------------
-Player::Player(char *n, float f, int i, int r) {
+Player::Player(const char *n, float f, int i, int r) {
   strcpy(name, n);
   floatValue = f;
   value = i;
@@ -70,7 +70,7 @@ Player::~Player() {
 }
 
 //- IsPlayer -----------------------------------------------------------------
-int Player::IsPlayer(char *user) {
+int Player::IsPlayer(const char *user) {
     if(0 == strcasecmp(user, name))
         return(1);
     else

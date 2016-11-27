@@ -32,7 +32,7 @@
 #include "TourneyPlayers.hh"
 
 //- Constructor -----------------------------------------------------------
-TourneyPlayers::TourneyPlayers(char *n, int r, float s) {
+TourneyPlayers::TourneyPlayers(const char *n, int r, float s) {
   perform=0;
   upset=0;
 
@@ -90,7 +90,7 @@ TourneyPlayers::~TourneyPlayers() {
 }
 
 //- AlreadyPlayed --------------------------------------------------------
-int TourneyPlayers::AlreadyPlayed(char *oppName) {
+int TourneyPlayers::AlreadyPlayed(const char *oppName) {
   Player *temp;
 
   LinkListIter<Player> opponentIter(opponentList);
@@ -117,7 +117,7 @@ int TourneyPlayers::RemovePotentialOppList() {
 }//- end of RemovePotentialOppList
 
 //- Start of RemoveFromOppList -------------------------------------------------
-void TourneyPlayers::RemoveFromOppList(char *name) {
+void TourneyPlayers::RemoveFromOppList(const char *name) {
   Player *p=NULL;
 
   LinkListIter<Player> opponentIter(opponentList);
@@ -144,7 +144,7 @@ void TourneyPlayers::RemoveLastOpponent() {
 }//- end RemoveLastOpponent -----------------------------------------------------    
        
 //- Start GetOpponentPlayer --------------------------------------------------------
-Player *TourneyPlayers::GetOpponentPlayer(char *oppName) {
+Player *TourneyPlayers::GetOpponentPlayer(const char *oppName) {
   Player *temp=NULL;
   LinkListIter<Player> opponentIter(opponentList);
 

@@ -28,7 +28,7 @@
 #include "Game.hh"
 
 //- Constructor -----------------------------------------------------------
-Game::Game(char *wn, char *bn, int t, int i, int r, char v) {
+Game::Game(const char *wn, const char *bn, int t, int i, int r, char v) {
   strcpy(whiteName, wn);
   strcpy(blackName, bn);
   time = t;
@@ -44,7 +44,7 @@ Game::~Game() {
 }
 
 //- IsGame -----------------------------------------------------------------
-int Game::IsGame(char *whiteUser, char *blackUser, int t, int i, int r, char v) {
+int Game::IsGame(const char *whiteUser, const char *blackUser, int t, int i, int r, char v) {
     if(
        (0 == strcasecmp(whiteUser, whiteName)) && 
        (0 == strcasecmp(blackUser, blackName)) &&

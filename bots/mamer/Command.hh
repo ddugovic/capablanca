@@ -44,11 +44,11 @@ extern "C" {
 class Command : public Link {
 public:
   Command();
-  Command(char *, char *, ranks, char *, char *, USERFP);
-  Command(char *, char *, ranks, char *, char *, TOURNFP);
+  Command(const char *, const char *, ranks, const char *, const char *, USERFP);
+  Command(const char *, const char *, ranks, const char *, const char *, TOURNFP);
   ~Command();
   
-  int IsCommand(char *);
+  int IsCommand(const char *);
   ranks GetManagerLevel();
   void SetManagerLevel(ranks);
   char *GetCommandName();

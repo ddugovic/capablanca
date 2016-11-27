@@ -161,14 +161,14 @@ int Mamer::Initialize(int argc, char **argv) {
 } //- End of Initialize
 
 //- s_and_r - Search and Replace a string within a string ------------
-char *Mamer::s_and_r(char *s, char *tofind, char *toreplace) {
+char *Mamer::s_and_r(char *s, const char *tofind, const char *toreplace) {
   char    *toReturn = NULL;
-  int     currSize = 0;
+  size_t  currSize = 0;
   char    *return_offset;
-  char    *replace_offset;
-  int     find_len;
-  int     toreplace_len;
-  register int    x;
+  const char *replace_offset;
+  size_t  find_len;
+  size_t  toreplace_len;
+  register size_t x;
   
   /* if nothing to look at, and nothing to replace.... return nothing */
   if ( s == NULL || tofind == NULL)
@@ -1060,7 +1060,7 @@ int Mamer::HandleDisconnect(char *message) {
 } //- End of HandleDisconnect
 
 //- AdjustManagerList ----------------------
-void Mamer::AdjustManagerList(int value, char *name) {
+void Mamer::AdjustManagerList(int value, const char *name) {
   Storage *tmp=NULL, *newName=NULL;
   LinkListIter<Storage> managerIter(storageList);
   FILE *theFile=NULL;
@@ -1128,7 +1128,7 @@ void Mamer::AdjustManagerList(int value, char *name) {
 }
 
 //- UserIsLoaded --------------------------
-int Mamer::UserIsLoaded(char *uname) {
+int Mamer::UserIsLoaded(const char *uname) {
   User *u = NULL;
   LinkListIter<User> userIter(userList);
   
@@ -1142,7 +1142,7 @@ int Mamer::UserIsLoaded(char *uname) {
 
 /* this function checks if the user is loaded and if not loads the user */
 //- CheckUser ---------------------------------------------------------------
-void Mamer::CheckUser(char *user) {
+void Mamer::CheckUser(const char *user) {
   if(!UserIsLoaded(user)) {
     if(debugLevel >= 5) 
       cout << "CheckUser - Adding User:" << user << ":" << endl;
@@ -1313,7 +1313,7 @@ printf("ret = %d\n", return_from_AddPlayer);
 } //- End of HandlePlayerInfo
 
 //- FindPending ---------------------------------------------------------------
-Player *Mamer::FindPending(char *user) {
+Player *Mamer::FindPending(const char *user) {
     Player *p = NULL;
     LinkListIter<Player> pendingIter(pendingList);
 
@@ -1325,7 +1325,7 @@ Player *Mamer::FindPending(char *user) {
 } //- End of FindPending
 
 //- FindUser ---------------------------------------------------------------
-User *Mamer::FindUser(char *user) {
+User *Mamer::FindUser(const char *user) {
     User *u = NULL;
     LinkListIter<User> userIter(userList);
 
@@ -1351,7 +1351,7 @@ Tourney *Mamer::FindTourney(int tourn) {
 } //- End of FindUser
 
 //- FindCommand ---------------------------------------------------------------
-Command *Mamer::FindCommand(char *comm, char *user) {
+Command *Mamer::FindCommand(char *comm, const char *user) {
     Command *c = NULL, *cnull=NULL;
     LinkListIter<Command> commIter(commandList);
     int commandsFound=0;
@@ -1552,7 +1552,7 @@ void Mamer::NextRound() {
 } //- End of NextRound
 
 //- XServerCom ---------------------------------------------
-int Mamer::XServerCom(char *fmt, ...)
+int Mamer::XServerCom(const char *fmt, ...)
 {
   va_list argptr;
   char buffer[1024];
@@ -1569,7 +1569,7 @@ int Mamer::XServerCom(char *fmt, ...)
 //- End of XServerCom
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name) {
+void Mamer::TellUser(reasons reason, const char *name) {
   switch (reason) {
   case NoPermissions:
     XServerCom("qtell %s %s notes: Sorry you do not have permission to do that.\n", name, username);
@@ -1583,7 +1583,7 @@ void Mamer::TellUser(reasons reason, char *name) {
 }//- End of TellUser
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name, int number) {
+void Mamer::TellUser(reasons reason, const char *name, int number) {
   switch (reason) {
   case JoinedTourney:
     switch (number) {
@@ -1658,7 +1658,7 @@ void Mamer::TellUser(reasons reason, char *name, int number) {
 }//- End of TellUser
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(Command *comm, char *name) {
+void Mamer::TellUser(Command *comm, const char *name) {
   char line[512];
   int i, length=strlen(comm->parameterList);
 
@@ -1699,7 +1699,7 @@ void Mamer::TellUser(Command *comm, char *name) {
 }//- End of TellUser
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name, char *request) {
+void Mamer::TellUser(reasons reason, const char *name, const char *request) {
   switch (reason) {
   case NotFound:
     XServerCom("qtell %s %s notes: Sorry %s is not found.\n", name, username, request);
@@ -1722,7 +1722,7 @@ void Mamer::TellUser(reasons reason, char *name, char *request) {
 }//- End of TellUser
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name, char *who, char *which, int new_value) {
+void Mamer::TellUser(reasons reason, const char *name, const char *who, const char *which, int new_value) {
   switch (reason) {
   case ChangedInfo:
     XServerCom("qtell %s %s notes: Changed the %s stat for %s to %d.\n", name, username, which, who, new_value);
@@ -1746,7 +1746,7 @@ void Mamer::TellUser(reasons reason, char *name, char *who, char *which, int new
 }//- End of TellUser
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name, char *which, char *new_value) {
+void Mamer::TellUser(reasons reason, const char *name, const char *which, const char *new_value) {
   switch (reason) {
   case CanNotChange:
     XServerCom("qtell %s %s notes: Can not change the %s var to %s.\n", name, username, which, new_value);
@@ -1761,7 +1761,7 @@ void Mamer::TellUser(reasons reason, char *name, char *which, char *new_value) {
 
 
 //- TellUser ------------------------------------------------
-void Mamer::TellUser(reasons reason, char *name, char *uname, int new_value) {
+void Mamer::TellUser(reasons reason, const char *name, const char *uname, int new_value) {
   switch (reason) {
   case ChangedManagerLevel:
     XServerCom("qtell %s %s notes: %s's Manager Level has been changed to %d\n", name, username, uname,new_value);

@@ -50,7 +50,7 @@ Command::Command() {
     tournFunction = 0;
 } //- End of constructor
 
-Command::Command(char *n, char *a, ranks m, char *d, char *paramTypeList, USERFP u) {
+Command::Command(const char *n, const char *a, ranks m, const char *d, const char *paramTypeList, USERFP u) {
     name = new char[strlen(n)+1];
 
     if(NULL == name) return;
@@ -79,7 +79,7 @@ Command::Command(char *n, char *a, ranks m, char *d, char *paramTypeList, USERFP
     userFunction = u;
 } //- End of constructor
 
-Command::Command(char *n, char *a, ranks m, char *d, char *paramTypeList, TOURNFP t) {
+Command::Command(const char *n, const char *a, ranks m, const char *d, const char *paramTypeList, TOURNFP t) {
     name = new char[strlen(n)+1];
     if(NULL == name) return;
     memset(name, '\0', strlen(n));
@@ -120,7 +120,7 @@ Command::~Command() {
 } //- End of deconstructor
 
 //- IsCommand ------------------------------------------------------
-int Command::IsCommand(char *comm) {
+int Command::IsCommand(const char *comm) {
   int length = strlen(comm);
   if((0 == strncasecmp(comm, name, MIN(length, (int)strlen(name)))) ||
      (0 == strncasecmp(comm, alias, MIN(length, (int)strlen(alias)))))

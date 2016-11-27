@@ -55,14 +55,14 @@ extern "C" {
 class Player : public Link {
 public:
 
-  Player(char *, int);
-  Player(char *, float);
-  Player(char *, double);
-  Player(char *, float, int);
-  Player(char *, float, int, int);
+  Player(const char *, int);
+  Player(const char *, float);
+  Player(const char *, double);
+  Player(const char *, float, int);
+  Player(const char *, float, int, int);
   ~Player();
   
-int IsPlayer(char *);
+int IsPlayer(const char *);
 
 private:
 

@@ -58,11 +58,11 @@ extern "C" {
 class Storage : public Link {
 public:
 
-  Storage(char *, int);
-  Storage(char *, float);
-  Storage(char *, double);
-  Storage(char *, float, int);
-  Storage(char *, float, int, int);
+  Storage(const char *, int);
+  Storage(const char *, float);
+  Storage(const char *, double);
+  Storage(const char *, float, int);
+  Storage(const char *, float, int, int);
   ~Storage();
 private:
 

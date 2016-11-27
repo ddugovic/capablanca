@@ -52,10 +52,10 @@ extern "C" {
 class Game : public Link {
 public:
 
-  Game(char *, char *, int, int, int, char);
+  Game(const char *, const char *, int, int, int, char);
   ~Game();
   
-int IsGame(char *, char *, int, int, int, char);
+int IsGame(const char *, const char *, int, int, int, char);
 
 private:
 

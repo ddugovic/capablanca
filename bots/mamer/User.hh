@@ -72,15 +72,15 @@ class User : public Link {
 public:
   
   User();
-  User(char *, char *);
+  User(const char *, const char *);
   ~User();
   
-  int IsUser(char *);
+  int IsUser(const char *);
   
-  void LoadPlayer(char *);
-  short LoadPlayer(char *, char *);
+  void LoadPlayer(const char *);
+  short LoadPlayer(const char *, const char *);
   
-  void SavePlayer(char *);
+  void SavePlayer(const char *);
   
   float GetRating(void);
   int GetManagerLevel(void);
@@ -123,7 +123,7 @@ public:
   void AddSecond(void);
   void AddThird(void);
   
-  void CreateDirectory(char *, char *);
+  void CreateDirectory(const char *, const char *);
 
  public:
 

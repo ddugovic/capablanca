@@ -62,7 +62,7 @@ extern "C" {
 
 class TourneyPlayers : public Link {
 public:
-  TourneyPlayers(char *, int, float);
+  TourneyPlayers(const char *, int, float);
   TourneyPlayers();
   ~TourneyPlayers();
   
@@ -82,12 +82,12 @@ public:
   int IsPaired();
   void NowPaired(int);
 
-  int AlreadyPlayed(char *);
+  int AlreadyPlayed(const char *);
   void CalculateScore();
 
   int RemovePotentialOppList();
-  Player *GetOpponentPlayer(char *);
-  void RemoveFromOppList(char *);
+  Player *GetOpponentPlayer(const char *);
+  void RemoveFromOppList(const char *);
   void RemoveLastOpponent();
 
 private:

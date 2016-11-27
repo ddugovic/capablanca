@@ -110,7 +110,7 @@ class Mamer : public CommandEntry {
   ~Mamer();
   
   int Initialize(int argc, char **argv);
-  char *s_and_r(char *, char *, char *);
+  char *s_and_r(char *, const char *, const char *);
   int OpenServerConnection(void);
   void ListenLoop(void);
   void Shutdown(void);
@@ -120,19 +120,19 @@ class Mamer : public CommandEntry {
   
   void DumpConfiguration(void);
   
-  int XServerCom(char *, ...);
-  void TellUser(reasons, char *);
-  void TellUser(Command *, char *);
-  void TellUser(reasons, char *, char *);
-  void TellUser(reasons, char *, int);
-  void TellUser(reasons, char *, char *, int);
-  void TellUser(reasons, char *, char *, char *);
-  void TellUser(reasons, char *, char *, char *, int);
+  int XServerCom(const char *, ...);
+  void TellUser(reasons, const char *);
+  void TellUser(Command *, const char *);
+  void TellUser(reasons, const char *, const char *);
+  void TellUser(reasons, const char *, int);
+  void TellUser(reasons, const char *, const char *, int);
+  void TellUser(reasons, const char *, const char *, const char *);
+  void TellUser(reasons, const char *, const char *, const char *, int);
 
 #define MAX_WORD_SIZE 1024
 #define MAX_LINE_SIZE 1024
 
-  int UserIsLoaded(char *);
+  int UserIsLoaded(const char *);
   int ParseParams(Command *, char *);
   int isWhiteSpace(int);
   char *getWord(char *);
@@ -145,8 +145,8 @@ class Mamer : public CommandEntry {
   int GenerateTourneyNumber(void);
 
   Tourney *FindTourney(int);
-  User    *FindUser(char *);
-  Command *FindCommand(char *, char *);
+  User    *FindUser(const char *);
+  Command *FindCommand(char *, const char *);
   
   void NextRound();
 
@@ -154,8 +154,8 @@ private:
   void Usage(void);
   void LoadConfigurationFile(void);
   void BuildCommandList(void);
-  void CheckUser(char *);
-  void AdjustManagerList(int, char *);
+  void CheckUser(const char *);
+  void AdjustManagerList(int, const char *);
   
   int HandleQtell(char *);
   int HandleTell(char *);
@@ -166,7 +166,7 @@ private:
   int HandleGameInfo(char *);
   int HandlePlayerInfo(char *);
 
-  Player  *FindPending(char *);
+  Player  *FindPending(const char *);
   
 public:
   char configFilename[MAXPATHLEN];

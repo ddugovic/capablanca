@@ -116,7 +116,7 @@ short Tourney::IsNotClosed(void) {
 }
 
 //- AddPlayer ----------------------------------------------------------
-int Tourney::AddPlayer(char *name, int rating, float score) {
+int Tourney::AddPlayer(const char *name, int rating, float score) {
   TourneyPlayers *newPlayer = NULL, *tp = NULL;
   Player *newSortPlayer = NULL;
 
@@ -170,7 +170,7 @@ int Tourney::AddPlayer(char *name, int rating, float score) {
 }
 
 //- RemovePlayer ----------------------------------------------------------
-int Tourney::RemovePlayer(char *name) {
+int Tourney::RemovePlayer(const char *name) {
   TourneyPlayers *tp = NULL, *p=NULL;
   Player *opp=NULL;
   int roundsRemaining=0;
@@ -219,7 +219,7 @@ int Tourney::RemovePlayer(char *name) {
 }
 
 //- GetPlayer ----------------------------------------------------------
-TourneyPlayers *Tourney::GetPlayer(char *name) {
+TourneyPlayers *Tourney::GetPlayer(const char *name) {
   LinkListIter<TourneyPlayers> playerIter(playerList);
   TourneyPlayers *tp = NULL;
   
@@ -307,7 +307,7 @@ int Tourney::GetSortValueCount(double value) {
 }
 
 //- GetSortPlayer ----------
-Player *Tourney::GetSortPlayer(char *name) {
+Player *Tourney::GetSortPlayer(const char *name) {
   Player *p = NULL;
   LinkListIter<Player> sortIter(sortList);
 
@@ -936,7 +936,7 @@ void Tourney::SetVariable(int why, int newValue) {
 }//- End SetVariable
 
 //- SetVariable ---------------------------------------------------------------
-void Tourney::SetVariable(int why, char *newValue) {
+void Tourney::SetVariable(int why, const char *newValue) {
 
   switch (why) {
   case 3:
@@ -957,7 +957,7 @@ void Tourney::SetVariable(int why, char *newValue) {
 }//- End SetVariable
 
 //- Begin GetWild - take a int return a string
-char *Tourney::GetWild(int w) {
+const char *Tourney::GetWild(int w) {
   switch (w) {
   case 0:
     return "0";
@@ -1008,7 +1008,7 @@ void Tourney::TellThemWhoTheyPlay() {
 }//- end TellThemWhoTheyPlay --------------------------------------
 
 //- SetGameResult --------------------------------------------
-int Tourney::SetGameResult(char *white, char *black, int result) {
+int Tourney::SetGameResult(const char *white, const char *black, int result) {
   Player *opp1 = NULL, *opp2 = NULL;
   TourneyPlayers *tp1 = NULL, *tp2 = NULL;
   Game *g = NULL;

@@ -65,7 +65,7 @@ User::User() {
 
 } //- End of User
 
-User::User(char *path, char *inName) {
+User::User(const char *path, const char *inName) {
     abuse = 0;
     playedTourneys = wins = losses = draws = 0;
     firsts = seconds = thirds = 0;
@@ -103,7 +103,7 @@ User::~User() {
 } //- End of ~User
 
 //- IsUser -----------------------------------------------------------------
-int User::IsUser(char *user) {
+int User::IsUser(const char *user) {
   //  printf("IsUser: %18s :: %s\n", user, name);
   
   if(0 == strcasecmp(user, name))
@@ -113,7 +113,7 @@ int User::IsUser(char *user) {
 } //- End of IsUser
 
 //- LoadPlayer -------------------------------------------------------------
-void User::LoadPlayer(char *filePath) {
+void User::LoadPlayer(const char *filePath) {
     char filename[MAXPATHLEN];
     fstream theFile;
     
@@ -130,7 +130,7 @@ void User::LoadPlayer(char *filePath) {
 } //- End of LoadPlayer
 
 //- LoadPlayer -------------------------------------------------------------
-short User::LoadPlayer(char *filePath, char *user) {
+short User::LoadPlayer(const char *filePath, const char *user) {
     struct stat statBuffer;
     char filename[MAXPATHLEN];
     fstream theFile;
@@ -170,7 +170,7 @@ short User::LoadPlayer(char *filePath, char *user) {
 } //- End of LoadPlayer
 
 //- SavePlayer -----------------------------------------------------------
-void User::SavePlayer(char *filePath) {
+void User::SavePlayer(const char *filePath) {
     char filename[MAXPATHLEN];
     fstream theFile;
 
@@ -390,7 +390,7 @@ void User::ChangeManagerLevel(int newLevel) {
 } //- End of ChangeManagerLevel
 
 //- CreateDirectory ---------------------------------------------------------
-void User::CreateDirectory(char *path, char *user) {
+void User::CreateDirectory(const char *path, const char *user) {
     struct stat statBuffer;
     char filename[MAXPATHLEN];
 
