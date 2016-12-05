@@ -36,9 +36,10 @@ GENSTRUCT enum gamestatus {GAME_EMPTY, GAME_NEW, GAME_ACTIVE, GAME_EXAMINE, GAME
 
 /* Do not change the order of these - DAV */
 GENSTRUCT enum gametype {TYPE_UNTIMED, TYPE_BLITZ, TYPE_STAND, TYPE_NONSTANDARD,
-               TYPE_WILD, TYPE_LIGHT, TYPE_BUGHOUSE, TYPE_GOTHIC, TYPE_KNIGHTMATE, TYPE_CAPABLANCA};
+               TYPE_WILD, TYPE_LIGHT, TYPE_BUGHOUSE, TYPE_GOTHIC, TYPE_KNIGHTMATE,
+               TYPE_CAPABLANCA, TYPE_SEIRAWAN};
 
-#define NUM_GAMETYPES 10 
+#define NUM_GAMETYPES 11
 
 /* OK, DAV, I'll try it another way. -- hersco */
 enum ratetype {RATE_STAND, RATE_BLITZ, RATE_WILD, RATE_LIGHT, RATE_BUGHOUSE};
@@ -144,7 +145,7 @@ GENSTRUCT struct game {
 };
 
 extern const char *TypeStrings[NUM_GAMETYPES];
-extern const char *TypeChars[NUM_GAMETYPES];
+//extern const char *TypeChars[NUM_GAMETYPES];
 
 #endif
 

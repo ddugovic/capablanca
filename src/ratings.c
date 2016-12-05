@@ -102,7 +102,7 @@ static void rating_add(int rating, int type)
     }
     Ratings_B_StdDev = sqrt(Rb_S / Rb_count);
     Ratings_B_Average = Rb_total / (double) Rb_count;
-  } else if (type == TYPE_WILD || type == TYPE_KNIGHTMATE || type == TYPE_GOTHIC || type == TYPE_CAPABLANCA) {	/* TYPE_WILD */
+  } else if (type == TYPE_WILD || type == TYPE_KNIGHTMATE || type == TYPE_GOTHIC || type == TYPE_CAPABLANCA || type == TYPE_SEIRAWAN) {	/* TYPE_WILD */
     wHist[which] += 1;
     Rw_count++;
     Rw_total += rating;
@@ -186,7 +186,7 @@ static void rating_remove(int rating, int type)
       Ratings_B_StdDev = 0;
       Ratings_B_Average = 0;
     }
-  } else if (type == TYPE_WILD || type == TYPE_KNIGHTMATE || type == TYPE_GOTHIC || type == TYPE_CAPABLANCA) {	/* TYPE_WILD */
+  } else if (type == TYPE_WILD || type == TYPE_KNIGHTMATE || type == TYPE_GOTHIC || type == TYPE_CAPABLANCA || type == TYPE_SEIRAWAN) {	/* TYPE_WILD */
     wHist[which] = wHist[which] - 1;
     if (wHist[which] < 0)
       wHist[which] = 0;
@@ -468,6 +468,7 @@ static void GetCurrentStats (int p, int *r, double *s, int *new,
     case TYPE_WILD:
     case TYPE_KNIGHTMATE:
     case TYPE_CAPABLANCA:
+    case TYPE_SEIRAWAN:
     case TYPE_GOTHIC:
       p_stats = &pp->w_stats;
       break;
@@ -555,7 +556,8 @@ int rating_update(int g, int link_game)
   } else if (game_globals.garray[g].type == TYPE_WILD
           || game_globals.garray[g].type == TYPE_KNIGHTMATE
           || game_globals.garray[g].type == TYPE_GOTHIC
-          || game_globals.garray[g].type == TYPE_CAPABLANCA) {
+          || game_globals.garray[g].type == TYPE_CAPABLANCA
+          || game_globals.garray[g].type == TYPE_SEIRAWAN) {
     w_stats = &player_globals.parray[game_globals.garray[g].white].w_stats;
     b_stats = &player_globals.parray[game_globals.garray[g].black].w_stats;
   } else if (game_globals.garray[g].type == TYPE_LIGHT) {
@@ -701,6 +703,7 @@ int rating_update(int g, int link_game)
   } else if (game_globals.garray[g].type == TYPE_WILD
           || game_globals.garray[g].type == TYPE_KNIGHTMATE
           || game_globals.garray[g].type == TYPE_CAPABLANCA
+          || game_globals.garray[g].type == TYPE_SEIRAWAN
           || game_globals.garray[g].type == TYPE_GOTHIC) {
     Rw_count++;
     Rw_total += (w_stats->rating + b_stats->rating) / 2.0;

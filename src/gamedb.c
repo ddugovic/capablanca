@@ -31,7 +31,7 @@ static int game_zero(int g);
 const char *TypeStrings[NUM_GAMETYPES] = {"untimed", "blitz", "standard", 
 					  "nonstandard", "wild", "lightning", 
 					  "bughouse", "gothic", "knightmate", 
-					  "capablanca"};
+					  "capablanca", "seirawan"};
 
 /* this method is awful! how about allocation as we need it and freeing
     afterwards! */
@@ -167,6 +167,8 @@ int game_isblitz(int wt, int winc, int bt, int binc,
       return TYPE_KNIGHTMATE;
     if (!strcmp(cat, "capablanca"))
       return TYPE_CAPABLANCA;
+    if (!strcmp(cat, "seirawan"))
+      return TYPE_SEIRAWAN;
     if (board && board[0] && strcmp(board, "0")) {
       if (!strcmp(cat, "wild"))
         return TYPE_WILD;
@@ -1051,6 +1053,7 @@ int game_read(int g, int wp, int bp)
   } else if (game_globals.garray[g].type == TYPE_WILD ||
 	     game_globals.garray[g].type == TYPE_KNIGHTMATE ||
 	     game_globals.garray[g].type == TYPE_CAPABLANCA ||
+	     game_globals.garray[g].type == TYPE_SEIRAWAN ||
 	     game_globals.garray[g].type == TYPE_GOTHIC) {
     game_globals.garray[g].white_rating = player_globals.parray[wp].w_stats.rating;
     game_globals.garray[g].black_rating = player_globals.parray[bp].w_stats.rating;
@@ -1251,6 +1254,7 @@ static void write_g_out(int g, char *file, int maxlines, int isDraw,
   } else if (game_globals.garray[g].type == TYPE_WILD ||
 	     game_globals.garray[g].type == TYPE_KNIGHTMATE ||
 	     game_globals.garray[g].type == TYPE_CAPABLANCA ||
+	     game_globals.garray[g].type == TYPE_SEIRAWAN ||
 	     game_globals.garray[g].type == TYPE_GOTHIC) {
     wr = player_globals.parray[wp].w_stats.rating;
     br = player_globals.parray[bp].w_stats.rating;

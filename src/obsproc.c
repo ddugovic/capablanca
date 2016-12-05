@@ -624,6 +624,7 @@ void ExamineScratch(int p,  param_list param,int setup)
   game_globals.garray[g].lastMoveTime = game_globals.garray[g].startTime;
   game_globals.garray[g].lastDecTime = game_globals.garray[g].startTime;
   game_globals.garray[g].totalHalfMoves = 0;
+  sprintf(game_globals.garray[g].variant, "%s/%s", category, board);
 
   pp->side = WHITE;       /* oh well... */
   pp->game = g;
