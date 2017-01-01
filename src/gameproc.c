@@ -415,11 +415,15 @@ static int was_promoted(struct game *g, int f, int r)
 #define BUGHOUSE_PAWN_REVERT 1
 #ifdef BUGHOUSE_PAWN_REVERT
   int i;
+  int halfMoves;
+  struct move_t* moveList;
 
-  for (i = g->numHalfMoves-2; i > 0; i -= 2) {
-    if (g->moveList[i].toFile == f && g->moveList[i].toRank == r) {
-      if (g->moveList[i].piecePromotionTo) {
-	switch(g->moveList[i].moveString[0]) { // [HGM] return original piece type rather than just TRUE
+  halfMoves = (g->status == GAME_EXAMINE) ? g->examHalfMoves : g->numHalfMoves;
+  moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
+  for (i = halfMoves-2; i > 0; i -= 2) {
+    if (moveList[i].toFile == f && moveList[i].toRank == r) {
+      if (moveList[i].piecePromotionTo) {
+	switch (moveList[i].moveString[0]) { // [HGM] return original piece type rather than just TRUE
           case 'P': return PAWN;
           case 'N': return HONORABLEHORSE; // !!! this is Shogi, so no KNIGHT !!!
           case 'B': return BISHOP;
@@ -429,10 +433,10 @@ static int was_promoted(struct game *g, int f, int r)
           default:  return GOLD;
         }
       }
-      if (g->moveList[i].fromFile == ALG_DROP)
+      if (moveList[i].fromFile == ALG_DROP)
 	return 0;
-      f = g->moveList[i].fromFile;
-      r = g->moveList[i].fromRank;
+      f = moveList[i].fromFile;
+      r = moveList[i].fromRank;
     }
   }
 #endif
