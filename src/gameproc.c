@@ -710,15 +710,18 @@ printf("promo '%s'\n", command);
     if (result == MOVE_OK && (gg->link >= 0 || gg->game_state.holdings) && move.pieceCaptured != NOPIECE) {
       /* transfer captured piece to partner */
       /* check if piece reverts to a pawn */
-      int victim = move.pieceCaptured, partner = gg->link, demoted;
+      int victim = move.pieceCaptured, partner = gg->link, demotion;
       // [HGM] zh: if not Bughouse, the game_state.holdings field decides what happens
       if(gg->link < 0) { 
 	partner = g; // pieces stay with current board
-	if(gg->game_state.holdings == -1) victim ^= WHITE|BLACK; // flip color
+	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       } 
-      if (demoted = was_promoted(&game_globals.garray[g], move.toFile, move.toRank))
-        update_holding(partner, colorval(victim) | demoted); // [HGM] was_promoted now returns original piece type
-      else
+      if (demotion = was_promoted(&game_globals.garray[g], move.toFile, move.toRank)) {
+        if (gg->game_state.holdings == -2)
+            update_holding(partner, colorval(victim)); // loop chess holdings
+        else
+            update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
+      } else
         update_holding(partner, victim);
     }
     now = tenth_secs();

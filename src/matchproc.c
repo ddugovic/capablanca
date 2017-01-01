@@ -513,6 +513,9 @@ int parse_match_string(int p, int* wt,int* bt,int* winc,int* binc,
 	if(!strcmp("zh", category)) {
 	  strcpy(category, "crazyhouse");
 	} else
+	if(!strcmp("lp", category)) {
+	  strcpy(category, "loop");
+	} else
 	if(!strcmp("fr", category)) {
 	  strcpy(category, "fischerandom");
 	} else

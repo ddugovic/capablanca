@@ -133,6 +133,7 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/data/boards/gothic
 	install -d -m0755 ${CHESSDDIR}/data/boards/super
 	install -d -m0755 ${CHESSDDIR}/data/boards/crazyhouse
+	install -d -m0755 ${CHESSDDIR}/data/boards/loop
 	install -d -m0755 ${CHESSDDIR}/data/boards/fischerandom
 	install -d -m0755 ${CHESSDDIR}/data/boards/shatranj
 	install -d -m0755 ${CHESSDDIR}/data/boards/xiangqi
@@ -165,6 +166,7 @@ install: $(ALL)
 	cp -u ${srcdir}/../data/boards/fischerandom/* ${CHESSDDIR}/data/boards/fischerandom
 	cp -u ${srcdir}/../data/boards/shatranj/* ${CHESSDDIR}/data/boards/shatranj
 	cp -u ${srcdir}/../data/boards/crazyhouse/* ${CHESSDDIR}/data/boards/crazyhouse
+	cp -u ${srcdir}/../data/boards/loop/* ${CHESSDDIR}/data/boards/loop
 	cp -u ${srcdir}/../data/boards/super/* ${CHESSDDIR}/data/boards/super
 	cp -u ${srcdir}/../data/boards/wild/* ${CHESSDDIR}/data/boards/wild
 	cp -u ${srcdir}/../data/boards/xiangqi/* ${CHESSDDIR}/data/boards/xiangqi

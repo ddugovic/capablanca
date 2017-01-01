@@ -600,6 +600,12 @@ void ExamineScratch(int p,  param_list param,int setup)
   if (category[0] != '\0' && board[0] == '\0')
     strcpy(board, "0"); // variants: provide default board
   // [HGM] allow some shortcuts for variant names
+  if(!strcmp("zh", category)) {
+    strcpy(category, "crazyhouse");
+  } else
+  if(!strcmp("lp", category)) {
+    strcpy(category, "loop");
+  } else
   if(!strcmp("sc", category)) {
     strcpy(category, "seirawan");
   }

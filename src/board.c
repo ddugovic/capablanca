@@ -1046,7 +1046,10 @@ static int board_read_file(char *category, char *gname, struct game_state_t *gs)
 		gs->drops = 2;
 		break;
 	    case 'h':
-		gs->holdings = -1;     // color-flip holdings
+		gs->holdings = -1; // color-flip holdings (bughouse/crazyhouse)
+		break;
+	    case 'l':
+		gs->holdings = -2; // color-flip holdings (loop chess)
 		break;
 	    case 'p':
 		gs->palace = 3;
