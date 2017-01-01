@@ -661,6 +661,20 @@ printf("promo '%s'\n", command);
       gg->examMoveList = (struct move_t *) realloc(gg->examMoveList, sizeof(struct move_t) * gg->examMoveListSize);
     }
     result = execute_move(&gg->game_state, &move, 1);
+    if (result == MOVE_OK && (gg->link >= 0 || gg->game_state.holdings) && move.pieceCaptured != NOPIECE) {
+      /* transfer captured piece to partner */
+      /* check if piece reverts to a pawn */
+      int victim = move.pieceCaptured, partner = gg->link, demotion;
+      // [HGM] zh: if not Bughouse, the game_state.holdings field decides what happens
+      if(gg->link < 0) {
+	partner = g; // pieces stay with current board
+	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
+      }
+      if (demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+        update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
+      else
+        update_holding(partner, victim);
+    }
     move.atTime = now;
     move.tookTime = 0;
     MakeFENpos(g, move.FENpos);
@@ -716,12 +730,9 @@ printf("promo '%s'\n", command);
 	partner = g; // pieces stay with current board
 	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       } 
-      if (demotion = was_promoted(&game_globals.garray[g], move.toFile, move.toRank)) {
-        if (gg->game_state.holdings == -2)
-            update_holding(partner, colorval(victim)); // loop chess holdings
-        else
-            update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
-      } else
+      if (demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+        update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
+      else
         update_holding(partner, victim);
     }
     now = tenth_secs();
