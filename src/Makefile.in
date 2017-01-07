@@ -132,6 +132,7 @@ install: $(ALL)
 	install -d -m0755 ${CHESSDDIR}/data/boards/knightmate
 	install -d -m0755 ${CHESSDDIR}/data/boards/gothic
 	install -d -m0755 ${CHESSDDIR}/data/boards/super
+	install -d -m0755 ${CHESSDDIR}/data/boards/bughouse
 	install -d -m0755 ${CHESSDDIR}/data/boards/crazyhouse
 	install -d -m0755 ${CHESSDDIR}/data/boards/loop
 	install -d -m0755 ${CHESSDDIR}/data/boards/fischerandom
@@ -165,6 +166,7 @@ install: $(ALL)
 	cp -u ${srcdir}/../data/boards/knightmate/* ${CHESSDDIR}/data/boards/knightmate
 	cp -u ${srcdir}/../data/boards/fischerandom/* ${CHESSDDIR}/data/boards/fischerandom
 	cp -u ${srcdir}/../data/boards/shatranj/* ${CHESSDDIR}/data/boards/shatranj
+	cp -u ${srcdir}/../data/boards/bughouse/* ${CHESSDDIR}/data/boards/bughouse
 	cp -u ${srcdir}/../data/boards/crazyhouse/* ${CHESSDDIR}/data/boards/crazyhouse
 	cp -u ${srcdir}/../data/boards/loop/* ${CHESSDDIR}/data/boards/loop
 	cp -u ${srcdir}/../data/boards/super/* ${CHESSDDIR}/data/boards/super
