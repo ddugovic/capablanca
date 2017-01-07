@@ -17,9 +17,9 @@ H.G. Muller
 
 This is an enhanced version of the 'lasker' internet chess server. I
 started to enhance Lasker when I needed a working chess server for a
-local school. You can get the original 'lasker' release from
-http://chessd.sourceforge.net/ and you can get my enhanced version
-from http://chess.samba.org/
+local school. You can download the original 'lasker' release from
+http://chessd.sourceforge.net/ and my enhanced version from
+http://chess.samba.org/
 
 Here is a list of some of the new features in this version:
 
@@ -146,14 +146,6 @@ to many other platforms, but I have not yet done so.
 
 To reload the server use the command 'areload'. You must be at the
 ADMIN_GOD admin level to issue this command.
-
-Updates
--------
-
-Updates will be available on http://chess.samba.org/
-
-You may wish to use the cvs version to enable you to update more
-easily. I will only be doing tar ball releases occasionally.
 
 License
 -------
