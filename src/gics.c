@@ -63,28 +63,45 @@ void save_userstat(void)
 	fclose(fp);
 }
 
-#if 0
+int com_oping(int p, param_list param)
+{
+	if (pIsPlaying(p))
+		return ping(p, player_globals.parray[p].opponent);
+	return COM_OK;
+}
+
 int com_ping(int p, param_list param)
 {
-  int p1;
-  struct timeval timeState;
-  struct timezone tz;
+	int p1;
 
-  if ((p1 = player_find_bylogin(param[0].val.word)) < 0) {
-    pprintf(p, "Player \"%s\" not logged on!\n", param[0].val.word);
-    return COM_OK;
-  }
-  if ((!con[player_globals.parray[p1].socket].timeseal) || (con[player_globals.parray[p1].socket].method)) {
-    pprintf(p, "%s is not using timeseal or uses an old client.\n", player_globals.parray[p1].name);
-    return COM_OK;
-  }
-  pprintf(p1, "\n[P]\n");
-  gettimeofday(&timeState, &tz);
-  con[player_globals.parray[p1].socket].pingtime = (((int) timeState.tv_sec % 10000) * 1000) + ((int) timeState.tv_usec / 1000);
-  con[player_globals.parray[p1].socket].pingplayer = p;
-  return COM_OK;
+	if (param[0].type == TYPE_NULL) {
+		p1 = p;
+	} else if ((p1 = player_find_part_login(param[0].val.word)) < 0) {
+		pprintf(p, "Player \"%s\" not logged on!\n", param[0].val.word);
+		return COM_OK;
+	}
+	return ping(p, p1);
 }
+
+int ping(int p, int p1)
+{
+#if 0 // do not actually ping
+	struct timeval timeState;
+	struct timezone tz;
+
+	struct player *pp = &player_globals.parray[p1];
+	if ((!net_globals.con[pp->socket]->timeseal)) {
+		pprintf(p, "%s is not using timeseal or uses an old client.\n", pp->name);
+		return COM_OK;
+	}
+	pprintf(p1, "\n[P]\n");
+	gettimeofday(&timeState, &tz);
+	con[player_globals.parray[p1].socket].pingtime = (((int) timeState.tv_sec % 10000) * 1000) + ((int) timeState.tv_usec / 1000);
+	con[player_globals.parray[p1].socket].pingplayer = p;
 #endif
+	pprintf(p, "%s idle: %s\n", player_globals.parray[p1].name, hms_desc(player_idle(p1)));
+	return COM_OK;
+}
 
 void game_save_playerratio(char *file, char *Opponent, int Result, int rated)
 {
