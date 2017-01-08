@@ -292,7 +292,7 @@ int attempt_drop(int p,int g,char* dropstr)
 {
  int len = strlen (dropstr);
  int color;
- int piece = 0;
+ piece_t piece = 0;
  int f;
  int r;
 

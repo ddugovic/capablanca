@@ -412,8 +412,7 @@ void game_ended(int g, int winner, int why)
 
 static int was_promoted(struct game *g, int f, int r)
 {
-#define BUGHOUSE_PAWN_REVERT 1
-#ifdef BUGHOUSE_PAWN_REVERT
+#if BUGHOUSE_PAWN_REVERT
   int i;
   int halfMoves;
   struct move_t* moveList;
@@ -422,6 +421,8 @@ static int was_promoted(struct game *g, int f, int r)
   moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
   for (i = halfMoves-2; i > 0; i -= 2) {
     if (moveList[i].toFile == f && moveList[i].toRank == r) {
+      if (moveList[i].piecePromotionFrom)
+	return moveList[i].piecePromotionFrom;
       if (moveList[i].piecePromotionTo) {
 	switch (moveList[i].moveString[0]) { // [HGM] return original piece type rather than just TRUE
           case 'P': return PAWN;
@@ -1188,7 +1189,7 @@ int com_abort(int p, param_list param)
 static int player_has_mating_material(struct game_state_t *gs, int color)
 {
   int i, j;
-  int piece;
+  piece_t piece;
   int minor_pieces = 0;
 
   for (i = 0; i < gs->files; i++)

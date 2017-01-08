@@ -67,7 +67,7 @@ static char *alg_list[] = {
 
 #define ALG_UNKNOWN -1
 
-static int get_move_info(const char *str, int *piece, int *ff, int *fr, int *tf, int *tr, int *bishconfusion)
+static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int *tf, int *tr, int *bishconfusion)
 {
   char tmp[1024];
   char *s;
@@ -208,7 +208,8 @@ nomatch:;
 
 int alg_is_move(const char *mstr)
 {
-	int piece=0, ff=0, fr=0, tf=0, tr=0, bc=0;
+	piece_t piece;
+	int ff=0, fr=0, tf=0, tr=0, bc=0;
 
 	return get_move_info(mstr, &piece, &ff, &fr, &tf, &tr, &bc);
 }
@@ -217,13 +218,17 @@ int alg_is_move(const char *mstr)
 static void add_promotion(struct game_state_t *gs, const char *mstr, struct move_t * mt)
 {
 	char *s;
-	int piece, i;
+	piece_t piece;
+	int i;
 	s = strchr(mstr, '=');
 	if (s == NULL) {
 		return;
 	}
 	if(gs->promoType == 3) { // handle Shogi promotions
 		piece = gs->board[mt->fromFile][mt->fromRank];
+#if BUGHOUSE_PAWN_REVERT
+		mt->piecePromotionFrom = piece;
+#endif
  		if(colorval(piece) == WHITE && mt->fromRank < gs->ranks - gs->ranks/3
 					    && mt->toRank   < gs->ranks - gs->ranks/3 ) return;
  		if(colorval(piece) == BLACK && mt->fromRank >= gs->ranks/3
@@ -323,6 +328,9 @@ static void add_promotion(struct game_state_t *gs, const char *mstr, struct move
 	default:
 		return;
 	}
+#if BUGHOUSE_PAWN_REVERT
+	mt->piecePromotionFrom = piece;
+#endif
 	i = colorval(gs->board[mt->fromFile][mt->fromRank]) == WHITE ? 0 : 1;
 	if(gs->promoType == 2 && gs->holding[i][piece-1] == 0) return; // only if piece was captured
 	if(piece >= WOODY && piece < KING && (gs->promoType != 2 || gs->promoZone == 3)) return; // reserved for Superchess
@@ -334,7 +342,8 @@ static void add_promotion(struct game_state_t *gs, const char *mstr, struct move
 int alg_parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt)
 {
 	int f=0, r=0, tmpr=0, posf=0, posr=0, posr2=0;
-	int piece=0, ff=0, fr=0, tf=0, tr=0, bc=0;
+	piece_t piece;
+	int ff=0, fr=0, tf=0, tr=0, bc=0;
 
   if (get_move_info(mstr, &piece, &ff, &fr, &tf, &tr, &bc) != MS_ALG) {
     d_printf( "CHESSD: Shouldn't try to algebraicly parse non-algabraic move string.\n");
@@ -531,7 +540,8 @@ char *alg_unparse(struct game_state_t * gs, struct move_t * mt)
 {
   static char mStr[20];
   char tmp[20];
-  int piece, f, r;
+  piece_t piece;
+  int f, r;
   int ambig, r_ambig, f_ambig;
   struct game_state_t fakeMove;
 

@@ -1594,11 +1594,14 @@ int legal_move(struct game_state_t * gs,
 
 /* This fills in the rest of the mt structure once it is determined that
  * the move is legal. Returns MOVE_ILLEGAL if move leaves you in check */
-static int move_calculate(struct game_state_t * gs, struct move_t * mt, int promote)
+static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t promote)
 {
   struct game_state_t fakeMove;
   int gating = 0, stm;
 
+#if BUGHOUSE_PAWN_REVERT
+  mt->piecePromotionFrom = NOPIECE;
+#endif
   mt->pieceCaptured = gs->board[mt->toFile][mt->toRank];
   mt->enPassant = 0;		/* Don't know yet, let execute move take care
 				   of it */
@@ -1619,7 +1622,10 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, int prom
   } else {
   stm = colorval(gs->board[mt->fromFile][mt->fromRank]);
   if(gs->promoType == 3) { // Shogi-style promotions: not just Pawns, but many pieces can promote
-    int piece = gs->board[mt->fromFile][mt->fromRank];
+    piece_t piece = gs->board[mt->fromFile][mt->fromRank];
+#if BUGHOUSE_PAWN_REVERT
+    mt->piecePromotionFrom = piece;
+#endif
     mt->piecePromotionTo = NOPIECE;
     if(colorval(piece) == WHITE && mt->fromRank < gs->ranks - gs->ranks/3
                                 && mt->toRank   < gs->ranks - gs->ranks/3 ||
@@ -1663,6 +1669,9 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, int prom
     if(!gs->pawnDblStep && promote == PRINCESS) promote = MAN2;
     if(!gs->pawnDblStep && promote != FERZ2 && promote != MAN2) promote = FERZ; // [HGM] kludge to recognize shatranj
     // non-promotion can still be an option for deeper promotion zones
+#if BUGHOUSE_PAWN_REVERT
+    mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
+#endif
     mt->piecePromotionTo = promote ? (promote | stm) : NOPIECE;
     if(promote && gs->promoType == 2 && !gs->holding[stm == BLACK][promote-1]) return MOVE_ILLEGAL; // unavailable piece specified
     if(promote == KNIGHT && gs->royalKnight) return MOVE_ILLEGAL; // Knight not allowed in Knightmate
@@ -1702,6 +1711,9 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, int prom
     if(promote == WOODY)    promote = WARLORD; else
     if(promote == MARSHALL) promote = CAPTAIN; else
     if(promote != LIEUTENANT) return MOVE_ILLEGAL;
+#if BUGHOUSE_PAWN_REVERT
+    mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
+#endif
     mt->piecePromotionTo = (promote | stm);
   } else if(gs->drops == 2 && promote && mt->fromRank == (stm == WHITE ? 0 : gs->ranks-1)) { // [HGM] Seirawan-style gating
     int i; struct game *g = &game_globals.garray[gs->gameNum];
@@ -1713,6 +1725,9 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, int prom
 	  g->moveList[i].fromFile == ALG_CASTLE && (i&1 ? gs->ranks-1 : 0) == mt->fromRank &&
 		 (g->moveList[i].fromRank == mt->fromFile || gs->files>>1 == mt->fromFile )) return MOVE_ILLEGAL;
     }
+#if BUGHOUSE_PAWN_REVERT
+    mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
+#endif
     mt->piecePromotionTo = promote; // gating OK
     gating = 1; // remember we did it for check test
   } else {
@@ -1980,7 +1995,7 @@ int has_legal_move(struct game_state_t * gs)
 }
 
 /* This will end up being a very complicated function */
-int parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt, int promote)
+int parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt, piece_t promote)
 {
   int type = is_move(mstr);
   int result, flipflag = 1;
@@ -2255,7 +2270,7 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
       foobar = wCnt = bCnt = 0;
       for (i=0; i<gs->files; i++) {
         for (j=0; j<gs->ranks; j++) {
-	  int p = gs->board[i][j];
+	  piece_t p = gs->board[i][j];
           switch(piecetype(p)) {
             case KNIGHT:
             case BISHOP:

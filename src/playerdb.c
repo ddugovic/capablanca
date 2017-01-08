@@ -267,9 +267,7 @@ int player_read(int p, char *name)
 	}
 
 	PFlagON(p, PFLAG_REG); /* lets load the file */
-	fgets(line, MAX_LINE_SIZE, fp); /* ok so which version file? */
-
-	if (line[0] == 'v') {
+	if (fgets(line, MAX_LINE_SIZE, fp) != NULL && line[0] == 'v') { /* ok so which version file? */
 		sscanf(line, "%*c %d", &version);
 	}
 
@@ -471,7 +469,8 @@ int showstored(int p)
 
   int c=0,p1;
   char dname[MAX_FILENAME_SIZE];
-  multicol *m = multicol_start(50); /* Limit to 50, should be enough*/
+  const int N = config_get_int("MAX_STORED", DEFAULT_MAX_STORED);
+  multicol *m = multicol_start(N); /* Limit to 50, should be enough */
   
   sprintf(dname, ADJOURNED_DIR "/%c", pp->login[0]);
   dirp = opendir(dname);
@@ -487,7 +486,7 @@ int showstored(int p)
       	p1=player_find_bylogin(file_bplayer(dp->d_name));
       }
       if (p1>=0) {
-      	if (c<50)
+      	if (c<N)
       		multicol_store(m,player_globals.parray[p1].name);
       	pprintf(p1,"\nNotification: ");
       	pprintf_highlight(p1,"%s",pp->name);
@@ -1043,8 +1042,7 @@ static int LoadMsgs(int p, int which, textlist **Head)
     return -1;
   }
   while (!feof(fp)) {
-    fgets(line, MAX_LINE_SIZE, fp);
-    if (feof(fp))
+    if (fgets(line, MAX_LINE_SIZE, fp) == NULL || feof(fp))
       break;
     if (SaveThisMsg(which, line)) {
       SaveTextListEntry(Cur, line, ++n);
@@ -1076,8 +1074,7 @@ static int LoadMsgRange(int p, int start, int end, textlist **Head)
     return -1;
   }
   for (n=1; n <= end || end <= 0; n++) {
-    fgets (line, MAX_LINE_SIZE, fp);
-    if (feof(fp))
+    if (fgets(line, MAX_LINE_SIZE, fp) == NULL || feof(fp))
       break;
     if ((start < 0 && (n < -start || n > -end)) || (start >= 0 && n >= start)) {
       SaveTextListEntry (Cur, line, n);
@@ -1115,8 +1112,7 @@ int ForwardMsgRange(char *p1, int p, int start, int end)
     return -1;
   }
   for (n=1; n <= end || end <= 0; n++) {
-    fgets (line, MAX_LINE_SIZE, fp);
-    if (feof(fp))
+    if (fgets(line, MAX_LINE_SIZE, fp) == NULL || feof(fp))
       break;
     if ((start < 0 && (n < -start || n > -end)) || (start >= 0 && n >= start)) {
       player_forward_message(top, p, line);

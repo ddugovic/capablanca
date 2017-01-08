@@ -168,12 +168,13 @@ extern int pieceValues[PIECES];
 #define BW 12
 #define BH 10
 /* Treated as [file][rank] */
-typedef int board_t[BW][BH];
+typedef int piece_t;
+typedef piece_t board_t[BW][BH];
 
 GENSTRUCT struct game_state_t {
-	int board[BW][BH];
+	piece_t board[BW][BH];
 	/* for bughouse */
-	int holding[2][PIECES];
+	piece_t holding[2][PIECES];
 	/* For castling */
 	char wkmoved, wqrmoved, wkrmoved;
 	char bkmoved, bqrmoved, bkrmoved;
@@ -211,8 +212,12 @@ GENSTRUCT struct move_t {
 	int color;
 	int fromFile, fromRank;
 	int toFile, toRank;
-	int pieceCaptured;
-	int piecePromotionTo;
+	piece_t pieceCaptured;
+#define BUGHOUSE_PAWN_REVERT 1
+#if BUGHOUSE_PAWN_REVERT
+	piece_t piecePromotionFrom;
+#endif
+	piece_t piecePromotionTo;
 	int enPassant; /* 0 = no, 1=higher -1= lower */
 	int doublePawn; /* Only used for board display */
 	char moveString[8]; _NULLTERM

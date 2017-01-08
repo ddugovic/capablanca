@@ -98,3 +98,6 @@ DUMP_PARSE_DECL(float)
 
 #define gen_dump_unsigned_char gen_dump_char
 #define gen_parse_unsigned_char gen_parse_char
+
+#define gen_dump_piece_t gen_dump_int
+#define gen_parse_piece_t gen_parse_int

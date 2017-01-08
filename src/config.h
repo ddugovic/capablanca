@@ -83,6 +83,7 @@
 
 /* all of these can be overridden using the 'aconfig' command */
 #define DEFAULT_MAX_PLAYER 5000
+#define DEFAULT_MAX_STORED 50
 #define DEFAULT_MAX_USER_LIST_SIZE 100
 #define DEFAULT_MAX_ALIASES 20
 #define DEFAULT_RATING 0

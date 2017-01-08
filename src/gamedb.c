@@ -798,7 +798,7 @@ int CharToPiece(char c, char *variant)
   }
 }
 
-char PieceToChar(int piece)
+char PieceToChar(piece_t piece)
 {
   switch (piece) {
     case W_PAWN:return 'P';
@@ -997,7 +997,7 @@ static int ReadGameAttrs_common(FILE * fp, int g,int version)
 	if (version == 9 || version == 100) {
 		return ReadGameAttrs_v100(fp, g);
 	}
-
+	d_printf("CHESSD: Reading v%d attribute: %d.\n",version,g);
 	return ReadGameAttrs_old(fp, g, version);
 }
 
@@ -1036,7 +1036,7 @@ int ReadGameAttrs(FILE * fp, int g)
 int game_read(int g, int wp, int bp)
 {
   FILE *fp;
-  int piece;
+  piece_t piece;
 
   game_globals.garray[g].white = wp;
   game_globals.garray[g].black = bp;

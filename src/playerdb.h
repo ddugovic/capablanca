@@ -149,7 +149,7 @@ GENSTRUCT struct player {
 	int d_width;
 	int language;
 	int style;
-	int promote;
+	piece_t promote;
 	int adminLevel;
 	int availmin;
 	int availmax;

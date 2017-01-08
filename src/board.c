@@ -305,7 +305,7 @@ static char *append_holding_display(char *buf, struct game_state_t *gs, int whit
   return buf;
 }
 
-void update_holding(int g, int pieceCaptured)
+void update_holding(int g, piece_t pieceCaptured)
 {
   int p = piecetype(pieceCaptured);
   int c = colorval(pieceCaptured);
@@ -470,7 +470,7 @@ static int genstyle(struct game_state_t *b, struct move_t *ml, const char *wp[],
 	else
 	  strcat(bstring, wp[0]);
       } else {
-	int piece = piecetype(b->board[r][f]);
+	piece_t piece = piecetype(b->board[r][f]);
 //	if(piece > QUEEN) piece = ELEPHANT + (piece == KING); // All fairies become elephants in ascii styles
 	if (colorval(b->board[r][f]) == WHITE)
 	  strcat(bstring, wp[piece]);
@@ -1280,7 +1280,7 @@ static int board_read_file(char *category, char *gname, struct game_state_t *gs)
 #define ANY_SQUARE -1
 #define SquareColor(f, r) ((f ^ r) & 1)
 
-static void place_piece(board_t b, int piece, int squareColor, int width)
+static void place_piece(board_t b, piece_t piece, int squareColor, int width)
 { //[HGM] board: make width a variable
   int r, f;
   int placed = 0;

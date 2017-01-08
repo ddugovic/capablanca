@@ -25,7 +25,8 @@
 static int WriteMoves(FILE * fp, struct move_t *m)
 {
   unsigned long MoveInfo = (m->color == BLACK);
-  int piece, castle;
+  piece_t piece;
+  int castle;
   int useFile = 0, useRank = 0, check = 0;
   int i;
 
