@@ -161,24 +161,7 @@ install: $(ALL)
 	cp -u ${srcdir}/../data/help/[a-z]* ${CHESSDDIR}/data/help
 	cp -u ${srcdir}/../data/usage/[a-z]* ${CHESSDDIR}/data/usage
 	cp -u ${srcdir}/../data/messages/[a-z]* ${CHESSDDIR}/data/messages
-	cp -u ${srcdir}/../data/boards/capablanca/* ${CHESSDDIR}/data/boards/capablanca
-	cp -u ${srcdir}/../data/boards/gothic/* ${CHESSDDIR}/data/boards/gothic
-	cp -u ${srcdir}/../data/boards/knightmate/* ${CHESSDDIR}/data/boards/knightmate
-	cp -u ${srcdir}/../data/boards/fischerandom/* ${CHESSDDIR}/data/boards/fischerandom
-	cp -u ${srcdir}/../data/boards/shatranj/* ${CHESSDDIR}/data/boards/shatranj
-	cp -u ${srcdir}/../data/boards/bughouse/* ${CHESSDDIR}/data/boards/bughouse
-	cp -u ${srcdir}/../data/boards/crazyhouse/* ${CHESSDDIR}/data/boards/crazyhouse
-	cp -u ${srcdir}/../data/boards/loop/* ${CHESSDDIR}/data/boards/loop
-	cp -u ${srcdir}/../data/boards/super/* ${CHESSDDIR}/data/boards/super
-	cp -u ${srcdir}/../data/boards/wild/* ${CHESSDDIR}/data/boards/wild
-	cp -u ${srcdir}/../data/boards/xiangqi/* ${CHESSDDIR}/data/boards/xiangqi
-	cp -u ${srcdir}/../data/boards/shogi/* ${CHESSDDIR}/data/boards/shogi
-	cp -u ${srcdir}/../data/boards/courier/* ${CHESSDDIR}/data/boards/courier
-	cp -u ${srcdir}/../data/boards/fairy/* ${CHESSDDIR}/data/boards/fairy
-	cp -u ${srcdir}/../data/boards/great/* ${CHESSDDIR}/data/boards/great
-	cp -u ${srcdir}/../data/boards/caparandom/* ${CHESSDDIR}/data/boards/caparandom
-	cp -u ${srcdir}/../data/boards/seirawan/* ${CHESSDDIR}/data/boards/seirawan
-	cp -u ${srcdir}/../data/boards/seirawan/* ${CHESSDDIR}/data/boards/spartan
+	cp -ru ${srcdir}/../data/boards/* ${CHESSDDIR}/data/boards/
 	cp -u ${srcdir}/../data/stats/newratingsV2_data ${CHESSDDIR}/data/stats
 	perl -e 'mkdir("${CHESSDDIR}/players/$$_",0755) for ("a".."z")'
 	perl -e 'mkdir("${CHESSDDIR}/games/history/$$_",0755) for ("0".."99")'
