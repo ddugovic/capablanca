@@ -786,7 +786,7 @@ printf("join\n");
   
   if(NULL != tourn) {    
     newEntry = new Player(user->name, 0., params[0].val.integer); // [HGM] signal this was from join
-printf("entry=%d\n",newEntry);
+printf("entry=%p\n",newEntry);
     gMamer.pendingList.Append(newEntry);
     gMamer.XServerCom("getpi %s%s", user->name, "\n");
     return(1);

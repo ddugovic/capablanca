@@ -109,22 +109,22 @@ int Mamer::Initialize(int argc, char **argv) {
 	    break;
 	 case 'u':
 	 case 'U':
-	   memset(userFilePath, '\0', MAXPATHLEN);
+	    memset(userFilePath, '\0', MAXPATHLEN);
 	    strncpy(userFilePath, optarg, MIN(strlen(optarg), MAXPATHLEN));
 	    break;
 	 case 'l':
 	 case 'L':
-	   memset(userFilePath, '\0', MAXPATHLEN);
+	    memset(userFilePath, '\0', MAXPATHLEN);
 	    strncpy(logFilename, optarg, MIN(strlen(optarg), MAXPATHLEN));
 	    break;
 	 case 'a':
 	 case 'A':
-	   memset(username, '\0', 80);
+	    memset(username, '\0', 80);
 	    strncpy(username, optarg, MIN(strlen(optarg), 80));
 	    break;
 	 case 'p':
 	 case 'P':
-	   memset(password, '\0', 80);
+	    memset(password, '\0', 80);
 	    strncpy(password, optarg, MIN(strlen(optarg), 80));
 	    break;
 	 case 'h':
@@ -869,10 +869,10 @@ int Mamer::HandleChannel(char *message) {
     char *q, *p = NULL, channel[8], mess[1024];
     char user[NAMELEN] = {'\0'};
     int  pos = 0, index=0;
-    char *hilist[] = {"hi ", "hello ", "howdy ", "aloha ", "hola ", "bonjour ", "tag ", NULL };
-    char *thanklist[] = {"thanks ", "thank you ", "thanx ", "gracias ", NULL };
-    char *byelist[] = {"bye ", "later ", "caio ", "adios ", "hasta la vista ", NULL };
-    char *swearlist[] = {"fuck", "shit", "god damn", "asshole", "cunt", "cock", "bullshit", "nigger", "asswipe", NULL };
+    const char *hilist[] = {"hi ", "hello ", "howdy ", "aloha ", "hola ", "bonjour ", "tag ", NULL };
+    const char *thanklist[] = {"thanks ", "thank you ", "thanx ", "gracias ", NULL };
+    const char *byelist[] = {"bye ", "later ", "caio ", "adios ", "hasta la vista ", NULL };
+    const char *swearlist[] = {"fuck", "shit", "god damn", "asshole", "cunt", "cock", "bullshit", "nigger", "asswipe", NULL };
 
     //- Parse apart channel message
     //- <user>(1): <mesg>
@@ -1294,7 +1294,7 @@ int Mamer::HandlePlayerInfo(char *message) {
 	   player, ratings[2], ratings[3], ratings[1], ratings[0], ratings[4], ratings[5]);
 
   p = FindPending(player);
-printf("player p=%d\n", p);
+printf("player p=%p\n", p);
   if(p != NULL) {
     tourneyNumber = p->value;       // find out which tourney we want
     t = FindTourney(tourneyNumber); // Get the tourney.  If its in the list it should be valid

@@ -142,7 +142,7 @@ typedef struct u_parameter {
 } parameter;
 
 struct string_list {
-  char *string;
+  const char *string;
   int number;
 };
 
