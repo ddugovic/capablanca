@@ -74,13 +74,13 @@ chessd: .autoheaders ficsmain.o
 	$(CC) $(DYNEXP) $(CFLAGS) $(LNFLAGS) -o chessd ficsmain.o $(LIBS)
 
 chessd.so: .autoheaders $(OBJS)
-	$(CC) -shared -o chessd.so $(OBJS) $(LIBS)
+	$(CC) -shared $(LNFLAGS) -o chessd.so $(OBJS) $(LIBS)
 
 chessd_addplayer: .autoheaders fics_addplayer.o $(OBJS) 
-	$(CC) fics_addplayer.o $(CFLAGS) $(OBJS) $(LNFLAGS) -o chessd_addplayer $(LIBS)
+	$(CC) $(LNFLAGS) fics_addplayer.o $(CFLAGS) $(OBJS) $(LNFLAGS) -o chessd_addplayer $(LIBS)
 
 makerank: .autoheaders makerank.o 
-	$(CC) makerank.o $(OBJS) -o makerank $(LIBS)
+	$(CC) $(LNFLAGS) makerank.o $(OBJS) -o makerank $(LIBS)
 
 depend:
 	makedepend -- ${CFLAGS} ${MAKEDEPMORECFLAGS} -- ${SRCS}

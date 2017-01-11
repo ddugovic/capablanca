@@ -28,7 +28,7 @@ Here is a list of some of the new features in this version:
      - server configuration via 'aconfig' command instead of config.h
      - added multi-part command parsing (commands separated by ';')
      - enhanced aliases
-     - build/install process fixed
+     - build/install process fixed (32-bit binary on 64-bit architecture)
      - fixed help system
      - transparent server reload (upgrade without disturbing connections or games)
 
@@ -40,7 +40,7 @@ First you need to configure and compile the chessd server. Do
 something like the following:
 
 	  cd src
-	  ./configure --prefix=/usr/local
+	  ./configure --host=i686-linux-gnu "CFLAGS=-m32" "CXXFLAGS=-m32" "LDFLAGS=-m32" "LTCC=gcc -m32" --prefix=/usr/local
 	  make
 
 Then to install the server run "make install". That will install a
