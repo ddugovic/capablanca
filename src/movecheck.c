@@ -1716,14 +1716,17 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
 #endif
     mt->piecePromotionTo = (promote | stm);
   } else if(gs->drops == 2 && promote && mt->fromRank == (stm == WHITE ? 0 : gs->ranks-1)) { // [HGM] Seirawan-style gating
-    int i; struct game *g = &game_globals.garray[gs->gameNum];
+    int i, halfMoves; struct game *g = &game_globals.garray[gs->gameNum];
+    struct move_t* moveList;
     if(!gs->holding[stm == BLACK][promote-1]) return MOVE_ILLEGAL; // unavailable piece specified
     // now we must test virginity of the moved piece. Yegh!
-    for (i = g->numHalfMoves-1; i >= 0; i--) {
-      if (g->moveList[i].fromFile == mt->fromFile && g->moveList[i].fromRank == mt->fromRank ||
-          g->moveList[i].toFile   == mt->fromFile && g->moveList[i].toRank   == mt->fromRank ||
-	  g->moveList[i].fromFile == ALG_CASTLE && (i&1 ? gs->ranks-1 : 0) == mt->fromRank &&
-		 (g->moveList[i].fromRank == mt->fromFile || gs->files>>1 == mt->fromFile )) return MOVE_ILLEGAL;
+    halfMoves = (g->status == GAME_EXAMINE) ? g->examHalfMoves : g->numHalfMoves;
+    moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
+    for (i = halfMoves-1; i >= 0; i--) {
+      if (moveList[i].fromFile == mt->fromFile && moveList[i].fromRank == mt->fromRank ||
+          moveList[i].toFile   == mt->fromFile && moveList[i].toRank   == mt->fromRank ||
+	  moveList[i].fromFile == ALG_CASTLE && (i&1 ? gs->ranks-1 : 0) == mt->fromRank &&
+		 (moveList[i].fromRank == mt->fromFile || gs->files>>1 == mt->fromFile )) return MOVE_ILLEGAL;
     }
 #if BUGHOUSE_PAWN_REVERT
     mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
