@@ -64,7 +64,5 @@ void reload_close(void)
 	book_close();
 	lists_close();
 	save_all_globals("globals.dat");
-#if 0
 	m_free_all();
-#endif
 }
