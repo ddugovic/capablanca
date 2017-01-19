@@ -345,7 +345,7 @@ void game_ended(int g, int winner, int why)
           pprintf (p,"\n%s",avail_black);
           avail_printed = 1;
         }
-        if (gl == -1) /* bughouse ? */ {
+        if (gl != -1) /* bughouse ? */ {
           if (((player_globals.parray[game_globals.garray[gl].white].b_stats.rating <= pp->availmax) && (player_globals.parray[game_globals.garray[gl].white].b_stats.rating >= pp->availmin)) || (!pp->availmax)) {
             pprintf (p,"\n%s",avail_bugwhite);
             avail_printed = 1;
