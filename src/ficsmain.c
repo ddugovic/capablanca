@@ -77,8 +77,7 @@ static int daemonize(void)
 		return -1;
 	else if (pid != 0)
 	{
-		FILE *pidfile = fopen("/usr/local/chessd/.pid","w+");
-		fprintf(pidfile, "%d", pid);
+		fprintf(fopen(PID_FILE, "w+"), "%d\n", pid);
 		exit(0);
 	}
 	if (setsid() == -1)

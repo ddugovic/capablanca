@@ -2,7 +2,7 @@
    Copyright (c) 1993 Richard V. Nash.
    Copyright (c) 2000 Dan Papasian
    Copyright (C) 2002 Andrew Tridgell
-   Copyright (C) 2016 Daniel Dugovic
+   Copyright (C) 2017 Daniel Dugovic
    
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -54,6 +54,7 @@
 /* define the directory that will be the root directory of FICS */
 #define FICSROOT CHESSDDIR "/"
 
+#define PID_FILE          FICSROOT ".pid"
 #define CONFIG_DB         FICSROOT "config.tdb"
 #define NEWS_DB           FICSROOT "news.tdb"
 #define LIB_DIR           FICSROOT "lib"
