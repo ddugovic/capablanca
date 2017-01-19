@@ -4,11 +4,12 @@ Documentation=man:chessd(1)
 After=syslog.target network.target
 
 [Service]
-Type=simple
+Type=forking
 User=chessd
 Group=chessd
 WorkingDirectory=/usr/local/chessd
-ExecStart=/usr/local/chessd/bin/chessd -f -T /home/chessd/capablanca/timeseal/timeseal_decoder-Linux-ELF-2.4 -p 5000
+PIDFile=/usr/local/chessd/.pid
+ExecStart=/usr/local/chessd/bin/chessd -p 5000 -T /home/chessd/capablanca/timeseal/timeseal_decoder-Linux-ELF-2.4
 Restart=always
 
 [Install]

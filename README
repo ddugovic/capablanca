@@ -50,7 +50,7 @@ Setting up
 ----------
 
 Next you will want to launch your chess server using the command:
-     bin/chessd -f -p 5000
+     bin/chessd -p 5000
 while in the chessd/ directory. This will launch the chess server
 using the skeleton data you installed above.
 

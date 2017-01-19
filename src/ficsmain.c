@@ -76,7 +76,11 @@ static int daemonize(void)
 	if ((pid = fork()) == -1) 
 		return -1;
 	else if (pid != 0)
+	{
+		FILE *pidfile = fopen("/usr/local/chessd/.pid","w+");
+		fprintf(pidfile, "%d", pid);
 		exit(0);
+	}
 	if (setsid() == -1)
 		return -1;
 	return 0;
