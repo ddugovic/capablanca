@@ -105,9 +105,35 @@ int timeseal_parse(char *command, struct connection_t *con)
 	if (timeseal_globals.decoder_conn <= 0) return 1;
 	
 	/* are they using timeseal on this connection? */
-	if (!con->timeseal_init && !con->timeseal) return 1;
-	
-	t = decode(command);
+        if (!con->timeseal_init && !con->timeseal) return 1;
+
+#if 1
+       {
+       static char *key="Timestamp (FICS) v1.0 - programmed by Henrik Gram.";
+#define SWAP(X,Y) { int h = buf[i+X]; buf[i+X] = buf[i+Y]; buf[i+Y] = h; }
+               unsigned char buf[1024]; int i, l, offs;
+               snprintf(buf, 1010, "%s\n", command);
+               offs = command[strlen(command)-1] & 0x7F;
+               l = strlen(buf);
+               for(i=0; buf[i] != '\n'; i++)
+                       buf[i] = ((buf[i] + 32) ^ key[(i+offs)%50]) & 0x7F;
+               for(i=0; i<l; i+=12) {
+                       SWAP(0,11); SWAP(4,7); SWAP(2,9);
+               }
+               t = 0;
+               for(i=0; buf[i]; i++) if(buf[i] == 0x18) {
+                       buf[i++] = 0;
+                       for(l=i; buf[l]; l++) if(buf[l] == 0x19) {
+                               buf[l] = 0; t = atoi(buf + i);
+                               break;
+                       }
+                       break;
+               }
+               if(t) strcpy(command, buf);
+       }
+#else
+	t = decode((unsigned char *) command);
+#endif
 	
 	if (t == 0) {
 		/* this wasn't encoded using timeseal */
