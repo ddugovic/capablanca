@@ -45,7 +45,7 @@ static void tdb_log_fn(TDB_CONTEXT *t, int level, const char *format, ...)
  */
 static int config_init(void)
 {
-	config_db = tdb_open_ex(CONFIG_DB, 0, 0, O_RDWR|O_CREAT, 0600, tdb_log_fn);
+	config_db = tdb_open_ex(CONFIG_DB, 0, TDB_CLEAR_IF_FIRST, O_RDWR|O_CREAT, 0600, tdb_log_fn);
 	if (!config_db) {
 		d_printf("Failed to create the config database!\n");
 		return -1;
@@ -123,14 +123,11 @@ int config_get_int(const char *name, int default_v)
 	/* this trick allows config variables to show up in 'aconfig' as
 	   soon as they are used */
 	if (!data.dptr) {
-#if 1
-		/* somehow this prevents a segmentation fault */
-		printf("%s=%d\n", name, default_v);
-#endif
-		char *s = NULL;
-		data.dsize = asprintf(&s, "%d", default_v) + 1;
-		data.dptr = s;
-		tdb_store(config_db, key, data, TDB_REPLACE);
+            char value[MAX_FILENAME_SIZE];
+            sprintf(value, "%d", default_v);
+            config_set(name, value);
+
+            data = tdb_fetch(config_db, key);
 	}
 
 	v = atoi(data.dptr);
