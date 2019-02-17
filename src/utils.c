@@ -110,7 +110,7 @@ int pcommand(int p, char *comstr,...)
 	return retval;
 }
 
-static int vpprintf(int p, int do_formatting, char *format,va_list ap)
+static int vpprintf(int p, int do_formatting, const char *format,va_list ap)
 {
 	struct player *pp = &player_globals.parray[p];
 	char *tmp = NULL;
@@ -130,7 +130,7 @@ static int vpprintf(int p, int do_formatting, char *format,va_list ap)
 	return retval;
 }
 
-int pprintf(int p, char *format,...)
+int pprintf(int p, const char *format,...)
 {
 	int retval;
 	va_list ap;
@@ -153,7 +153,7 @@ static void pprintf_dohightlight(int p)
 		pprintf(p, "\033[2m");
 }
 
-int pprintf_highlight(int p, char *format,...)
+int pprintf_highlight(int p, const char *format,...)
 {
 	struct player *pp = &player_globals.parray[p];
 	int retval;
@@ -184,7 +184,7 @@ static void sprintf_dohightlight(int p, char *s)
 /*
   like pprintf() but with paging for long messages
 */
-int pprintf_more(int p, char *format,...)
+int pprintf_more(int p, const char *format,...)
 {
 	struct player *pp = &player_globals.parray[p];
 	char *s = NULL;
@@ -199,7 +199,7 @@ int pprintf_more(int p, char *format,...)
 	return pmore_text(p);
 }
 
-int psprintf_highlight(int p, char *s, char *format,...)
+int psprintf_highlight(int p, char *s, const char *format,...)
 {
 	struct player *pp = &player_globals.parray[p];
 	int retval;
@@ -217,7 +217,7 @@ int psprintf_highlight(int p, char *s, char *format,...)
 	return retval;
 }
 
-int pprintf_prompt(int p, char *format,...)
+int pprintf_prompt(int p, const char *format,...)
 {
 	int retval;
 	va_list ap;
@@ -238,7 +238,7 @@ void send_prompt(int p)
 		isspace(prompt[strlen(prompt)-1])?"":" ");
 }
 
-int pprintf_noformat(int p, char *format,...)
+int pprintf_noformat(int p, const char *format,...)
 {
 	int retval;
 	va_list ap;
@@ -670,12 +670,12 @@ static int t_buffersize = 0;	/* size of return buffer */
 static void t_sft(const char *want, struct t_tree *t)
 {
   if (t) {
-    int cmp = strncmp(want, &t->name, strlen(want));
+    int cmp = strncmp(want, t->name, strlen(want));
     if (cmp <= 0)		/* if want <= this one, look left */
       t_sft(want, t->left);
     if (t_buffersize && (cmp == 0)) {	/* if a match, add it to buffer */
       t_buffersize--;
-      *t_buffer++ = &(t->name);
+      *t_buffer++ = (t->name);
     }
     if (cmp >= 0)		/* if want >= this one, look right */
       t_sft(want, t->right);
@@ -700,14 +700,14 @@ static void t_mft(struct t_dirs *d)
   struct dirent *dp;
   struct t_tree **t;
 
-  if ((dirp = opendir(&(d->name))) == NULL) {
+  if ((dirp = opendir(d->name)) == NULL) {
     d_printf( "CHESSD:mft() couldn't opendir.\n");
   } else {
     while ((dp = readdir(dirp))) {
       t = &d->files;
       if (dp->d_name[0] != '.') {	/* skip anything starting with . */
 	while (*t) {
-	  if (strcmp(dp->d_name, &(*t)->name) < 0) {
+	  if (strcmp(dp->d_name, (*t)->name) < 0) {
 	    t = &(*t)->left;
 	  } else {
 	    t = &(*t)->right;
@@ -715,7 +715,7 @@ static void t_mft(struct t_dirs *d)
 	}
 	*t = malloc(sizeof(struct t_tree) - OVERRUN + strlen(dp->d_name));
 	(*t)->right = (*t)->left = NULL;
-	strcpy(&(*t)->name, dp->d_name);
+	strcpy((*t)->name, dp->d_name);
       }
     }
     closedir(dirp);
@@ -743,7 +743,7 @@ int search_directory(const char *dir, const char *filter, char **buffer, int buf
       filter = &nullify;
     i = &ramdirs;
     while (*i) {			/* find dir in dir tree */
-      cmp = strcmp(dir, &(*i)->name);
+      cmp = strcmp(dir, (*i)->name);
       if (cmp == 0)
 	break;
       else if (cmp < 0)
@@ -755,7 +755,7 @@ int search_directory(const char *dir, const char *filter, char **buffer, int buf
       *i = malloc(sizeof(struct t_dirs) - OVERRUN + strlen(dir)); // [HGM] allocate just enough, even though struct promoised more
       (*i)->left = (*i)->right = NULL;
       (*i)->files = NULL;
-      strcpy(&(*i)->name, dir);
+      strcpy((*i)->name, dir);
     }
     if ((*i)->files) {			/* delete any obsolete file tree */
       if ((*i)->mtime != statbuf.st_mtime) {
@@ -1077,7 +1077,7 @@ FILE *fopen_p(const char *fmt, const char *mode, ...)
 	va_list ap;
 	int x;
 	va_start(ap, mode);
-	x = vsprintf(&s, fmt, ap);
+	x = vsprintf(s, fmt, ap);
 	va_end(ap);
 	if (!s) return NULL;
 	if (x == -1 || strstr(s, "..")) {

@@ -58,11 +58,11 @@
 FILE *fopen_p(const char *fmt, const char *mode, ...) PRINTF_ATTRIBUTE(1,3);
 int asprintf(char **strp, const char *fmt, ...) PRINTF_ATTRIBUTE(2,3);
 void d_printf(const char *fmt, ...) PRINTF_ATTRIBUTE(1,2);
-int pprintf(int p, char *format,...) PRINTF_ATTRIBUTE(2,3);
-int pprintf_highlight(int p, char *format,...) PRINTF_ATTRIBUTE(2,3);
-int psprintf_highlight(int p, char *s, char *format,...) PRINTF_ATTRIBUTE(3,4);
-int pprintf_prompt(int p, char *format,...) PRINTF_ATTRIBUTE(2,3);
-int pprintf_noformat(int p, char *format,...) PRINTF_ATTRIBUTE(2,3);
+int pprintf(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
+int pprintf_highlight(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
+int psprintf_highlight(int p, char *s, const char *format,...) PRINTF_ATTRIBUTE(3,4);
+int pprintf_prompt(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
+int pprintf_noformat(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
 int pcommand(int p, char *comstr,...) PRINTF_ATTRIBUTE(2,3);
 
 
