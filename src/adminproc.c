@@ -1002,7 +1002,6 @@ int com_ftell(int p, param_list param)
 {
   struct player *pp = &player_globals.parray[p];
   int p1;
-  char command[1024];
 
   if (param[0].type == TYPE_WORD) {
 
@@ -1017,12 +1016,12 @@ int com_ftell(int p, param_list param)
     }
 
     if (pp->ftell != -1) {
-      sprintf (command, "tell 0 I will no longer be forwarding the conversation between *%s* and myself.", player_globals.parray[pp->ftell].name);
-      pcommand (p,command);
+      pcommand (p, "tell 0 I will no longer be forwarding the conversation between *%s* and myself.",
+                player_globals.parray[pp->ftell].name);
     } 
 
-    sprintf (command, "tell 0 I will be forwarding the conversation between *%s* and myself to channel 0.", player_globals.parray[p1].name);
-    pcommand (p,command);
+    pcommand (p, "tell 0 I will be forwarding the conversation between *%s* and myself to channel 0.",
+             player_globals.parray[p1].name);
 
     pp->ftell = p1;
     return COM_OK_NOPROMPT;
