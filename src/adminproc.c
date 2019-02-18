@@ -579,7 +579,7 @@ int com_asetpasswd(int p, param_list param)
       pcommand(p, "addcomment %s Account locked.\n", pp1->name);
   } else {
     pp1->passwd = strdup(chessd_crypt(param[1].val.word, NULL));
-    sprintf(text, "Password of %s changed to \"%s\".\n", pp1->name, param[1].val.word);
+    sprintf(text, "Password of %s changed.\n", pp1->name);
     pprintf(p, "%s", text);
   }
   if (param[1].val.word[0] == '*') {

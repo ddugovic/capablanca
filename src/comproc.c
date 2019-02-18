@@ -341,7 +341,7 @@ int com_password(int p, param_list param)
 		pp->passwd = NULL;
 	}
 	pp->passwd = strdup(chessd_crypt(newpassword, NULL));
-	pprintf(p, "Password changed to \"%s\".\n", newpassword);
+	pprintf(p, "Password changed.\n");
 	return COM_OK;
 }
 
