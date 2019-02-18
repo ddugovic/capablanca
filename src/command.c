@@ -698,14 +698,17 @@ static int process_prompt(int p, char *command)
   int retval;
   char *cmd = "";
 
-	if(comlog == NULL) comlog = fopen("command.log", "a");
-	if(comlog) fprintf(comlog, "p%d: '%s'\n", p, command), fflush(comlog);
-
   command = eattailwhite(eatwhite(command));
   if (!*command) {
 	  send_prompt(p);
 	  return COM_OK;
   }
+
+  if (strncmp("password", command, 8)) {
+	if(comlog == NULL) comlog = fopen("command.log", "a");
+	if(comlog) fprintf(comlog, "p%d: '%s'\n", p, command), fflush(comlog);
+  }
+
   retval = process_command(p, command, &cmd);
   switch (retval) {
   case COM_OK:
@@ -847,7 +850,6 @@ int process_disconnection(int fd)
 {
   int p = player_find(fd);
   int p1;
-  char command[1024];
   struct player *pp;
 
   if (p < 0) {
@@ -882,10 +884,8 @@ int process_disconnection(int fd)
 
       if (player_globals.parray[p1].ftell == p) {
         player_globals.parray[p1].ftell = -1;
-        sprintf (command,"tell 0 *%s* has logged out - conversation forwarding stopped.",pp->name);
-        pcommand (p1,command);
-        pprintf_prompt (p1,"%s, whose tells you were forwarding has logged out.\n",
-                 pp->name);
+        pcommand (p1, "tell 0 *%s* has logged out - conversation forwarding stopped.",pp->name);
+        pprintf_prompt (p1, "%s, whose tells you were forwarding has logged out.\n", pp->name);
       }
 
       if (!CheckPFlag(p1, PFLAG_PIN))
