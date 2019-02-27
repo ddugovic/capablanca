@@ -25,19 +25,6 @@ static TDB_CONTEXT *config_db;
 
 static int config_set(const char *name, char *value);
 
-/*
-  tdb logging function, just in case something goes wrong we log database errors to stderr
- */
-static void tdb_log_fn(TDB_CONTEXT *t, int level, const char *format, ...)
-{
-	va_list ap;
-	
-	va_start(ap, format);
-	vfprintf(stderr, format, ap);
-	va_end(ap);
-}
-
-
 /* 
    initialise the config database with some default values. This is only called once
    on initial installation
@@ -45,7 +32,7 @@ static void tdb_log_fn(TDB_CONTEXT *t, int level, const char *format, ...)
  */
 static int config_init(void)
 {
-	config_db = tdb_open_ex(CONFIG_DB, 0, TDB_CLEAR_IF_FIRST, O_RDWR|O_CREAT, 0600, tdb_log_fn);
+	config_db = tdb_open(CONFIG_DB, 0, TDB_CLEAR_IF_FIRST, O_RDWR|O_CREAT, 0600);
 	if (!config_db) {
 		d_printf("Failed to create the config database!\n");
 		return -1;
@@ -73,7 +60,7 @@ void config_close(void)
  */
 int config_open(void)
 {
-	config_db = tdb_open_ex(CONFIG_DB, 0, 0, O_RDWR, 0600, tdb_log_fn);
+	config_db = tdb_open(CONFIG_DB, 0, 0, O_RDWR, 0600);
 	if (!config_db && errno == ENOENT) {
 		return config_init();
 	}

@@ -5676,6 +5676,53 @@ else
   exit -1
 fi
 
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for tdb_open in -ltdb" >&5
+$as_echo_n "checking for tdb_open in -ltdb... " >&6; }
+if ${ac_cv_lib_tdb_tdb_open+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-ltdb  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char tdb_open ();
+int
+main ()
+{
+return tdb_open ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"; then :
+  ac_cv_lib_tdb_tdb_open=yes
+else
+  ac_cv_lib_tdb_tdb_open=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_tdb_tdb_open" >&5
+$as_echo "$ac_cv_lib_tdb_tdb_open" >&6; }
+if test "x$ac_cv_lib_tdb_tdb_open" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBTDB 1
+_ACEOF
+
+  LIBS="-ltdb $LIBS"
+
+else
+  exit -1
+fi
+
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sqrt in -lm" >&5
 $as_echo_n "checking for sqrt in -lm... " >&6; }
 if ${ac_cv_lib_m_sqrt+:} false; then :
@@ -6213,62 +6260,6 @@ $as_echo "#define TM_IN_SYS_TIME 1" >>confdefs.h
 
 fi
 
-
-for ac_func in dlopen
-do :
-  ac_fn_c_check_func "$LINENO" "dlopen" "ac_cv_func_dlopen"
-if test "x$ac_cv_func_dlopen" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_DLOPEN 1
-_ACEOF
-
-fi
-done
-
-if test x"$ac_cv_func_dlopen" = x"no"; then
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
-$as_echo_n "checking for dlopen in -ldl... " >&6; }
-if ${ac_cv_lib_dl_dlopen+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-ldl  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen ();
-int
-main ()
-{
-return dlopen ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_dl_dlopen=yes
-else
-  ac_cv_lib_dl_dlopen=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
-$as_echo "$ac_cv_lib_dl_dlopen" >&6; }
-if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
-  LIBS="$LIBS -ldl";
-	$as_echo "#define HAVE_DLOPEN 1" >>confdefs.h
-
-fi
-
-fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for compar_fn_t in stdlib.h" >&5
 $as_echo_n "checking for compar_fn_t in stdlib.h... " >&6; }

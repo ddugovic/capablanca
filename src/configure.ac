@@ -18,6 +18,7 @@ dnl Checks for libraries.
 AC_CHECK_LIB(mcrypt, mcrypt_check_version, [], [exit -1])
 AC_CHECK_LIB(crypt, crypt, [], [exit -1])
 AC_CHECK_LIB(dl, dlopen, [], [exit -1])
+AC_CHECK_LIB(tdb, tdb_open, [], [exit -1])
 dnl Replace `main' with a function in -lm:
 AC_CHECK_LIB(m, sqrt, [], [exit -1])
 
@@ -32,13 +33,6 @@ AC_C_CONST
 AC_TYPE_SIZE_T
 AC_HEADER_TIME
 AC_STRUCT_TM
-
-dnl we need dlopen() for 'areload'
-AC_CHECK_FUNCS(dlopen)
-if test x"$ac_cv_func_dlopen" = x"no"; then
-    AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl";
-	AC_DEFINE(HAVE_DLOPEN)])
-fi
 
 AC_CACHE_CHECK([for compar_fn_t in stdlib.h],ccache_cv_COMPAR_FN_T, [
     AC_TRY_COMPILE(

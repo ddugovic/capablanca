@@ -46,15 +46,16 @@
 #include <sys/wait.h>
 #include <sys/mman.h>
 
+#include <tdb.h>
+
 #include "autoconfig.h"
-#include "malloc.h"
+#define FREE(x) ((x)?free(x),(x)=NULL:0)
 #include "parsers/genparser.h"
 #include "common.h"
 #include "vers.h"
 #include "variable.h"
 #include "command.h"
 #include "gics.h"
-#include "tdb/tdb.h"
 #include "ficsmain.h"
 #include "config.h"
 #include "network.h"
