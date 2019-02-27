@@ -1092,11 +1092,11 @@ static void stored_mail_moves(int p, int mail, param_list param)
   if (param[2].type == TYPE_NULL) {
     if (!CheckPFlag(p, PFLAG_REG)) {
       pprintf (p,"Unregistered players must specify their e-mail address.\n");
-      return COM_OK;
+      return;
     }
   } else if(!safestring(param[2].val.string)) {
     pprintf (p,"Bad e-mail address.\n");
-    return COM_OK;
+    return;
   }
 
   if (!FindPlayer(p, param[0].val.word, &wp, &wconnected))
@@ -1526,7 +1526,7 @@ int com_jkill(int p, param_list param)
   FILE* Journal;
   char* kill = param[0].val.word;
   char fname[MAX_FILENAME_SIZE];
-  char fname_new[MAX_FILENAME_SIZE];
+  char fname_new[MAX_FILENAME_SIZE+2];
   int empty;
 
   if (!CheckPFlag(p, PFLAG_REG)) {

@@ -23,7 +23,7 @@
 /* database for holding config info */
 static TDB_CONTEXT *config_db;
 
-static int config_set(const char *name, char *value);
+static int config_set(const char *name, const char *value);
 
 /* 
    initialise the config database with some default values. This is only called once
@@ -39,7 +39,7 @@ static int config_init(void)
 	}
 
 	/* a few important defaults */
-	config_set("DEFAULT_PROMPT", "fics% ");
+	config_set("DEFAULT_PROMPT", DEFAULT_PROMPT);
 	config_set("GUEST_LOGIN", "guest");
 
 	/* this allows an initial admin connection */
@@ -110,7 +110,7 @@ int config_get_int(const char *name, int default_v)
 	/* this trick allows config variables to show up in 'aconfig' as
 	   soon as they are used */
 	if (!data.dptr) {
-            char value[MAX_FILENAME_SIZE];
+            char value[MAX_STRING_LENGTH];
             sprintf(value, "%d", default_v);
             config_set(name, value);
 
@@ -128,7 +128,7 @@ int config_get_int(const char *name, int default_v)
    set a configration variable. 
    Returns 0 on success 
 */
-static int config_set(const char *name, char *value)
+static int config_set(const char *name, const char *value)
 {
 	TDB_DATA data;
 	TDB_DATA key;
@@ -158,9 +158,7 @@ const char *config_get_tmp(const char *name)
 	static unsigned idx;
 	const char **p = &ret[idx];
 	idx = (idx+1) % 10;
-	if (*p) {
-		free(*p);
-	}
+	FREE(*p);
 	*p = config_get(name);
 	return *p;
 }

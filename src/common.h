@@ -33,13 +33,6 @@
 #define NULL ((void *)0)
 #endif
 
-#define SWAP(a,b,type) {\
-  type tmp; \
-  tmp = (a);\
-  (a) = (b);\
-  (b) = tmp;\
-}
-
 #define ZERO_STRUCT(s) memset(&(s), 0, sizeof(s))
 #define ZERO_STRUCTP(s) memset(s, 0, sizeof(*(s)))
 

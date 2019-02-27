@@ -352,7 +352,8 @@ int alg_parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt)
   // [HGM] check if move does not stray off board
   if(gs->ranks < 10) { 
     if(tr == 0 || fr == 0) return MOVE_ILLEGAL; // used nonexistent 0-rank
-    if(tr != ALG_UNKNOWN) tr--; if(fr != ALG_UNKNOWN) fr--; // shift to lowest rank = 1
+    if(tr != ALG_UNKNOWN) tr--;
+    if(fr != ALG_UNKNOWN) fr--; // shift to lowest rank = 1
   }
   if(tr >= gs->ranks || fr >= gs->ranks || tf >= gs->files || ff >= gs->files)
     return MOVE_ILLEGAL;

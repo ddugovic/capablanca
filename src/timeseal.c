@@ -26,7 +26,7 @@
   the return value is the decoded timestamp. It will be zero if the decoder didn't
   recognise the input as valid timeseal data
  */
-static unsigned decode(unsigned char *s)
+static unsigned decode(char *s)
 {
 	char line[1024];
 	char *p;
@@ -111,7 +111,7 @@ int timeseal_parse(char *command, struct connection_t *con)
        {
        static char *key="Timestamp (FICS) v1.0 - programmed by Henrik Gram.";
 #define SWAP(X,Y) { int h = buf[i+X]; buf[i+X] = buf[i+Y]; buf[i+Y] = h; }
-               unsigned char buf[1024]; int i, l, offs;
+               char buf[1024]; int i, l, offs;
                snprintf(buf, 1010, "%s\n", command);
                offs = command[strlen(command)-1] & 0x7F;
                l = strlen(buf);
@@ -132,7 +132,7 @@ int timeseal_parse(char *command, struct connection_t *con)
                if(t) strcpy(command, buf);
        }
 #else
-	t = decode((unsigned char *) command);
+	t = decode(command);
 #endif
 	
 	if (t == 0) {
