@@ -92,7 +92,7 @@ static void alias_substitute(struct alias_type *alias_list, int num_alias,
 	while ((atpos = strchr(name+at_offset, '@'))) {
 		char *name2 = NULL;
 		asprintf(&name2, "%*.*s%s%s", 
-			 atpos-name, atpos-name, name,
+			 (int)(atpos-name), (int)(atpos-name), name,
 			 com_str,
 			 atpos+1);
 		if (!name2) break;
@@ -580,7 +580,6 @@ static int process_password(int p, char *password)
   struct in_addr fromHost;
   int messnum;
   char fname[10];
-  int dummy; /* (to hold a return value) */ 
 
   turn_echo_on(pp->socket);
 
@@ -683,7 +682,7 @@ static int process_password(int p, char *password)
   if (CheckPFlag(p, PFLAG_REG) && !pp->timeOfReg)
     pp->timeOfReg = time(0);
   pp->logon_time = pp->last_command_time = time(0);
-  dummy = check_and_print_shutdown(p);
+  check_and_print_shutdown(p);
   pprintf_prompt(p, "\n");
   if (CheckPFlag(p, PFLAG_REG))
     announce_avail(p);

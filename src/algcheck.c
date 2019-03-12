@@ -539,8 +539,8 @@ int alg_parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt)
 
 char *alg_unparse(struct game_state_t * gs, struct move_t * mt)
 {
-  static char mStr[20];
-  char tmp[20];
+  static char mStr[MAX_MOVE_LENGTH];
+  char tmp[MAX_MOVE_LENGTH];
   piece_t piece;
   int f, r;
   int ambig, r_ambig, f_ambig;
@@ -561,7 +561,7 @@ char *alg_unparse(struct game_state_t * gs, struct move_t * mt)
       strcpy(mStr, "O-O-O");
     }
     if(gs->drops == 2) {
-	if(mt->piecePromotionTo < 0) snprintf(mStr, 20, "%c%de%d", mt->fromRank + 'a', r, r);
+	if(mt->piecePromotionTo < 0) snprintf(mStr, MAX_MOVE_LENGTH, "%c%de%d", mt->fromRank + 'a', r, r);
 	goto suffix; // [HGM] in Seirawan castling can have gating suffix
     }
     goto check;

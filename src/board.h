@@ -75,6 +75,7 @@
 #define PIECES 44
 
 #define MAX_BOARD_STRING_LENGTH 1280	/* Abitrarily 80 * 16 */
+#define MAX_MOVE_LENGTH 20
 #define MAX_STYLES 13
 
 #define W_PAWN (PAWN | WHITE)

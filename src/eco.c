@@ -136,7 +136,6 @@ static void ECO_init()
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
-    sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
@@ -147,7 +146,7 @@ static void ECO_init()
       exit(1);
     }
     strcpy(ECO_book[i]->ECO, ECO);
-    strcpy(ECO_book[i]->FENpos, FENpos);
+    sprintf(ECO_book[i]->FENpos, "%s %s", FENpos, onMove);
     ++i;
   }
   fclose(fp);
@@ -177,7 +176,6 @@ static void NIC_init()
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
-    sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
@@ -188,7 +186,7 @@ static void NIC_init()
       exit(1);
     }
     strcpy(NIC_book[i]->NIC, NIC);
-    strcpy(NIC_book[i]->FENpos, FENpos);
+    sprintf(NIC_book[i]->FENpos, "%s %s", FENpos, onMove);
     ++i;
   }
   fclose(fp);
@@ -214,7 +212,6 @@ static void LONG_init()
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
     sscanf(ptmp, "%[\x21-z] %s", FENpos, onMove);
-    sprintf(FENpos, "%s %s", FENpos, onMove);
     strcpy(ptmp, "");
     if (fgets(ptmp, 1024, fp) == NULL) continue;
     if (feof(fp)) continue;
@@ -225,7 +222,7 @@ static void LONG_init()
       exit(1);
     }
     strcpy(LONG_book[i]->LONG, LONG);
-    strcpy(LONG_book[i]->FENpos, FENpos);
+    sprintf(LONG_book[i]->FENpos, "%s %s", FENpos, onMove);
     ++i;
   }
   fclose(fp);

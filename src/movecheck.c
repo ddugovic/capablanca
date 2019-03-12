@@ -371,24 +371,25 @@ static int legal_lance_move(struct game_state_t * gs, int ff, int fr, int tf, in
   int i;
   int start, stop;
 
-  if (ff == tf) {
-    if (abs(fr - tr) == 1)
-      return 1;
-    if (fr < tr) {
-      if(gs->onMove != WHITE) return 0;
-      start = fr + 1;
-      stop = tr - 1;
-    } else {
-      if(gs->onMove == WHITE) return 0;
-      start = tr + 1;
-      stop = fr - 1;
-    }
-    for (i = start; i <= stop; i++) {
-      if (gs->board[ff][i] != NOPIECE)
-	return 0;
-    }
+  if (ff != tf)
+    return 0;
+  if (gs->onMove == WHITE ? (fr >= tr) : (fr <= tr))
+    return 0;
+
+  if (abs(fr - tr) == 1)
     return 1;
+  if (gs->onMove == WHITE) {
+    start = fr + 1;
+    stop = tr - 1;
+  } else {
+    start = tr - 1;
+    stop = fr + 1;
   }
+  for (i = start; i <= stop; i++) {
+    if (gs->board[ff][i] != NOPIECE)
+      return 0;
+  }
+  return 1;
 }
 
 static int legal_queen_move(struct game_state_t * gs, int ff, int fr, int tf, int tr)
@@ -453,8 +454,8 @@ static int legal_man_move(struct game_state_t * gs, int ff, int fr, int tf, int 
 
 static int legal_wazir_move(struct game_state_t * gs, int ff, int fr, int tf, int tr)
 {
-  if(gs->palace && (tr > gs->palace && tr < gs->ranks - gs->palace ||
-     tf < (gs->files - gs->palace)/2 || tf >= (gs->files + gs->palace)/2))
+  if (gs->palace && ((tr > gs->palace && tr < gs->ranks - gs->palace) ||
+      tf < (gs->files - gs->palace)/2 || tf >= (gs->files + gs->palace)/2))
     return 0;
   if (abs(ff - tf) == 1 && fr == tr)
     return 1;
@@ -483,8 +484,8 @@ static int legal_ferz_move(struct game_state_t * gs, int ff, int fr, int tf, int
 
 static int legal_mandarin_move(struct game_state_t * gs, int ff, int fr, int tf, int tr)
 {
-  if(gs->palace && (tr > gs->palace && tr < gs->ranks - gs->palace ||
-     tf < (gs->files - gs->palace)/2 || tf >= (gs->files + gs->palace)/2))
+  if (gs->palace && ((tr > gs->palace && tr < gs->ranks - gs->palace) ||
+      tf < (gs->files - gs->palace)/2 || tf >= (gs->files + gs->palace)/2))
     return 0;
   if (abs(ff - tf) != 1)
     return 0;
@@ -568,7 +569,7 @@ static int legal_modernelephant_move(struct game_state_t * gs, int ff, int fr, i
 static int legal_lieutenant_move(struct game_state_t * gs, int ff, int fr, int tf, int tr)
 {
   return legal_modernelephant_move(gs, ff, fr, tf, tr) ||
-	 fr == tr && abs(ff - tf) == 1 && gs->board[tf][tr] == NOPIECE;
+	 (fr == tr && abs(ff - tf) == 1 && gs->board[tf][tr] == NOPIECE);
 }
 
 static int legal_priestess_move(struct game_state_t * gs, int ff, int fr, int tf, int tr)
@@ -1139,8 +1140,8 @@ static void possible_mandarin_moves(struct game_state_t * gs,
       continue;
     if ((r < 0) || (r >= gs->ranks))
       continue;
-    if(gs->palace && (r >= gs->palace && r < gs->ranks - gs->palace ||
-       f < (gs->files - gs->palace)/2 || f >= (gs->files + gs->palace)/2))
+    if (gs->palace && ((r > gs->palace && r < gs->ranks - gs->palace) ||
+        f < (gs->files - gs->palace)/2 || f >= (gs->files + gs->palace)/2))
       continue;
     if ((gs->board[f][r] == NOPIECE) ||
 	(iscolor(gs->board[f][r], CToggle(gs->onMove))))
@@ -1163,8 +1164,8 @@ static void possible_wazir_moves(struct game_state_t * gs,
       continue;
     if ((r < 0) || (r >= gs->ranks))
       continue;
-    if(gs->palace && (r >= gs->palace && r < gs->ranks - gs->palace ||
-       f < (gs->files - gs->palace)/2 || f >= (gs->files + gs->palace)/2))
+    if (gs->palace && ((r > gs->palace && r < gs->ranks - gs->palace) ||
+        f < (gs->files - gs->palace)/2 || f >= (gs->files + gs->palace)/2))
       continue;
     if ((gs->board[f][r] == NOPIECE) ||
 	(iscolor(gs->board[f][r], CToggle(gs->onMove))))
@@ -1332,7 +1333,7 @@ static void possible_honorablehorse_moves(struct game_state_t * gs,
 				  int onf, int onr,
 				  int *posf, int *posr, int *numpos)
 {
-  int f, r = onr + (gs->onMove == WHITE ? 2 : -2);
+  int r = onr + (gs->onMove == WHITE ? 2 : -2);
 
   if(r < 0 || r >= gs->ranks) return;
   if(onf > 0) {
@@ -1721,10 +1722,10 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     halfMoves = (g->status == GAME_EXAMINE) ? g->examHalfMoves : g->numHalfMoves;
     moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
     for (i = halfMoves-1; i >= 0; i--) {
-      if (moveList[i].fromFile == mt->fromFile && moveList[i].fromRank == mt->fromRank ||
-          moveList[i].toFile   == mt->fromFile && moveList[i].toRank   == mt->fromRank ||
-	  moveList[i].fromFile == ALG_CASTLE && (i&1 ? gs->ranks-1 : 0) == mt->fromRank &&
-		 (moveList[i].fromRank == mt->fromFile || gs->files>>1 == mt->fromFile )) return MOVE_ILLEGAL;
+      if ((moveList[i].fromFile == mt->fromFile && moveList[i].fromRank == mt->fromRank) ||
+          (moveList[i].toFile   == mt->fromFile && moveList[i].toRank   == mt->fromRank) ||
+	  (moveList[i].fromFile == ALG_CASTLE && (i&1 ? gs->ranks-1 : 0) == mt->fromRank &&
+		 (moveList[i].fromRank == mt->fromFile || gs->files>>1 == mt->fromFile ))) return MOVE_ILLEGAL;
     }
 #if BUGHOUSE_PAWN_REVERT
     mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
@@ -1969,7 +1970,7 @@ int has_legal_move(struct game_state_t * gs)
   }
 
   /* IanO:  if we got here, then kf and kr must be set */
-  if (gs->gameNum >=0 && game_globals.garray[gs->gameNum].link >= 0
+  if ((gs->gameNum >=0 && game_globals.garray[gs->gameNum].link >= 0)
 	|| gs->holdings) { // [HGM] zh: also in 2-player games with drops
     /* bughouse: potential drops as check interpositions */
     gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - 1]++;
@@ -2065,9 +2066,9 @@ int parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt, piece_t
     return MOVE_ILLEGAL;
     break;
   }
-  if((mt->fromRank >= gs->ranks || mt->fromRank < 0 || mt->fromFile >= gs->files) &&
-     mt->fromFile != ALG_DROP && mt->fromFile != ALG_CASTLE
-     || mt->toRank < 0 || mt->toRank >= gs->ranks || mt->toFile >= gs->files)
+  if (((mt->fromRank >= gs->ranks || mt->fromRank < 0 || mt->fromFile >= gs->files) &&
+        mt->fromFile != ALG_DROP && mt->fromFile != ALG_CASTLE)
+     || (mt->toRank < 0 || mt->toRank >= gs->ranks || mt->toFile >= gs->files))
     return MOVE_ILLEGAL; // [HGM] make sure move stays on board
 
   if (!(result = legal_move(gs, mt->fromFile, mt->fromRank, mt->toFile, mt->toRank)))
@@ -2158,7 +2159,7 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
     gs->board[mt->fromFile][mt->fromRank] = NOPIECE;
   }
   /* Check if irreversable */
-  if ((piecetype(movedPiece) == PAWN) && (mt->fromRank != mt->toRank) // [HGM] XQ: sideway Pawn move reversible!
+  if ((piecetype(movedPiece) == PAWN && mt->fromRank != mt->toRank) // [HGM] XQ: sideway Pawn move reversible!
 			|| (tookPiece != NOPIECE)) {
     if (gs->gameNum >= 0)
       gs->lastIrreversable = game_globals.garray[gs->gameNum].numHalfMoves;
