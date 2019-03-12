@@ -519,14 +519,14 @@ static int process_login(int p, char *loginname)
 			return COM_LOGOUT;
 		}
 
-		pprintf_noformat(p, "\n\"%s\" is not a registered name.  You may play unrated games as a guest.\n(After logging in, do \"help register\" for more info on how to register.)\n\nPress return to enter the FICS as \"%s\":", 
+		pprintf_nowrap(p, "\n\"%s\" is not a registered name.  You may play unrated games as a guest.\n(After logging in, do \"help register\" for more info on how to register.)\n\nPress return to enter the FICS as \"%s\":",
 				 loginnameii, loginnameii);
 		pp->status = PLAYER_PASSWORD;
 		turn_echo_off(pp->socket);
 		return COM_OK;
 	}
 
-	pprintf_noformat(p, "\n\"%s\" is a registered name.  If it is yours, type the password.\nIf not, just hit return to try another name.\n\npassword: ", 
+	pprintf_nowrap(p, "\n\"%s\" is a registered name.  If it is yours, type the password.\nIf not, just hit return to try another name.\n\npassword: ",
 			 pp->name);
 	pp->status = PLAYER_PASSWORD;
 	turn_echo_off(pp->socket);

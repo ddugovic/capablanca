@@ -1272,10 +1272,10 @@ static void possible_lieutenant_moves(struct game_state_t * gs,
 				  int *posf, int *posr, int *numpos)
 {
   possible_modernelephant_moves(gs, onf, onr, posf, posr, numpos);
-      if (onf < gs->files-1 && (gs->board[onf+1][onr] == NOPIECE))
-        add_pos(onf + 1, onr, posf, posr, numpos);
-    if (onf > 0 && (gs->board[onf-1][onr] == NOPIECE))
-        add_pos(onf - 1, onr, posf, posr, numpos);
+  if (onf < gs->files-1 && (gs->board[onf+1][onr] == NOPIECE))
+    add_pos(onf + 1, onr, posf, posr, numpos);
+  if (onf > 0 && (gs->board[onf-1][onr] == NOPIECE))
+    add_pos(onf - 1, onr, posf, posr, numpos);
 }
 
 static void possible_priestess_moves(struct game_state_t * gs,
@@ -1301,18 +1301,16 @@ static void possible_gold_moves(struct game_state_t * gs,
 				   int *posf, int *posr, int *numpos)
 {
   possible_wazir_moves(gs, onf, onr, posf, posr, numpos);
-  if(gs->onMove == WHITE) {
-    if(onr < gs->ranks-1)
-      if(onf > 0 && !iscolor(gs->board[onf-1][onr+1], WHITE))
-	add_pos(onf-1, onr+1, posf, posr, numpos);
-      if(onf < gs->files-1 && !iscolor(gs->board[onf+1][onr+1], WHITE))
-	add_pos(onf+1, onr+1, posf, posr, numpos);
-  } else {
-    if(onr > 0)
-      if(onf > 0 && !iscolor(gs->board[onf-1][onr-1], BLACK))
-	add_pos(onf-1, onr-1, posf, posr, numpos);
-      if(onf < gs->files-1 && !iscolor(gs->board[onf+1][onr-1], BLACK))
-	add_pos(onf+1, onr-1, posf, posr, numpos);
+  if (gs->onMove == WHITE && onr < gs->ranks-1) {
+    if (onf > 0 && !iscolor(gs->board[onf-1][onr+1], WHITE))
+      add_pos(onf-1, onr+1, posf, posr, numpos);
+    if (onf < gs->files-1 && !iscolor(gs->board[onf+1][onr+1], WHITE))
+      add_pos(onf+1, onr+1, posf, posr, numpos);
+  } else if (gs->onMove == BLACK && onr > 0) {
+    if (onf > 0 && !iscolor(gs->board[onf-1][onr-1], BLACK))
+      add_pos(onf-1, onr-1, posf, posr, numpos);
+    if (onf < gs->files-1 && !iscolor(gs->board[onf+1][onr-1], BLACK))
+      add_pos(onf+1, onr-1, posf, posr, numpos);
   }
 }
 
@@ -1627,10 +1625,10 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     mt->piecePromotionFrom = piece;
 #endif
     mt->piecePromotionTo = NOPIECE;
-    if(colorval(piece) == WHITE && mt->fromRank < gs->ranks - gs->ranks/3
-                                && mt->toRank   < gs->ranks - gs->ranks/3 ||
-       colorval(piece) == BLACK && mt->fromRank >= gs->ranks/3
-                                && mt->toRank   >= gs->ranks/3 )
+    if((colorval(piece) == WHITE && mt->fromRank < gs->ranks - gs->ranks/3
+                                 && mt->toRank   < gs->ranks - gs->ranks/3) ||
+       (colorval(piece) == BLACK && mt->fromRank >= gs->ranks/3
+                                 && mt->toRank   >= gs->ranks/3) )
         promote = NOPIECE; // suppress promotion outside zone
     if(promote) { // promotion piece determined by original, no matter what was requested
       switch(piecetype(piece)) {

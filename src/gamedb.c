@@ -237,9 +237,9 @@ void send_board_to(int g, int p)
   Bell(p);
 
   if (pp->game == g && net_globals.con[pp->socket]->timeseal) {
-    pprintf_noformat(p, "\n%s\n[G]\n", b);
+    pprintf_nowrap(p, "\n%s\n[G]\n", b);
   } else {
-    pprintf_noformat(p, "\n%s", b);
+    pprintf_nowrap(p, "\n%s", b);
   }
 
   if (p != command_globals.commanding_player) {

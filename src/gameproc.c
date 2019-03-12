@@ -287,15 +287,15 @@ void game_ended(int g, int winner, int why)
     int printed = 0;
     int avail_printed = 0;
 
-    pprintf_noformat(gg->white, outstr);
-    pprintf_noformat(gg->black, outstr);
+    pprintf_nowrap(gg->white, outstr);
+    pprintf_nowrap(gg->black, outstr);
     Bell (gg->white);
     Bell (gg->black);
 
     gg->link = -1;		/*IanO: avoids recursion */
     if (gl >= 0 && game_globals.garray[gl].link >= 0) {
-      pprintf_noformat(game_globals.garray[gl].white, outstr);
-      pprintf_noformat(game_globals.garray[gl].black, outstr);
+      pprintf_nowrap(game_globals.garray[gl].white, outstr);
+      pprintf_nowrap(game_globals.garray[gl].black, outstr);
       if (CheckPFlag(game_globals.garray[gl].white, PFLAG_OPEN)) {
         getavailmess (game_globals.garray[gl].white, avail_bugwhite);
         print_avail = 1;
@@ -332,7 +332,7 @@ void game_ended(int g, int winner, int why)
 	continue;
 
       if (CheckPFlag(p, PFLAG_GIN) || player_is_observe(p, g)) {
-        pprintf_noformat(p, outstr);
+        pprintf_nowrap(p, outstr);
         printed = 1;
       }
 

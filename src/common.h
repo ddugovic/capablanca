@@ -55,7 +55,7 @@ int pprintf(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
 int pprintf_highlight(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
 int psprintf_highlight(int p, char *s, const char *format,...) PRINTF_ATTRIBUTE(3,4);
 int pprintf_prompt(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
-int pprintf_noformat(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
+int pprintf_nowrap(int p, const char *format,...) PRINTF_ATTRIBUTE(2,3);
 int pcommand(int p, char *comstr,...) PRINTF_ATTRIBUTE(2,3);
 
 

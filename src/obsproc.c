@@ -100,7 +100,7 @@ int com_games(int p, param_list param)
 	bp = game_globals.garray[i].black;
 	board_calc_strength(&game_globals.garray[i].game_state, &ws, &bs);
 	if ((game_globals.garray[i].status != GAME_EXAMINE) && (game_globals.garray[i].status != GAME_SETUP)) {
-	  pprintf_noformat(p, "%3d %4s %-11.11s %4s %-10.10s [%c%c%c%3d %3d] ",
+	  pprintf_nowrap(p, "%3d %4s %-11.11s %4s %-10.10s [%c%c%c%3d %3d] ",
 			   i + 1,
 			   ratstrii(GetRating(&player_globals.parray[wp],game_globals.garray[i].type), wp),
 			   player_globals.parray[wp].name,
@@ -112,15 +112,15 @@ int com_games(int p, param_list param)
 			   game_globals.garray[i].wInitTime / 600,
 			   game_globals.garray[i].wIncrement / 10);
 	  game_update_time(i);
-	  pprintf_noformat(p, "%6s -",
+	  pprintf_nowrap(p, "%6s -",
 		 tenth_str((game_globals.garray[i].wTime > 0 ? game_globals.garray[i].wTime : 0), 0));
-	  pprintf_noformat(p, "%6s (%2d-%2d) %c: %2d\n",
+	  pprintf_nowrap(p, "%6s (%2d-%2d) %c: %2d\n",
 		  tenth_str((game_globals.garray[i].bTime > 0 ? game_globals.garray[i].bTime : 0), 0),
 			   ws, bs,
 			 (game_globals.garray[i].game_state.onMove == WHITE) ? 'W' : 'B',
 			   game_globals.garray[i].game_state.moveNum);
 	} else {
-	  pprintf_noformat(p, "%3d (%s %4d %-11.11s %4d %-10.10s) [%c%c%c%3d %3d] ",
+	  pprintf_nowrap(p, "%3d (%s %4d %-11.11s %4d %-10.10s) [%c%c%c%3d %3d] ",
 			   i + 1,
                            (game_globals.garray[i].status == GAME_EXAMINE) ? "Exam." : "Setup",
 			   game_globals.garray[i].white_rating,
@@ -132,7 +132,7 @@ int com_games(int p, param_list param)
 			   *rstr[game_globals.garray[i].rated],
 			   game_globals.garray[i].wInitTime / 600,
 			   game_globals.garray[i].wIncrement / 10);
-	  pprintf_noformat(p, "%c: %2d\n",
+	  pprintf_nowrap(p, "%c: %2d\n",
 			 (game_globals.garray[i].game_state.onMove == WHITE) ? 'W' : 'B',
 			   game_globals.garray[i].game_state.moveNum);
 	}
@@ -423,7 +423,7 @@ int com_moves(int p, param_list param)
       g = pp->game;
     } else if (pp->num_observe) {
       for (g = 0; g < pp->num_observe; g++) {
-	pprintf_noformat(p, "%s\n", movesToString(pp->observe_list[g], 0));
+	pprintf_nowrap(p, "%s\n", movesToString(pp->observe_list[g], 0));
       }
       return COM_OK;
     } else {
@@ -445,7 +445,7 @@ int com_moves(int p, param_list param)
     pprintf(p, "Sorry, that is a private game.\n");
     return COM_OK;
   }
-  pprintf_noformat(p, "%s\n", movesToString(g, 0));	/* pgn may break interfaces? */
+  pprintf_nowrap(p, "%s\n", movesToString(g, 0));	/* pgn may break interfaces? */
   return COM_OK;
 }
 
@@ -1187,7 +1187,7 @@ static void stored_mail_moves(int p, int mail, param_list param)
         else
 	  pprintf(p, "Moves mailed.\n");
       } else {
-        pprintf_noformat(p, "%s\n", movesToString(g, 0));
+        pprintf_nowrap(p, "%s\n", movesToString(g, 0));
       } /* Do smoves */
     }
   }

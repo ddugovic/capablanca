@@ -290,45 +290,31 @@ static void getsquare(char* square,int *f, int *r)
 
 int attempt_drop(int p,int g,char* dropstr)
 {
- int len = strlen (dropstr);
- int color;
+ int len = strlen(dropstr);
  piece_t piece = 0;
  int f;
  int r;
 
  if ((len < 4) || (len > 5))
    return 0;
+ if (!((dropstr[len-3] == '@') || (dropstr[len-3] == '*')))
+   return 0;
 
-/*check x@e3 */
-
- if ((dropstr[0] == 'x') || (dropstr[0] == 'X')) { /* as x must be clear */
-   getsquare(dropstr+2,&f,&r);
-   piece = NOPIECE;
-
-/*check wp@e3 */
-
- } else if (dropstr[0] == 'w') {
-   piece = CharToPiece(dropstr[1], game_globals.garray[g].game_state.variant) & 0x7F;
-   color = WHITE;
-   getsquare(dropstr+3,&f,&r);
-
-/* check bp@e3 */
-
- } else  if (len == 5) { /* check length to avoid b@e2 and bb@e2 being confused */
-   if (dropstr[0] == 'b') {
+ if (len == 5) { /* check length to avoid b@e2 and bb@e2 being confused */
+   if (dropstr[0] == 'w') { /*check wp@e3 */
+     piece = CharToPiece(dropstr[1], game_globals.garray[g].game_state.variant) & ~BLACK;
+     getsquare(dropstr+3,&f,&r);
+   } else if (dropstr[0] == 'b') { /* check bp@e3 */
      piece = CharToPiece(dropstr[1], game_globals.garray[g].game_state.variant) | BLACK;
      getsquare(dropstr+3,&f,&r);
    }
-
-/* check p@e3 and P@e3 */
-
- } else {
-   if (!((dropstr[1] == '@') || (dropstr[1] == '*')))
-     return 0;
-   else {
+ } else { /* check p@e3 and P@e3 */
+   if ((dropstr[0] == 'x') || (dropstr[0] == 'X')) { /*check x@e3 */
+     piece = NOPIECE;
+   } else {
      piece = CharToPiece(dropstr[0], game_globals.garray[g].game_state.variant);
-     getsquare(dropstr+2,&f,&r);
-     }
+   }
+   getsquare(dropstr+2,&f,&r);
  }
 
  game_globals.garray[g].game_state.board[f][r] = piece;

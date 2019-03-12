@@ -501,11 +501,6 @@ int parse_match_string(int p, int* wt,int* bt,int* winc,int* binc,
         strcpy (board, parsebuf+1);
       } else {
         strcpy(category,parsebuf);
-        if (!strncmp("bughouse",category, strlen(category))
-            && strlen(category) >= 3 || !strcmp("bh", category)) {
-          strcpy(category, "bughouse");
-          bughouse = 1;
-        }
 	// [HGM] allow some shortcuts for variant names
 	if(!strcmp("bh", category)) {
 	  strcpy(category, "bughouse");
@@ -552,6 +547,8 @@ int parse_match_string(int p, int* wt,int* bt,int* winc,int* binc,
 	if(!strcmp("xq", category)) {
 	  strcpy(category, "xiangqi");
 	}
+	if(!strcmp("bughouse", category))
+          bughouse = 1;
       }
     } else
       confused = 1;
@@ -704,7 +701,7 @@ int com_match(int p, param_list param)
     binc = game_globals.garray[g].bIncrement / 10;
     rated = game_globals.garray[g].rated;
     strcpy(category, game_globals.garray[g].variant);
-    if(q = strchr(category, '/')) {
+    if ((q = strchr(category, '/'))) {
       *q = 0; strcpy(board, q+1);
     } else strcpy(board, "0");
   }

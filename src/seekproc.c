@@ -96,8 +96,10 @@ int com_seek(int p, param_list param)
 
 	seek_globals.ads[num].status = SEEKCLOSED; // params are valid; create ad
 
-	if(wt < 0) wt = pp->d_time; if(bt < 0) bt = wt;
-	if(winc < 0) winc = pp->d_inc; if(binc < 0) binc = bt;
+	if(wt < 0) wt = pp->d_time;
+	if(bt < 0) bt = wt;
+	if(winc < 0) winc = pp->d_inc;
+	if(binc < 0) binc = bt;
 	seek_globals.ads[num].wtime = wt;
 	seek_globals.ads[num].btime = bt;
 	seek_globals.ads[num].winc = winc;

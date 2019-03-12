@@ -243,7 +243,7 @@ static int sendme(int which, char *str, int len)
  * flushed
 */
 /* width here is terminal width = width var + 1 at presnt) */
-int net_send_string(int fd, char *str, int format, int width)
+int net_send_string(int fd, char *str, int wrap, int width)
 {
   int which, i, j;
 
@@ -253,7 +253,7 @@ int net_send_string(int fd, char *str, int format, int width)
   while (*str) {
     for (i = 0; str[i] >= ' '; i++);
     if (i) {
-      if (format && (i >= (j = width - net_globals.con[which]->outPos))) {	/* word wrap */
+      if (wrap && (i >= (j = width - net_globals.con[which]->outPos))) {	/* word wrap */
 	i = j-1;
 	while (i > 0 && str[i - 1] != ' ')
 	  i--;

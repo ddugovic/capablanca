@@ -110,7 +110,7 @@ int pcommand(int p, char *comstr,...)
 	return retval;
 }
 
-static int vpprintf(int p, int do_formatting, const char *format,va_list ap)
+static int vpprintf(int p, int wrap, const char *format,va_list ap)
 {
 	struct player *pp = &player_globals.parray[p];
 	char *tmp = NULL;
@@ -120,7 +120,7 @@ static int vpprintf(int p, int do_formatting, const char *format,va_list ap)
 	if (retval != 0) {
 		net_send_string(pp->socket, 
 				tmp, 
-				do_formatting, 
+				wrap,
 				pp->d_width + 1);
 	}
 	if (tmp) {
@@ -140,7 +140,7 @@ int pprintf(int p, const char *format,...)
 	return retval;
 }
 
-static void pprintf_dohightlight(int p)
+static void pprintf_dohighlight(int p)
 {
 	struct player *pp = &player_globals.parray[p];
 	if (pp->highlight & 0x01)
@@ -159,7 +159,7 @@ int pprintf_highlight(int p, const char *format,...)
 	int retval;
 	va_list ap;
 
-	pprintf_dohightlight(p);
+	pprintf_dohighlight(p);
 	va_start(ap, format);
 	retval = vpprintf(p, 1, format, ap);
 	va_end(ap);
@@ -168,7 +168,7 @@ int pprintf_highlight(int p, const char *format,...)
 	return retval;
 }
 
-static void sprintf_dohightlight(int p, char *s)
+static void sprintf_dohighlight(int p, char *s)
 {
 	struct player *pp = &player_globals.parray[p];
 	if (pp->highlight & 0x01)
@@ -207,7 +207,7 @@ int psprintf_highlight(int p, char *s, const char *format,...)
 	
 	va_start(ap, format);
 	if (pp->highlight) {
-		sprintf_dohightlight(p, s);
+		sprintf_dohighlight(p, s);
 		retval = vsprintf(s + strlen(s), format, ap);
 		strcat(s, "\033[0m");
 	} else {
@@ -238,7 +238,7 @@ void send_prompt(int p)
 		isspace(prompt[strlen(prompt)-1])?"":" ");
 }
 
-int pprintf_noformat(int p, const char *format,...)
+int pprintf_nowrap(int p, const char *format,...)
 {
 	int retval;
 	va_list ap;
