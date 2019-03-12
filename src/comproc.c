@@ -115,7 +115,7 @@ static void com_stats_andify(int *numbers, int howmany, char *dest)
 
 static void com_stats_rating(char *hdr, struct statistics * stats, char *dest, long now)
 {
-  char tmp[100];
+  char tmp[MAX_STATUS_LENGTH];
 
   *dest = 0;
 

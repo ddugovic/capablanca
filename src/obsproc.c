@@ -562,7 +562,7 @@ int com_mailoldmoves(int p, param_list param)
 void ExamineScratch(int p,  param_list param,int setup)
 {
   struct player *pp = &player_globals.parray[p];
-  char category[100], board[100], parsebuf[100];
+  char category[100], board[100], parsebuf[MAX_STATUS_LENGTH];
   char *val;
   int g;
 

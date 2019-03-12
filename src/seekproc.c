@@ -282,7 +282,7 @@ static int get_empty_seekslot(void)
 static char *form_ad(struct pending * ad, int i)
 {
 
-	char           *final, buf[100];
+	char           *final, buf[MAX_STATUS_LENGTH];
 	int             rating, total, type;
 
 	total = ad->wtime * 60 + ad->winc * 40;

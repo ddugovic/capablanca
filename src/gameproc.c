@@ -24,7 +24,7 @@
 static void getavailmess(int p, char* message)
 {
 	struct player *pp = &player_globals.parray[p];
-	char titles[100];
+	char titles[MAX_TITLES_LENGTH];
 
 	titles [0]='\0';
 	AddPlayerLists(p,titles);
@@ -41,7 +41,7 @@ static void getavailmess(int p, char* message)
 void getnotavailmess(int p, char* message)
 {
 	struct player *pp = &player_globals.parray[p];
-	char titles[100];
+	char titles[MAX_TITLES_LENGTH];
 
 	titles[0]='\0';
 	AddPlayerLists(p,titles);
@@ -52,7 +52,7 @@ void getnotavailmess(int p, char* message)
 void announce_avail(int p)
 {
 	struct player *pp = &player_globals.parray[p];
-	char avail[200];
+	char avail[MAX_RESPONSE_LENGTH];
 	int p1;
 	if ((pp->game < 0) && (CheckPFlag(p, PFLAG_OPEN))) {
 		getavailmess (p,avail);
@@ -73,7 +73,7 @@ void announce_avail(int p)
 void announce_notavail(int p)
 {
 	struct player *pp = &player_globals.parray[p];
-	char avail[200];
+	char avail[MAX_RESPONSE_LENGTH];
 	int p1;
 	
 	getnotavailmess (p,avail);
@@ -93,12 +93,12 @@ void announce_notavail(int p)
 void game_ended(int g, int winner, int why)
 {
   struct game *gg = &game_globals.garray[g];
-  char outstr[200];
-  char avail_black[200]; /* for announcing white/black avail */
-  char avail_white[200];
-  char avail_bugwhite[200];
-  char avail_bugblack[200];
-  char tmp[200];
+  char outstr[MAX_RESPONSE_LENGTH];
+  char avail_black[MAX_RESPONSE_LENGTH]; /* for announcing white/black avail */
+  char avail_white[MAX_RESPONSE_LENGTH];
+  char avail_bugwhite[MAX_RESPONSE_LENGTH];
+  char avail_bugblack[MAX_RESPONSE_LENGTH];
+  char tmp[MAX_RESPONSE_LENGTH];
   int p;
   int gl = gg->link;
   int rate_change = 0;
@@ -535,7 +535,7 @@ void process_move(int p, char *command)
 {
   struct player *pp = &player_globals.parray[p];
   struct game *gg;
-  int g, result, len, i, f;
+  int g, result, len, i;
   struct move_t move;
   unsigned now = 0;
 
@@ -571,7 +571,7 @@ void process_move(int p, char *command)
   }
   pp->promote = NOPIECE; // [HGM] this seemed to be uninitialized, which caused spurious promotion in Shogi
   if ((len = strlen(command)) > 1) {
-    if (command[len - 2] == '=' || gg->game_state.drops == 2 && command[len - 2] == '/') { // [HGM] encode gating as promotion
+    if (command[len - 2] == '=' || (gg->game_state.drops == 2 && command[len - 2] == '/')) { // [HGM] encode gating as promotion
 printf("promo '%s'\n", command);
       switch (tolower(command[len - 1])) {
       case 'n':
@@ -675,7 +675,7 @@ printf("promo '%s'\n", command);
 	partner = g; // pieces stay with current board
 	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       }
-      if (demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+      if ((demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank))))
         update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
       else
         update_holding(partner, victim);
@@ -735,7 +735,7 @@ printf("promo '%s'\n", command);
 	partner = g; // pieces stay with current board
 	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       } 
-      if (demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+      if ((demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank))))
         update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
       else
         update_holding(partner, victim);
@@ -955,12 +955,12 @@ static int CheckRepetition (int p, int g)
 
   for (move_num = numPly - 3; // [HGM] FEN stored in moveList[numHalfMoves-1] !
        move_num >= game_globals.garray[g].game_state.lastIrreversable - 1; move_num--) {
-    pos = GetFENpos (g, move_num);
-    if (!(turn - move_num & 1) && strlen(pos1) == strlen(pos) && !strcmp(pos1, pos))
-      flag1++ == 2 && (s1 = move_num);
-    if ( (turn - move_num & 1) && strlen(pos2) == strlen(pos) && !strcmp(pos2, pos))
-      flag2++ == 2 && (s2 = move_num); // remember start of last two loops
-printf("%2d. %d-%d '%s' '%s' '%s'\n", move_num, flag1, flag2, pos1,pos2,pos);
+    pos = GetFENpos(g, move_num);
+    if (!((turn - move_num) & 1) && strlen(pos1) == strlen(pos) && !strcmp(pos1, pos))
+      if (flag1++ != 2) s1 = move_num;
+    if ( ((turn - move_num) & 1) && strlen(pos2) == strlen(pos) && !strcmp(pos2, pos))
+      if (flag2++ != 2) s2 = move_num; // remember start of last two loops
+    printf("%2d. %d-%d '%s' '%s' '%s'\n", move_num, flag1, flag2, pos1, pos2, pos);
   }
   if (flag1 >= 3 || flag2 >= 3) {
     if ((pend = find_pend(pp->opponent, p, PEND_DRAW)) != NULL) {
@@ -1584,7 +1584,7 @@ int com_simmatch(int p, param_list param)
   struct player *pp = &player_globals.parray[p];
   int p1, g, adjourned;
   int num;
-  char tmp[100];
+  char tmp[MAX_STATUS_LENGTH];
   struct pending* pend;
   char* board = NULL;
   char* category = NULL;

@@ -142,8 +142,8 @@ static void output_match_messages(int wp,int bp,int g, char* mess)
 
   int printed;
   int avail_printed = 0;
-  char notavail_white[200];
-  char notavail_black[200];
+  char notavail_white[MAX_RESPONSE_LENGTH];
+  char notavail_black[MAX_RESPONSE_LENGTH];
   int p;
   char *outStr;
 
@@ -317,7 +317,7 @@ int accept_match(struct pending *pend, int p, int p1)
   struct player *pp = &player_globals.parray[p];
   int wt, winc, bt, binc, rated, white;
   char category[50], board[50];
-  char tmp[100];
+  char tmp[MAX_STATUS_LENGTH];
   int bh = 0, partner = 0, pp1 = 0, g1, g2;
  
   unobserveAll(p);              /* stop observing when match starts */
@@ -448,7 +448,7 @@ int parse_match_string(int p, int* wt,int* bt,int* winc,int* binc,
 {
   int numba;
   int confused = 0;
-  char parsebuf[100];
+  char parsebuf[MAX_STATUS_LENGTH];
   int bughouse = 0;
 
   while (!confused && (sscanf(mstring, " %99s", parsebuf) == 1)) {

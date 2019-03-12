@@ -890,7 +890,7 @@ size_t strnlen(const char *s, size_t n)
 const char *strday(time_t *t)
 {
 	struct tm *stm = localtime(t);
-	static char tstr[100];
+	static char tstr[MAX_STATUS_LENGTH];
 
 	strftime(tstr, sizeof(tstr), "%a %b %e", stm);
 	return tstr;
@@ -899,7 +899,7 @@ const char *strday(time_t *t)
 
 static const char *strtime(struct tm * stm, short gmt)
 {
-	static char tstr[100];
+	static char tstr[MAX_STATUS_LENGTH];
 
 	if (gmt)
 		strftime(tstr, sizeof(tstr), "%a %b %e, %H:%M GMT %Y", stm);

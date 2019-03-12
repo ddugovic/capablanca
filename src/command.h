@@ -33,7 +33,16 @@ extern const char *usage_dir[NUM_LANGS];
 /* Maximum string length of a single command word */
 #define MAX_COM_LENGTH 50
 
-/* Maximum string length of the whole command line */
+/* Maximum string length of titles */
+#define MAX_TITLES_LENGTH 100
+
+/* Maximum string length of a status line */
+#define MAX_STATUS_LENGTH 100
+
+/* Maximum string length of the response line */
+#define MAX_RESPONSE_LENGTH 200
+
+/* Maximum string length of the command line */
 #define MAX_STRING_LENGTH 1024
 
 #define COM_OK 0

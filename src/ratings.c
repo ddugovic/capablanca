@@ -729,7 +729,7 @@ static void ShowAssess (int p, int p1, int p2, int type1, int type2)
   int loss1, loss2, loss3, loss4;
   double newsterr1, newsterr2, newsterr3, newsterr4;
   int nowtime = time(0);
-  char line[100];        /* should never need any more than 80. */
+  char line[MAX_STATUS_LENGTH]; /* should never need any more than 80. */
 
   if (type1 == TYPE_BUGHOUSE) {
     p3 = player_globals.parray[p1].partner;
