@@ -1,0 +1,10 @@
+language: cpp
+cache: false
+addons:
+  apt:
+    packages:
+      - libtdb-dev
+before_script:
+  - cd src
+script:
+  - ./configure "CFLAGS=-g -ggdb" "CXXFLAGS=-g -ggdb" "LTCC=gcc -g -ggdb" && make
