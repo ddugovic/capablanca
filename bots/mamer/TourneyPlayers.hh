@@ -100,6 +100,7 @@ public:
   char name[NAMELEN];
   int rating;
   float score;
+  float extra; // [HGM] McMahon points
   int perform;
   int upset;
   int activeFlag;

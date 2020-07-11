@@ -254,6 +254,7 @@ void Tourney::SortPlayers() {
   while((s = sortIter.Next())) sortList.Delete(s);
 
   i=0;
+  playerIter.Reset(); // [HGM]
   while((tp = playerIter.Next())) {
     (tp->activeFlag) ? tp->sortValue = (tp->score + tp->rating/10000.0) : tp->sortValue = -1.0;
   //  tp->ClearWhites();
@@ -425,8 +426,10 @@ void Tourney::CloseAndStart(void) {
   TourneyPlayers *tp = NULL;
   status = CLOSED;
   params.currentRound = 0;
+  Player*s = NULL;
 
   LinkListIter<TourneyPlayers> playerIter(playerList);
+  LinkListIter<Player> sortIter(sortList);
 
   startDate = time(0);
 
@@ -438,6 +441,7 @@ void Tourney::CloseAndStart(void) {
       params.rounds = GetPlayerCount() - 1;
       break;
     case 's':
+    case 'm': // [HGM] McMahon
       params.rounds = (int)ceil(log2(GetPlayerCount())); 
       break;
     default:
@@ -455,6 +459,20 @@ void Tourney::CloseAndStart(void) {
     tp->ClearBlacks();
     tp->ClearTotalWhites();
     tp->ClearTotalBlacks();
+  }
+
+  if(params.style == 'm') { // [HGM] McMahon
+    int i = 1;
+    sortIter.Reset();
+    while((s = sortIter.Next())) { 
+      TourneyPlayers *tp = GetPlayer(s->name);
+      int nr = GetPlayerCount();
+      int mx = params.rounds + 1;
+      int p = (nr - i)*2*mx/nr;
+      if(p > mx) p = mx;
+      tp->extra = tp->score = p*0.5;
+      i++;
+    }
   }
 
   MakeAssignments();
@@ -860,7 +878,7 @@ void Tourney::Announce(void) {
   memset(announce, '\0', MAX_LINE_SIZE);
   sprintf(announce, "*****Tourney Announcement***** %80s Trny #%d  %d %d %c ", 
 	  "", number, params.time, params.inc, params.mode);
-  if(params.style == 's') { strcat(announce, " SWISS"); } else { strcat(announce, " RR"); }
+  if(params.style == 's') { strcat(announce, " SWISS"); } else { strcat(announce, params.style == 'm' ? " McMahon" : " RR"); }
   switch(params.variant) {
   case 'w':
     strcat(announce, " Wild ");
@@ -940,7 +958,7 @@ void Tourney::SetVariable(int why, const char *newValue) {
 
   switch (why) {
   case 3:
-    if((newValue[0] == 's') || (newValue[0] == 'r')) 
+    if((newValue[0] == 's') || (newValue[0] == 'r') || (newValue[0] == 'm')) 
       params.style = newValue[0];
     break;
   case 4:

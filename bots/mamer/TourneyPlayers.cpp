@@ -54,6 +54,7 @@ TourneyPlayers::TourneyPlayers(const char *n, int r, float s) {
 
   rating = r;
   score = s;
+  extra = 0.0;
 
   oppChoice=0;
   location=ONLINE;
@@ -80,6 +81,7 @@ TourneyPlayers::TourneyPlayers() {
   memset(name, '\0', NAMELEN);
   rating = 0;
   score = 0;
+  extra = 0.0;
 
   oppChoice=0;
   location=ONLINE;
@@ -235,7 +237,7 @@ int TourneyPlayers::GetConsecutiveBlacks(void) {
 
 //- CalculateScore --------------------------------------
 void TourneyPlayers::CalculateScore(void) {
-  score = 0.0;
+  score = extra;
   Player *opp;
   LinkListIter<Player> opponentIter(opponentList);
 
