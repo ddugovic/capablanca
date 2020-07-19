@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install libraries
+      run: sudo apt install libcrypt-dev libtdb-dev
+    - name: configure
+      run: cd src && ./configure --host=i686-linux-gnu "CFLAGS=-m32" "CXXFLAGS=-m32" "LDFLAGS=-m32" "LTCC=gcc -m32" --prefix=/usr/local
+    - name: make
+      run: cd src && make
+    - name: test
+      run: cd tests && ./setup.exp localhost admin password
