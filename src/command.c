@@ -467,7 +467,7 @@ static int process_login(int p, char *loginname)
 	if (strcasecmp(loginname, config_get_tmp("GUEST_LOGIN")) == 0) {
 		loginname = guest_name();
 		is_guest = 1;
-		pprintf(p,"\nCreated temporary login '%s'\n", loginname);
+		pprintf(p,"\nLogging you in as \"%s\"\n", loginname);
 	}
 
 	strlcpy(loginnameii, loginname, sizeof(loginnameii));
@@ -519,7 +519,7 @@ static int process_login(int p, char *loginname)
 			return COM_LOGOUT;
 		}
 
-		pprintf_nowrap(p, "\n\"%s\" is not a registered name.  You may play unrated games as a guest.\n(After logging in, do \"help register\" for more info on how to register.)\n\nPress return to enter the FICS as \"%s\":",
+		pprintf_nowrap(p, "\n\"%s\" is not a registered name.  You may play unrated games as a guest.\n(After logging in, do \"help register\" for more info on how to register.)\n\nPress return to enter the server as \"%s\":",
 				 loginnameii, loginnameii);
 		pp->status = PLAYER_PASSWORD;
 		turn_echo_off(pp->socket);
@@ -623,6 +623,8 @@ static int process_password(int p, char *password)
 	  pprintf(p,"\n  ** LOGGED IN AS HEAD ADMIN **\n");
 	  pp->adminLevel = ADMIN_GOD;
   }
+  
+  pprintf(p,"\n**** Starting FICS session as %s%s ****\n", pp->name, CheckPFlag(p, PFLAG_REG) ? "": "(U)");
 
   news_login(p);
 
