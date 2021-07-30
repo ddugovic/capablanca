@@ -18,7 +18,7 @@ match_max 100000
 spawn telnet $host 5000
 expect "\rlogin: "
 send "admin\r"
-expect "Press return to enter the FICS"
+expect "Press return to enter the server"
 send "\r"
 expect "fics% "
 
