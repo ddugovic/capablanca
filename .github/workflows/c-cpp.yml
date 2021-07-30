@@ -9,12 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
+    - name: add architecture i386
+      run: sudo dpkg --add-architecture i386 && sudo apt update
     - name: install libraries
-      run: sudo apt install libcrypt-dev libtdb-dev
+      run: sudo apt install libtdb-dev libmcrypt-dev:i386
     - name: configure
       run: cd src && ./configure --host=i686-linux-gnu "CFLAGS=-m32" "CXXFLAGS=-m32" "LDFLAGS=-m32" "LTCC=gcc -m32" --prefix=/usr/local
     - name: make
