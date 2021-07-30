@@ -1,14 +1,12 @@
 [Unit]
 Description=Job that runs the mamer daemon
-After=syslog.target network.target chessd.service
+After=chessd.service
 
 [Service]
 Type=simple
-User=chessd
-Group=chessd
 WorkingDirectory=/usr/local/chessd/mamer
 ExecStart=/usr/local/chessd/mamer/mamer
 Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

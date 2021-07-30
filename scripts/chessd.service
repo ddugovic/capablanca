@@ -1,16 +1,14 @@
 [Unit]
 Description=Job that runs the chessd daemon
 Documentation=man:chessd(1)
-After=syslog.target network.target
+After=network-online.target
 
 [Service]
 Type=forking
-User=chessd
-Group=chessd
 WorkingDirectory=/usr/local/chessd
 PIDFile=/usr/local/chessd/.pid
 ExecStart=/usr/local/chessd/bin/chessd -p 5000 -T /home/chessd/capablanca/timeseal/timeseal_decoder-Linux-ELF-2.4
 Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
