@@ -1719,7 +1719,7 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     struct move_t* moveList;
     if(!gs->holding[stm == BLACK][promote-1]) return MOVE_ILLEGAL; // unavailable piece specified
     // now we must test virginity of the moved piece. Yegh!
-    halfMoves = (g->status == GAME_EXAMINE) ? g->examHalfMoves : g->numHalfMoves;
+    halfMoves = g->numHalfMoves;
     moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
     for (i = halfMoves-1; i >= 0; i--) {
       if ((moveList[i].fromFile == mt->fromFile && moveList[i].fromRank == mt->fromRank) ||
@@ -2302,6 +2302,40 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
   return MOVE_OK;
 }
 
+static int is_promoted(struct game *g, int f, int r)
+{
+#if BUGHOUSE_PAWN_REVERT
+  int i;
+  int halfMoves;
+  struct move_t* moveList;
+
+  halfMoves = g->numHalfMoves;
+  moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList : g->moveList;
+  for (i = halfMoves-1; i > 0; i -= 2) {
+    if (moveList[i].toFile == f && moveList[i].toRank == r) {
+      if (moveList[i].piecePromotionFrom)
+	return moveList[i].piecePromotionFrom;
+      if (moveList[i].piecePromotionTo) {
+	switch (moveList[i].moveString[0]) { // [HGM] return original piece type rather than just TRUE
+          case 'P': return PAWN;
+          case 'N': return HONORABLEHORSE; // !!! this is Shogi, so no KNIGHT !!!
+          case 'B': return BISHOP;
+          case 'R': return ROOK;
+          case 'L': return LANCE;
+          case 'S': return SILVER;
+          default:  return GOLD;
+        }
+      }
+      if (moveList[i].fromFile == ALG_DROP)
+	return 0;
+      f = moveList[i].fromFile;
+      r = moveList[i].fromRank;
+    }
+  }
+#endif
+  return 0;
+}
+
 int backup_move(int g, int mode)
 {
   struct game_state_t *gs;
@@ -2360,7 +2394,10 @@ int backup_move(int g, int mode)
       case GENERAL: piece = HOPLITE; break;
       case DRAGONHORSE: piece = BISHOP; break;
       case DRAGONKING:  piece = ROOK;   break;
-      case GOLD: // TODO: figure out what original was
+      case GOLD:
+#if BUGHOUSE_PAWN_REVERT
+      if ((piece = is_promoted(&game_globals.garray[g], m->toFile, m->toRank))) break;
+#endif
       default: piece = PAWN;
     }
     piece |= colorval(gs->board[m->toFile][m->toRank]);
@@ -2489,6 +2526,8 @@ int backup_move(int g, int mode)
     /* Should set the enpassant array, but I don't care right now */
     goto cleanupMove;
   }
+  if (gs->holdings && m->pieceCaptured)
+    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(m->pieceCaptured)-1]--; // remove captured piece from holdings (onMove not flipped yet!)
   gs->board[m->toFile][m->toRank] = m->pieceCaptured;
 cleanupMove:
   if (game_globals.garray[g].status != GAME_EXAMINE) {

@@ -97,7 +97,7 @@ GENSTRUCT struct game {
 	int black;
 	int link;
 	enum gamestatus status;
-	int examHalfMoves;
+	int examHalfMoves; /* unused */
 	int examMoveListSize;  
 	struct move_t *examMoveList; _LEN(examMoveListSize)    /* extra movelist for examine */
 

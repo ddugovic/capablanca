@@ -417,8 +417,8 @@ static int was_promoted(struct game *g, int f, int r)
   int halfMoves;
   struct move_t* moveList;
 
-  halfMoves = (g->status == GAME_EXAMINE) ? g->examHalfMoves : g->numHalfMoves;
-  moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
+  halfMoves = g->numHalfMoves;
+  moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList : g->moveList;
   for (i = halfMoves-2; i > 0; i -= 2) {
     if (moveList[i].toFile == f && moveList[i].toRank == r) {
       if (moveList[i].piecePromotionFrom)
