@@ -1394,7 +1394,7 @@ int legal_move(struct game_state_t * gs,
     if(gs->drops != 1) return 0; // [HGM] variants: no drops in this variant
     if (move_piece == KING)
       return 0;
-    if (gs->holding[gs->onMove==WHITE ? 0 : 1][move_piece-1] == 0)
+    if (gs->holding[gs->onMove==WHITE ? 0 : 1][move_piece-PAWN] == 0)
       return 0;
     if (gs->board[tFile][tRank] != NOPIECE)
       return 0;
@@ -1613,7 +1613,7 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
   } else if(mt->fromFile == ALG_CASTLE) { 
 	// [HGM] castle: generalized castling, fr and tr give from and to file of Rook.
 	    sprintf(mt->moveString, mt->toRank > mt->toFile ? "o-o-o" : "o-o");
-	if(gs->drops == 2 && promote && gs->holding[gs->onMove == BLACK][abs(promote)-1]) { // promote can be flipped (reverse gating kludge)
+	if(gs->drops == 2 && promote && gs->holding[gs->onMove == BLACK][abs(promote)-PAWN]) { // promote can be flipped (reverse gating kludge)
 	    int c = gs->onMove == WHITE ? 0 : gs->ranks-1;
 	    mt->piecePromotionTo = promote; gating = 1;
 	    if(promote < 0) sprintf(mt->moveString, "R/%c%d-e%d", mt->fromRank + 'a', c, c); // use RxK notation for Rook-square gatings
@@ -1661,7 +1661,7 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     if(promote == KING) return MOVE_ILLEGAL; // no king in normal chess
     if(!promote && (mt->toRank == 0 || mt->toRank == gs->ranks-1)) { // promotion obligatory, but not specified
 	if(gs->promoType != 2) promote = QUEEN; else { // choose a default
-	    for(promote=PIECES-1; promote>PAWN; promote--) if(gs->holding[stm == BLACK][promote-1]) break;
+	    for(promote=PIECES-1; promote>PAWN; promote--) if(gs->holding[stm == BLACK][promote-PAWN]) break;
 	    if(promote == PAWN) return MOVE_ILLEGAL; // nothing available
 	}
     } // if not obligatory, we defer unless promotion was explicitly specified!
@@ -1672,7 +1672,7 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     mt->piecePromotionFrom = piecetype(gs->board[mt->fromFile][mt->fromRank]);
 #endif
     mt->piecePromotionTo = promote ? (promote | stm) : NOPIECE;
-    if(promote && gs->promoType == 2 && !gs->holding[stm == BLACK][promote-1]) return MOVE_ILLEGAL; // unavailable piece specified
+    if(promote && gs->promoType == 2 && !gs->holding[stm == BLACK][promote-PAWN]) return MOVE_ILLEGAL; // unavailable piece specified
     if(promote == KNIGHT && gs->royalKnight) return MOVE_ILLEGAL; // Knight not allowed in Knightmate
     if(gs->promoType != 2 && promote > QUEEN) { // for promoType != 2 we must check explicitly if the requested pieceis compatible with the variant
 	switch(promote) {
@@ -1717,7 +1717,7 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
   } else if(gs->drops == 2 && promote && mt->fromRank == (stm == WHITE ? 0 : gs->ranks-1)) { // [HGM] Seirawan-style gating
     int i, halfMoves; struct game *g = &game_globals.garray[gs->gameNum];
     struct move_t* moveList;
-    if(!gs->holding[stm == BLACK][promote-1]) return MOVE_ILLEGAL; // unavailable piece specified
+    if(!gs->holding[stm == BLACK][promote-PAWN]) return MOVE_ILLEGAL; // unavailable piece specified
     // now we must test virginity of the moved piece. Yegh!
     halfMoves = g->numHalfMoves;
     moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList  : g->moveList;
@@ -1973,12 +1973,12 @@ int has_legal_move(struct game_state_t * gs)
   if ((gs->gameNum >=0 && game_globals.garray[gs->gameNum].link >= 0)
 	|| gs->holdings) { // [HGM] zh: also in 2-player games with drops
     /* bughouse: potential drops as check interpositions */
-    gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - 1]++;
+    gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - PAWN]++;
     for (f=kf-1; f<=kf+1; f++) for (r=kr-1; r<=kr+1; r++) {
       if (f>=0 && f<gs->files && r>=0 && r<gs->ranks && gs->board[f][r] == NOPIECE) {
 	/* try a drop next to the king */
 	if (legal_andcheck_move(gs, ALG_DROP, QUEEN, f, r)) {
-	  gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - 1]--;
+	  gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - PAWN]--;
 	  // OK, so we have an interposing drop. But do we have something to drop?
 	  if(game_globals.garray[gs->gameNum].link < 0) {
 		// we have no partner, so we must have something to drop now
@@ -1990,7 +1990,7 @@ int has_legal_move(struct game_state_t * gs)
 	}
       }
     }
-    gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - 1]--;
+    gs->holding[gs->onMove==WHITE ? 0 : 1][QUEEN - PAWN]--;
   }
 
   return 0;
@@ -2112,7 +2112,7 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
   if (mt->fromFile == ALG_DROP) {
     movedPiece = mt->fromRank;
     tookPiece = NOPIECE;
-    gs->holding[gs->onMove==WHITE ? 0 : 1][movedPiece-1]--;
+    gs->holding[gs->onMove==WHITE ? 0 : 1][movedPiece-PAWN]--;
     gs->board[mt->toFile][mt->toRank] = movedPiece | gs->onMove;
     if (gs->gameNum >= 0)
       gs->lastIrreversable = game_globals.garray[gs->gameNum].numHalfMoves;
@@ -2140,7 +2140,7 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
 	gs->board[fKing][backRank] = mt->piecePromotionTo | gs->onMove; // gate on King square
       else
 	gs->board[mt->fromRank][backRank] = -mt->piecePromotionTo | gs->onMove; // gate on Rook square
-      gs->holding[gs->onMove==WHITE ? 0 : 1][abs(mt->piecePromotionTo)-1]--; // remove gated piece from holdings
+      gs->holding[gs->onMove==WHITE ? 0 : 1][abs(mt->piecePromotionTo)-PAWN]--; // remove gated piece from holdings
     }
   } else {
   movedPiece = gs->board[mt->fromFile][mt->fromRank];
@@ -2148,13 +2148,13 @@ int execute_move(struct game_state_t * gs, struct move_t * mt, int check_game_st
   if(gs->drops == 2 && mt->piecePromotionTo != NOPIECE && piecetype(movedPiece) != PAWN) { // [HGM] Seirawan-style gating
     gs->board[mt->toFile][mt->toRank] = gs->board[mt->fromFile][mt->fromRank];
     gs->board[mt->fromFile][mt->fromRank] = mt->piecePromotionTo | gs->onMove;;
-    gs->holding[gs->onMove==WHITE ? 0 : 1][mt->piecePromotionTo-1]--; // remove gated piece from holdings
+    gs->holding[gs->onMove==WHITE ? 0 : 1][mt->piecePromotionTo-PAWN]--; // remove gated piece from holdings
   } else {
     if (mt->piecePromotionTo == NOPIECE) {
       gs->board[mt->toFile][mt->toRank] = gs->board[mt->fromFile][mt->fromRank];
     } else {
       gs->board[mt->toFile][mt->toRank] = mt->piecePromotionTo | gs->onMove;
-      if(gs->promoType == 2) gs->holding[gs->onMove][mt->piecePromotionTo-1]--;
+      if(gs->promoType == 2) gs->holding[gs->onMove][mt->piecePromotionTo-PAWN]--;
     }
     gs->board[mt->fromFile][mt->fromRank] = NOPIECE;
   }
@@ -2374,16 +2374,16 @@ int backup_move(int g, int mode)
     gs->board[m->toFile  ][rank] = NOPIECE; // King toSqr
     gs->board[m->toRank  ][rank] = NOPIECE; // Rook toSqr
     if(gs->board[m->fromRank][rank] != NOPIECE)
-      gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[m->fromRank][rank])-1]++; // put back in holdings (onMove not flipped yet!)
+      gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[m->fromRank][rank])-PAWN]++; // put back in holdings (onMove not flipped yet!)
     if(gs->board[kingFromFile][rank] != NOPIECE)
-      gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[kingFromFile][rank])-1]++; // put back in holdings (onMove not flipped yet!)
+      gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[kingFromFile][rank])-PAWN]++; // put back in holdings (onMove not flipped yet!)
     gs->board[m->fromRank][rank] = ROOK | m->color; // Rook fromSqr
     gs->board[kingFromFile][rank] = KING | m->color; // King fromSquare
     goto cleanupMove;
   }
   piece = gs->board[m->toFile][m->toRank];
   if(gs->board[m->fromFile][m->fromRank] != NOPIECE) { // [HGM] from-square occupied; move must have been Seirawan-style gating
-    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[m->fromFile][m->fromRank])-1]++; // put back in holdings (onMove not flipped yet!)
+    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(gs->board[m->fromFile][m->fromRank])-PAWN]++; // put back in holdings (onMove not flipped yet!)
   } else
   if (m->piecePromotionTo != NOPIECE) { // it is a real promotion
     switch(piecetype(m->piecePromotionTo)) { // Spartan pieces came from Hoplite, Shogi is problematic
@@ -2527,7 +2527,7 @@ int backup_move(int g, int mode)
     goto cleanupMove;
   }
   if (gs->holdings && m->pieceCaptured)
-    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(m->pieceCaptured)-1]--; // remove captured piece from holdings (onMove not flipped yet!)
+    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(m->pieceCaptured)-PAWN]--; // remove captured piece from holdings (onMove not flipped yet!)
   gs->board[m->toFile][m->toRank] = m->pieceCaptured;
 cleanupMove:
   if (game_globals.garray[g].status != GAME_EXAMINE) {

@@ -332,7 +332,7 @@ static void add_promotion(struct game_state_t *gs, const char *mstr, struct move
 	mt->piecePromotionFrom = piece;
 #endif
 	i = colorval(gs->board[mt->fromFile][mt->fromRank]) == WHITE ? 0 : 1;
-	if(gs->promoType == 2 && gs->holding[i][piece-1] == 0) return; // only if piece was captured
+	if(gs->promoType == 2 && gs->holding[i][piece-PAWN] == 0) return; // only if piece was captured
 	if(piece >= WOODY && piece < KING && (gs->promoType != 2 || gs->promoZone == 3)) return; // reserved for Superchess
 
 	mt->piecePromotionTo = piece | colorval(gs->board[mt->fromFile][mt->fromRank]);

@@ -258,8 +258,8 @@ void board_calc_strength(struct game_state_t *b, int *ws, int *bs)
     }
   }
   for (r = PAWN; r < PIECES; r++) {
-    *ws += b->holding[0][r-1] * pieceValues[r];
-    *bs += b->holding[1][r-1] * pieceValues[r];
+    *ws += b->holding[0][r-PAWN] * pieceValues[r];
+    *bs += b->holding[1][r-PAWN] * pieceValues[r];
   }
 }
 
@@ -270,7 +270,7 @@ static char *holding_str(int *holding)
 
 	i = 0;
 	for (p = PAWN; p < PIECES; p++) {
-		for (j = 0; j < holding[p-1]; j++) {
+		for (j = 0; j < holding[p-PAWN]; j++) {
 			tmp[i++] = wpstring[p][0];
 		}
 	}
@@ -320,7 +320,7 @@ void update_holding(int g, piece_t pieceCaptured)
     c = 1;
     pp = game_globals.garray[g].black;
   }
-  gs->holding[c][p-1]++;
+  gs->holding[c][p-PAWN]++;
   tmp1[0] = '\0';
   append_holding_machine(tmp1, g, c, p);
   sprintf(tmp2, "Game %d %s received: %s -> [%s]\n", g+1,
@@ -1239,7 +1239,7 @@ static int board_read_file(char *category, char *gname, struct game_state_t *gs)
 	break;
       case '@':
 	if (onColor >= 0 && onPiece >= 0) // allow placement in holdings
-	  gs->holding[onColor == BLACK][onPiece-1]++;
+	  gs->holding[onColor == BLACK][onPiece-PAWN]++;
 	break;
       case '1':
       case '2':
