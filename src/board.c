@@ -23,12 +23,12 @@
 #include "includes.h"
 
 
-const char *wpstring[] = {" ", "P", "N", "B", "R", "A", "C", "M", "Q", "E", "B", "Q", "W", "H", "N", "D", "H", "L", 
-			  "C", "S", "G", "H", "A", "F", "E", "H", "M", "S", "E", "W", "O", "G", "V", "S", "E", "A",
-			  "K", "H", "E", "W", "G", "L", "C", "H"};
-const char *bpstring[] = {" ", "p", "n", "b", "r", "a", "c", "m", "q", "e", "b", "q", "w", "h", "n", "d", "h", "l", 
-			  "c", "s", "g", "h", "a", "f", "e", "h", "m", "s", "e", "w", "o", "g", "v", "s", "e", "a",
-			  "k", "h", "e", "w", "g", "l", "c", "h"};
+const char wpchar[] = {' ', 'P', 'N', 'B', 'R', 'A', 'C', 'M', 'Q', 'E', 'B', 'Q', 'W', 'H', 'N', 'D', 'H', 'L',
+                       'C', 'S', 'G', 'H', 'A', 'F', 'E', 'H', 'M', 'S', 'E', 'W', 'O', 'G', 'V', 'S', 'E', 'A',
+                       'K', 'H', 'E', 'W', 'G', 'L', 'C', 'H'};
+const char bpchar[] = {' ', 'p', 'n', 'b', 'r', 'a', 'c', 'm', 'q', 'e', 'b', 'q', 'w', 'h', 'n', 'd', 'h', 'l',
+                       'c', 's', 'g', 'h', 'a', 'f', 'e', 'h', 'm', 's', 'e', 'w', 'o', 'g', 'v', 's', 'e', 'a',
+                       'k', 'h', 'e', 'w', 'g', 'l', 'c', 'h'};
 
 int pieceValues[PIECES] = {0, 1, 3, 3, 5, 8, 9, 3, 9, 1, 1, 2, 2, 2, 1, 6, 5, 2, 3, 3, 3, 1, 5, 2, 1, 7, 7, 3, 3, 3, 7, 7, 7, 8, 9, 12,
 			   0, 8, 9, 8, 7, 3, 3, 1};
@@ -267,15 +267,17 @@ void board_calc_strength(struct game_state_t *b, int *ws, int *bs)
 
 static char *holding_str(int *holding)
 {
-	static char tmp[80];
+	static char tmp[80]; // static delays free
 	int p,i,j;
 
-	i = 0;
+	tmp[0] = '[';
+	i = 1;
 	for (p = PAWN; p < PIECES; p++) {
 		for (j = 0; j < holding[p-PAWN]; j++) {
-			tmp[i++] = wpstring[p][0];
+			tmp[i++] = wpchar[p];
 		}
 	}
+	tmp[i++] = ']';
 	tmp[i] = '\0';
 	return tmp;
 }
@@ -285,14 +287,14 @@ static char *append_holding_machine(char *buf, int g, int c, int p)
   struct game_state_t *gs = &game_globals.garray[g].game_state;
   char tmp[160];
 
-  sprintf(tmp, "<b1> game %d %s [%s] %s [", g+1, gs->name[0], holding_str(gs->holding[0]), gs->name[1]);
+  sprintf(tmp, "<b1> game %d %s %s %s ", g+1, gs->name[0], holding_str(gs->holding[0]), gs->name[1]);
   strcat(tmp, holding_str(gs->holding[1]));
   strcat(buf, tmp);
   if (p) {
-    sprintf(tmp, "] <- %c%s\n", "WB"[c], wpstring[p]);
+    sprintf(tmp, " <- %c%c\n", "WB"[c], wpchar[p]);
     strcat(buf, tmp);
   } else
-    strcat(buf, "]\n");
+    strcat(buf, "\n");
   return buf;
 }
 
@@ -301,12 +303,12 @@ static char *append_holding_display(char *buf, struct game_state_t *gs, int whit
   char tmp[20];
 
   if (white)
-    sprintf(tmp, "%s holding [", gs->name[0]);
+    sprintf(tmp, "%s holding ", gs->name[0]);
   else
-    sprintf(tmp, "%s holding [", gs->name[1]);
+    sprintf(tmp, "%s holding ", gs->name[1]);
   strcat(buf, tmp);
   strcat(buf, holding_str(gs->holding[white ? 0 : 1]));
-  strcat(buf, "]\n");
+  strcat(buf, "\n");
   return buf;
 }
 
@@ -328,8 +330,8 @@ void update_holding(int g, piece_t pieceCaptured)
   gs->holding[c][p-PAWN]++;
   tmp1[0] = '\0';
   append_holding_machine(tmp1, g, c, p);
-  sprintf(tmp2, "Game %d %s received: %s -> [%s]\n", g+1,
-          player_globals.parray[pp].name, wpstring[p], holding_str(gs->holding[c]));
+  sprintf(tmp2, "Game %d %s received: %c -> %s\n", g+1,
+          player_globals.parray[pp].name, wpchar[p], holding_str(gs->holding[c]));
   for (pl = 0; pl < player_globals.p_num; pl++) {
     if (player_globals.parray[pl].status == PLAYER_EMPTY)
       continue;
@@ -760,10 +762,7 @@ static int style8(struct game_state_t *b, struct move_t *ml)
       if (b->board[f][r] == NOPIECE) {
 	strcat(bstring, " ");
       } else {
-	if (colorval(b->board[f][r]) == WHITE)
-	  strcat(bstring, wpstring[piecetype(b->board[f][r])]);
-	else
-	  strcat(bstring, bpstring[piecetype(b->board[f][r])]);
+	strcat(bstring, piecechar(b->board[f][r]));
       }
     }
   }
@@ -833,10 +832,7 @@ static int style10(struct game_state_t *b, struct move_t *ml)
       if (b->board[f][r] == NOPIECE) {
 	strcat(bstring, " ");
       } else {
-	if (colorval(b->board[f][r]) == WHITE)
-	  strcat(bstring, wpstring[piecetype(b->board[f][r])]);
-	else
-	  strcat(bstring, bpstring[piecetype(b->board[f][r])]);
+	strcat(bstring, piecechar(b->board[f][r]));
       }
     }
     strcat(bstring, "|\n");
@@ -904,10 +900,7 @@ static int style11(struct game_state_t *b, struct move_t *ml)
       if (b->board[f][r] == NOPIECE) {
 	strcat(bstring, " ");
       } else {
-	if (colorval(b->board[f][r]) == WHITE)
-	  strcat(bstring, wpstring[piecetype(b->board[f][r])]);
-	else
-	  strcat(bstring, bpstring[piecetype(b->board[f][r])]);
+	strcat(bstring, piecechar(b->board[f][r]));
       }
     }
   }
@@ -951,10 +944,7 @@ static int style12(struct game_state_t *b, struct move_t *ml)
       if (b->board[f][r] == NOPIECE) {
 	strcat(bstring, "-");
       } else {
-	if (colorval(b->board[f][r]) == WHITE)
-	  strcat(bstring, wpstring[piecetype(b->board[f][r])]);
-	else
-	  strcat(bstring, bpstring[piecetype(b->board[f][r])]);
+	strcat(bstring, piecechar(b->board[f][r]));
       }
     }
     strcat(bstring, " ");
@@ -1455,7 +1445,7 @@ static void wild_update(board_t b, int style)
       for (f = 0; f < 8; f++) {
 	if (onPiece < 0 || b[f][r] != onPiece) {
 	  onPiece = b[f][r];
-	  fprintf(fp, " %s", wpstring[piecetype(b[f][r])]);
+	  fprintf(fp, " %c", wpchar[piecetype(b[f][r])]);
 	}
 	fprintf(fp, " %c%c", f + 'a', r + '1');
       }
@@ -1466,7 +1456,7 @@ static void wild_update(board_t b, int style)
       for (f = 0; f < 8; f++) {
 	if (onPiece < 0 || b[f][r] != onPiece) {
 	  onPiece = b[f][r];
-	  fprintf(fp, " %s", wpstring[piecetype(b[f][r])]);
+	  fprintf(fp, " %c", wpchar[piecetype(b[f][r])]);
 	}
 	fprintf(fp, " %c%c", f + 'a', r + '1');
       }

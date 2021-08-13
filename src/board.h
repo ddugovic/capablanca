@@ -160,6 +160,7 @@
 #define isblack(p) ((p) & BLACK)
 #define iswhite(p) (!isblack(p))
 #define iscolor(p,color) (((p) & BLACK) == (color))
+#define piecechar(p) (isblack(p) ? bpchar[p] : wpchar[p])
 #define piecetype(p) ((p) & 0x7f)
 #define colorval(p) ((p) & 0x80)
 #define square_color(r,f) ((((r)+(f)) & 0x01) ? BLACK : WHITE)
@@ -239,8 +240,8 @@ GENSTRUCT struct move_t {
 
 #define MoveToHalfMove( gs ) ((((gs)->moveNum - 1) * 2) + (((gs)->onMove == WHITE) ? 0 : 1))
 
-extern const char *wpstring[];
-extern const char *bpstring[];
+extern const char wpchar[];
+extern const char bpchar[];
 
 extern int kludgeFlag; // [HGM] setup: forces move nr to zero in board printing
 

@@ -1606,8 +1606,8 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
 				   of it */
   if (mt->fromFile == ALG_DROP) {
     mt->piecePromotionTo = NOPIECE;
-    sprintf(mt->moveString, "%s/%c%c-%c%d",
-	    wpstring[mt->fromRank],
+    sprintf(mt->moveString, "%c/%c%c-%c%d",
+	    piecechar(mt->fromRank),
 		DROP_CHAR, DROP_CHAR,
 	    mt->toFile + 'a', mt->toRank + 1 - (gs->ranks>9));
   } else if(mt->fromFile == ALG_CASTLE) { 
@@ -1754,8 +1754,8 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
 #else
   {
 #endif
-    sprintf(mt->moveString, "%s/%c%d-%c%d",
-	    wpstring[piecetype(gs->board[mt->fromFile][mt->fromRank])],
+    sprintf(mt->moveString, "%c/%c%d-%c%d",
+	    piecechar(piecetype(gs->board[mt->fromFile][mt->fromRank])),
 	    mt->fromFile + 'a', mt->fromRank + 1 - (gs->ranks>9),
 	    mt->toFile + 'a', mt->toRank + 1 - (gs->ranks>9));
   }
