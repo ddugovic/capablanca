@@ -675,8 +675,8 @@ printf("promo '%s'\n", command);
 	partner = g; // pieces stay with current board
 	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       }
-      if ((demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank))))
-        update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
+      if (gg->game_state.holdings != -2 && (demotion = was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+        update_holding(partner, colorval(victim) | piecetype(demotion)); // [HGM] was_promoted now returns original piece type
       else
         update_holding(partner, victim);
     }
@@ -735,8 +735,8 @@ printf("promo '%s'\n", command);
 	partner = g; // pieces stay with current board
 	if(gg->game_state.holdings < 0) victim ^= WHITE|BLACK; // flip color
       } 
-      if ((demotion = (gg->game_state.holdings != -2 && was_promoted(&game_globals.garray[g], move.toFile, move.toRank))))
-        update_holding(partner, colorval(victim) | demotion); // [HGM] was_promoted now returns original piece type
+      if (gg->game_state.holdings != -2 && (demotion = was_promoted(&game_globals.garray[g], move.toFile, move.toRank)))
+        update_holding(partner, colorval(victim) | piecetype(demotion)); // [HGM] was_promoted now returns original piece type
       else
         update_holding(partner, victim);
     }

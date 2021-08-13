@@ -2311,7 +2311,7 @@ static int is_promoted(struct game *g, int f, int r)
 
   halfMoves = g->numHalfMoves;
   moveList  = (g->status == GAME_EXAMINE) ? g->examMoveList : g->moveList;
-  for (i = halfMoves-1; i > 0; i -= 2) {
+  for (i = halfMoves-2; i > 0; i -= 2) {
     if (moveList[i].toFile == f && moveList[i].toRank == r) {
       if (moveList[i].piecePromotionFrom)
 	return moveList[i].piecePromotionFrom;
@@ -2526,9 +2526,13 @@ int backup_move(int g, int mode)
     /* Should set the enpassant array, but I don't care right now */
     goto cleanupMove;
   }
-  if (gs->holdings && m->pieceCaptured)
-    gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(m->pieceCaptured)-PAWN]--; // remove captured piece from holdings (onMove not flipped yet!)
   gs->board[m->toFile][m->toRank] = m->pieceCaptured;
+  if (gs->holdings && m->pieceCaptured) {
+      int victim = m->pieceCaptured;
+      if (gs->holdings != -2)
+        victim = is_promoted(&game_globals.garray[g], m->toFile, m->toRank);
+      gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(victim)-PAWN]--; // remove captured piece from holdings (onMove not flipped yet!)
+  }
 cleanupMove:
   if (game_globals.garray[g].status != GAME_EXAMINE) {
     game_update_time(g);
