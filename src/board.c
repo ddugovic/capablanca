@@ -424,16 +424,15 @@ char *move_and_time(struct move_t *m)
 
 /* The following take the game state and whole move list */
 
-void Enlarge(char *a, int ss, int w)
+void Enlarge(char *buf, int ss, int files)
 {
-  int l, i;
-  char *p, *q;
-  if(strlen(a) < ss) return;
-  for(i=8; i<w; i++) {
-    l = strlen(a);
-    p = a + l; q = p + ss;
-    while(q != a+l-ss) *q-- = *p--;
+  int l, f;
+
+  // Extends (copies) buf[len-ss-ss+1..len] to buf[len+1..len+ss+ss]
+  for(f=4; (l=strlen(buf)-ss) >= 0 && f<files; f++) {
+    memmove(buf+l+1, buf+l+1-ss, ss+ss);
   }
+  return buf;
 }
 
 static int genstyle(struct game_state_t *b, struct move_t *ml, const char *wp[], const char *bp[],
@@ -569,7 +568,7 @@ static int style13(struct game_state_t *b, struct move_t *ml)
   static const char *bp[] = {"   ", "\033[21m\033[37m P ", "\033[21m\033[37m N ", "\033[21m\033[37m B ", "\033[21m\033[37m R ", "\033[21m\033[37m A ", "\033[21m\033[37m C ", "\033[21m\033[37m M ", "\033[21m\033[37m Q ", "\033[21m\033[37m E ", "\033[21m\033[37m K "};
   static const char *wsqr = "\033[40m";
   static const char *bsqr = "\033[45m";
-  static const char *top = "\t+------------------------+\n";
+  static const char *top = "\t+------------+\n";
   static const char *mid = "";
   static const char *start = "|";
   static const char *end = "\033[0m|";
@@ -592,8 +591,8 @@ static int style1(struct game_state_t *b, struct move_t *ml)
 			     " *K|", " *H|", " *E|", " *W|", " *G|", " *L|", " *C|", " *H|"};
   static char *wsqr = "";
   static char *bsqr = "";
-  static char *top = "\t---------------------------------\n";
-  static char *mid = "\t|---+---+---+---+---+---+---+---|\n";
+  static char *top = "\t-----------------\n";
+  static char *mid = "\t|---+---+---+---|\n";
   static char *start = "|";
   static char *end = "";
   static char *label = "\t  a   b   c   d   e   f   g   h   i   j   k   l\n";
@@ -638,7 +637,7 @@ static int style3(struct game_state_t *b, struct move_t *ml)
 			     " *K", " *H", " *E", " *W", " *G", " *L", " *C", " *H"};
   static char *wsqr = "\033[0m";
   static char *bsqr = "\033[7m";
-  static char *top = "\t+------------------------+\n";
+  static char *top = "\t+------------+\n";
   static char *mid = "";
   static char *start = "|";
   static char *end = "\033[0m|";
@@ -661,7 +660,7 @@ static int style4(struct game_state_t *b, struct move_t *ml)
 			     " *K", " *H", " *E", " *W", " *G", " *L", " *C", " *H"};
   static char *wsqr = "\033[7m";
   static char *bsqr = "\033[0m";
-  static char *top = "\t+------------------------+\n";
+  static char *top = "\t+------------+\n";
   static char *mid = "";
   static char *start = "|";
   static char *end = "\033[0m|";
@@ -686,8 +685,8 @@ static int style5(struct game_state_t *b, struct move_t *ml)
 			     " =k=", " (f)", " [e]", " (w)", " [g]", " <l>", " |c|", "  h "};
   static char *wsqr = "";
   static char *bsqr = "";
-  static char *top = "        .   .   .   .   .   .   .   .   .\n";
-  static char *mid = "        .   .   .   .   .   .   .   .   .\n";
+  static char *top = "        .   .   .   .   .\n";
+  static char *mid = "        .   .   .   .   .\n";
   static char *start = "";
   static char *end = "";
   static char *label = "\t  a   b   c   d   e   f   g   h   i   j   k   l\n";
@@ -711,9 +710,9 @@ static int style6(struct game_state_t *b, struct move_t *ml)
 			     " BK |", " BH |", " BE |", " BW |", " BG |", " BL |", " BC |", " Bh |"};
   static char *wsqr = "";
   static char *bsqr = "";
-  static char *top = "\t-----------------------------------------\n";
+  static char *top = "\t---------------------\n";
 
-  static char *mid = "\t-----------------------------------------\n";
+  static char *mid = "\t---------------------\n";
   static char *start = "|";
   static char *end = "";
   static char *label = "\t  A    B    C    D    E    F    G    H    I    J    K    L\n";
@@ -733,7 +732,7 @@ static int style7(struct game_state_t *b, struct move_t *ml)
 			     " k", " h", " e", " w", " g", " l", " c", " h"};
   static char *wsqr = "";
   static char *bsqr = "";
-  static char *top = "\t:::::::::::::::::::::\n";
+  static char *top = "\t:::::::::::::\n";
   static char *mid = "";
   static char *start = "..";
   static char *end = " ..";
