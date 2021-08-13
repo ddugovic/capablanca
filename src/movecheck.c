@@ -1647,10 +1647,10 @@ static int move_calculate(struct game_state_t * gs, struct move_t * mt, piece_t 
     } else
       switch(piecetype(piece)) { // force mandatory promotions
         case HONORABLEHORSE:
-          if(mt->toRank == 1 || mt->toRank == gs->files-2) promote = GOLD;
+          if(mt->toRank == 1 || mt->toRank == gs->ranks-2) promote = GOLD;
         case PAWN:
         case LANCE:
-          if(mt->toRank == 0 || mt->toRank == gs->files-1) promote = GOLD;
+          if(mt->toRank == 0 || mt->toRank == gs->ranks-1) promote = GOLD;
         default: break;
       }
     if(promote) mt->piecePromotionTo = promote | (colorval(gs->board[mt->fromFile][mt->fromRank]));
