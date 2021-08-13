@@ -202,6 +202,7 @@ GENSTRUCT struct game_state_t {
 	char promoType;
 	char promoZone;
 	char variant[20];
+	char name[2][8];
 };
 
 #define ALG_DROP -2

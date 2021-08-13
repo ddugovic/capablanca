@@ -173,6 +173,8 @@ int board_init(int g,struct game_state_t *b, char *category, char *board)
   b->promoType = 1;
   b->promoZone = 1;
   b->variant[0] = 0; // [HGM] variant: default is normal, if variant name is missing
+  sprintf(b->name[0], "White");
+  sprintf(b->name[1], "Black");
   if (!category || !board || !category[0] || !board[0]) 
   				/* accounts for bughouse too */
     board_standard(b);
@@ -283,7 +285,7 @@ static char *append_holding_machine(char *buf, int g, int c, int p)
   struct game_state_t *gs = &game_globals.garray[g].game_state;
   char tmp[160];
 
-  sprintf(tmp, "<b1> game %d white [%s] black [", g+1, holding_str(gs->holding[0]));
+  sprintf(tmp, "<b1> game %d %s [%s] %s [", g+1, gs->name[0], holding_str(gs->holding[0]), gs->name[1]);
   strcat(tmp, holding_str(gs->holding[1]));
   strcat(buf, tmp);
   if (p) {
@@ -296,10 +298,13 @@ static char *append_holding_machine(char *buf, int g, int c, int p)
 
 static char *append_holding_display(char *buf, struct game_state_t *gs, int white)
 {
+  char tmp[20];
+
   if (white)
-    strcat(buf, "White holding: [");
+    sprintf(tmp, "%s holding [", gs->name[0]);
   else
-    strcat(buf, "Black holding: [");
+    sprintf(tmp, "%s holding [", gs->name[1]);
+  strcat(buf, tmp);
   strcat(buf, holding_str(gs->holding[white ? 0 : 1]));
   strcat(buf, "]\n");
   return buf;
@@ -498,19 +503,19 @@ static int genstyle(struct game_state_t *b, struct move_t *ml, const char *wp[],
     case 5:
       break;
     case 4:
-      sprintf(tmp, "     Black Clock : %s", tenth_str(((bTime > 0) ? bTime : 0), 1));
+      sprintf(tmp, "     %s Clock : %s", b->name[1], tenth_str(((bTime > 0) ? bTime : 0), 1));
       strcat(bstring, tmp);
       break;
     case 3:
-      sprintf(tmp, "     White Clock : %s", tenth_str(((wTime > 0) ? wTime : 0), 1));
+      sprintf(tmp, "     %s Clock : %s", b->name[0], tenth_str(((wTime > 0) ? wTime : 0), 1));
       strcat(bstring, tmp);
       break;
     case 2:
-      sprintf(tmp, "     Black Strength : %d", bs);
+      sprintf(tmp, "     %s Strength : %d", b->name[1], bs);
       strcat(bstring, tmp);
       break;
     case 1:
-      sprintf(tmp, "     White Strength : %d", ws);
+      sprintf(tmp, "     %s Strength : %d", b->name[0], ws);
       strcat(bstring, tmp);
       break;
     case 0:
@@ -1272,6 +1277,10 @@ static int board_read_file(char *category, char *gname, struct game_state_t *gs)
     }
   }
   fclose(fp);
+  if (!strcmp(category, "shogi")) {
+    sprintf(gs->name[0], "Sente");
+    sprintf(gs->name[1], "Gote");
+  }
   return 0;
 }
 
