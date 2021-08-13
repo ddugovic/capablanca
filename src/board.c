@@ -23,15 +23,25 @@
 #include "includes.h"
 
 
-const char wpchar[] = {' ', 'P', 'N', 'B', 'R', 'A', 'C', 'M', 'Q', 'E', 'B', 'Q', 'W', 'H', 'N', 'D', 'H', 'L',
-                       'C', 'S', 'G', 'H', 'A', 'F', 'E', 'H', 'M', 'S', 'E', 'W', 'O', 'G', 'V', 'S', 'E', 'A',
-                       'K', 'H', 'E', 'W', 'G', 'L', 'C', 'H'};
-const char bpchar[] = {' ', 'p', 'n', 'b', 'r', 'a', 'c', 'm', 'q', 'e', 'b', 'q', 'w', 'h', 'n', 'd', 'h', 'l',
-                       'c', 's', 'g', 'h', 'a', 'f', 'e', 'h', 'm', 's', 'e', 'w', 'o', 'g', 'v', 's', 'e', 'a',
-                       'k', 'h', 'e', 'w', 'g', 'l', 'c', 'h'};
+const char wpchar[] = {' ', 'P', 'N', 'B', 'R', 'A', 'C', 'M',
+                       'Q', 'E', 'B', 'Q', 'W', 'H', 'N', 'D',
+                       'H', 'L', 'C', 'S', 'G', 'H', 'A', 'F',
+                       'E', 'H', 'M', 'S', 'E', 'W', 'O', 'G',
+                       'V', 'S', 'E', 'A', 'K', 'H', 'E', 'W',
+                       'G', 'L', 'C', 'H'};
+const char bpchar[] = {' ', 'p', 'n', 'b', 'r', 'a', 'c', 'm',
+                       'q', 'e', 'b', 'q', 'w', 'h', 'n', 'd',
+                       'h', 'l', 'c', 's', 'g', 'h', 'a', 'f',
+                       'e', 'h', 'm', 's', 'e', 'w', 'o', 'g',
+                       'v', 's', 'e', 'a', 'k', 'h', 'e', 'w',
+                       'g', 'l', 'c', 'h'};
 
-int pieceValues[PIECES] = {0, 1, 3, 3, 5, 8, 9, 3, 9, 1, 1, 2, 2, 2, 1, 6, 5, 2, 3, 3, 3, 1, 5, 2, 1, 7, 7, 3, 3, 3, 7, 7, 7, 8, 9, 12,
-			   0, 8, 9, 8, 7, 3, 3, 1};
+int pieceValues[PIECES] = { 0,  1,  3,  3,  5,  8,  9,  3,
+                            9,  1,  1,  2,  2,  2,  1,  6,
+                            5,  2,  3,  3,  3,  1,  5,  2,
+                            1,  7,  7,  3,  3,  3,  7,  7,
+                            7,  8,  9, 12,  0,  8,  9,  8,
+                            7,  3,  3,  1};
 
 static const int mach_type = (1<<7) | (1<<8) | (1<<9) | (1<<10) | (1<<11);
 #define IsMachineStyle(n) (((1<<(n)) & mach_type) != 0)
@@ -246,7 +256,7 @@ int board_init(int g,struct game_state_t *b, char *category, char *board)
 
 void board_calc_strength(struct game_state_t *b, int *ws, int *bs)
 {
-  int r, f;
+  int r, f, v;
   int *p;
 
   *ws = *bs = 0;
@@ -256,12 +266,20 @@ void board_calc_strength(struct game_state_t *b, int *ws, int *bs)
 	p = ws;
       else
 	p = bs;
-      *p += pieceValues[piecetype(b->board[r][f])];
+      if (!strcmp(b->variant, "shogi") && piecetype(b->board[r][f]) == BISHOP)
+        v = 4; // half of Tanigawa (NHK 2006)
+      else
+        v = pieceValues[piecetype(b->board[r][f])];
+      *p += v;
     }
   }
   for (r = PAWN; r < PIECES; r++) {
-    *ws += b->holding[0][r-PAWN] * pieceValues[r];
-    *bs += b->holding[1][r-PAWN] * pieceValues[r];
+    if (!strcmp(b->variant, "shogi") && r == BISHOP)
+      v = 4; // half of Tanigawa (NHK 2006)
+    else
+      v = pieceValues[r];
+    *ws += b->holding[0][r-PAWN] * v;
+    *bs += b->holding[1][r-PAWN] * v;
   }
 }
 
