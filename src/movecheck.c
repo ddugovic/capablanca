@@ -2529,8 +2529,11 @@ int backup_move(int g, int mode)
   gs->board[m->toFile][m->toRank] = m->pieceCaptured;
   if (gs->holdings && m->pieceCaptured) {
       int victim = m->pieceCaptured;
-      if (gs->holdings != -2)
+      if (gs->holdings != -2) {
         victim = is_promoted(&game_globals.garray[g], m->toFile, m->toRank);
+        if (victim == 0)
+          victim = m->pieceCaptured;
+      }
       gs->holding[gs->onMove==WHITE ? 1 : 0][piecetype(victim)-PAWN]--; // remove captured piece from holdings (onMove not flipped yet!)
   }
 cleanupMove:
