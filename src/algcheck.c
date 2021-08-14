@@ -48,6 +48,7 @@
  * p - piece
  * x - x
  * @ - drop character (bughouse)
+ * # - drop character
  */
 static char *alg_list[] = {
   "fxfr", "pxfr",		/* These two get confused in case of bishop */
@@ -95,7 +96,7 @@ static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int 
       continue;
     for (j = len - 1; j >= 0; j--) {
       switch (alg_list[i][j]) {
-      case 'f':
+      case 'f': // file
 	if ((tmp[j] < 'a') || (tmp[j] > 'l')) // [HGM] upto l-file
 	  goto nomatch;
 	if (ltf == ALG_UNKNOWN)
@@ -103,7 +104,7 @@ static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int 
 	else
 	  lff = tmp[j] - 'a';
 	break;
-      case 'r':
+      case 'r': // rank
 	if ((tmp[j] < '0') || (tmp[j] > '9')) // [HGM] also match 0- and 9-rank
 	  goto nomatch;
 	if (ltr == ALG_UNKNOWN)
@@ -111,14 +112,14 @@ static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int 
 	else
 	  lfr = tmp[j] - '0';
 	break;
-      case 'p':
+      case 'p': // piece
 	if (isupper(tmp[j]))
 	  c = tolower(tmp[j]);
 	else
 	  c = tmp[j];
 	if (c == 'k')
 	  lpiece = KING;
-	else if (c == 'e')   // [HGM] note that som piece indicators are ambiguous,
+	else if (c == 'e')   // [HGM] note that some piece indicators are ambiguous,
 	  lpiece = ELEPHANT; //       and their true meaning depends on the variant,
 	else if (c == 'v')   //       which we do not know at this point.
 	  lpiece = CENTAUR;
@@ -157,16 +158,16 @@ static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int 
 	else
 	  goto nomatch;
 	break;
-      case 'x':
+      case 'x': // capture
 	if ((tmp[j] != 'x') && (tmp[j] != 'X'))
 	  goto nomatch;
 	break;
-      case '@':
+      case '@': // drop
 	if (tmp[j] != '@' && tmp[j] != '*')
 	  goto nomatch;
 	lff = lfr = ALG_DROP;
 	break;
-      case '#':
+      case '#': // drop
 	if (tmp[j] != '#')
 	  goto nomatch;
 	lff = lfr = ALG_DROP;
@@ -180,9 +181,7 @@ static int get_move_info(const char *str, piece_t *piece, int *ff, int *fr, int 
       lpiece = PAWN;
     if (lpiece == PAWN && (lfr == ALG_UNKNOWN)) {	/* ffr or ff */
       if (lff != ALG_UNKNOWN) {
-	if (lff == ltf)
-	  goto nomatch;
-	if ((lff - ltf != 1) && (ltf - lff != 1))
+	if ((lff - ltf != 1) && (ltf - lff != 1))	/* Pawn non-diagonal capture */
 	  goto nomatch;
       }
     }
@@ -382,6 +381,9 @@ int alg_parse_move(char *mstr, struct game_state_t * gs, struct move_t * mt)
       break;
     case QUEEN:
       if(strstr(gs->variant, "shatranj")) piece = FERZ;
+      break;
+    case FERZ:
+      if(strstr(gs->variant, "shogi")) piece = FERZ2;
       break;
     case WAZIR:
       if(strstr(gs->variant, "super")) piece = WOODY;
