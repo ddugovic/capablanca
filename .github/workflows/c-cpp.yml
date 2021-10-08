@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install libraries
-      run: sudo apt install libmcrypt-dev libtdb-dev
+      run: sudo apt install expect libmcrypt-dev libtdb-dev
     - name: configure
       run: cd src && ./configure --prefix=/usr/local
     - name: make
